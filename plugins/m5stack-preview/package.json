@@ -1,0 +1,27 @@
+{
+  "name": "m5stack-preview",
+  "version": "0.7.42",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "notices": "node scripts/collect-notices.mjs",
+    "test:release": "node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/browser-preview.test.mjs"
+  },
+  "dependencies": {
+    "@openai/mcp-extensions": "0.1.0",
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3",
+    "@types/node": "24.0.0"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "license": "MIT"
+}

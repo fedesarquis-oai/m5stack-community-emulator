@@ -1,0 +1,6 @@
+packages:
+  - '.'
+overrides:
+  ajv: 8.17.1
+  fast-uri: 3.0.1
+  zod-to-json-schema: 3.25.1

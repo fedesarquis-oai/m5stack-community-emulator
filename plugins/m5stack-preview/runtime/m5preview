@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+"""Workspace-only native M5 UI workflow. No packages or persistent services."""
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import signal
+import stat
+import subprocess
+import sys
+import tempfile
+import secrets
+
+ROOT = Path(__file__).resolve().parent
+PROFILES = ('atoms3r','stickcplus2','sticks3','cores3','cores3se')
+JOBS = 2
+GIT_LOCAL_TIMEOUT = 15
+GIT_FETCH_TIMEOUT = 180
+SETUP_MARKER = '.m5preview-setup-incomplete'
+
+def run(args, cwd=ROOT, log=None, **kw):
+    if log:
+        with open(ROOT / "logs" / log, "w") as out:
+            result = subprocess.run([str(x) for x in args], cwd=cwd, stdout=out, stderr=subprocess.STDOUT, **kw)
+        if result.returncode:
+            raise RuntimeError(f"Command failed ({result.returncode}); see logs/{log}")
+        return result
+    return subprocess.run([str(x) for x in args], cwd=cwd, check=True, **kw)
+
+def pins():
+    return json.loads((ROOT / "dependencies.lock.json").read_text())
+
+def git_environment():
+    # Isolate filesystem routing, not company/global Git policy. System/global
+    # configuration, hooks, proxies, certificate rules and helpers remain in
+    # force. Never print this environment or raw Git authentication errors.
+    env = dict(os.environ)
+    for name in ('GIT_DIR','GIT_COMMON_DIR','GIT_WORK_TREE','GIT_INDEX_FILE',
+                 'GIT_OBJECT_DIRECTORY','GIT_ALTERNATE_OBJECT_DIRECTORIES',
+                 'GIT_PREFIX','GIT_CEILING_DIRECTORIES','GIT_QUARANTINE_PATH',
+                 'GIT_NAMESPACE'):
+        env.pop(name,None)
+    env.update(GIT_TERMINAL_PROMPT='0',GCM_INTERACTIVE='never',GIT_OPTIONAL_LOCKS='0')
+    return env
+
+
+def git_output(folder, *args, timeout=GIT_LOCAL_TIMEOUT):
+    # Explicit paths also prevent inherited core.worktree settings from
+    # redirecting checkout/verification into an unrelated working directory.
+    command = ['git','--no-replace-objects','-C',str(folder),
+               '--git-dir='+str(folder/'.git'),'--work-tree='+str(folder),*args]
+    process = subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE,text=True,env=git_environment(),
+                               start_new_session=True)
+    try:
+        output,_ = process.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        # Git may spawn transport/credential helpers holding these pipes open.
+        # Terminate only this owned process group, including its descendants.
+        try: os.killpg(process.pid,signal.SIGTERM)
+        except ProcessLookupError: pass
+        try: process.communicate(timeout=1)
+        except subprocess.TimeoutExpired:
+            try: os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError: pass
+            process.communicate(timeout=2)
+        raise RuntimeError(f'Git {args[0]} timed out after {timeout} seconds; its owned process group was stopped') from None
+    except BaseException:
+        # Ctrl-C must not leave a detached Git transport/helper using staging.
+        try: os.killpg(process.pid,signal.SIGKILL)
+        except ProcessLookupError: pass
+        process.wait(timeout=2)
+        process.stdout.close(); process.stderr.close()
+        raise
+    if process.returncode:
+        raise RuntimeError(f'Git {args[0]} failed (exit {process.returncode}). Check approved Git/network access; no credentials were requested from the terminal')
+    return output
+
+
+def dependency_recovery(name):
+    return (f'Dependency {name} is missing, incomplete, changed or damaged. Its existing files were preserved. '
+            f'Inspect vendor/{name}; preserve it by moving it to a new backup path if repair is needed, '
+            'then rerun ./m5preview setup --browser-only.')
+
+
+def verify_checkout(folder, name, dep, marker=None):
+    try:
+        if folder.is_symlink() or not folder.is_dir() or (folder/'.git').is_symlink() or not (folder/'.git').is_dir():
+            raise RuntimeError('Expected a regular checkout with its own Git directory')
+        if (folder/SETUP_MARKER).exists() and marker is None:
+            raise RuntimeError('A prior publication did not finish')
+        expected_git = str((folder/'.git').resolve())
+        common = git_output(folder,'rev-parse','--git-common-dir').strip()
+        if str((folder/common).resolve()) != expected_git:
+            raise RuntimeError('Git common directory is outside this checkout')
+        sha = git_output(folder,'rev-parse','HEAD').strip()
+        dirty = git_output(folder,'status','--porcelain=v1','-z','--untracked-files=all').split('\0')
+        allowed = ['?? '+SETUP_MARKER] if marker is not None else []
+        if sha!=dep['commit'] or any(entry and entry not in allowed for entry in dirty):
+            raise RuntimeError('Checkout differs from its exact pin or has local changes')
+        if marker is not None and (folder/SETUP_MARKER).read_text()!=marker:
+            raise RuntimeError('Setup marker changed during publication')
+    except (OSError,RuntimeError) as error:
+        raise RuntimeError(dependency_recovery(name)+' '+str(error)) from None
+
+
+def verify_dependencies():
+    if (ROOT/'vendor').is_symlink():
+        raise RuntimeError('vendor must be a workspace directory, not a symlink; existing files were preserved')
+    for name, dep in pins().items():
+        verify_checkout(ROOT/'vendor'/name,name,dep)
+
+
+def copy_checkout_exclusive(source, destination_fd):
+    """Publish only into paths this attempt creates; never replace an entry."""
+    for child in source.iterdir():
+        if child.is_symlink(): os.symlink(os.readlink(child),child.name,dir_fd=destination_fd)
+        elif child.is_dir():
+            os.mkdir(child.name,dir_fd=destination_fd)
+            nested = os.open(child.name,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW,dir_fd=destination_fd)
+            try: copy_checkout_exclusive(child,nested)
+            finally: os.close(nested)
+        elif child.is_file():
+            # Both paths are under vendor on the same filesystem. Exclusive
+            # hardlink creation preserves modes/bytes without a second copy.
+            os.link(child,child.name,dst_dir_fd=destination_fd)
+        else: raise RuntimeError('Unexpected non-regular dependency resource')
+
+
+def cleanup_owned_stage(stage, identity):
+    """Retain private staging: pathname-based deletion has an ownership race.
+
+    Successful publication hardlinks regular files, so these retained names do
+    not duplicate their contents. Failed downloads can accumulate disk usage.
+    No automatic housekeeping/deletion is performed by this setup patch.
+    """
+    return
+
+
+def verify_reservation(folder, directory_fd, marker_fd, marker):
+    current=folder.lstat(); owned=os.fstat(directory_fd)
+    if not stat.S_ISDIR(current.st_mode) or (current.st_dev,current.st_ino)!=(owned.st_dev,owned.st_ino):
+        raise RuntimeError('Reserved dependency directory was replaced; preserving all paths')
+    current=os.stat(SETUP_MARKER,dir_fd=directory_fd,follow_symlinks=False)
+    owned=os.fstat(marker_fd)
+    os.lseek(marker_fd,0,os.SEEK_SET)
+    if (not stat.S_ISREG(current.st_mode) or (current.st_dev,current.st_ino)!=(owned.st_dev,owned.st_ino)
+            or os.read(marker_fd,128).decode('ascii',errors='replace')!=marker):
+        raise RuntimeError('Setup marker changed; preserving the published directory')
+
+
+def install_dependency(name, dep):
+    vendor=ROOT/'vendor'
+    if vendor.is_symlink(): raise RuntimeError('vendor must not be a symlink; existing files were preserved')
+    vendor.mkdir(exist_ok=True)
+    folder=vendor/name
+    if folder.exists() or folder.is_symlink():
+        verify_checkout(folder,name,dep)
+        return
+    stage=Path(tempfile.mkdtemp(prefix='.'+name+'-fetch-',dir=vendor))
+    info=stage.stat(); identity=(info.st_dev,info.st_ino)
+    reserved=False
+    directory_fd=marker_fd=None
+    try:
+        git_output(stage,'init',str(stage))
+        git_output(stage,'remote','add','origin',dep['url'])
+        git_output(stage,'fetch','--depth','1','origin',dep['commit'],timeout=GIT_FETCH_TIMEOUT)
+        git_output(stage,'checkout','--detach',dep['commit'])
+        verify_checkout(stage,name,dep)
+        # mkdir is an exclusive reservation. rename(stage, folder) could
+        # silently replace a concurrently created empty user directory.
+        folder.mkdir()
+        reserved=True
+        directory_fd=os.open(folder,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)
+        marker=secrets.token_hex(24)+'\n'
+        marker_fd=os.open(SETUP_MARKER,os.O_RDWR|os.O_CREAT|os.O_EXCL,0o600,dir_fd=directory_fd)
+        os.write(marker_fd,marker.encode('ascii'))
+        verify_reservation(folder,directory_fd,marker_fd,marker)
+        copy_checkout_exclusive(stage,directory_fd)
+        verify_reservation(folder,directory_fd,marker_fd,marker)
+        verify_checkout(folder,name,dep,marker=marker)
+        verify_reservation(folder,directory_fd,marker_fd,marker)
+        os.unlink(SETUP_MARKER,dir_fd=directory_fd)
+        print(f'Verified {name}; retained staging: vendor/{stage.name} (regular files are hardlinked).',flush=True)
+    except (OSError,RuntimeError) as error:
+        if reserved or folder.exists() or folder.is_symlink():
+            raise RuntimeError(dependency_recovery(name)+' '+str(error)) from None
+        raise RuntimeError(f'Dependency {name} was not installed. Retained staging: vendor/{stage.name}. Rerun ./m5preview setup --browser-only after resolving approved tool/network access. '+str(error)) from None
+    finally:
+        if marker_fd is not None: os.close(marker_fd)
+        if directory_fd is not None: os.close(directory_fd)
+        cleanup_owned_stage(stage,identity)
+
+def setup(browser_only=False):
+    for tool in ("git", "clang", "clang++"):
+        if not shutil.which(tool):
+            raise RuntimeError(f"Required existing system tool missing: {tool}; no global installer was run")
+    for name, dep in pins().items():
+        install_dependency(name,dep)
+    verify_dependencies()
+    print("Setup ready: pinned native sources stay in this workspace.")
+
+def main():
+    if len(sys.argv)>1 and sys.argv[1]=='hardware':
+        from scripts import hardware
+        sys.argv.pop(1)
+        return hardware.main()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command",choices=["setup","build","web-build","test","web-test","doctor"])
+    parser.add_argument("--profile",choices=PROFILES,default="cores3se")
+    parser.add_argument("--app",choices=['counter','custom'],default='custom',help='Both names use the editable Hello World app headers.')
+    parser.add_argument('--browser-only',action='store_true',help='Setup pinned native sources (retained compatibility flag)')
+    args=parser.parse_args()
+    if args.browser_only and args.command!='setup':raise ValueError('--browser-only is a setup option')
+    if args.command=='doctor':
+        report={'tools':{name:shutil.which(name) for name in ('python3','git','clang','clang++')},
+                'build_workers':JOBS,'hardware_access':False,'dependencies':'not checked'}
+        try: verify_dependencies(); report['dependencies']='all official pins clean'
+        except (RuntimeError,OSError,subprocess.SubprocessError) as error: report['dependencies']=str(error)
+        print(json.dumps(report,indent=2));return
+    for folder in ["logs",".build",".local","vendor"]:(ROOT/folder).mkdir(exist_ok=True)
+    os.chdir(ROOT)
+    if args.command=='setup':return setup(args.browser_only)
+    from scripts import virtual_device
+    metadata=virtual_device.build(sys.modules[__name__],args.profile)
+    if args.command in ('test','web-test'):
+        run(['clang++','-std=c++17','-Wall','-Wextra','-pedantic','tests/user_app_test.cpp','-o','.build/user-app-test'])
+        run([ROOT/'.build/user-app-test'])
+        print('PASS starter model and native compilation; browser microphone and physical checks remain separate')
+
+if __name__=="__main__":
+    try:main()
+    except (RuntimeError,subprocess.SubprocessError,OSError,ValueError) as error:
+        print("ERROR: "+str(error),file=sys.stderr);sys.exit(1)

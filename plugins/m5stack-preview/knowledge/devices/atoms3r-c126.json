@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "id": "atoms3r-c126",
+  "name": "AtomS3R",
+  "sku": "C126",
+  "variant": "plain controller",
+  "verified_on": "2026-10-13",
+  "official_source": {
+    "url": "https://docs.m5stack.com/en/core/AtomS3R",
+    "sections": [
+      "Description",
+      "Specifications",
+      "PinMap",
+      "Version Change"
+    ]
+  },
+  "hardware": {
+    "microcontroller": {
+      "model": "ESP32-S3-PICO-1-N8R8",
+      "source_section": "Specifications"
+    },
+    "memory": {
+      "flash_mb": 8,
+      "psram_mb": 8,
+      "source_section": "Specifications"
+    },
+    "camera": {
+      "present": null,
+      "model": null,
+      "status": "not_listed_unverified",
+      "basis": "No camera is listed in the official Description, Specifications or PinMap; explicit absence and physical hardware were not verified."
+    },
+    "display": {
+      "resolution_px": [
+        128,
+        128
+      ],
+      "diagonal_inches": 0.85,
+      "controller_current": "ST7735",
+      "earlier_controller": "GC9107",
+      "documented_controller_change": "2026-05-14",
+      "owned_panel_revision": "unknown",
+      "rotated_sizes_px": [
+        [
+          128,
+          128
+        ]
+      ],
+      "rotation_contract_ref": "index.json#/rotation_contract"
+    },
+    "touch": {
+      "present": false,
+      "controller": null
+    },
+    "buttons": {
+      "app": [
+        {
+          "id": "A",
+          "physical_role": "display-cap button",
+          "gpio": 41
+        }
+      ],
+      "system": [
+        {
+          "id": "RESET",
+          "app_button": false
+        }
+      ]
+    },
+    "motion": {
+      "accelerometer": true,
+      "gyroscope": true,
+      "imu": "BMI270",
+      "magnetometer": "BMM150"
+    },
+    "microphone_input": {
+      "present": false,
+      "codec": null
+    },
+    "audio_output": {
+      "kind": "none",
+      "speaker": false,
+      "buzzer": false
+    },
+    "battery": {
+      "included": false,
+      "capacity_mah": null,
+      "external_accessories_excluded": true
+    },
+    "body_dimensions_mm_as_published": [
+      24,
+      24,
+      12.9
+    ],
+    "absence_basis": "Plain-controller component list and pinmap; user-confirmed plain C126. Voice Base is a separate accessory.",
+    "rtc": {
+      "present": null,
+      "status": "No separate RTC is established by the audited manual"
+    },
+    "infrared": {
+      "transmit": true,
+      "receive": false,
+      "gpio": 47
+    },
+    "leds": {
+      "rgb": {
+        "present": false,
+        "basis": "Parent owner independently checked official Atom selector; LP5562/RGB pin heading is not an RGB emitter claim",
+        "source": "https://docs.m5stack.com/ja/products_selector/m5atom_compare"
+      },
+      "system": {
+        "role": "download-mode green indicator",
+        "app_control_verified": false
+      }
+    },
+    "power": {
+      "supply": "USB-C or external 5V through expansion",
+      "onboard_5v_to_3v3": true,
+      "battery_model": false
+    },
+    "ports": {
+      "usb": "Type-C USB OTG / Serial-JTAG",
+      "grove": {
+        "connector": "HY2.0-4P",
+        "gpio": [
+          2,
+          1
+        ]
+      },
+      "bottom_gpio": [
+        5,
+        6,
+        7,
+        8,
+        38,
+        39
+      ]
+    }
+  },
+  "native_preview": {
+    "baseline_ref": "index.json#/preview_baseline",
+    "runtime_profile": "atoms3r",
+    "profile_exists": true,
+    "framebuffer_px": [
+      128,
+      128
+    ],
+    "inputs": [
+      "primary_A_completed_gesture",
+      "synthetic_roll",
+      "synthetic_shake",
+      "app_reset"
+    ],
+    "microphone_adapter": false,
+    "audio_output_intent": "none",
+    "rotation_control": false,
+    "camera_adapter": false,
+    "hardware_verified_by_this_task": true,
+    "battery_simulation": false,
+    "display_pose": {
+      "enabled": true,
+      "roll_source": "acknowledged semantic roll",
+      "framebuffer_rotation": false,
+      "changes_native_resolution": false
+    },
+    "additional_peripheral_adapters": {
+      "rtc": false,
+      "ir": false,
+      "led": false,
+      "magnetometer": false,
+      "camera": false,
+      "proximity": false,
+      "battery": false,
+      "power": false,
+      "storage": false,
+      "gpio": false,
+      "radio": false
+    },
+    "microphone_mapping": "none",
+    "speaker_pcm": {
+      "implemented": false
+    },
+    "network": {
+      "implemented": true,
+      "adapter": 1,
+      "transport": "host HTTP(S)",
+      "rf_simulation": false
+    }
+  },
+  "do_not_alias": [
+    "AtomS3 C123",
+    "AtomS3R plus Atomic Voice Base"
+  ],
+  "browser_preview": {
+    "profile_exists": true,
+    "microphone_adapter": false,
+    "audio_output": "none",
+    "full_audio_playback": false,
+    "camera_adapter": false,
+    "microphone_mode": "none",
+    "microphone_maps_to": "none",
+    "microphone_sources": []
+  },
+  "physical_firmware": {
+    "implemented": true,
+    "profile": "atoms3r",
+    "features": [
+      "display",
+      "primary_button",
+      "semantic_shake",
+      "semantic_tilt"
+    ],
+    "audio": "none",
+    "flash_mb": 8,
+    "psram_mb": 8,
+    "psram_mode": "octal",
+    "driver": "M5Unified 0.2.26 / M5GFX 0.2.33",
+    "physical_confirmation": "2026-10-13: display, three button presses, hold reset, tilt, shake",
+    "panel_revision": "autodetected by M5GFX; exact owned IC not separately measured",
+    "recovery_acceptance": "2026-10-13: original 8 MB flash restored and device digest verified; user confirmed original app boots and responds normally",
+    "restart_acceptance": "2026-10-13: user confirmed Atom Check returns and the display button responds after USB unplug/reconnect and brief RST",
+    "edited_firmware_build": "0df9cc1cc1e22096",
+    "network": {
+      "implemented": true,
+      "physical_verified": true,
+      "status": "2026-10-13: same app passed native/Chrome and Atom HTTPS GET/POST, chunked/503 replies, body limits, redirect and wrong-CA rejection, responsive cancellation and late-result suppression. Two physical request cycles had stable final heap. User confirmed a cold restart and button-triggered HTTPS PASS; USB confirmed saved settings, NTP time and HTTP 200 / 39 B.",
+      "validated_firmware_build": "4ed424c3218cddb9"
+    }
+  }
+}

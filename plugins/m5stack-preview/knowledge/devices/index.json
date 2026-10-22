@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-14",
+  "purpose": "Exact-SKU knowledge for local app authoring; not a runtime capability registry",
+  "files": [
+    "atoms3r-c126.json",
+    "stickcplus2-k016-p2.json",
+    "cores3-k128.json",
+    "cores3-se-k128-se.json",
+    "sticks3-k150.json"
+  ],
+  "field_semantics": {
+    "hardware": "Plain SKU, including its explicitly bundled base; optional accessories excluded",
+    "null": "Unknown, unverified, or not applicable; consult the adjacent status or presence field",
+    "false": "Absent in this SKU or not implemented in the stated preview baseline; never transfer between namespaces",
+    "resolution_px": "Manufacturer's listed display pixel dimensions, not a universal driver rotation-zero mapping",
+    "rotated_sizes_px": "Geometric width/height possibilities derived from 90-degree rotations, not tested firmware outputs",
+    "body_dimensions_mm_as_published": "Dimensions in the manufacturer's published order; not a screen-placement model",
+    "runtime_profile": "Exact identifier in runtime/data/device-profiles.json; existence does not prove hardware or host-media fidelity",
+    "native_preview": "Shipped MCP adapter contract, gated by actual native worker capability; separate from physical hardware and legacy optional demos",
+    "browser_preview": "Local browser adapter; capture/output requires explicit user action and host support; native mapping is declared separately",
+    "physical_firmware": "Implemented board adapter and explicitly scoped physical acceptance; does not imply all peripherals are supported"
+  },
+  "camera_status_semantics": {
+    "listed_present": "Official specification explicitly identifies onboard camera hardware",
+    "explicitly_absent": "Official comparison or compatibility statement explicitly excludes a camera",
+    "not_listed_unverified": "Official component list has no camera entry; present remains null, not inferred false",
+    "native_preview.camera_adapter": "Separate implementation flag; false for all five records in this release"
+  },
+  "rotation_contract": {
+    "source": "https://docs.m5stack.com/en/arduino/m5gfx/m5gfx_sprite#setrotation",
+    "manufacturer_api": "M5GFX setRotation",
+    "quarter_turns_supported_by_api": true,
+    "set_before_drawing": true,
+    "board_specific_default_verified": false,
+    "implementation_guidance": "Select rotation explicitly, then query display.width()/height(); verify physical orientation and touch coordinates per board/revision. Do not copy a generic default into a SKU contract.",
+    "imu_tilt_rotates_framebuffer": false,
+    "framebuffer_rotation_control": false,
+    "device_pose_matches_roll": true,
+    "device_pose_changes_native_pixel_dimensions": false,
+    "shake_animation": "bounded shell animation; reduced-motion suppresses transient movement"
+  },
+  "preview_baseline": {
+    "version": "0.7.40",
+    "display": "native C++ framebuffer",
+    "microphone": "app-requested local PCM16 at 16 kHz mono",
+    "speaker": "CoreS3/SE/StickS3 mono PCM16 at 8\u201348 kHz; up to 30 seconds per clip",
+    "buzzer": "StickC Plus2 tone intents",
+    "providers": "none",
+    "default_shell": "fixed generic device controls and host audio settings",
+    "physical_firmware": "CoreS3 SE: display/touch/buttons/mono exclusive audio. AtomS3R: display/button/semantic motion and Wi-Fi/HTTP(S). StickS3: display/KEY1/KEY2/semantic motion/mono exclusive audio. All three have scoped deployment, original-firmware restore and restart acceptance; CoreS3 standard and StickC Plus2 remain emulator-only.",
+    "network": "Optional bounded GET/JSON POST on all five emulator profiles. Firmware adapters on AtomS3R, CoreS3 SE and StickS3; Atom has prior physical Wi-Fi acceptance; SE/Stick public API, saved-settings power cycle and forget/reprovision accepted October 20. Private USB setup, saved credentials, optional reconnection and explicit forget. Public service calls run on device Wi-Fi without a Mac server."
+  },
+  "selection_rules": [
+    "Match exact SKU before selecting a profile",
+    "Never alias K150 to K016-P2 because display resolution matches",
+    "Never alias K128-SE to K128 because motion hardware differs",
+    "Do not infer microphone, speaker or battery on plain C126 from an attached Voice Base",
+    "Unknown requested SKU must remain unsupported until its profile and adapters are implemented and validated"
+  ],
+  "evidence_status": "See runtime/docs/release-validation.md; physical claims require board tests."
+}

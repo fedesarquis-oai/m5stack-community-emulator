@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M5Stack Community Emulator</title></head>
+<body>
+  <main class="workbench" aria-label="Device simulator">
+    <header class="topbar">
+      <label class="device-picker"><span class="sr-only">Device</span><select id="profile" aria-label="Device" disabled><option>Loading devices…</option></select></label>
+      <div id="session-actions" class="session-actions" hidden>
+        <button id="reload" class="icon-button" type="button" title="Reload app" aria-label="Reload app" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 11a7 7 0 1 0-2 6M19 11l-4-4"/></svg></button>
+        <button id="stop" class="icon-button" type="button" title="Stop app" aria-label="Stop app" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></button>
+      </div>
+      <details class="diagnostics" name="workbench-menu"><summary title="Runtime" aria-label="Runtime"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></summary><div class="runtime-popover"><div class="app-info"><span>App</span><output id="app">Waiting for app</output></div><dl><div><dt>Display</dt><dd id="dimensions">128 × 128</dd></div><div><dt>Session</dt><dd id="session-id">—</dd></div><div><dt>Build</dt><dd id="build-id">—</dd></div><div><dt>Frame</dt><dd id="revision">—</dd></div></dl><span class="hardware-state">No hardware connected</span>        <section id="media-diagnostics" class="media-diagnostics" aria-label="Technical audio details"><h3>Audio diagnostics</h3><output id="media-support">Host media capabilities not yet reported.</output>
+        </section></div></details>
+    </header>
+    <div class="runtime-state"><span id="display-mode" title="Illustrative input preview">Input preview</span><span id="display-note" hidden></span><span class="status" id="status" role="status">Connecting</span></div>
+    <div id="message" class="message" role="alert" hidden></div>
+    <section id="stage" class="stage" aria-label="Device display">
+      <div id="empty" class="empty" hidden>Display unavailable</div>
+      <div id="display" class="display"><div id="device-shell" class="device-shell" data-profile="atoms3r"><span id="case-label" class="case-label" aria-hidden="true">ATOM S3R</span><div id="bezel" class="bezel"><canvas id="frame" width="128" height="128" aria-label="Illustrative Hello World input preview"></canvas></div><button id="device-primary" class="device-primary" type="button" aria-label="Press StickC Plus2 button A" title="Button A — press, hold and release" hidden disabled>A</button><button id="device-secondary" class="device-system device-secondary" type="button" aria-label="Press StickC Plus2 button B" title="Button B — app-controlled press/hold" hidden disabled>B</button><button id="device-power" class="device-system device-power" type="button" aria-label="Simulate POWER click" title="POWER — simulate BtnPWR.wasClicked(); no power switching" hidden disabled>PWR</button><button id="device-rst" class="device-system device-rst" type="button" aria-label="RST — reset simulated app" title="RST — reset app only; hardware reset and download mode are not emulated" hidden disabled>RST</button><div id="device-touch-strip" class="device-touch-strip" role="group" aria-label="CoreS3 SE lower capacitive touch strip" hidden><button id="device-touch-a" class="touch-zone touch-zone-a" type="button" data-touch-x="53" aria-label="Touch lower strip left, A" title="Touch A — lower capacitive strip" disabled><span aria-hidden="true">‹‹</span></button><button id="device-touch-b" class="touch-zone touch-zone-b" type="button" data-touch-x="160" aria-label="Touch lower strip center, B" title="Touch B — lower capacitive strip" disabled><span class="touch-ring" aria-hidden="true"></span></button><button id="device-touch-c" class="touch-zone touch-zone-c" type="button" data-touch-x="266" aria-label="Touch lower strip right, C" title="Touch C — lower capacitive strip" disabled><span aria-hidden="true">››</span></button><i class="se-microphone se-microphone-left" aria-hidden="true"></i><i class="se-microphone se-microphone-right" aria-hidden="true"></i></div><div class="core-sensors" aria-hidden="true"><i></i><span></span><i></i></div><span class="case-port" aria-hidden="true"></span></div><span id="preview-value" class="sr-only" role="status">Count 0</span></div>
+    </section>
+    <div id="key-legend" class="key-legend" aria-label="Primary input keyboard shortcuts"><kbd>A</kbd><kbd>Space</kbd><span id="key-action">Button</span></div>
+    <section id="inputs" class="inputs" aria-label="Simulated inputs" hidden>
+      <button id="shake" type="button" title="Shake device" disabled><span aria-hidden="true">↔</span> Shake</button>
+      <div id="motion" class="motion"><button data-roll="-30" type="button" disabled aria-label="Tilt left 30 degrees" title="Tilt left 30°">Tilt ←</button><button data-roll="0" type="button" disabled aria-label="Return to level" title="Return to level">Level</button><button data-roll="30" type="button" disabled aria-label="Tilt right 30 degrees" title="Tilt right 30°">Tilt →</button><output id="roll" aria-live="polite">0°</output></div>
+      <button id="power-hold" type="button" title="Simulate BtnPWR.wasHold(); no timing threshold or power-off emulation" hidden disabled>POWER hold</button>
+      <button id="reset" type="button" title="Reset app" disabled>Reset app</button>
+    </section>
+    <section id="media-controls" class="audio-dock" aria-labelledby="audio-settings-heading" hidden><h2 id="audio-settings-heading" class="audio-settings-heading">Audio settings</h2><div class="audio-settings-body">
+        <section id="microphone-controls" class="microphone-controls" aria-label="Microphone">
+          <div class="voice-composer"><span id="mic-device-icon" class="mic-device-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1M12 19v3M8 22h8"/></svg></span>
+            <div class="voice-activity"><div class="voice-heading"><h2 id="audio-heading">Microphone</h2><span id="mic-indicator" class="mic-indicator" hidden aria-label="Microphone active"></span><span id="mic-status" role="status">Off</span></div><div id="voice-waveform" class="voice-waveform" aria-hidden="true" data-state="idle"><i id="voice-wave-0"></i><i id="voice-wave-1"></i><i id="voice-wave-2"></i><i id="voice-wave-3"></i><i id="voice-wave-4"></i><i id="voice-wave-5"></i><i id="voice-wave-6"></i><i id="voice-wave-7"></i><i id="voice-wave-8"></i><i id="voice-wave-9"></i><i id="voice-wave-10"></i><i id="voice-wave-11"></i><i id="voice-wave-12"></i><i id="voice-wave-13"></i><i id="voice-wave-14"></i><i id="voice-wave-15"></i><i id="voice-wave-16"></i><i id="voice-wave-17"></i><i id="voice-wave-18"></i><i id="voice-wave-19"></i><i id="voice-wave-20"></i><i id="voice-wave-21"></i><i id="voice-wave-22"></i><i id="voice-wave-23"></i></div></div>
+            <div class="voice-level"><meter id="mic-meter" class="sr-only" min="0" max="1" value="0" aria-label="Microphone level (logarithmic)"></meter><output id="mic-level" title="Signal meter: logarithmic −60 to 0 dBFS. This display does not amplify the audio.">0%</output></div>
+          </div>
+          <output id="microphone-app-status" class="microphone-app-status" role="status"></output>
+        </section>
+        <section id="sound-controls" class="sound-controls" aria-label="Audio output">
+          <button id="sound-toggle" class="speaker-button" type="button" aria-label="Enable sound" title="Enable sound"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4 6 8H3v8h3l5 4z"/><path class="speaker-waves" d="M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/><path class="speaker-muted" d="m16 9 6 6m0-6-6 6"/></svg><span id="sound-toggle-label" class="sr-only">Enable sound</span></button>
+          <div class="sound-label"><h2 id="sound-heading">Speaker</h2><span id="sound-status" role="status">Muted</span></div>
+          <label class="volume-control"><span class="sr-only">Volume</span><input id="sound-volume" type="range" min="0" max="100" value="35" aria-label="Sound volume"><output id="sound-volume-value">35%</output></label>
+        </section>
+        <div id="media-message" class="media-message" role="alert" hidden></div>
+
+    </div></section>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body></html>

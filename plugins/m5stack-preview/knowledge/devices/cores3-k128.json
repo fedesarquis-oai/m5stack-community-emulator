@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "id": "cores3-k128",
+  "name": "CoreS3",
+  "sku": "K128",
+  "variant": "standard kit with DinBase",
+  "verified_on": "2026-10-08",
+  "official_source": {
+    "url": "https://docs.m5stack.com/en/core/CoreS3",
+    "sections": [
+      "Specifications",
+      "PinMap / CAP.TOUCH",
+      "Includes",
+      "Product Comparison",
+      "Version Change"
+    ]
+  },
+  "hardware": {
+    "microcontroller": {
+      "model": "ESP32-S3",
+      "source_section": "Specifications"
+    },
+    "memory": {
+      "flash_mb": 16,
+      "psram_mb": 8,
+      "source_section": "Specifications"
+    },
+    "display": {
+      "resolution_px": [
+        320,
+        240
+      ],
+      "diagonal_inches": 2,
+      "controller_current": "ILI9342E",
+      "earlier_controller": "ILI9342C",
+      "documented_controller_change": "2026-08-07",
+      "new_panel_minimum_M5GFX": "0.2.27",
+      "owned_panel_revision": "unknown",
+      "rotated_sizes_px": [
+        [
+          320,
+          240
+        ],
+        [
+          240,
+          320
+        ]
+      ],
+      "rotation_contract_ref": "index.json#/rotation_contract"
+    },
+    "touch": {
+      "present": true,
+      "type": "capacitive",
+      "controller": "FT6336U",
+      "full_surface_dimensions_px": null,
+      "full_surface_status": "not established from standard-SKU manual; do not borrow SE dimensions"
+    },
+    "buttons": {
+      "app": [],
+      "system": [
+        {
+          "id": "POWER",
+          "app_button": false,
+          "role": "system_power_key",
+          "firmware_readable": true,
+          "firmware_interface": "M5Unified BtnPWR through PMIC key state",
+          "app_button_meaning": "Not a dedicated physical A/B/C app switch; does not mean unreadable by firmware"
+        },
+        {
+          "id": "RESET",
+          "app_button": false,
+          "role": "hardware_reset_and_download_mode",
+          "preview_mapping": "Native Reset app/RST uses supported reload to start a fresh worker/session without requiring app HoldReset acceptance. Input preview resets locally; no hardware reset or private draft deletion implied."
+        }
+      ],
+      "app_category": "Dedicated physical app switches; excludes touch-derived logical buttons and firmware-readable system controls",
+      "touch_derived_logical_buttons": {
+        "names": [
+          "BtnA",
+          "BtnB",
+          "BtnC"
+        ],
+        "mechanism": "M5Unified software mapping of touch regions with configurable touch-button height; not dedicated physical switches",
+        "library_version_and_configuration_dependent": true,
+        "source": "https://raw.githubusercontent.com/m5stack/M5Unified/master/src/M5Unified.inl",
+        "preview_strip_emulation": false
+      }
+    },
+    "motion": {
+      "accelerometer": true,
+      "gyroscope": true,
+      "imu": "BMI270",
+      "magnetometer": "BMM150"
+    },
+    "microphone_input": {
+      "present": true,
+      "codec": "ES7210",
+      "channels": 2
+    },
+    "audio_output": {
+      "kind": "speaker",
+      "speaker": true,
+      "buzzer": false,
+      "amplifier": "AW88298",
+      "power_watts": 1
+    },
+    "battery": {
+      "included": true,
+      "capacity_mah": 500,
+      "location": "bundled DinBase",
+      "depends_on_base": true
+    },
+    "camera": {
+      "present": true,
+      "model": "GC0308",
+      "megapixels": 0.3,
+      "status": "listed_present",
+      "basis": "Official Specifications and PinMap / Camera explicitly list the onboard camera."
+    },
+    "proximity_sensor": "LTR-553ALS-WA",
+    "body_dimensions_mm_as_published": [
+      54,
+      54,
+      15.5
+    ],
+    "kit_dimensions_mm_as_published": [
+      69,
+      54,
+      31.5
+    ],
+    "rtc": {
+      "present": true,
+      "model": "BM8563"
+    },
+    "infrared": {
+      "transmit": null,
+      "receive": null,
+      "status": "No built-in IR identified by the audited manual"
+    },
+    "leds": {
+      "power_indicator": {
+        "present": true,
+        "pmu_controlled": true,
+        "app_led_adapter": false
+      }
+    },
+    "power": {
+      "pmu": "AXP2101",
+      "io_expander": "AW9523B",
+      "battery_location": "included DinBase",
+      "dinbase_dc_input_volts": [
+        9,
+        24
+      ]
+    },
+    "ports": {
+      "usb": "Type-C OTG/CDC",
+      "grove": [
+        "A",
+        "B",
+        "C"
+      ],
+      "expansion_bus": "M5-Bus",
+      "micro_sd": true
+    },
+    "ambient_light_sensor": "LTR-553ALS-WA"
+  },
+  "native_preview": {
+    "baseline_ref": "v0.7.28",
+    "runtime_profile": "cores3",
+    "profile_exists": true,
+    "framebuffer_px": [
+      320,
+      240
+    ],
+    "touch_bounds_px": {
+      "x_min": 0,
+      "x_max": 319,
+      "y_min": 0,
+      "y_max": 239
+    },
+    "touch_semantics": "For app_adapter:1 counter/custom: bounded spatial TouchTap x/y/duration and TouchSwipe start/end/duration; app owns regions and hold behavior. Starter held TouchTap resets app.",
+    "spatial_touch_dispatch": true,
+    "inputs": [
+      "completed_touch_xy_duration_if_app_adapter_1",
+      "completed_swipe_start_end_xy_duration_if_app_adapter_1",
+      "synthetic_roll",
+      "synthetic_shake",
+      "semantic_app_reset_if_accepted",
+      "mic_normalized_level_if_media_adapter_1",
+      "semantic_power_click_or_hold_if_power_button_adapter_1"
+    ],
+    "audio_output_intent": "app_owned_pcm16_or_tone",
+    "rotation_control": false,
+    "camera_adapter": false,
+    "battery_simulation": false,
+    "hardware_verified_by_this_task": false,
+    "microphone_adapter": true,
+    "display_pose": {
+      "enabled": true,
+      "roll_source": "acknowledged semantic roll",
+      "framebuffer_rotation": false,
+      "changes_native_resolution": false
+    },
+    "additional_peripheral_adapters": {
+      "rtc": false,
+      "ir": false,
+      "led": false,
+      "magnetometer": false,
+      "camera": false,
+      "proximity": false,
+      "battery": false,
+      "power": false,
+      "storage": false,
+      "gpio": false,
+      "radio": false
+    },
+    "requires_native_media_adapter": 1,
+    "microphone_input": {
+      "mode": "pcm",
+      "format": "PCM16",
+      "sample_rate_hz": 16000,
+      "sources": [
+        "fixture",
+        "browser"
+      ],
+      "pcm_transport": true,
+      "channels_emulated": 1,
+      "requires_worker_adapter": "audio_input_adapter:1"
+    },
+    "microphone_mapping": "UserApp onMicrophoneBlock; 16 kHz mono PCM; app opt-in required",
+    "audio_output": "speaker_pcm_and_tone",
+    "spatial_touch_required_app_adapter": 1,
+    "spatial_touch_apps": [
+      "counter",
+      "custom"
+    ],
+    "legacy_touch_semantics": "Legacy workers/apps may reduce validated touch coordinates and duration to primary short-action/hold-reset; no claim of spatial app dispatch for those workers.",
+    "power_button_input": {
+      "required_worker_field": "power_button_adapter",
+      "required_worker_value": 1,
+      "apps": [
+        "counter",
+        "custom"
+      ],
+      "events": [
+        "PowerClick",
+        "PowerHold"
+      ],
+      "source": "semantic_simulator_actions",
+      "gpio_or_pmic_timing_emulated": false,
+      "power_off_emulated": false,
+      "bootloader_emulated": false,
+      "legacy_worker_enabled": false,
+      "host_capability": "powerButton",
+      "tool_event": {
+        "type": "power",
+        "action": [
+          "click",
+          "hold"
+        ]
+      },
+      "native_commands": [
+        "power click",
+        "power hold"
+      ],
+      "duration_payload": false,
+      "hold_threshold_ms": null,
+      "starter_behavior": "accepted_no_op_author_app_may_handle",
+      "reset_rst_action": "supported_reload_worker_restart"
+    },
+    "reset_semantics": "Panel Reset app/RST uses supported Reload to start a new worker/session without requiring app HoldReset acceptance. Input preview resets locally; private draft deletion not implied.",
+    "panel_reset": {
+      "native_action": "supported_reload_worker_restart",
+      "native_fresh_session": true,
+      "input_preview_action": "local_illustration_reset",
+      "depends_on_app_HoldReset_acceptance": false,
+      "worker_local_state_restarted": true,
+      "supported_reload_starts_new_worker_lifetime": true,
+      "persisted_private_draft_deleted_by_plugin": false,
+      "persisted_private_draft_rewritten_by_plugin": false,
+      "hardware_reset": false,
+      "pmic_emulation": false,
+      "bootloader_emulation": false,
+      "status": "implemented"
+    },
+    "speaker_pcm": {
+      "implemented": true,
+      "requires_worker_adapter": "speaker_output_adapter:1",
+      "format": "mono PCM16",
+      "sample_rate_hz": [
+        8000,
+        48000
+      ],
+      "max_clip_seconds": 30
+    },
+    "network": {
+      "implemented": true,
+      "adapter": 1,
+      "transport": "host HTTP(S)",
+      "rf_simulation": false
+    }
+  },
+  "do_not_alias": [
+    "CoreS3 SE K128-SE",
+    "CoreS3 Lite"
+  ],
+  "browser_preview": {
+    "profile_exists": true,
+    "microphone_adapter": true,
+    "microphone_mode": "app_requested_PCM16_16000Hz_mono",
+    "microphone_sources": [
+      "browser",
+      "fixture"
+    ],
+    "microphone_default": "off",
+    "explicit_enable_and_permission_required": true,
+    "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
+    "audio_output": "speaker_pcm_and_tone",
+    "audio_default": "muted",
+    "explicit_sound_enable_required": true,
+    "volume_control": true,
+    "local_test_tone": false,
+    "full_audio_playback": true,
+    "camera_adapter": false,
+    "actual_host_support_verified_by_this_task": false,
+    "power_button_input": {
+      "semantic_actions": [
+        "click",
+        "hold"
+      ],
+      "input_preview_feedback": "lastInput only; count and reset state unchanged",
+      "native_requires": "power_button_adapter:1 and matching Core counter/custom profile/app",
+      "duration_threshold": false,
+      "physical_poweroff_or_bootloader": false
+    }
+  }
+}

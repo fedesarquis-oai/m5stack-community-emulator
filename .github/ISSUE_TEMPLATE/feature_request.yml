@@ -1,0 +1,17 @@
+name: Feature request
+description: Describe a device app you cannot build yet.
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: What app or interaction do you want to build?
+    validations:
+      required: true
+  - type: input
+    id: board
+    attributes:
+      label: Exact device/SKU and peripheral needed
+  - type: textarea
+    id: sources
+    attributes:
+      label: Manufacturer documentation or existing project links

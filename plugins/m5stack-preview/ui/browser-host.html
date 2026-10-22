@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>M5Stack Community Emulator — local browser</title>
+<style>
+html,body{height:100%;margin:0;background:#fafafa;font:14px system-ui;color:#343b3f}body{display:flex;flex-direction:column}header{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid #e3e5e6}header span{color:#697279}iframe{width:100%;flex:1;border:0;min-height:0}[hidden]{display:none!important}
+#error{width:min(440px,calc(100% - 64px));margin:12vh auto;padding:28px;border:1px solid #e3e5e6;border-radius:16px;background:white;box-sizing:border-box}#error .state{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#697279}#error .state:before{content:"";width:7px;height:7px;border-radius:50%;background:#b28243}#error h1{font-size:23px;font-weight:600;letter-spacing:-.5px;margin:16px 0 10px}#error p{font-size:14px;line-height:1.6;color:#697279;margin:0 0 22px}#reconnect{border:0;border-radius:8px;background:#343b3f;color:white;padding:11px 16px;font:500 13px system-ui;cursor:pointer}#reconnect:disabled{opacity:.5;cursor:wait}#reconnect:focus-visible{outline:2px solid #6c92d0;outline-offset:3px}
+</style></head>
+<body><header><strong>M5Stack Community Emulator</strong><span>Local browser preview</span></header>
+<section id="error" role="alert" aria-labelledby="error-title" hidden><span class="state">Connection paused</span><h1 id="error-title">Emulator disconnected</h1><p id="error-detail"></p><button id="reconnect" type="button">Check connection</button></section>
+<iframe id="workbench" title="Device workbench" allow="microphone; autoplay" hidden></iframe><script type="module" src="/browser-host.js"></script></body></html>

@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "id": "sticks3-k150",
+  "name": "StickS3",
+  "sku": "K150",
+  "verified_on": "2026-10-13",
+  "official_source": {
+    "url": "https://docs.m5stack.com/en/core/StickS3",
+    "sections": [
+      "Description",
+      "Specifications",
+      "PinMap / Button",
+      "PinMap / Audio",
+      "Button Operation Instructions"
+    ]
+  },
+  "hardware": {
+    "microcontroller": {
+      "model": "ESP32-S3-PICO-1-N8R8",
+      "source_section": "Specifications"
+    },
+    "memory": {
+      "flash_mb": 8,
+      "psram_mb": 8,
+      "source_section": "Specifications"
+    },
+    "camera": {
+      "present": null,
+      "model": null,
+      "status": "not_listed_unverified",
+      "basis": "No camera is listed in the official Description, Specifications or PinMap; explicit absence and physical hardware were not verified."
+    },
+    "display": {
+      "resolution_px": [
+        135,
+        240
+      ],
+      "diagonal_inches": 1.14,
+      "controller_current": "ST7789P3",
+      "rotated_sizes_px": [
+        [
+          135,
+          240
+        ],
+        [
+          240,
+          135
+        ]
+      ],
+      "rotation_contract_ref": "index.json#/rotation_contract"
+    },
+    "touch": {
+      "present": false,
+      "controller": null,
+      "absence_basis": "No touch component in official component list or pinmap"
+    },
+    "buttons": {
+      "app": [
+        {
+          "id": "KEY1",
+          "gpio": 11
+        },
+        {
+          "id": "KEY2",
+          "gpio": 12
+        }
+      ],
+      "system": [
+        {
+          "id": "POWER_RESET",
+          "app_button": false
+        }
+      ],
+      "label_mapping_note": "KEY1 G11 maps to M5.BtnA / primary; KEY2 G12 maps to M5.BtnB / secondary. Physical KEY1/KEY2 click/hold accepted October 14; KEY1 network POST accepted October 20.",
+      "system_behavior": {
+        "single_click": "power_on_or_reset",
+        "double_click": "power_off",
+        "long_press": "download_mode"
+      }
+    },
+    "motion": {
+      "accelerometer": true,
+      "gyroscope": true,
+      "imu": "BMI270",
+      "magnetometer": null
+    },
+    "microphone_input": {
+      "present": true,
+      "model": "MEMS",
+      "codec": "ES8311",
+      "channels": 1
+    },
+    "audio_output": {
+      "kind": "speaker",
+      "speaker": true,
+      "buzzer": false,
+      "amplifier": "AW8737",
+      "power_watts": 1
+    },
+    "battery": {
+      "included": true,
+      "capacity_mah": 250,
+      "location": "inside controller"
+    },
+    "body_dimensions_mm_as_published": [
+      48,
+      24,
+      15
+    ],
+    "rtc": {
+      "present": null,
+      "status": "No separate RTC identified by the audited manual"
+    },
+    "infrared": {
+      "transmit": true,
+      "receive": true,
+      "tx_gpio": 46,
+      "rx_gpio": 42,
+      "receive_constraint": "RMT receive with speaker amplifier disabled"
+    },
+    "power": {
+      "manager": "M5PM1",
+      "external_5v": "configurable input/output; not simulated"
+    },
+    "ports": {
+      "usb": "Type-C",
+      "grove": {
+        "connector": "HY2.0-4P",
+        "gpio": [
+          9,
+          10
+        ]
+      },
+      "expansion_bus": "Hat2-Bus 16-pin"
+    }
+  },
+  "native_preview": {
+    "baseline_ref": "index.json#/preview_baseline",
+    "runtime_profile": "sticks3",
+    "profile_exists": true,
+    "status": "implemented_native_profile_host_validation_separate",
+    "framebuffer_px": [
+      135,
+      240
+    ],
+    "inputs": [
+      "primary_KEY1",
+      "secondary_KEY2",
+      "hold_reset",
+      "shake",
+      "tilt",
+      "app_requested_microphone_PCM"
+    ],
+    "audio_output_intent": "speaker_pcm_and_tone",
+    "camera_adapter": false,
+    "hardware_verified_by_this_task": true,
+    "microphone_adapter": true,
+    "rotation_control": false,
+    "battery_simulation": false,
+    "display_pose": {
+      "enabled": true,
+      "roll_source": "virtual_tilt",
+      "framebuffer_rotation": false,
+      "changes_native_resolution": false
+    },
+    "additional_peripheral_adapters": {
+      "rtc": false,
+      "ir": false,
+      "led": false,
+      "magnetometer": false,
+      "camera": false,
+      "proximity": false,
+      "battery": false,
+      "power": false,
+      "storage": false,
+      "gpio": false,
+      "radio": false
+    },
+    "microphone_mapping": "UserApp onMicrophoneBlock; 16 kHz mono PCM; app opt-in required",
+    "speaker_pcm": {
+      "implemented": true,
+      "requires_worker_adapter": "speaker_output_adapter:1",
+      "format": "mono PCM16",
+      "sample_rate_hz": [
+        8000,
+        48000
+      ],
+      "max_clip_seconds": 30
+    },
+    "secondary_button": {
+      "implemented": true,
+      "name": "KEY2",
+      "requires_worker_adapter": "secondary_button_adapter:1",
+      "application_events": [
+        "SecondaryClick",
+        "SecondaryHold"
+      ]
+    },
+    "microphone_input": {
+      "mode": "pcm",
+      "format": "PCM16",
+      "sample_rate_hz": 16000,
+      "sources": [
+        "fixture",
+        "browser"
+      ],
+      "pcm_transport": true,
+      "channels_emulated": 1,
+      "requires_worker_adapter": "audio_input_adapter:1"
+    },
+    "network": {
+      "implemented": true,
+      "adapter": 1,
+      "transport": "host HTTP(S)",
+      "rf_simulation": false
+    }
+  },
+  "do_not_alias": [
+    "M5StickC Plus2 K016-P2",
+    "M5StickC Plus",
+    "M5StickC Plus SE"
+  ],
+  "browser_preview": {
+    "profile_exists": true,
+    "microphone_adapter": true,
+    "microphone_mode": "app_requested_PCM16_16000Hz_mono",
+    "microphone_sources": [
+      "browser",
+      "fixture"
+    ],
+    "microphone_default": "off",
+    "explicit_enable_and_permission_required": true,
+    "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
+    "audio_output": "speaker_pcm_and_tone",
+    "audio_default": "muted",
+    "explicit_sound_enable_required": true,
+    "volume_control": true,
+    "local_test_tone": false,
+    "full_audio_playback": true,
+    "camera_adapter": false,
+    "actual_host_support_verified_by_this_task": true,
+    "power_button_input": {
+      "implemented": false,
+      "application_events": [],
+      "system_button": "Physical power/reset/download is separate from KEY1 and KEY2; not simulated as an application input.",
+      "physical_poweroff_or_bootloader": false
+    },
+    "host_support_evidence": {
+      "Chrome": "Historical v0.7.28 acceptance: StickS3 PCM playback, live microphone, KEY1 during capture and KEY2 stopping capture; physical acceptance is recorded separately. Fresh October 20 v0.7.35 live microphone capture confirmed by user; native screen showed 294400 samples.",
+      "Codex_panel": "Previously inspected host blocked microphone access; no current host fix verified."
+    }
+  },
+  "physical_firmware": {
+    "status": "implemented_features_physically_accepted",
+    "audio_duplex": "exclusive",
+    "flash_mb": 8,
+    "psram_mb": 8,
+    "psram_mode": "Octal",
+    "verified_on": "2026-10-14",
+    "automated_checks": [
+      "exact board and 135x240 framebuffer",
+      "PCM playback replacement and stop",
+      "48000-sample microphone capture and playback",
+      "secondary hold discards partial capture",
+      "primary input during capture and exclusive audio pause/resume",
+      "three repeated capture/playback cycles with stable heap and PSRAM"
+    ],
+    "user_confirmed": [
+      "upright readable display",
+      "KEY1 click and hold reset",
+      "KEY2 recording and hold cancellation",
+      "tilt and shake",
+      "clear chime and drums",
+      "intelligible local voice playback"
+    ],
+    "implemented": true,
+    "profile": "sticks3",
+    "features": [
+      "display",
+      "primary_button",
+      "secondary_button",
+      "semantic_shake",
+      "semantic_tilt",
+      "microphone",
+      "speaker",
+      "tone",
+      "network"
+    ],
+    "driver": "M5Unified 0.2.26 / M5GFX 0.2.33",
+    "audio": "16 kHz mono input; mono PCM output; exclusive capture/playback",
+    "recovery_acceptance": "2026-10-14: all 8 MB restored and digest verified; user confirmed original app boots normally",
+    "scope_ref": "../../runtime/docs/hardware-plan.md",
+    "physical_confirmation": "2026-10-14: display, KEY1/KEY2 click/hold, semantic tilt/shake, mono capture/playback, cancellation and responsive input",
+    "restart_acceptance": "2026-10-14: user confirmed brief reset and battery power-off/on with working sound; USB confirmed power-on reset, exact build and no error",
+    "validated_firmware_build": "1f8a615aeaddd910",
+    "network": {
+      "implemented": true,
+      "physical_verified": true,
+      "verified_on": "2026-10-20",
+      "validated_firmware_build": "753f7bf8662a970b",
+      "status": "Public HTTPS GET/JSON POST, physical input, pause, forget/reprovision and battery power cycle with persisted settings passed; no Mac API server."
+    }
+  }
+}

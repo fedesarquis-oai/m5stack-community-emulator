@@ -1,0 +1,196 @@
+[
+  {
+    "id": "atoms3r",
+    "label": "AtomS3R C126",
+    "width": 128,
+    "height": 128,
+    "primaryInput": "button",
+    "motion": true,
+    "microphone": false,
+    "audioOutput": "none",
+    "hardware": {
+      "microphone": false,
+      "audioOutput": "none"
+    },
+    "firmware": {
+      "fqbn": "esp32:esp32:esp32s3:PSRAM=opi,FlashSize=8M,PartitionScheme=default_8MB,CDCOnBoot=cdc,USBMode=hwcdc",
+      "flashBytes": 8388608,
+      "psramBytes": 8388608,
+      "boardEnum": "board_M5AtomS3R",
+      "rotation": 0,
+      "features": [
+        "display",
+        "buttons",
+        "motion",
+        "network"
+      ],
+      "audioDuplex": "none"
+    },
+    "network": {
+      "adapter": 1,
+      "httpMethods": [
+        "GET",
+        "POST"
+      ],
+      "physicalValidated": true
+    }
+  },
+  {
+    "id": "stickcplus2",
+    "label": "M5StickC Plus2",
+    "width": 135,
+    "height": 240,
+    "primaryInput": "button",
+    "motion": true,
+    "microphone": true,
+    "microphoneMode": "level",
+    "audioOutput": "buzzer",
+    "audioMode": "tone",
+    "hardware": {
+      "microphone": true,
+      "audioOutput": "buzzer"
+    },
+    "secondaryButton": true,
+    "network": {
+      "adapter": 1,
+      "httpMethods": [
+        "GET",
+        "POST"
+      ],
+      "physicalValidated": false
+    }
+  },
+  {
+    "id": "sticks3",
+    "label": "StickS3 K150",
+    "width": 135,
+    "height": 240,
+    "primaryInput": "button",
+    "primaryLabel": "KEY1",
+    "secondaryLabel": "KEY2",
+    "secondaryButton": true,
+    "motion": true,
+    "microphone": true,
+    "microphoneMode": "level",
+    "audioOutput": "speaker",
+    "audioMode": "tone",
+    "hardware": {
+      "sku": "K150",
+      "microphone": true,
+      "audioOutput": "speaker"
+    },
+    "firmware": {
+      "fqbn": "esp32:esp32:esp32s3:PSRAM=opi,FlashSize=8M,PartitionScheme=default_8MB,CDCOnBoot=cdc,USBMode=hwcdc",
+      "flashBytes": 8388608,
+      "psramBytes": 8388608,
+      "boardEnum": "board_M5StickS3",
+      "rotation": 0,
+      "features": [
+        "display",
+        "buttons",
+        "motion",
+        "microphone",
+        "speaker",
+        "tone",
+        "network"
+      ],
+      "audioDuplex": "exclusive"
+    },
+    "network": {
+      "adapter": 1,
+      "httpMethods": [
+        "GET",
+        "POST"
+      ],
+      "physicalValidated": true
+    }
+  },
+  {
+    "id": "cores3",
+    "label": "CoreS3 standard",
+    "width": 320,
+    "height": 240,
+    "primaryInput": "touch",
+    "powerButton": true,
+    "motion": true,
+    "microphone": true,
+    "microphoneMode": "level",
+    "audioOutput": "speaker",
+    "audioMode": "tone",
+    "hardware": {
+      "microphone": true,
+      "audioOutput": "speaker"
+    },
+    "network": {
+      "adapter": 1,
+      "httpMethods": [
+        "GET",
+        "POST"
+      ],
+      "physicalValidated": false
+    }
+  },
+  {
+    "id": "cores3se",
+    "label": "CoreS3 SE",
+    "width": 320,
+    "height": 240,
+    "primaryInput": "touch",
+    "powerButton": true,
+    "motion": false,
+    "microphone": true,
+    "microphoneMode": "level",
+    "audioOutput": "speaker",
+    "audioMode": "tone",
+    "hardware": {
+      "sku": "K128-SE",
+      "microphone": true,
+      "audioOutput": "speaker",
+      "motion": false,
+      "camera": false,
+      "proximity": false,
+      "compass": false,
+      "includedBattery": false,
+      "touchSurface": {
+        "width": 320,
+        "height": 280
+      }
+    },
+    "touchStrip": true,
+    "touchWidth": 320,
+    "touchHeight": 280,
+    "touchPolicy": "worker-gated-full-surface",
+    "touchBounds": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 280
+    },
+    "requiredTouchStripAdapter": 1,
+    "firmware": {
+      "fqbn": "esp32:esp32:esp32s3:PSRAM=enabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB,CDCOnBoot=cdc,USBMode=hwcdc",
+      "flashBytes": 16777216,
+      "psramBytes": 8388608,
+      "boardEnum": "board_M5StackCoreS3SE",
+      "rotation": 1,
+      "features": [
+        "display",
+        "touch",
+        "buttons",
+        "microphone",
+        "speaker",
+        "tone",
+        "network"
+      ],
+      "audioDuplex": "exclusive"
+    },
+    "network": {
+      "adapter": 1,
+      "httpMethods": [
+        "GET",
+        "POST"
+      ],
+      "physicalValidated": true
+    }
+  }
+]

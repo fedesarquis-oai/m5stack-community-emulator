@@ -1,0 +1,38 @@
+{
+  "status": "static_alignment_checked",
+  "verified_on": "2026-10-20",
+  "plugin_version": "0.7.40",
+  "records_checked": 5,
+  "scope": "Exact-SKU knowledge and registry alignment, with separately scoped physical acceptance for CoreS3 SE, AtomS3R and StickS3",
+  "checks": [
+    "Five implemented runtime profiles with a shared registry",
+    "StickS3 KEY1/KEY2, microphone and speaker PCM; Plus2 retains buzzer",
+    "SE lower touch strip and absence of motion retained",
+    "All microphones supply app-requested PCM; no base provider service",
+    "Atom native/Chrome and physical Wi-Fi/API acceptance: repeated requests, TLS rejection, bounded errors, cancellation and cold restart with persisted credentials",
+    "StickS3 physical display/controls/mono audio, bounded lifecycle/memory, verified original-firmware restoration and battery restart passed. Test-app loudness tuning is separate.",
+    "All five freshly compiled native profiles completed public HTTPS GET/JSON POST and app-owned pause via the shared adapter (httpbin.org; fixed test marker only).",
+    "CoreS3 SE, AtomS3R and StickS3 compiled the same Network Check application with the shared firmware driver. SE and Stick public GET/POST, physical input, persisted-settings power cycles and forget/reprovision passed October 20.",
+    "Four microphone profiles received 1600 known PCM samples at exactly 0.25 RMS and processed primary input during capture; Atom rejects microphone input.",
+    "Private setup, placeholder rejection, exact installed-profile checks, optional timer and reconnection without POST replay passed focused tests.",
+    "Fresh user-confirmed Chrome microphone on StickS3, showing 294400 samples.",
+    "Tracked hardware operations yield before the host wait deadline; polling returns progress and retained results without repeating USB work."
+  ],
+  "files_sha256": {
+    "atoms3r-c126.json": "7f841ccd05eae6a995a63ad076fabdfdf606c0ddcf35246c25efdc9d3b232c44",
+    "cores3-k128.json": "5b98685ad8982ab818cdf77855389f44c31b90e65dd2367ec9ab0a43d7210a46",
+    "cores3-se-k128-se.json": "1c95216f5cfd4636547cdd5d3644b4fdc8738aacf95266e120cabcd14c002f07",
+    "index.json": "9254a97de5155161692e221e7a2b38c74edc3400c2bff44d68065aba0524fbbc",
+    "stickcplus2-k016-p2.json": "e9d91b085728c45318ca09b20645976ba73f0b96e81d8b49c249a7592de17ce1",
+    "sticks3-k150.json": "0289d2e583ef56c0a18f36b16cef4c938df7a2261e8d3fbba8e7c0e2a3e2791d"
+  },
+  "not_run": [
+    "Physical adapters and acceptance for StickC Plus2 and CoreS3 standard",
+    "Raw 9-axis IMU, camera/storage/GPIO/RTC and BLE adapters",
+    "Verification of a new Codex desktop microphone fix",
+    "Long-duration network stress, RF fidelity and exhaustive router compatibility",
+    "Atom regression of new setup/forget/reprovision; prior network baseline remains accepted.",
+    "Fresh Chrome acceptance on other microphone profiles; existing historical acceptance and current PCM/lifecycle checks retained."
+  ],
+  "physical_evidence_ref": "../../runtime/docs/hardware-plan.md"
+}

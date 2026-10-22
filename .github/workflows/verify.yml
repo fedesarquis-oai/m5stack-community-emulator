@@ -1,0 +1,19 @@
+name: Verify community package
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify committed distribution
+        run: python3 scripts/package.py
+      - name: Start packaged stdio server
+        run: node scripts/smoke.mjs
+      - name: Check distributable tools and browser transport
+        working-directory: plugins/m5stack-preview
+        run: node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/browser-preview.test.mjs tests/launcher.test.mjs ui/tests/speaker-pcm.test.mjs ui/tests/device-media.test.mjs ui/tests/live-microphone.test.mjs ui/tests/live-microphone-processor.test.mjs ui/tests/preview-connection.test.mjs

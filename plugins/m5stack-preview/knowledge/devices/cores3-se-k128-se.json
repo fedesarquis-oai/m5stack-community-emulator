@@ -1,0 +1,399 @@
+{
+  "schema_version": 1,
+  "id": "cores3-se-k128-se",
+  "name": "CoreS3 SE",
+  "sku": "K128-SE",
+  "verified_on": "2026-10-13",
+  "official_source": {
+    "url": "https://docs.m5stack.com/en/core/CoreS3-SE",
+    "sections": [
+      "Description",
+      "Specifications",
+      "PinMap",
+      "Product Comparison",
+      "Arduino compatibility note"
+    ]
+  },
+  "hardware": {
+    "microcontroller": {
+      "model": "ESP32-S3",
+      "source_section": "Specifications"
+    },
+    "memory": {
+      "flash_mb": 16,
+      "psram_mb": 8,
+      "source_section": "Specifications"
+    },
+    "display": {
+      "resolution_px": [
+        320,
+        240
+      ],
+      "diagonal_inches": 2,
+      "controller_current": "ILI9342C",
+      "controller_revision_note": "As listed for SE; standard CoreS3 revision changes are not transferred automatically",
+      "rotated_sizes_px": [
+        [
+          320,
+          240
+        ],
+        [
+          240,
+          320
+        ]
+      ],
+      "rotation_contract_ref": "index.json#/rotation_contract"
+    },
+    "touch": {
+      "present": true,
+      "type": "capacitive",
+      "controller": "FT6336U",
+      "full_surface_dimensions_px": [
+        320,
+        280
+      ],
+      "surface_is_larger_than_lcd": true
+    },
+    "buttons": {
+      "app": [],
+      "system": [
+        {
+          "id": "POWER",
+          "app_button": false,
+          "role": "system_power_key",
+          "firmware_readable": true,
+          "firmware_interface": "M5Unified BtnPWR through PMIC key state",
+          "app_button_meaning": "Not a dedicated physical A/B/C app switch; does not mean unreadable by firmware"
+        },
+        {
+          "id": "RESET",
+          "app_button": false,
+          "role": "hardware_reset_and_download_mode",
+          "preview_mapping": "Native Reset app/RST uses supported reload to start a fresh worker/session without requiring app HoldReset acceptance. Input preview resets locally; no hardware reset or private draft deletion implied."
+        }
+      ],
+      "app_category": "Dedicated physical app switches; excludes touch-derived logical buttons and firmware-readable system controls",
+      "touch_derived_logical_buttons": {
+        "names": [
+          "BtnA",
+          "BtnB",
+          "BtnC"
+        ],
+        "mechanism": "M5Unified software mapping of touch regions with configurable touch-button height; not dedicated physical switches",
+        "library_version_and_configuration_dependent": true,
+        "source": "https://raw.githubusercontent.com/m5stack/M5Unified/master/src/M5Unified.inl",
+        "preview_strip_emulation": false
+      }
+    },
+    "motion": {
+      "accelerometer": false,
+      "gyroscope": false,
+      "imu": null,
+      "magnetometer": null
+    },
+    "microphone_input": {
+      "present": true,
+      "codec": "ES7210",
+      "channels": 2
+    },
+    "audio_output": {
+      "kind": "speaker",
+      "speaker": true,
+      "buzzer": false,
+      "amplifier": "AW88298",
+      "power_watts": 1
+    },
+    "battery": {
+      "included": false,
+      "capacity_mah": null,
+      "external_base_possible": true
+    },
+    "camera": {
+      "present": false,
+      "model": null,
+      "status": "explicitly_absent",
+      "basis": "Official Product Comparison marks the SE camera absent; the Arduino compatibility note excludes camera code."
+    },
+    "proximity_sensor": null,
+    "body_dimensions_mm_as_published": [
+      54,
+      54,
+      15.5
+    ],
+    "absence_basis": "Official standard/Lite/SE comparison explicitly omits camera, proximity, IMU, compass and included battery",
+    "rtc": {
+      "present": true,
+      "model": "BM8563"
+    },
+    "power": {
+      "pmu": "AXP2101",
+      "io_expander": "AW9523B"
+    },
+    "ports": {
+      "usb": "Type-C OTG/CDC",
+      "expansion_bus": true,
+      "micro_sd": true
+    },
+    "infrared": {
+      "transmit": null,
+      "receive": null,
+      "status": "No built-in IR identified by the audited manual"
+    }
+  },
+  "native_preview": {
+    "baseline_ref": "index.json#/preview_baseline",
+    "runtime_profile": "cores3se",
+    "profile_exists": true,
+    "framebuffer_px": [
+      320,
+      240
+    ],
+    "touch_bounds_px": {
+      "x_min": 0,
+      "x_max": 319,
+      "y_min": 0,
+      "y_max": 279
+    },
+    "touch_semantics": "Completed spatial TouchTap/TouchSwipe; LCD y0..239. Lower strip y240..279 requires touch_strip_adapter:1 on an exact SE counter/custom worker. Older workers remain display-only. App owns touch regions and hold behavior.",
+    "spatial_touch_dispatch": true,
+    "inputs": [
+      "completed_touch_xy_duration_if_app_adapter_1",
+      "completed_swipe_start_end_xy_duration_if_app_adapter_1",
+      "semantic_app_reset_if_accepted",
+      "text_if_app_adapter_1",
+      "rgb565_image_if_app_adapter_1",
+      "semantic_power_click_or_hold_if_power_button_adapter_1",
+      "microphone_pcm16_if_audio_input_adapter_1"
+    ],
+    "audio_output_intent": "app_owned_pcm16_or_tone",
+    "rotation_control": false,
+    "camera_adapter": false,
+    "battery_simulation": false,
+    "hardware_verified_by_this_task": true,
+    "microphone_adapter": true,
+    "display_pose": {
+      "enabled": false,
+      "roll_source": "none",
+      "framebuffer_rotation": false,
+      "changes_native_resolution": false
+    },
+    "additional_peripheral_adapters": {
+      "rtc": false,
+      "ir": false,
+      "led": false,
+      "magnetometer": false,
+      "camera": false,
+      "proximity": false,
+      "battery": false,
+      "power": false,
+      "storage": false,
+      "gpio": false,
+      "radio": false
+    },
+    "requires_native_media_adapter": 1,
+    "microphone_input": {
+      "mode": "app_requested_PCM16",
+      "sample_rate_hz": 16000,
+      "channels": 1,
+      "sources": [
+        "fixture",
+        "browser"
+      ],
+      "pcm_transport": true,
+      "dual_hardware_channels_emulated": false
+    },
+    "microphone_mapping": {
+      "counter": "UserApp onMicrophoneBlock when audioInputRequested()",
+      "custom": "UserApp onMicrophoneBlock when audioInputRequested()",
+      "legacy_worker": "disabled without audio_input_adapter=1"
+    },
+    "audio_output": "speaker_pcm_and_tone",
+    "status": "implemented_native_profile_host_validation_separate",
+    "touch_policy": {
+      "logical_app_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 280
+      },
+      "physical_surface_dimensions_px": [
+        320,
+        280
+      ],
+      "extra_strip_supported": true,
+      "lcd_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 240
+      },
+      "required_touch_strip_adapter": 1,
+      "legacy_worker_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 240
+      },
+      "mapping": "Completed TouchTap/TouchSwipe coordinates over 320x280; y240..279 is the lower capacitive strip. App owns A/B/C touch-region behavior; these are not mechanical buttons."
+    },
+    "required_app_adapter": 1,
+    "generic_app_mapping": {
+      "apps": [
+        "counter",
+        "custom"
+      ],
+      "image": "native_RGB565_framebuffer",
+      "text": "bounded_UTF8",
+      "result_context": "exact_draft_request_revision",
+      "trail": "no_generic_asset_adapter",
+      "microphone": "app-requested bounded PCM16 blocks"
+    },
+    "build_target": "native_framebuffer_web_build; separate physical firmware target",
+    "preview_limitations": [
+      "No camera, IMU, compass, proximity sensor or included battery is implied on SE",
+      "RTC, storage, radio, GPIO and complete power adapters remain unimplemented",
+      "Browser audio uses the computer microphone/speaker; physical SE uses exclusive capture/playback with mono PCM",
+      "Transcription, credentials and provider services belong to app-specific backends and are excluded from the plugin",
+      "Codex desktop microphone access remains host-dependent; Chrome acceptance does not establish desktop host support"
+    ],
+    "spatial_touch_required_app_adapter": 1,
+    "spatial_touch_apps": [
+      "counter",
+      "custom"
+    ],
+    "legacy_touch_semantics": "Legacy workers/apps may reduce validated touch coordinates and duration to primary short-action/hold-reset; no claim of spatial app dispatch for those workers.",
+    "power_button_input": {
+      "required_worker_field": "power_button_adapter",
+      "required_worker_value": 1,
+      "apps": [
+        "counter",
+        "custom"
+      ],
+      "events": [
+        "PowerClick",
+        "PowerHold"
+      ],
+      "source": "semantic_simulator_actions",
+      "gpio_or_pmic_timing_emulated": false,
+      "power_off_emulated": false,
+      "bootloader_emulated": false,
+      "legacy_worker_enabled": false,
+      "host_capability": "powerButton",
+      "tool_event": {
+        "type": "power",
+        "action": [
+          "click",
+          "hold"
+        ]
+      },
+      "native_commands": [
+        "power click",
+        "power hold"
+      ],
+      "duration_payload": false,
+      "hold_threshold_ms": null,
+      "starter_behavior": "accepted_no_op_author_app_may_handle",
+      "reset_rst_action": "supported_reload_worker_restart"
+    },
+    "reset_semantics": "Panel Reset app/RST uses supported Reload to start a new worker/session without requiring app HoldReset acceptance. Input preview resets locally; private draft deletion not implied.",
+    "panel_reset": {
+      "native_action": "supported_reload_worker_restart",
+      "native_fresh_session": true,
+      "input_preview_action": "local_illustration_reset",
+      "depends_on_app_HoldReset_acceptance": false,
+      "worker_local_state_restarted": true,
+      "supported_reload_starts_new_worker_lifetime": true,
+      "persisted_private_draft_deleted_by_plugin": false,
+      "persisted_private_draft_rewritten_by_plugin": false,
+      "hardware_reset": false,
+      "pmic_emulation": false,
+      "bootloader_emulation": false,
+      "status": "implemented"
+    },
+    "speaker_pcm": {
+      "implemented": true,
+      "requires_worker_adapter": "speaker_output_adapter:1",
+      "format": "mono PCM16",
+      "sample_rate_hz": [
+        8000,
+        48000
+      ],
+      "max_clip_seconds": 30
+    },
+    "network": {
+      "implemented": true,
+      "adapter": 1,
+      "transport": "host HTTP(S)",
+      "rf_simulation": false
+    }
+  },
+  "do_not_alias": [
+    "CoreS3 K128",
+    "CoreS3 Lite"
+  ],
+  "browser_preview": {
+    "profile_exists": true,
+    "microphone_adapter": true,
+    "microphone_mode": "app_requested_PCM16_16000Hz_mono",
+    "microphone_sources": [
+      "browser",
+      "fixture"
+    ],
+    "microphone_default": "off",
+    "explicit_enable_and_permission_required": true,
+    "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
+    "audio_output": "speaker_pcm_and_tone",
+    "audio_default": "muted",
+    "explicit_sound_enable_required": true,
+    "volume_control": true,
+    "local_test_tone": false,
+    "full_audio_playback": true,
+    "camera_adapter": false,
+    "actual_host_support_verified_by_this_task": true,
+    "image_input": "Codex tool with named workspace fixture; no shell picker",
+    "live_pcm_recording": true,
+    "power_button_input": {
+      "semantic_actions": [
+        "click",
+        "hold"
+      ],
+      "input_preview_feedback": "lastInput only; count and reset state unchanged",
+      "native_requires": "power_button_adapter:1 and matching Core counter/custom profile/app",
+      "duration_threshold": false,
+      "physical_poweroff_or_bootloader": false
+    },
+    "capture_policy": "App demand plus device gesture and browser/OS permission. Stop on hide or failure; another gesture required to reconnect.",
+    "host_support_evidence": {
+      "Chrome": "user-confirmed local microphone PCM and speaker playback",
+      "Codex_panel": "microphone blocked in previously inspected host; no later fix verified"
+    }
+  },
+  "physical_firmware": {
+    "implemented": true,
+    "profile": "cores3se",
+    "features": [
+      "display",
+      "touch",
+      "buttons",
+      "microphone",
+      "speaker",
+      "tone",
+      "network"
+    ],
+    "audio": "16 kHz mono input; mono PCM output; exclusive capture/playback",
+    "flash_mb": 16,
+    "psram_mb": 8,
+    "psram_mode": "quad",
+    "driver": "M5Unified 0.2.26 / M5GFX 0.2.33",
+    "physical_confirmation": "2026-10-13: display, touch/hold/swipe/strip and POWER event detection, clear chime/drums, microphone capture/local playback, USB power cycle and RST",
+    "recovery_acceptance": "Original 16 MB flash restored and digest verified; user confirmed Dream Logger boots normally",
+    "scope_ref": "../../runtime/docs/hardware-plan.md",
+    "network": {
+      "implemented": true,
+      "physical_verified": true,
+      "verified_on": "2026-10-20",
+      "validated_firmware_build": "28b069b15d4ed326",
+      "status": "Public HTTPS GET/JSON POST, physical input, pause, forget/reprovision and USB power cycle with persisted settings passed; no Mac API server."
+    }
+  }
+}

@@ -1,0 +1,2350 @@
+{
+  "description": "Retained dependency source derived from esbuild; exact acquisition versions/integrity are locked in pnpm-lock.yaml.",
+  "lockfileSha256": "f26a54b66a2e71fe033c982f3cf149a93578e397574c68e23cfab706572a0926",
+  "bundles": [
+    {
+      "path": "server/dist/index.js",
+      "bytes": 1389030,
+      "sha256": "623d008a08862448e47f6aaeddee0f4945ba00440ecc7b536ca48615ab8307ce"
+    },
+    {
+      "path": "server/dist/application-server.js",
+      "bytes": 1389016,
+      "sha256": "26fdf6e990034242cb868ff48430e00c9865f7f14392df324653c6486590fb9a"
+    },
+    {
+      "path": "server/dist/browser-preview.js",
+      "bytes": 1427891,
+      "sha256": "f2aaf5f49f40e56553cf7b9c2292e885e17a6c0c15faa8f333d324748bafd60d"
+    },
+    {
+      "path": "ui/dist/workbench.html",
+      "bytes": 902162,
+      "sha256": "36a75578ce3891207578b6f78824a738232cc9d3d1f292113ca586e69ad57b39"
+    },
+    {
+      "path": "ui/dist/browser-host.js",
+      "bytes": 731380,
+      "sha256": "30aaa1263b7d6c001e0e3977ebf39c335b281fb6827bd3926475ab736e304101"
+    }
+  ],
+  "packages": [
+    {
+      "name": "@cfworker/json-schema",
+      "version": "4.1.1",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/@cfworker/json-schema/LICENSE.md",
+          "source": "https://raw.githubusercontent.com/cfworker/cfworker/5409fdc2bd144f68e8b28c61c71fcb16600000a6/LICENSE.md",
+          "sha256": "376944252ab78ca6b41aee44ddea8894927ee67891e77e61eb9d59af63e35094",
+          "bytes": 1070
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/deep-compare-strict.js",
+          "bytesInOutput": 2445
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/pointer.js",
+          "bytesInOutput": 465
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/dereference.js",
+          "bytesInOutput": 10185
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/format.js",
+          "bytesInOutput": 21828
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/types.js",
+          "bytesInOutput": 765
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/ucs2-length.js",
+          "bytesInOutput": 1143
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/validate.js",
+          "bytesInOutput": 87867
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/validator.js",
+          "bytesInOutput": 1527
+        }
+      ]
+    },
+    {
+      "name": "@modelcontextprotocol/ext-apps",
+      "version": "1.7.5",
+      "license": "MIT",
+      "targets": [
+        "browserHost",
+        "server",
+        "ui"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/@modelcontextprotocol/ext-apps/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a",
+          "bytes": 12227
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/server/index.js",
+          "bytesInOutput": 67131
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/app.js",
+          "bytesInOutput": 37654
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/app-bridge.js",
+          "bytesInOutput": 36462
+        }
+      ]
+    },
+    {
+      "name": "@modelcontextprotocol/sdk",
+      "version": "1.29.0",
+      "license": "MIT",
+      "targets": [
+        "browserHost",
+        "server",
+        "ui"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/@modelcontextprotocol/sdk/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d",
+          "bytes": 1071
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js",
+          "bytesInOutput": 11343
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js",
+          "bytesInOutput": 159069
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js",
+          "bytesInOutput": 342
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js",
+          "bytesInOutput": 3306
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js",
+          "bytesInOutput": 108087
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js",
+          "bytesInOutput": 6123
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js",
+          "bytesInOutput": 23700
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js",
+          "bytesInOutput": 3360
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js",
+          "bytesInOutput": 46797
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js",
+          "bytesInOutput": 1269
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js",
+          "bytesInOutput": 6525
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js",
+          "bytesInOutput": 1968
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js",
+          "bytesInOutput": 91506
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js",
+          "bytesInOutput": 2049
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js",
+          "bytesInOutput": 4917
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/client.js",
+          "bytesInOutput": 5516
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/client/index.js",
+          "bytesInOutput": 20778
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/inMemory.js",
+          "bytesInOutput": 1373
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js",
+          "bytesInOutput": 1380
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js",
+          "bytesInOutput": 52409
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js",
+          "bytesInOutput": 114
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js",
+          "bytesInOutput": 528
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js",
+          "bytesInOutput": 36031
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js",
+          "bytesInOutput": 52341
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js",
+          "bytesInOutput": 1382
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js",
+          "bytesInOutput": 114
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js",
+          "bytesInOutput": 528
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js",
+          "bytesInOutput": 35486
+        }
+      ]
+    },
+    {
+      "name": "@openai/mcp-extensions",
+      "version": "0.1.0",
+      "license": "Apache-2.0",
+      "targets": [
+        "server",
+        "ui"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/@openai/mcp-extensions/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/fields.js",
+          "bytesInOutput": 6627
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/file-picker.js",
+          "bytesInOutput": 5739
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/schema.js",
+          "bytesInOutput": 7548
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/elicitation.js",
+          "bytesInOutput": 3363
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/strings.js",
+          "bytesInOutput": 198
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/mentions.js",
+          "bytesInOutput": 4365
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/settings.js",
+          "bytesInOutput": 20013
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/extensions.js",
+          "bytesInOutput": 717
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/resources.js",
+          "bytesInOutput": 54
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/deep-link.js",
+          "bytesInOutput": 890
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/files.js",
+          "bytesInOutput": 394
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/message.js",
+          "bytesInOutput": 808
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/model-context.js",
+          "bytesInOutput": 1186
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/strings.js",
+          "bytesInOutput": 66
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/resources.js",
+          "bytesInOutput": 3573
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/extensions.js",
+          "bytesInOutput": 1785
+        }
+      ]
+    },
+    {
+      "name": "ajv",
+      "version": "8.17.1",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/ajv/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3",
+          "bytes": 1090
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/code.js",
+          "bytesInOutput": 14607
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/scope.js",
+          "bytesInOutput": 16122
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/index.js",
+          "bytesInOutput": 72174
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/util.js",
+          "bytesInOutput": 21642
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/names.js",
+          "bytesInOutput": 4878
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/errors.js",
+          "bytesInOutput": 18099
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/boolSchema.js",
+          "bytesInOutput": 4728
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/rules.js",
+          "bytesInOutput": 3174
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/applicability.js",
+          "bytesInOutput": 3048
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/dataType.js",
+          "bytesInOutput": 24492
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/defaults.js",
+          "bytesInOutput": 4377
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/code.js",
+          "bytesInOutput": 18783
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/keyword.js",
+          "bytesInOutput": 17253
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/subschema.js",
+          "bytesInOutput": 11256
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/resolve.js",
+          "bytesInOutput": 15366
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/index.js",
+          "bytesInOutput": 61155
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/validation_error.js",
+          "bytesInOutput": 1413
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/ref_error.js",
+          "bytesInOutput": 2007
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/index.js",
+          "bytesInOutput": 27495
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/refs/data.json",
+          "bytesInOutput": 1773
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/uri.js",
+          "bytesInOutput": 984
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/core.js",
+          "bytesInOutput": 72384
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/id.js",
+          "bytesInOutput": 1167
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/ref.js",
+          "bytesInOutput": 15228
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/index.js",
+          "bytesInOutput": 1470
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitNumber.js",
+          "bytesInOutput": 3600
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/multipleOf.js",
+          "bytesInOutput": 3204
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js",
+          "bytesInOutput": 2208
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitLength.js",
+          "bytesInOutput": 3759
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/pattern.js",
+          "bytesInOutput": 2985
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitProperties.js",
+          "bytesInOutput": 3153
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/required.js",
+          "bytesInOutput": 9468
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitItems.js",
+          "bytesInOutput": 3006
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/equal.js",
+          "bytesInOutput": 1032
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js",
+          "bytesInOutput": 9060
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/const.js",
+          "bytesInOutput": 2853
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/enum.js",
+          "bytesInOutput": 5733
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/index.js",
+          "bytesInOutput": 3570
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js",
+          "bytesInOutput": 6219
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/items.js",
+          "bytesInOutput": 6360
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js",
+          "bytesInOutput": 1482
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/items2020.js",
+          "bytesInOutput": 3492
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/contains.js",
+          "bytesInOutput": 10806
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/dependencies.js",
+          "bytesInOutput": 10179
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js",
+          "bytesInOutput": 3936
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js",
+          "bytesInOutput": 12228
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/properties.js",
+          "bytesInOutput": 6558
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js",
+          "bytesInOutput": 8643
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/not.js",
+          "bytesInOutput": 2646
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/anyOf.js",
+          "bytesInOutput": 1431
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/oneOf.js",
+          "bytesInOutput": 6015
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/allOf.js",
+          "bytesInOutput": 2487
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/if.js",
+          "bytesInOutput": 7431
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/thenElse.js",
+          "bytesInOutput": 1692
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/index.js",
+          "bytesInOutput": 4932
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/format/format.js",
+          "bytesInOutput": 12321
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/format/index.js",
+          "bytesInOutput": 990
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/metadata.js",
+          "bytesInOutput": 1719
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/draft7.js",
+          "bytesInOutput": 2043
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/discriminator/types.js",
+          "bytesInOutput": 1347
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/discriminator/index.js",
+          "bytesInOutput": 14091
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/refs/json-schema-draft-07.json",
+          "bytesInOutput": 13095
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/ajv.js",
+          "bytesInOutput": 9015
+        }
+      ]
+    },
+    {
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/ajv-formats/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "9df3bb69929a3b650ed73b3bfa1756725aaff0ac296461605753547004eafeaf",
+          "bytes": 1074
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js",
+          "bytesInOutput": 37176
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/limit.js",
+          "bytesInOutput": 8967
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/index.js",
+          "bytesInOutput": 5085
+        }
+      ]
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/fast-deep-equal/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js",
+          "bytesInOutput": 4032
+        }
+      ]
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.0.1",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/fast-uri/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "bf13d2149c7784aeabc5575262251fde5a26bec741a9fd05558a4afe72326ae8",
+          "bytes": 1763
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/scopedChars.js",
+          "bytesInOutput": 1503
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/utils.js",
+          "bytesInOutput": 20454
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/schemes.js",
+          "bytesInOutput": 14892
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/index.js",
+          "bytesInOutput": 30972
+        }
+      ]
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "license": "MIT",
+      "targets": [
+        "server"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/json-schema-traverse/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a",
+          "bytes": 1074
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js",
+          "bytesInOutput": 8619
+        }
+      ]
+    },
+    {
+      "name": "zod",
+      "version": "4.4.3",
+      "license": "MIT",
+      "targets": [
+        "browserHost",
+        "server",
+        "ui"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/zod/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+          "bytes": 1072
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js",
+          "bytesInOutput": 10281
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js",
+          "bytesInOutput": 9246
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js",
+          "bytesInOutput": 14601
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js",
+          "bytesInOutput": 267
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js",
+          "bytesInOutput": 9027
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js",
+          "bytesInOutput": 795
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js",
+          "bytesInOutput": 304242
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js",
+          "bytesInOutput": 6885
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js",
+          "bytesInOutput": 61329
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js",
+          "bytesInOutput": 14772
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js",
+          "bytesInOutput": 13521
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js",
+          "bytesInOutput": 24840
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js",
+          "bytesInOutput": 56982
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js",
+          "bytesInOutput": 3495
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js",
+          "bytesInOutput": 579
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js",
+          "bytesInOutput": 219888
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js",
+          "bytesInOutput": 22938
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js",
+          "bytesInOutput": 14586
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js",
+          "bytesInOutput": 28104
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js",
+          "bytesInOutput": 25221
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js",
+          "bytesInOutput": 14064
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js",
+          "bytesInOutput": 15036
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js",
+          "bytesInOutput": 14199
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js",
+          "bytesInOutput": 13611
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js",
+          "bytesInOutput": 25563
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js",
+          "bytesInOutput": 13887
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js",
+          "bytesInOutput": 13746
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js",
+          "bytesInOutput": 16242
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js",
+          "bytesInOutput": 21855
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js",
+          "bytesInOutput": 14394
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js",
+          "bytesInOutput": 15384
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js",
+          "bytesInOutput": 13608
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js",
+          "bytesInOutput": 41739
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js",
+          "bytesInOutput": 15060
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js",
+          "bytesInOutput": 14442
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js",
+          "bytesInOutput": 26745
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js",
+          "bytesInOutput": 13473
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js",
+          "bytesInOutput": 14049
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js",
+          "bytesInOutput": 13491
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js",
+          "bytesInOutput": 17637
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js",
+          "bytesInOutput": 25104
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js",
+          "bytesInOutput": 25725
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js",
+          "bytesInOutput": 495
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js",
+          "bytesInOutput": 17076
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js",
+          "bytesInOutput": 24285
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js",
+          "bytesInOutput": 22617
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js",
+          "bytesInOutput": 13212
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js",
+          "bytesInOutput": 14016
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js",
+          "bytesInOutput": 13380
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js",
+          "bytesInOutput": 14052
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js",
+          "bytesInOutput": 19905
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js",
+          "bytesInOutput": 15582
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js",
+          "bytesInOutput": 13617
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js",
+          "bytesInOutput": 14835
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js",
+          "bytesInOutput": 28965
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js",
+          "bytesInOutput": 13683
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js",
+          "bytesInOutput": 13989
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js",
+          "bytesInOutput": 26145
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js",
+          "bytesInOutput": 25950
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js",
+          "bytesInOutput": 13812
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js",
+          "bytesInOutput": 25236
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js",
+          "bytesInOutput": 495
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js",
+          "bytesInOutput": 23811
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js",
+          "bytesInOutput": 14283
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js",
+          "bytesInOutput": 15600
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js",
+          "bytesInOutput": 15147
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js",
+          "bytesInOutput": 15438
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js",
+          "bytesInOutput": 15945
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js",
+          "bytesInOutput": 6666
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js",
+          "bytesInOutput": 4875
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js",
+          "bytesInOutput": 69375
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js",
+          "bytesInOutput": 34848
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js",
+          "bytesInOutput": 59100
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js",
+          "bytesInOutput": 7893
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js",
+          "bytesInOutput": 438
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js",
+          "bytesInOutput": 27951
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js",
+          "bytesInOutput": 42
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js",
+          "bytesInOutput": 4539
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/external.js",
+          "bytesInOutput": 183
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js",
+          "bytesInOutput": 2958
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js",
+          "bytesInOutput": 4335
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js",
+          "bytesInOutput": 4110
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js",
+          "bytesInOutput": 3132
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js",
+          "bytesInOutput": 148692
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js",
+          "bytesInOutput": 2532
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js",
+          "bytesInOutput": 51114
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js",
+          "bytesInOutput": 2085
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js",
+          "bytesInOutput": 22107
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js",
+          "bytesInOutput": 453
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js",
+          "bytesInOutput": 348
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/index.js",
+          "bytesInOutput": 102
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js",
+          "bytesInOutput": 2291
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js",
+          "bytesInOutput": 20472
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js",
+          "bytesInOutput": 4924
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js",
+          "bytesInOutput": 4507
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js",
+          "bytesInOutput": 8274
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js",
+          "bytesInOutput": 18993
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js",
+          "bytesInOutput": 1167
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js",
+          "bytesInOutput": 193
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js",
+          "bytesInOutput": 73301
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js",
+          "bytesInOutput": 7646
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js",
+          "bytesInOutput": 4862
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js",
+          "bytesInOutput": 9368
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js",
+          "bytesInOutput": 8407
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js",
+          "bytesInOutput": 4688
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js",
+          "bytesInOutput": 5012
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js",
+          "bytesInOutput": 4733
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js",
+          "bytesInOutput": 4537
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js",
+          "bytesInOutput": 8521
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js",
+          "bytesInOutput": 4628
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js",
+          "bytesInOutput": 4582
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js",
+          "bytesInOutput": 5414
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js",
+          "bytesInOutput": 7285
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js",
+          "bytesInOutput": 4798
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js",
+          "bytesInOutput": 5128
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js",
+          "bytesInOutput": 4536
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js",
+          "bytesInOutput": 13913
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js",
+          "bytesInOutput": 5020
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js",
+          "bytesInOutput": 4814
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js",
+          "bytesInOutput": 8915
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js",
+          "bytesInOutput": 4491
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js",
+          "bytesInOutput": 4683
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js",
+          "bytesInOutput": 4497
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js",
+          "bytesInOutput": 5879
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js",
+          "bytesInOutput": 8368
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js",
+          "bytesInOutput": 8575
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js",
+          "bytesInOutput": 165
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js",
+          "bytesInOutput": 5692
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js",
+          "bytesInOutput": 8095
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js",
+          "bytesInOutput": 7539
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js",
+          "bytesInOutput": 4404
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js",
+          "bytesInOutput": 4672
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js",
+          "bytesInOutput": 4460
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js",
+          "bytesInOutput": 4684
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js",
+          "bytesInOutput": 6635
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js",
+          "bytesInOutput": 5194
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js",
+          "bytesInOutput": 4539
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js",
+          "bytesInOutput": 4945
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js",
+          "bytesInOutput": 9655
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js",
+          "bytesInOutput": 4561
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js",
+          "bytesInOutput": 4663
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js",
+          "bytesInOutput": 8715
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js",
+          "bytesInOutput": 8650
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js",
+          "bytesInOutput": 4604
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js",
+          "bytesInOutput": 8412
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js",
+          "bytesInOutput": 165
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js",
+          "bytesInOutput": 7937
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js",
+          "bytesInOutput": 4761
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js",
+          "bytesInOutput": 5200
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js",
+          "bytesInOutput": 5049
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js",
+          "bytesInOutput": 5146
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js",
+          "bytesInOutput": 5315
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js",
+          "bytesInOutput": 2221
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js",
+          "bytesInOutput": 1625
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js",
+          "bytesInOutput": 23115
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js",
+          "bytesInOutput": 11612
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js",
+          "bytesInOutput": 19657
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js",
+          "bytesInOutput": 2630
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js",
+          "bytesInOutput": 146
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js",
+          "bytesInOutput": 9315
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js",
+          "bytesInOutput": 14
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js",
+          "bytesInOutput": 986
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js",
+          "bytesInOutput": 1443
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js",
+          "bytesInOutput": 1368
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js",
+          "bytesInOutput": 1044
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js",
+          "bytesInOutput": 49369
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js",
+          "bytesInOutput": 838
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js",
+          "bytesInOutput": 17015
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js",
+          "bytesInOutput": 688
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js",
+          "bytesInOutput": 7329
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js",
+          "bytesInOutput": 212
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js",
+          "bytesInOutput": 7119
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/index.js",
+          "bytesInOutput": 34
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js",
+          "bytesInOutput": 2287
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js",
+          "bytesInOutput": 20473
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js",
+          "bytesInOutput": 4916
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js",
+          "bytesInOutput": 4513
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js",
+          "bytesInOutput": 8274
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js",
+          "bytesInOutput": 18993
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js",
+          "bytesInOutput": 1178
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js",
+          "bytesInOutput": 193
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js",
+          "bytesInOutput": 73342
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js",
+          "bytesInOutput": 7646
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js",
+          "bytesInOutput": 4862
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js",
+          "bytesInOutput": 9368
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js",
+          "bytesInOutput": 8407
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js",
+          "bytesInOutput": 4688
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js",
+          "bytesInOutput": 5012
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js",
+          "bytesInOutput": 4733
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js",
+          "bytesInOutput": 4537
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js",
+          "bytesInOutput": 8521
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js",
+          "bytesInOutput": 4630
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js",
+          "bytesInOutput": 4582
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js",
+          "bytesInOutput": 5414
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js",
+          "bytesInOutput": 7285
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js",
+          "bytesInOutput": 4798
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js",
+          "bytesInOutput": 5128
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js",
+          "bytesInOutput": 4536
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js",
+          "bytesInOutput": 13928
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js",
+          "bytesInOutput": 5020
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js",
+          "bytesInOutput": 4814
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js",
+          "bytesInOutput": 8915
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js",
+          "bytesInOutput": 4491
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js",
+          "bytesInOutput": 4683
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js",
+          "bytesInOutput": 4497
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js",
+          "bytesInOutput": 5879
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js",
+          "bytesInOutput": 8368
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js",
+          "bytesInOutput": 8575
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js",
+          "bytesInOutput": 165
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js",
+          "bytesInOutput": 5692
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js",
+          "bytesInOutput": 8095
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js",
+          "bytesInOutput": 7539
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js",
+          "bytesInOutput": 4404
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js",
+          "bytesInOutput": 4672
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js",
+          "bytesInOutput": 4460
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js",
+          "bytesInOutput": 4684
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js",
+          "bytesInOutput": 6635
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js",
+          "bytesInOutput": 5194
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js",
+          "bytesInOutput": 4539
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js",
+          "bytesInOutput": 4945
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js",
+          "bytesInOutput": 9655
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js",
+          "bytesInOutput": 4561
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js",
+          "bytesInOutput": 4663
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js",
+          "bytesInOutput": 8715
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js",
+          "bytesInOutput": 8650
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js",
+          "bytesInOutput": 4604
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js",
+          "bytesInOutput": 8412
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js",
+          "bytesInOutput": 165
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js",
+          "bytesInOutput": 7937
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js",
+          "bytesInOutput": 4761
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js",
+          "bytesInOutput": 5200
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js",
+          "bytesInOutput": 5049
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js",
+          "bytesInOutput": 5146
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js",
+          "bytesInOutput": 5315
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js",
+          "bytesInOutput": 2221
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js",
+          "bytesInOutput": 1622
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js",
+          "bytesInOutput": 23115
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js",
+          "bytesInOutput": 11612
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js",
+          "bytesInOutput": 19661
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js",
+          "bytesInOutput": 2630
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js",
+          "bytesInOutput": 146
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js",
+          "bytesInOutput": 9315
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js",
+          "bytesInOutput": 986
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js",
+          "bytesInOutput": 1443
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js",
+          "bytesInOutput": 1368
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js",
+          "bytesInOutput": 1044
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js",
+          "bytesInOutput": 49367
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js",
+          "bytesInOutput": 838
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js",
+          "bytesInOutput": 17013
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js",
+          "bytesInOutput": 688
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js",
+          "bytesInOutput": 7328
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js",
+          "bytesInOutput": 151
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js",
+          "bytesInOutput": 116
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js",
+          "bytesInOutput": 14
+        }
+      ]
+    },
+    {
+      "name": "zod-to-json-schema",
+      "version": "3.25.1",
+      "license": "ISC",
+      "targets": [
+        "browserHost",
+        "server",
+        "ui"
+      ],
+      "notices": [
+        {
+          "path": "licenses/npm/zod-to-json-schema/LICENSE",
+          "source": "locked package distribution",
+          "sha256": "80d3168ad2f70f6f5bb2ab22b23414707abf6f0a392034891481ae36a1a429d4",
+          "bytes": 745
+        }
+      ],
+      "inputs": [
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js",
+          "bytesInOutput": 2679
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js",
+          "bytesInOutput": 2100
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js",
+          "bytesInOutput": 1065
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js",
+          "bytesInOutput": 693
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js",
+          "bytesInOutput": 1155
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js",
+          "bytesInOutput": 2334
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js",
+          "bytesInOutput": 4290
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js",
+          "bytesInOutput": 201
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js",
+          "bytesInOutput": 246
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js",
+          "bytesInOutput": 255
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js",
+          "bytesInOutput": 3732
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js",
+          "bytesInOutput": 402
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js",
+          "bytesInOutput": 414
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js",
+          "bytesInOutput": 300
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js",
+          "bytesInOutput": 3666
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js",
+          "bytesInOutput": 1584
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js",
+          "bytesInOutput": 34863
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js",
+          "bytesInOutput": 5313
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js",
+          "bytesInOutput": 1719
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js",
+          "bytesInOutput": 1470
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js",
+          "bytesInOutput": 534
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js",
+          "bytesInOutput": 423
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js",
+          "bytesInOutput": 6909
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js",
+          "bytesInOutput": 2850
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js",
+          "bytesInOutput": 4593
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js",
+          "bytesInOutput": 5892
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js",
+          "bytesInOutput": 1275
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js",
+          "bytesInOutput": 1509
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js",
+          "bytesInOutput": 240
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js",
+          "bytesInOutput": 1461
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js",
+          "bytesInOutput": 2379
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js",
+          "bytesInOutput": 240
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js",
+          "bytesInOutput": 189
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js",
+          "bytesInOutput": 264
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js",
+          "bytesInOutput": 8679
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js",
+          "bytesInOutput": 5604
+        },
+        {
+          "target": "server",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js",
+          "bytesInOutput": 7161
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js",
+          "bytesInOutput": 82
+        },
+        {
+          "target": "ui",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js",
+          "bytesInOutput": 93
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js",
+          "bytesInOutput": 82
+        },
+        {
+          "target": "browserHost",
+          "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js",
+          "bytesInOutput": 93
+        }
+      ]
+    }
+  ]
+}

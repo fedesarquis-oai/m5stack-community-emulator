@@ -1,0 +1,84 @@
+{
+  "recorded_date": "2026-10-07",
+  "purpose": "Pure shake detector reused in desktop UI simulation; no hardware scripts or device access.",
+  "source_project_executed": false,
+  "hardware_access": false,
+  "files": [
+    {
+      "source_path": "<original-hello-counter-project>/HelloCounter/ShakeDetector.h",
+      "target_path": "src/ShakeDetector.h",
+      "source_sha256": "428f75bdff5181d8b286aaab2c84a1659b220c84eb3e6658e56f453794edb1c4",
+      "target_sha256": "428f75bdff5181d8b286aaab2c84a1659b220c84eb3e6658e56f453794edb1c4",
+      "source_bytes": 4409,
+      "target_bytes": 4409,
+      "transformation": "none; byte-for-byte copy"
+    },
+    {
+      "source_path": "<original-hello-counter-project>/tests/shake_detector_test.cpp",
+      "target_path": "tests/shake_detector_test.cpp",
+      "source_sha256": "e07c6e3937574b1f0d366c153f95359661dfec333699afa25e82e9cdb1a8b7e1",
+      "target_sha256": "0370c622ef92a0c511a49e7edbf3b7fec2ea15afe62687506666d4b93b436ad9",
+      "source_bytes": 6782,
+      "target_bytes": 6773,
+      "transformation": "Single include path replacement only",
+      "include_replacement": {
+        "old": "#include \"../HelloCounter/ShakeDetector.h\"",
+        "new": "#include \"../src/ShakeDetector.h\""
+      },
+      "test_groups": 12
+    }
+  ],
+  "adapter": {
+    "target_path": "src/synthetic_motion.hpp",
+    "sha256": "692ecb9060f8d2659475e65cae5a14d1c7c0daa9864be8161a9735754bf297d5",
+    "api": "preview::SyntheticMotionAdapter::shake() -> bool; optional constructor uint32 initial virtual milliseconds defaults to zero",
+    "persistent_state": "One copied ShakeDetector and uint32 virtual millisecond clock per adapter instance",
+    "fixture": {
+      "sample_period_ms": 20,
+      "sample_rate_hz": 50,
+      "quiet_duration_ms": 1800,
+      "quiet_g": [
+        0,
+        0,
+        1
+      ],
+      "lobe_duration_ms": 120,
+      "lobe_ax_g": [
+        0.55,
+        -0.55,
+        0.55
+      ],
+      "lobe_ay_g": 0,
+      "lobe_az_g": 1,
+      "samples_per_call": 108,
+      "virtual_duration_ms_per_call": 2160
+    },
+    "success": "true only if exactly one detector event occurs across the complete fixture",
+    "wall_clock_sleeps": false,
+    "physical_imu_emulation": false
+  },
+  "validation": {
+    "status": "passed",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "compiler_flags": [
+      "-std=c++17",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic"
+    ],
+    "original_test_groups_passed": 12,
+    "adapter_checks": [
+      "100 sequential requests retain detector and virtual clock and each return exactly one event",
+      "100 requests from uint32 max-1000 cross unsigned clock wrap and each return exactly one event"
+    ],
+    "adapter_requests_checked": 200,
+    "adapter_harness_sha256": "4a8f9fc851ac06507f9a10c08f1dd83d4dc217f5b7e977c2a6bb6718ef664146",
+    "adapter_harness": "\n#include \"synthetic_motion.hpp\"\n#include <cstdint>\n#include <iostream>\n#include <limits>\nint main() {\n    preview::SyntheticMotionAdapter adapter;\n    for (unsigned i = 0; i < 100; ++i) {\n        if (!adapter.shake()) {\n            std::cerr << \"FAIL default or repeated fixture at request \" << i << '\\n';\n            return 1;\n        }\n    }\n    std::cout << \"PASS: 100 persistent fixture requests each emit exactly one event\\n\";\n    preview::SyntheticMotionAdapter wrapping(std::numeric_limits<std::uint32_t>::max() - 1000);\n    for (unsigned i = 0; i < 100; ++i) {\n        if (!wrapping.shake()) {\n            std::cerr << \"FAIL unsigned-clock-wrap fixture at request \" << i << '\\n';\n            return 1;\n        }\n    }\n    std::cout << \"PASS: virtual clock wrap and 100 further fixture requests\\n\";\n}\n",
+    "source_and_target_hashes_rechecked": true,
+    "physical_project_scripts_executed": false,
+    "hardware_access": false,
+    "temporary_binaries_removed": true,
+    "seconds": 1.626
+  }
+}

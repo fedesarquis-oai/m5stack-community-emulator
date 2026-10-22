@@ -1,0 +1,3325 @@
+{
+  "server": {
+    "server/network-adapter.mjs": {
+      "bytes": 6118,
+      "format": "esm",
+      "bytesInOutput": 21435
+    },
+    "ui/speaker-pcm.mjs": {
+      "bytes": 1218,
+      "format": "esm",
+      "bytesInOutput": 3885
+    },
+    "runtime/data/device-profiles.json": {
+      "bytes": 4297,
+      "format": "esm",
+      "bytesInOutput": 12186
+    },
+    "ui/device-profiles.mjs": {
+      "bytes": 662,
+      "format": "esm",
+      "bytesInOutput": 1455
+    },
+    "server/native-session.mjs": {
+      "bytes": 51886,
+      "format": "esm",
+      "bytesInOutput": 159885
+    },
+    "server/raster-image.mjs": {
+      "bytes": 11560,
+      "format": "esm",
+      "bytesInOutput": 32454
+    },
+    "server/workbench.mjs": {
+      "bytes": 16955,
+      "format": "esm",
+      "bytesInOutput": 54924
+    },
+    "server/hardware.mjs": {
+      "bytes": 7214,
+      "format": "esm",
+      "bytesInOutput": 24123
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js": {
+      "bytes": 4055,
+      "format": "esm",
+      "bytesInOutput": 10281
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js": {
+      "bytes": 4366,
+      "format": "esm",
+      "bytesInOutput": 9246
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js": {
+      "bytes": 5602,
+      "format": "esm",
+      "bytesInOutput": 14601
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js": {
+      "bytes": 243,
+      "format": "esm",
+      "bytesInOutput": 267
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js": {
+      "bytes": 3601,
+      "format": "esm",
+      "bytesInOutput": 9027
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/typeAliases.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js": {
+      "bytes": 300,
+      "format": "esm",
+      "bytesInOutput": 795
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js": {
+      "bytes": 131268,
+      "format": "esm",
+      "bytesInOutput": 304242
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/external.js": {
+      "bytes": 205,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js": {
+      "bytes": 2578,
+      "format": "esm",
+      "bytesInOutput": 6885
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js": {
+      "bytes": 22018,
+      "format": "esm",
+      "bytesInOutput": 61329
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js": {
+      "bytes": 6413,
+      "format": "esm",
+      "bytesInOutput": 14772
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js": {
+      "bytes": 4444,
+      "format": "esm",
+      "bytesInOutput": 13521
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js": {
+      "bytes": 9078,
+      "format": "esm",
+      "bytesInOutput": 24840
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js": {
+      "bytes": 20005,
+      "format": "esm",
+      "bytesInOutput": 56982
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js": {
+      "bytes": 1088,
+      "format": "esm",
+      "bytesInOutput": 3495
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js": {
+      "bytes": 70,
+      "format": "esm",
+      "bytesInOutput": 579
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js": {
+      "bytes": 83322,
+      "format": "esm",
+      "bytesInOutput": 219888
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js": {
+      "bytes": 5188,
+      "format": "esm",
+      "bytesInOutput": 22938
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js": {
+      "bytes": 4511,
+      "format": "esm",
+      "bytesInOutput": 14586
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js": {
+      "bytes": 6619,
+      "format": "esm",
+      "bytesInOutput": 28104
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js": {
+      "bytes": 5785,
+      "format": "esm",
+      "bytesInOutput": 25221
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js": {
+      "bytes": 4710,
+      "format": "esm",
+      "bytesInOutput": 14064
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 15036
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js": {
+      "bytes": 4804,
+      "format": "esm",
+      "bytesInOutput": 14199
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js": {
+      "bytes": 4588,
+      "format": "esm",
+      "bytesInOutput": 13611
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js": {
+      "bytes": 5544,
+      "format": "esm",
+      "bytesInOutput": 25563
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js": {
+      "bytes": 4805,
+      "format": "esm",
+      "bytesInOutput": 13887
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js": {
+      "bytes": 4603,
+      "format": "esm",
+      "bytesInOutput": 13746
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js": {
+      "bytes": 5439,
+      "format": "esm",
+      "bytesInOutput": 16242
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js": {
+      "bytes": 5131,
+      "format": "esm",
+      "bytesInOutput": 21855
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js": {
+      "bytes": 4818,
+      "format": "esm",
+      "bytesInOutput": 14394
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js": {
+      "bytes": 5137,
+      "format": "esm",
+      "bytesInOutput": 15384
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js": {
+      "bytes": 4554,
+      "format": "esm",
+      "bytesInOutput": 13608
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js": {
+      "bytes": 12005,
+      "format": "esm",
+      "bytesInOutput": 41739
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js": {
+      "bytes": 5052,
+      "format": "esm",
+      "bytesInOutput": 15060
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js": {
+      "bytes": 4696,
+      "format": "esm",
+      "bytesInOutput": 14442
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js": {
+      "bytes": 6390,
+      "format": "esm",
+      "bytesInOutput": 26745
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js": {
+      "bytes": 4577,
+      "format": "esm",
+      "bytesInOutput": 13473
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js": {
+      "bytes": 4635,
+      "format": "esm",
+      "bytesInOutput": 14049
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js": {
+      "bytes": 4582,
+      "format": "esm",
+      "bytesInOutput": 13491
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js": {
+      "bytes": 4851,
+      "format": "esm",
+      "bytesInOutput": 17637
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js": {
+      "bytes": 6202,
+      "format": "esm",
+      "bytesInOutput": 25104
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js": {
+      "bytes": 6242,
+      "format": "esm",
+      "bytesInOutput": 25725
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 495
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js": {
+      "bytes": 4929,
+      "format": "esm",
+      "bytesInOutput": 17076
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js": {
+      "bytes": 8082,
+      "format": "esm",
+      "bytesInOutput": 24285
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js": {
+      "bytes": 5157,
+      "format": "esm",
+      "bytesInOutput": 22617
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js": {
+      "bytes": 4491,
+      "format": "esm",
+      "bytesInOutput": 13212
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js": {
+      "bytes": 4762,
+      "format": "esm",
+      "bytesInOutput": 14016
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js": {
+      "bytes": 4506,
+      "format": "esm",
+      "bytesInOutput": 13380
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js": {
+      "bytes": 4525,
+      "format": "esm",
+      "bytesInOutput": 14052
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js": {
+      "bytes": 4909,
+      "format": "esm",
+      "bytesInOutput": 19905
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js": {
+      "bytes": 4966,
+      "format": "esm",
+      "bytesInOutput": 15582
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js": {
+      "bytes": 4568,
+      "format": "esm",
+      "bytesInOutput": 13617
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js": {
+      "bytes": 4774,
+      "format": "esm",
+      "bytesInOutput": 14835
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js": {
+      "bytes": 6714,
+      "format": "esm",
+      "bytesInOutput": 28965
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js": {
+      "bytes": 4567,
+      "format": "esm",
+      "bytesInOutput": 13683
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js": {
+      "bytes": 4663,
+      "format": "esm",
+      "bytesInOutput": 13989
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js": {
+      "bytes": 6369,
+      "format": "esm",
+      "bytesInOutput": 26145
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js": {
+      "bytes": 6290,
+      "format": "esm",
+      "bytesInOutput": 25950
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js": {
+      "bytes": 4454,
+      "format": "esm",
+      "bytesInOutput": 13812
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js": {
+      "bytes": 5430,
+      "format": "esm",
+      "bytesInOutput": 25236
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 495
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js": {
+      "bytes": 5271,
+      "format": "esm",
+      "bytesInOutput": 23811
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js": {
+      "bytes": 4739,
+      "format": "esm",
+      "bytesInOutput": 14283
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 15600
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js": {
+      "bytes": 4452,
+      "format": "esm",
+      "bytesInOutput": 15147
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js": {
+      "bytes": 4498,
+      "format": "esm",
+      "bytesInOutput": 15438
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js": {
+      "bytes": 4665,
+      "format": "esm",
+      "bytesInOutput": 15945
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js": {
+      "bytes": 2149,
+      "format": "esm",
+      "bytesInOutput": 6666
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js": {
+      "bytes": 1512,
+      "format": "esm",
+      "bytesInOutput": 4875
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js": {
+      "bytes": 28054,
+      "format": "esm",
+      "bytesInOutput": 69375
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js": {
+      "bytes": 17006,
+      "format": "esm",
+      "bytesInOutput": 34848
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js": {
+      "bytes": 20716,
+      "format": "esm",
+      "bytesInOutput": 59100
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js": {
+      "bytes": 3218,
+      "format": "esm",
+      "bytesInOutput": 7893
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 438
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js": {
+      "bytes": 594,
+      "format": "esm",
+      "bytesInOutput": 27951
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js": {
+      "bytes": 182,
+      "format": "esm",
+      "bytesInOutput": 42
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js": {
+      "bytes": 30860,
+      "format": "esm",
+      "bytesInOutput": 4539
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/checks.js": {
+      "bytes": 676,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/iso.js": {
+      "bytes": 1311,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/coerce.js": {
+      "bytes": 690,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/external.js": {
+      "bytes": 708,
+      "format": "esm",
+      "bytesInOutput": 183
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4-mini/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js": {
+      "bytes": 6942,
+      "format": "esm",
+      "bytesInOutput": 11343
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js": {
+      "bytes": 663,
+      "format": "esm",
+      "bytesInOutput": 2958
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js": {
+      "bytes": 1151,
+      "format": "esm",
+      "bytesInOutput": 4335
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js": {
+      "bytes": 1609,
+      "format": "esm",
+      "bytesInOutput": 4110
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js": {
+      "bytes": 997,
+      "format": "esm",
+      "bytesInOutput": 3132
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js": {
+      "bytes": 51378,
+      "format": "esm",
+      "bytesInOutput": 148692
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js": {
+      "bytes": 1090,
+      "format": "esm",
+      "bytesInOutput": 2532
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js": {
+      "bytes": 24161,
+      "format": "esm",
+      "bytesInOutput": 51114
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js": {
+      "bytes": 550,
+      "format": "esm",
+      "bytesInOutput": 2085
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js": {
+      "bytes": 907,
+      "format": "esm",
+      "bytesInOutput": 22107
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 453
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js": {
+      "bytes": 92,
+      "format": "esm",
+      "bytesInOutput": 348
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js": {
+      "bytes": 73271,
+      "format": "esm",
+      "bytesInOutput": 159069
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js": {
+      "bytes": 568,
+      "format": "esm",
+      "bytesInOutput": 342
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js": {
+      "bytes": 1281,
+      "format": "esm",
+      "bytesInOutput": 2679
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js": {
+      "bytes": 880,
+      "format": "esm",
+      "bytesInOutput": 2100
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js": {
+      "bytes": 404,
+      "format": "esm",
+      "bytesInOutput": 1065
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js": {
+      "bytes": 258,
+      "format": "esm",
+      "bytesInOutput": 693
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js": {
+      "bytes": 509,
+      "format": "esm",
+      "bytesInOutput": 1155
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js": {
+      "bytes": 1013,
+      "format": "esm",
+      "bytesInOutput": 2334
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js": {
+      "bytes": 1877,
+      "format": "esm",
+      "bytesInOutput": 4290
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js": {
+      "bytes": 83,
+      "format": "esm",
+      "bytesInOutput": 201
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js": {
+      "bytes": 134,
+      "format": "esm",
+      "bytesInOutput": 246
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js": {
+      "bytes": 139,
+      "format": "esm",
+      "bytesInOutput": 255
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js": {
+      "bytes": 1388,
+      "format": "esm",
+      "bytesInOutput": 3732
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js": {
+      "bytes": 197,
+      "format": "esm",
+      "bytesInOutput": 402
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js": {
+      "bytes": 246,
+      "format": "esm",
+      "bytesInOutput": 414
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js": {
+      "bytes": 120,
+      "format": "esm",
+      "bytesInOutput": 300
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js": {
+      "bytes": 1894,
+      "format": "esm",
+      "bytesInOutput": 3666
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js": {
+      "bytes": 609,
+      "format": "esm",
+      "bytesInOutput": 1584
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js": {
+      "bytes": 14954,
+      "format": "esm",
+      "bytesInOutput": 34863
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js": {
+      "bytes": 2275,
+      "format": "esm",
+      "bytesInOutput": 5313
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js": {
+      "bytes": 789,
+      "format": "esm",
+      "bytesInOutput": 1719
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js": {
+      "bytes": 576,
+      "format": "esm",
+      "bytesInOutput": 1470
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js": {
+      "bytes": 290,
+      "format": "esm",
+      "bytesInOutput": 534
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js": {
+      "bytes": 204,
+      "format": "esm",
+      "bytesInOutput": 423
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js": {
+      "bytes": 3142,
+      "format": "esm",
+      "bytesInOutput": 6909
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js": {
+      "bytes": 1183,
+      "format": "esm",
+      "bytesInOutput": 2850
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js": {
+      "bytes": 2021,
+      "format": "esm",
+      "bytesInOutput": 4593
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js": {
+      "bytes": 2309,
+      "format": "esm",
+      "bytesInOutput": 5892
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js": {
+      "bytes": 623,
+      "format": "esm",
+      "bytesInOutput": 1275
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js": {
+      "bytes": 611,
+      "format": "esm",
+      "bytesInOutput": 1509
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js": {
+      "bytes": 132,
+      "format": "esm",
+      "bytesInOutput": 240
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js": {
+      "bytes": 650,
+      "format": "esm",
+      "bytesInOutput": 1461
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js": {
+      "bytes": 1066,
+      "format": "esm",
+      "bytesInOutput": 2379
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js": {
+      "bytes": 136,
+      "format": "esm",
+      "bytesInOutput": 240
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js": {
+      "bytes": 112,
+      "format": "esm",
+      "bytesInOutput": 189
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js": {
+      "bytes": 142,
+      "format": "esm",
+      "bytesInOutput": 264
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js": {
+      "bytes": 4925,
+      "format": "esm",
+      "bytesInOutput": 8679
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js": {
+      "bytes": 2420,
+      "format": "esm",
+      "bytesInOutput": 5604
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseTypes.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js": {
+      "bytes": 3188,
+      "format": "esm",
+      "bytesInOutput": 7161
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/index.js": {
+      "bytes": 1474,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js": {
+      "bytes": 1833,
+      "format": "esm",
+      "bytesInOutput": 3306
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js": {
+      "bytes": 51762,
+      "format": "esm",
+      "bytesInOutput": 108087
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/code.js": {
+      "bytes": 4676,
+      "format": "cjs",
+      "bytesInOutput": 14607
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/scope.js": {
+      "bytes": 5198,
+      "format": "cjs",
+      "bytesInOutput": 16122
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/codegen/index.js": {
+      "bytes": 23127,
+      "format": "cjs",
+      "bytesInOutput": 72174
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/util.js": {
+      "bytes": 7103,
+      "format": "cjs",
+      "bytesInOutput": 21642
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/names.js": {
+      "bytes": 1440,
+      "format": "cjs",
+      "bytesInOutput": 4878
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/errors.js": {
+      "bytes": 5771,
+      "format": "cjs",
+      "bytesInOutput": 18099
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/boolSchema.js": {
+      "bytes": 1531,
+      "format": "cjs",
+      "bytesInOutput": 4728
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/rules.js": {
+      "bytes": 918,
+      "format": "cjs",
+      "bytesInOutput": 3174
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/applicability.js": {
+      "bytes": 853,
+      "format": "cjs",
+      "bytesInOutput": 3048
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/dataType.js": {
+      "bytes": 8409,
+      "format": "cjs",
+      "bytesInOutput": 24492
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/defaults.js": {
+      "bytes": 1448,
+      "format": "cjs",
+      "bytesInOutput": 4377
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/code.js": {
+      "bytes": 6216,
+      "format": "cjs",
+      "bytesInOutput": 18783
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/keyword.js": {
+      "bytes": 5695,
+      "format": "cjs",
+      "bytesInOutput": 17253
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/subschema.js": {
+      "bytes": 3858,
+      "format": "cjs",
+      "bytesInOutput": 11256
+    },
+    "node_modules/.pnpm/fast-deep-equal@3.1.3/node_modules/fast-deep-equal/index.js": {
+      "bytes": 1177,
+      "format": "cjs",
+      "bytesInOutput": 4032
+    },
+    "node_modules/.pnpm/json-schema-traverse@1.0.0/node_modules/json-schema-traverse/index.js": {
+      "bytes": 2428,
+      "format": "cjs",
+      "bytesInOutput": 8619
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/resolve.js": {
+      "bytes": 5006,
+      "format": "cjs",
+      "bytesInOutput": 15366
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/validate/index.js": {
+      "bytes": 20552,
+      "format": "cjs",
+      "bytesInOutput": 61155
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/validation_error.js": {
+      "bytes": 337,
+      "format": "cjs",
+      "bytesInOutput": 1413
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/ref_error.js": {
+      "bytes": 543,
+      "format": "cjs",
+      "bytesInOutput": 2007
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/compile/index.js": {
+      "bytes": 10046,
+      "format": "cjs",
+      "bytesInOutput": 27495
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/refs/data.json": {
+      "bytes": 409,
+      "bytesInOutput": 1773
+    },
+    "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/scopedChars.js": {
+      "bytes": 245,
+      "format": "cjs",
+      "bytesInOutput": 1503
+    },
+    "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/utils.js": {
+      "bytes": 5863,
+      "format": "cjs",
+      "bytesInOutput": 20454
+    },
+    "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/schemes.js": {
+      "bytes": 4724,
+      "format": "cjs",
+      "bytesInOutput": 14892
+    },
+    "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/index.js": {
+      "bytes": 9801,
+      "format": "cjs",
+      "bytesInOutput": 30972
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/uri.js": {
+      "bytes": 218,
+      "format": "cjs",
+      "bytesInOutput": 984
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/core.js": {
+      "bytes": 25185,
+      "format": "cjs",
+      "bytesInOutput": 72384
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/id.js": {
+      "bytes": 267,
+      "format": "cjs",
+      "bytesInOutput": 1167
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/ref.js": {
+      "bytes": 5234,
+      "format": "cjs",
+      "bytesInOutput": 15228
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/core/index.js": {
+      "bytes": 357,
+      "format": "cjs",
+      "bytesInOutput": 1470
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitNumber.js": {
+      "bytes": 1036,
+      "format": "cjs",
+      "bytesInOutput": 3600
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/multipleOf.js": {
+      "bytes": 1023,
+      "format": "cjs",
+      "bytesInOutput": 3204
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/ucs2length.js": {
+      "bytes": 808,
+      "format": "cjs",
+      "bytesInOutput": 2208
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitLength.js": {
+      "bytes": 1130,
+      "format": "cjs",
+      "bytesInOutput": 3759
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/pattern.js": {
+      "bytes": 905,
+      "format": "cjs",
+      "bytesInOutput": 2985
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitProperties.js": {
+      "bytes": 896,
+      "format": "cjs",
+      "bytesInOutput": 3153
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/required.js": {
+      "bytes": 3188,
+      "format": "cjs",
+      "bytesInOutput": 9468
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/limitItems.js": {
+      "bytes": 852,
+      "format": "cjs",
+      "bytesInOutput": 3006
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/runtime/equal.js": {
+      "bytes": 286,
+      "format": "cjs",
+      "bytesInOutput": 1032
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/uniqueItems.js": {
+      "bytes": 3037,
+      "format": "cjs",
+      "bytesInOutput": 9060
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/const.js": {
+      "bytes": 852,
+      "format": "cjs",
+      "bytesInOutput": 2853
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/enum.js": {
+      "bytes": 1901,
+      "format": "cjs",
+      "bytesInOutput": 5733
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/validation/index.js": {
+      "bytes": 1036,
+      "format": "cjs",
+      "bytesInOutput": 3570
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/additionalItems.js": {
+      "bytes": 1931,
+      "format": "cjs",
+      "bytesInOutput": 6219
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/items.js": {
+      "bytes": 1993,
+      "format": "cjs",
+      "bytesInOutput": 6360
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/prefixItems.js": {
+      "bytes": 354,
+      "format": "cjs",
+      "bytesInOutput": 1482
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/items2020.js": {
+      "bytes": 1037,
+      "format": "cjs",
+      "bytesInOutput": 3492
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/contains.js": {
+      "bytes": 3680,
+      "format": "cjs",
+      "bytesInOutput": 10806
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/dependencies.js": {
+      "bytes": 3198,
+      "format": "cjs",
+      "bytesInOutput": 10179
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/propertyNames.js": {
+      "bytes": 1221,
+      "format": "cjs",
+      "bytesInOutput": 3936
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/additionalProperties.js": {
+      "bytes": 4309,
+      "format": "cjs",
+      "bytesInOutput": 12228
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/properties.js": {
+      "bytes": 2153,
+      "format": "cjs",
+      "bytesInOutput": 6558
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/patternProperties.js": {
+      "bytes": 3236,
+      "format": "cjs",
+      "bytesInOutput": 8643
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/not.js": {
+      "bytes": 773,
+      "format": "cjs",
+      "bytesInOutput": 2646
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/anyOf.js": {
+      "bytes": 343,
+      "format": "cjs",
+      "bytesInOutput": 1431
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/oneOf.js": {
+      "bytes": 2257,
+      "format": "cjs",
+      "bytesInOutput": 6015
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/allOf.js": {
+      "bytes": 756,
+      "format": "cjs",
+      "bytesInOutput": 2487
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/if.js": {
+      "bytes": 2438,
+      "format": "cjs",
+      "bytesInOutput": 7431
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/thenElse.js": {
+      "bytes": 446,
+      "format": "cjs",
+      "bytesInOutput": 1692
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/applicator/index.js": {
+      "bytes": 1529,
+      "format": "cjs",
+      "bytesInOutput": 4932
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/format/format.js": {
+      "bytes": 4317,
+      "format": "cjs",
+      "bytesInOutput": 12321
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/format/index.js": {
+      "bytes": 209,
+      "format": "cjs",
+      "bytesInOutput": 990
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/metadata.js": {
+      "bytes": 427,
+      "format": "cjs",
+      "bytesInOutput": 1719
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/draft7.js": {
+      "bytes": 557,
+      "format": "cjs",
+      "bytesInOutput": 2043
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/discriminator/types.js": {
+      "bytes": 308,
+      "format": "cjs",
+      "bytesInOutput": 1347
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/vocabularies/discriminator/index.js": {
+      "bytes": 4845,
+      "format": "cjs",
+      "bytesInOutput": 14091
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/refs/json-schema-draft-07.json": {
+      "bytes": 3811,
+      "bytesInOutput": 13095
+    },
+    "node_modules/.pnpm/ajv@8.17.1/node_modules/ajv/dist/ajv.js": {
+      "bytes": 2841,
+      "format": "cjs",
+      "bytesInOutput": 9015
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/formats.js": {
+      "bytes": 12263,
+      "format": "cjs",
+      "bytesInOutput": 37176
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/limit.js": {
+      "bytes": 2900,
+      "format": "cjs",
+      "bytesInOutput": 8967
+    },
+    "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/index.js": {
+      "bytes": 1508,
+      "format": "cjs",
+      "bytesInOutput": 5085
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js": {
+      "bytes": 2814,
+      "format": "esm",
+      "bytesInOutput": 6123
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/server.js": {
+      "bytes": 10095,
+      "format": "esm",
+      "bytesInOutput": 23700
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/helpers.js": {
+      "bytes": 2397,
+      "format": "esm",
+      "bytesInOutput": 3360
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/index.js": {
+      "bytes": 21161,
+      "format": "esm",
+      "bytesInOutput": 46797
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/completable.js": {
+      "bytes": 1346,
+      "format": "esm",
+      "bytesInOutput": 1269
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/uriTemplate.js": {
+      "bytes": 8724,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/toolNameValidation.js": {
+      "bytes": 3790,
+      "format": "esm",
+      "bytesInOutput": 6525
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/mcp-server.js": {
+      "bytes": 1241,
+      "format": "esm",
+      "bytesInOutput": 1968
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/index.js": {
+      "bytes": 121,
+      "format": "esm",
+      "bytesInOutput": 102
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/mcp.js": {
+      "bytes": 40694,
+      "format": "esm",
+      "bytesInOutput": 91506
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/stdio.js": {
+      "bytes": 928,
+      "format": "esm",
+      "bytesInOutput": 2049
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/stdio.js": {
+      "bytes": 2607,
+      "format": "esm",
+      "bytesInOutput": 4917
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/server/index.js": {
+      "bytes": 30801,
+      "format": "esm",
+      "bytesInOutput": 67131
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/deep-compare-strict.js": {
+      "bytes": 975,
+      "format": "esm",
+      "bytesInOutput": 2445
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/pointer.js": {
+      "bytes": 169,
+      "format": "esm",
+      "bytesInOutput": 465
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/dereference.js": {
+      "bytes": 4225,
+      "format": "esm",
+      "bytesInOutput": 10185
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/format.js": {
+      "bytes": 7579,
+      "format": "esm",
+      "bytesInOutput": 21828
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/types.js": {
+      "bytes": 262,
+      "format": "esm",
+      "bytesInOutput": 765
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/ucs2-length.js": {
+      "bytes": 448,
+      "format": "esm",
+      "bytesInOutput": 1143
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/validate.js": {
+      "bytes": 36016,
+      "format": "esm",
+      "bytesInOutput": 87867
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/validator.js": {
+      "bytes": 657,
+      "format": "esm",
+      "bytesInOutput": 1527
+    },
+    "node_modules/.pnpm/@cfworker+json-schema@4.1.1/node_modules/@cfworker/json-schema/dist/esm/index.js": {
+      "bytes": 260,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/fields.js": {
+      "bytes": 2444,
+      "format": "esm",
+      "bytesInOutput": 6627
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/file-picker.js": {
+      "bytes": 2083,
+      "format": "esm",
+      "bytesInOutput": 5739
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/schema.js": {
+      "bytes": 3067,
+      "format": "esm",
+      "bytesInOutput": 7548
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/forms/elicitation.js": {
+      "bytes": 1301,
+      "format": "esm",
+      "bytesInOutput": 3363
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/strings.js": {
+      "bytes": 85,
+      "format": "esm",
+      "bytesInOutput": 198
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/mentions.js": {
+      "bytes": 1784,
+      "format": "esm",
+      "bytesInOutput": 4365
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/settings.js": {
+      "bytes": 8465,
+      "format": "esm",
+      "bytesInOutput": 20013
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/extensions.js": {
+      "bytes": 476,
+      "format": "esm",
+      "bytesInOutput": 717
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/resources.js": {
+      "bytes": 63,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/file-entrypoint.js": {
+      "bytes": 320,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/resources.js": {
+      "bytes": 657,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/ui.js": {
+      "bytes": 1419,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/server/index.js": {
+      "bytes": 1298,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "server/application-server.mjs": {
+      "bytes": 15182,
+      "format": "esm",
+      "bytesInOutput": 50175
+    },
+    "server/index.mjs": {
+      "bytes": 173,
+      "format": "esm",
+      "bytesInOutput": 37
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/client.js": {
+      "bytes": 7647,
+      "format": "esm",
+      "bytesInOutput": 5516
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/client/index.js": {
+      "bytes": 29673,
+      "format": "esm",
+      "bytesInOutput": 20778
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/inMemory.js": {
+      "bytes": 1717,
+      "format": "esm",
+      "bytesInOutput": 1373
+    },
+    "server/browser-preview-server.mjs": {
+      "bytes": 8474,
+      "format": "esm",
+      "bytesInOutput": 8246
+    },
+    "server/browser-preview.mjs": {
+      "bytes": 2622,
+      "format": "esm",
+      "bytesInOutput": 2391
+    }
+  },
+  "ui": {
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js": {
+      "bytes": 4055,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js": {
+      "bytes": 4366,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js": {
+      "bytes": 5602,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js": {
+      "bytes": 243,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js": {
+      "bytes": 3601,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/typeAliases.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js": {
+      "bytes": 300,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js": {
+      "bytes": 131268,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/external.js": {
+      "bytes": 205,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js": {
+      "bytes": 2578,
+      "format": "esm",
+      "bytesInOutput": 2291
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js": {
+      "bytes": 22018,
+      "format": "esm",
+      "bytesInOutput": 20472
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js": {
+      "bytes": 6413,
+      "format": "esm",
+      "bytesInOutput": 4924
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js": {
+      "bytes": 4444,
+      "format": "esm",
+      "bytesInOutput": 4507
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js": {
+      "bytes": 9078,
+      "format": "esm",
+      "bytesInOutput": 8274
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js": {
+      "bytes": 20005,
+      "format": "esm",
+      "bytesInOutput": 18993
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js": {
+      "bytes": 1088,
+      "format": "esm",
+      "bytesInOutput": 1167
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js": {
+      "bytes": 70,
+      "format": "esm",
+      "bytesInOutput": 193
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js": {
+      "bytes": 83322,
+      "format": "esm",
+      "bytesInOutput": 73301
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js": {
+      "bytes": 5188,
+      "format": "esm",
+      "bytesInOutput": 7646
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js": {
+      "bytes": 4511,
+      "format": "esm",
+      "bytesInOutput": 4862
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js": {
+      "bytes": 6619,
+      "format": "esm",
+      "bytesInOutput": 9368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js": {
+      "bytes": 5785,
+      "format": "esm",
+      "bytesInOutput": 8407
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js": {
+      "bytes": 4710,
+      "format": "esm",
+      "bytesInOutput": 4688
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 5012
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js": {
+      "bytes": 4804,
+      "format": "esm",
+      "bytesInOutput": 4733
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js": {
+      "bytes": 4588,
+      "format": "esm",
+      "bytesInOutput": 4537
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js": {
+      "bytes": 5544,
+      "format": "esm",
+      "bytesInOutput": 8521
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js": {
+      "bytes": 4805,
+      "format": "esm",
+      "bytesInOutput": 4628
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js": {
+      "bytes": 4603,
+      "format": "esm",
+      "bytesInOutput": 4582
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js": {
+      "bytes": 5439,
+      "format": "esm",
+      "bytesInOutput": 5414
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js": {
+      "bytes": 5131,
+      "format": "esm",
+      "bytesInOutput": 7285
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js": {
+      "bytes": 4818,
+      "format": "esm",
+      "bytesInOutput": 4798
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js": {
+      "bytes": 5137,
+      "format": "esm",
+      "bytesInOutput": 5128
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js": {
+      "bytes": 4554,
+      "format": "esm",
+      "bytesInOutput": 4536
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js": {
+      "bytes": 12005,
+      "format": "esm",
+      "bytesInOutput": 13913
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js": {
+      "bytes": 5052,
+      "format": "esm",
+      "bytesInOutput": 5020
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js": {
+      "bytes": 4696,
+      "format": "esm",
+      "bytesInOutput": 4814
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js": {
+      "bytes": 6390,
+      "format": "esm",
+      "bytesInOutput": 8915
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js": {
+      "bytes": 4577,
+      "format": "esm",
+      "bytesInOutput": 4491
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js": {
+      "bytes": 4635,
+      "format": "esm",
+      "bytesInOutput": 4683
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js": {
+      "bytes": 4582,
+      "format": "esm",
+      "bytesInOutput": 4497
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js": {
+      "bytes": 4851,
+      "format": "esm",
+      "bytesInOutput": 5879
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js": {
+      "bytes": 6202,
+      "format": "esm",
+      "bytesInOutput": 8368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js": {
+      "bytes": 6242,
+      "format": "esm",
+      "bytesInOutput": 8575
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 165
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js": {
+      "bytes": 4929,
+      "format": "esm",
+      "bytesInOutput": 5692
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js": {
+      "bytes": 8082,
+      "format": "esm",
+      "bytesInOutput": 8095
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js": {
+      "bytes": 5157,
+      "format": "esm",
+      "bytesInOutput": 7539
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js": {
+      "bytes": 4491,
+      "format": "esm",
+      "bytesInOutput": 4404
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js": {
+      "bytes": 4762,
+      "format": "esm",
+      "bytesInOutput": 4672
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js": {
+      "bytes": 4506,
+      "format": "esm",
+      "bytesInOutput": 4460
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js": {
+      "bytes": 4525,
+      "format": "esm",
+      "bytesInOutput": 4684
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js": {
+      "bytes": 4909,
+      "format": "esm",
+      "bytesInOutput": 6635
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js": {
+      "bytes": 4966,
+      "format": "esm",
+      "bytesInOutput": 5194
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js": {
+      "bytes": 4568,
+      "format": "esm",
+      "bytesInOutput": 4539
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js": {
+      "bytes": 4774,
+      "format": "esm",
+      "bytesInOutput": 4945
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js": {
+      "bytes": 6714,
+      "format": "esm",
+      "bytesInOutput": 9655
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js": {
+      "bytes": 4567,
+      "format": "esm",
+      "bytesInOutput": 4561
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js": {
+      "bytes": 4663,
+      "format": "esm",
+      "bytesInOutput": 4663
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js": {
+      "bytes": 6369,
+      "format": "esm",
+      "bytesInOutput": 8715
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js": {
+      "bytes": 6290,
+      "format": "esm",
+      "bytesInOutput": 8650
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js": {
+      "bytes": 4454,
+      "format": "esm",
+      "bytesInOutput": 4604
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js": {
+      "bytes": 5430,
+      "format": "esm",
+      "bytesInOutput": 8412
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 165
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js": {
+      "bytes": 5271,
+      "format": "esm",
+      "bytesInOutput": 7937
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js": {
+      "bytes": 4739,
+      "format": "esm",
+      "bytesInOutput": 4761
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 5200
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js": {
+      "bytes": 4452,
+      "format": "esm",
+      "bytesInOutput": 5049
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js": {
+      "bytes": 4498,
+      "format": "esm",
+      "bytesInOutput": 5146
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js": {
+      "bytes": 4665,
+      "format": "esm",
+      "bytesInOutput": 5315
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js": {
+      "bytes": 2149,
+      "format": "esm",
+      "bytesInOutput": 2221
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js": {
+      "bytes": 1512,
+      "format": "esm",
+      "bytesInOutput": 1625
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js": {
+      "bytes": 28054,
+      "format": "esm",
+      "bytesInOutput": 23115
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js": {
+      "bytes": 17006,
+      "format": "esm",
+      "bytesInOutput": 11612
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js": {
+      "bytes": 20716,
+      "format": "esm",
+      "bytesInOutput": 19657
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js": {
+      "bytes": 3218,
+      "format": "esm",
+      "bytesInOutput": 2630
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 146
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js": {
+      "bytes": 594,
+      "format": "esm",
+      "bytesInOutput": 9315
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js": {
+      "bytes": 182,
+      "format": "esm",
+      "bytesInOutput": 14
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js": {
+      "bytes": 30860,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/checks.js": {
+      "bytes": 676,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/iso.js": {
+      "bytes": 1311,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/coerce.js": {
+      "bytes": 690,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/external.js": {
+      "bytes": 708,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4-mini/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js": {
+      "bytes": 6942,
+      "format": "esm",
+      "bytesInOutput": 1380
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js": {
+      "bytes": 663,
+      "format": "esm",
+      "bytesInOutput": 986
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js": {
+      "bytes": 1151,
+      "format": "esm",
+      "bytesInOutput": 1443
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js": {
+      "bytes": 1609,
+      "format": "esm",
+      "bytesInOutput": 1368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js": {
+      "bytes": 997,
+      "format": "esm",
+      "bytesInOutput": 1044
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js": {
+      "bytes": 51378,
+      "format": "esm",
+      "bytesInOutput": 49369
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js": {
+      "bytes": 1090,
+      "format": "esm",
+      "bytesInOutput": 838
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js": {
+      "bytes": 24161,
+      "format": "esm",
+      "bytesInOutput": 17015
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js": {
+      "bytes": 550,
+      "format": "esm",
+      "bytesInOutput": 688
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js": {
+      "bytes": 907,
+      "format": "esm",
+      "bytesInOutput": 7329
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 212
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js": {
+      "bytes": 92,
+      "format": "esm",
+      "bytesInOutput": 7119
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js": {
+      "bytes": 73271,
+      "format": "esm",
+      "bytesInOutput": 52409
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js": {
+      "bytes": 568,
+      "format": "esm",
+      "bytesInOutput": 114
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js": {
+      "bytes": 1281,
+      "format": "esm",
+      "bytesInOutput": 82
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js": {
+      "bytes": 880,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js": {
+      "bytes": 404,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js": {
+      "bytes": 258,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js": {
+      "bytes": 509,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js": {
+      "bytes": 1013,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js": {
+      "bytes": 1877,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js": {
+      "bytes": 83,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js": {
+      "bytes": 134,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js": {
+      "bytes": 139,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js": {
+      "bytes": 1388,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js": {
+      "bytes": 197,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js": {
+      "bytes": 246,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js": {
+      "bytes": 120,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js": {
+      "bytes": 1894,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js": {
+      "bytes": 609,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js": {
+      "bytes": 14954,
+      "format": "esm",
+      "bytesInOutput": 93
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js": {
+      "bytes": 2275,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js": {
+      "bytes": 789,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js": {
+      "bytes": 576,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js": {
+      "bytes": 290,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js": {
+      "bytes": 204,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js": {
+      "bytes": 3142,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js": {
+      "bytes": 1183,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js": {
+      "bytes": 2021,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js": {
+      "bytes": 2309,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js": {
+      "bytes": 623,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js": {
+      "bytes": 611,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js": {
+      "bytes": 132,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js": {
+      "bytes": 650,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js": {
+      "bytes": 1066,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js": {
+      "bytes": 136,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js": {
+      "bytes": 112,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js": {
+      "bytes": 142,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js": {
+      "bytes": 4925,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js": {
+      "bytes": 2420,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseTypes.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js": {
+      "bytes": 3188,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/index.js": {
+      "bytes": 1474,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js": {
+      "bytes": 1833,
+      "format": "esm",
+      "bytesInOutput": 528
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js": {
+      "bytes": 51762,
+      "format": "esm",
+      "bytesInOutput": 36031
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/app.js": {
+      "bytes": 33323,
+      "format": "esm",
+      "bytesInOutput": 37654
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/index.js": {
+      "bytes": 121,
+      "format": "esm",
+      "bytesInOutput": 34
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/resources.js": {
+      "bytes": 63,
+      "format": "esm",
+      "bytesInOutput": 54
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/deep-link.js": {
+      "bytes": 1037,
+      "format": "esm",
+      "bytesInOutput": 890
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/files.js": {
+      "bytes": 516,
+      "format": "esm",
+      "bytesInOutput": 394
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/message.js": {
+      "bytes": 1020,
+      "format": "esm",
+      "bytesInOutput": 808
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/model-context.js": {
+      "bytes": 1286,
+      "format": "esm",
+      "bytesInOutput": 1186
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/strings.js": {
+      "bytes": 85,
+      "format": "esm",
+      "bytesInOutput": 66
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/resources.js": {
+      "bytes": 3968,
+      "format": "esm",
+      "bytesInOutput": 3573
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/extensions.js": {
+      "bytes": 2561,
+      "format": "esm",
+      "bytesInOutput": 1785
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/shared/file-entrypoint.js": {
+      "bytes": 320,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@openai+mcp-extensions@0.1.0_@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol_4bd30db0e4b03fd0b4944b67ff58cfae/node_modules/@openai/mcp-extensions/dist/app/index.js": {
+      "bytes": 889,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "ui/controller.mjs": {
+      "bytes": 11071,
+      "format": "esm",
+      "bytesInOutput": 11072
+    },
+    "runtime/data/device-profiles.json": {
+      "bytes": 4297,
+      "format": "esm",
+      "bytesInOutput": 4062
+    },
+    "ui/device-profiles.mjs": {
+      "bytes": 662,
+      "format": "esm",
+      "bytesInOutput": 485
+    },
+    "ui/input-preview.mjs": {
+      "bytes": 4656,
+      "format": "esm",
+      "bytesInOutput": 4844
+    },
+    "ui/device-motion.mjs": {
+      "bytes": 6620,
+      "format": "esm",
+      "bytesInOutput": 6700
+    },
+    "ui/device-layout.mjs": {
+      "bytes": 2771,
+      "format": "esm",
+      "bytesInOutput": 2661
+    },
+    "ui/speaker-pcm.mjs": {
+      "bytes": 1218,
+      "format": "esm",
+      "bytesInOutput": 1295
+    },
+    "ui/device-media.mjs": {
+      "bytes": 28513,
+      "format": "esm",
+      "bytesInOutput": 28847
+    },
+    "ui/host-media-support.mjs": {
+      "bytes": 1448,
+      "format": "esm",
+      "bytesInOutput": 1408
+    },
+    "ui/live-microphone-processor.mjs": {
+      "bytes": 4468,
+      "format": "esm",
+      "bytesInOutput": 4709
+    },
+    "ui/live-microphone.mjs": {
+      "bytes": 27559,
+      "format": "esm",
+      "bytesInOutput": 27639
+    },
+    "ui/style.css": {
+      "bytes": 14775,
+      "bytesInOutput": 17832
+    },
+    "ui/main.mjs": {
+      "bytes": 35504,
+      "format": "esm",
+      "bytesInOutput": 36330
+    }
+  },
+  "browserHost": {
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js": {
+      "bytes": 2578,
+      "format": "esm",
+      "bytesInOutput": 2287
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js": {
+      "bytes": 22018,
+      "format": "esm",
+      "bytesInOutput": 20473
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js": {
+      "bytes": 6413,
+      "format": "esm",
+      "bytesInOutput": 4916
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js": {
+      "bytes": 4444,
+      "format": "esm",
+      "bytesInOutput": 4513
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js": {
+      "bytes": 9078,
+      "format": "esm",
+      "bytesInOutput": 8274
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js": {
+      "bytes": 20005,
+      "format": "esm",
+      "bytesInOutput": 18993
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js": {
+      "bytes": 1088,
+      "format": "esm",
+      "bytesInOutput": 1178
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js": {
+      "bytes": 70,
+      "format": "esm",
+      "bytesInOutput": 193
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js": {
+      "bytes": 83322,
+      "format": "esm",
+      "bytesInOutput": 73342
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js": {
+      "bytes": 5188,
+      "format": "esm",
+      "bytesInOutput": 7646
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js": {
+      "bytes": 4511,
+      "format": "esm",
+      "bytesInOutput": 4862
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js": {
+      "bytes": 6619,
+      "format": "esm",
+      "bytesInOutput": 9368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js": {
+      "bytes": 5785,
+      "format": "esm",
+      "bytesInOutput": 8407
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js": {
+      "bytes": 4710,
+      "format": "esm",
+      "bytesInOutput": 4688
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 5012
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js": {
+      "bytes": 4804,
+      "format": "esm",
+      "bytesInOutput": 4733
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js": {
+      "bytes": 4588,
+      "format": "esm",
+      "bytesInOutput": 4537
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js": {
+      "bytes": 5544,
+      "format": "esm",
+      "bytesInOutput": 8521
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js": {
+      "bytes": 4805,
+      "format": "esm",
+      "bytesInOutput": 4630
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js": {
+      "bytes": 4603,
+      "format": "esm",
+      "bytesInOutput": 4582
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js": {
+      "bytes": 5439,
+      "format": "esm",
+      "bytesInOutput": 5414
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js": {
+      "bytes": 5131,
+      "format": "esm",
+      "bytesInOutput": 7285
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js": {
+      "bytes": 4818,
+      "format": "esm",
+      "bytesInOutput": 4798
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js": {
+      "bytes": 5137,
+      "format": "esm",
+      "bytesInOutput": 5128
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js": {
+      "bytes": 4554,
+      "format": "esm",
+      "bytesInOutput": 4536
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js": {
+      "bytes": 12005,
+      "format": "esm",
+      "bytesInOutput": 13928
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js": {
+      "bytes": 5052,
+      "format": "esm",
+      "bytesInOutput": 5020
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js": {
+      "bytes": 4696,
+      "format": "esm",
+      "bytesInOutput": 4814
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js": {
+      "bytes": 6390,
+      "format": "esm",
+      "bytesInOutput": 8915
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js": {
+      "bytes": 4577,
+      "format": "esm",
+      "bytesInOutput": 4491
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js": {
+      "bytes": 4635,
+      "format": "esm",
+      "bytesInOutput": 4683
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js": {
+      "bytes": 4582,
+      "format": "esm",
+      "bytesInOutput": 4497
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js": {
+      "bytes": 4851,
+      "format": "esm",
+      "bytesInOutput": 5879
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js": {
+      "bytes": 6202,
+      "format": "esm",
+      "bytesInOutput": 8368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js": {
+      "bytes": 6242,
+      "format": "esm",
+      "bytesInOutput": 8575
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 165
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js": {
+      "bytes": 4929,
+      "format": "esm",
+      "bytesInOutput": 5692
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js": {
+      "bytes": 8082,
+      "format": "esm",
+      "bytesInOutput": 8095
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js": {
+      "bytes": 5157,
+      "format": "esm",
+      "bytesInOutput": 7539
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js": {
+      "bytes": 4491,
+      "format": "esm",
+      "bytesInOutput": 4404
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js": {
+      "bytes": 4762,
+      "format": "esm",
+      "bytesInOutput": 4672
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js": {
+      "bytes": 4506,
+      "format": "esm",
+      "bytesInOutput": 4460
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js": {
+      "bytes": 4525,
+      "format": "esm",
+      "bytesInOutput": 4684
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js": {
+      "bytes": 4909,
+      "format": "esm",
+      "bytesInOutput": 6635
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js": {
+      "bytes": 4966,
+      "format": "esm",
+      "bytesInOutput": 5194
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js": {
+      "bytes": 4568,
+      "format": "esm",
+      "bytesInOutput": 4539
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js": {
+      "bytes": 4774,
+      "format": "esm",
+      "bytesInOutput": 4945
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js": {
+      "bytes": 6714,
+      "format": "esm",
+      "bytesInOutput": 9655
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js": {
+      "bytes": 4567,
+      "format": "esm",
+      "bytesInOutput": 4561
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js": {
+      "bytes": 4663,
+      "format": "esm",
+      "bytesInOutput": 4663
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js": {
+      "bytes": 6369,
+      "format": "esm",
+      "bytesInOutput": 8715
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js": {
+      "bytes": 6290,
+      "format": "esm",
+      "bytesInOutput": 8650
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js": {
+      "bytes": 4454,
+      "format": "esm",
+      "bytesInOutput": 4604
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js": {
+      "bytes": 5430,
+      "format": "esm",
+      "bytesInOutput": 8412
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js": {
+      "bytes": 111,
+      "format": "esm",
+      "bytesInOutput": 165
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js": {
+      "bytes": 5271,
+      "format": "esm",
+      "bytesInOutput": 7937
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js": {
+      "bytes": 4739,
+      "format": "esm",
+      "bytesInOutput": 4761
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js": {
+      "bytes": 4772,
+      "format": "esm",
+      "bytesInOutput": 5200
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js": {
+      "bytes": 4452,
+      "format": "esm",
+      "bytesInOutput": 5049
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js": {
+      "bytes": 4498,
+      "format": "esm",
+      "bytesInOutput": 5146
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js": {
+      "bytes": 4665,
+      "format": "esm",
+      "bytesInOutput": 5315
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js": {
+      "bytes": 2149,
+      "format": "esm",
+      "bytesInOutput": 2221
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js": {
+      "bytes": 1512,
+      "format": "esm",
+      "bytesInOutput": 1622
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js": {
+      "bytes": 28054,
+      "format": "esm",
+      "bytesInOutput": 23115
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js": {
+      "bytes": 17006,
+      "format": "esm",
+      "bytesInOutput": 11612
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js": {
+      "bytes": 20716,
+      "format": "esm",
+      "bytesInOutput": 19661
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js": {
+      "bytes": 3218,
+      "format": "esm",
+      "bytesInOutput": 2630
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 146
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js": {
+      "bytes": 594,
+      "format": "esm",
+      "bytesInOutput": 9315
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js": {
+      "bytes": 663,
+      "format": "esm",
+      "bytesInOutput": 986
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js": {
+      "bytes": 1151,
+      "format": "esm",
+      "bytesInOutput": 1443
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js": {
+      "bytes": 1609,
+      "format": "esm",
+      "bytesInOutput": 1368
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js": {
+      "bytes": 997,
+      "format": "esm",
+      "bytesInOutput": 1044
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js": {
+      "bytes": 51378,
+      "format": "esm",
+      "bytesInOutput": 49367
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js": {
+      "bytes": 1090,
+      "format": "esm",
+      "bytesInOutput": 838
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js": {
+      "bytes": 24161,
+      "format": "esm",
+      "bytesInOutput": 17013
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js": {
+      "bytes": 550,
+      "format": "esm",
+      "bytesInOutput": 688
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js": {
+      "bytes": 907,
+      "format": "esm",
+      "bytesInOutput": 7328
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 151
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/index.js": {
+      "bytes": 92,
+      "format": "esm",
+      "bytesInOutput": 116
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js": {
+      "bytes": 73271,
+      "format": "esm",
+      "bytesInOutput": 52341
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js": {
+      "bytes": 4055,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/ZodError.js": {
+      "bytes": 4366,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/locales/en.js": {
+      "bytes": 5602,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/errors.js": {
+      "bytes": 243,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js": {
+      "bytes": 3601,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/typeAliases.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/errorUtil.js": {
+      "bytes": 300,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js": {
+      "bytes": 131268,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/external.js": {
+      "bytes": 205,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/parse.js": {
+      "bytes": 182,
+      "format": "esm",
+      "bytesInOutput": 14
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/schemas.js": {
+      "bytes": 30860,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/checks.js": {
+      "bytes": 676,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/iso.js": {
+      "bytes": 1311,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/coerce.js": {
+      "bytes": 690,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/mini/external.js": {
+      "bytes": 708,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4-mini/index.js": {
+      "bytes": 99,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-compat.js": {
+      "bytes": 6942,
+      "format": "esm",
+      "bytesInOutput": 1382
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/experimental/tasks/interfaces.js": {
+      "bytes": 568,
+      "format": "esm",
+      "bytesInOutput": 114
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Options.js": {
+      "bytes": 1281,
+      "format": "esm",
+      "bytesInOutput": 82
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/Refs.js": {
+      "bytes": 880,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/errorMessages.js": {
+      "bytes": 404,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/getRelativePath.js": {
+      "bytes": 258,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/any.js": {
+      "bytes": 509,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/array.js": {
+      "bytes": 1013,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/bigint.js": {
+      "bytes": 1877,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/boolean.js": {
+      "bytes": 83,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/branded.js": {
+      "bytes": 134,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/catch.js": {
+      "bytes": 139,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/date.js": {
+      "bytes": 1388,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/default.js": {
+      "bytes": 197,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/effects.js": {
+      "bytes": 246,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/enum.js": {
+      "bytes": 120,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/intersection.js": {
+      "bytes": 1894,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/literal.js": {
+      "bytes": 609,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/string.js": {
+      "bytes": 14954,
+      "format": "esm",
+      "bytesInOutput": 93
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/record.js": {
+      "bytes": 2275,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/map.js": {
+      "bytes": 789,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nativeEnum.js": {
+      "bytes": 576,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/never.js": {
+      "bytes": 290,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/null.js": {
+      "bytes": 204,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/union.js": {
+      "bytes": 3142,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/nullable.js": {
+      "bytes": 1183,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/number.js": {
+      "bytes": 2021,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/object.js": {
+      "bytes": 2309,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/optional.js": {
+      "bytes": 623,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/pipeline.js": {
+      "bytes": 611,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/promise.js": {
+      "bytes": 132,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/set.js": {
+      "bytes": 650,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/tuple.js": {
+      "bytes": 1066,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/undefined.js": {
+      "bytes": 136,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/unknown.js": {
+      "bytes": 112,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parsers/readonly.js": {
+      "bytes": 142,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/selectParser.js": {
+      "bytes": 4925,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseDef.js": {
+      "bytes": 2420,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/parseTypes.js": {
+      "bytes": 11,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js": {
+      "bytes": 3188,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/index.js": {
+      "bytes": 1474,
+      "format": "esm",
+      "bytesInOutput": 0
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/server/zod-json-schema-compat.js": {
+      "bytes": 1833,
+      "format": "esm",
+      "bytesInOutput": 528
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js": {
+      "bytes": 51762,
+      "format": "esm",
+      "bytesInOutput": 35486
+    },
+    "node_modules/.pnpm/@modelcontextprotocol+ext-apps@1.7.5_@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3__zod@4.4.3/node_modules/@modelcontextprotocol/ext-apps/dist/src/app-bridge.js": {
+      "bytes": 42938,
+      "format": "esm",
+      "bytesInOutput": 36462
+    },
+    "ui/preview-connection.mjs": {
+      "bytes": 2768,
+      "format": "esm",
+      "bytesInOutput": 2853
+    },
+    "ui/browser-host.mjs": {
+      "bytes": 2555,
+      "format": "esm",
+      "bytesInOutput": 2450
+    }
+  },
+  "outputs": {
+    "server": {
+      "server/dist/index.js": {
+        "bytes": 1389030,
+        "imports": [
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:https",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          }
+        ]
+      },
+      "server/dist/application-server.js": {
+        "bytes": 1389016,
+        "imports": [
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:https",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          }
+        ]
+      },
+      "server/dist/browser-preview.js": {
+        "bytes": 1427891,
+        "imports": [
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:https",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:crypto",
+            "kind": "import-statement",
+            "external": true
+          }
+        ]
+      }
+    },
+    "ui": {
+      "ui/dist/workbench.js": {
+        "bytes": 875655,
+        "imports": []
+      },
+      "ui/dist/workbench.css": {
+        "bytes": 17851,
+        "imports": []
+      }
+    },
+    "browserHost": {
+      "ui/dist/browser-host.js": {
+        "bytes": 731380,
+        "imports": []
+      }
+    }
+  }
+}

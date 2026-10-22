@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "app": {
+    "id": "custom",
+    "label": "Hello World",
+    "source_files": [
+      "src/user_app.hpp",
+      "src/user_draw.hpp",
+      "src/app_assets.hpp"
+    ]
+  },
+  "profiles": [
+    "atoms3r",
+    "stickcplus2",
+    "sticks3",
+    "cores3",
+    "cores3se"
+  ],
+  "inputs": [
+    "primary",
+    "hold",
+    "shake",
+    "tilt",
+    "microphone_level",
+    "touch_tap",
+    "touch_swipe",
+    "text",
+    "recording_start_requested",
+    "recording_started",
+    "recording_stopped",
+    "recording_ready",
+    "recording_cleared",
+    "image_ready",
+    "image_cleared"
+  ],
+  "media": {
+    "required_worker_adapter": 1,
+    "profiles": [
+      "stickcplus2",
+      "sticks3",
+      "cores3",
+      "cores3se"
+    ],
+    "microphone": "App-requested browser PCM input; legacy normalized level and optional bounded clip capture remain separate.",
+    "output": "App-owned mono PCM16 on StickS3/CoreS3/CoreS3 SE; bounded tones on those boards and the Plus2 buzzer.",
+    "default_sound": "70 ms click on primary tap/press, only when the board supports audio and host output is enabled.",
+    "pcm": true,
+    "pcm_scope": "Microphone: PCM16 little-endian, 16000 Hz, mono. Speaker: mono PCM16, 8\u201348 kHz, up to 30 seconds per clip; no hardware codec emulation."
+  },
+  "version": "0.7.42",
+  "profile_gates": {
+    "motion": [
+      "atoms3r",
+      "stickcplus2",
+      "sticks3",
+      "cores3"
+    ],
+    "touch": [
+      "cores3",
+      "cores3se"
+    ],
+    "microphone": [
+      "stickcplus2",
+      "sticks3",
+      "cores3",
+      "cores3se"
+    ]
+  },
+  "app_adapter": {
+    "required_worker_field": "app_adapter",
+    "required_worker_value": 1,
+    "apps": [
+      "counter",
+      "custom"
+    ],
+    "text_max_utf8_bytes": 2048,
+    "recording": {
+      "max_duration_ms": 30000,
+      "max_bytes": 2097152,
+      "ready_expiry_ms": 300000,
+      "native_transport": "metadata_only",
+      "raw_audio_export": false,
+      "api_submission": false,
+      "transcription": false,
+      "scope": "Optional generic app metadata; no bundled provider service or voice upload."
+    },
+    "image": {
+      "format": "RGB565",
+      "max_width": 320,
+      "max_height": 240,
+      "selected_display_bounds": true,
+      "fit": [
+        "contain",
+        "cover"
+      ],
+      "paths": "reviewed media-fixtures basename PNG only for tool import"
+    },
+    "result_context": {
+      "fields": [
+        "draft_id",
+        "request_id",
+        "revision"
+      ],
+      "max_distinct_contexts_per_worker": 64,
+      "reset_keeps_history": true,
+      "capacity_behavior": "fail_closed_until_reload",
+      "reset_history_scope": "Accepted in-app HoldReset retains worker-local history; supported Reload and panel Reset app/RST begin a new worker/session."
+    },
+    "capture_handshake": {
+      "required_worker_field": "capture_adapter",
+      "required_worker_value": 1,
+      "intent_fields": [
+        "id",
+        "source",
+        "action",
+        "sequence"
+      ],
+      "actions": [
+        "start",
+        "stop",
+        "cancel"
+      ],
+      "max_distinct_capture_ids_per_worker": 64,
+      "reset_keeps_history": true,
+      "capacity_behavior": "fail_closed_until_reload",
+      "passive_start": false,
+      "ready_requires_stopped": true,
+      "legacy_adapter_compatible": true,
+      "reset_history_scope": "Accepted in-app HoldReset retains worker-local history; supported Reload and panel Reset app/RST begin a new worker/session."
+    },
+    "text_delivery_acknowledgment": {
+      "worker_field": "app_input_accepted",
+      "accepted": true,
+      "other_commands": null,
+      "legacy_field_optional": true,
+      "native_voice_delivery_requires": "exact fresh same-identity text reply, explicit true and consumed original result context; valid successor allowed"
+    },
+    "touch_strip": {
+      "profiles": [
+        "cores3se"
+      ],
+      "required_worker_field": "touch_strip_adapter",
+      "required_worker_value": 1,
+      "required_app_declaration": "static constexpr unsigned touch_strip_adapter = 1",
+      "surface_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 280
+      },
+      "lcd_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 240
+      },
+      "legacy_worker_bounds_px": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 240
+      },
+      "mapping": "completed spatial TouchTap/TouchSwipe; A/B/C are app-defined touch regions, not physical switches"
+    },
+    "audio_input": {
+      "required_worker_field": "audio_input_adapter",
+      "required_worker_value": 1,
+      "format": "pcm_s16le",
+      "sample_rate": 16000,
+      "channels": 1,
+      "max_chunk_frames": 1600,
+      "max_session_ms": 300000,
+      "sources": [
+        "browser",
+        "fixture"
+      ],
+      "consent": "App demand plus a completed device gesture and browser/OS permission. Hide, switch, reload, stop, denial and failure disarm; a new gesture is required.",
+      "native_transport": "borrowed_pcm_callback",
+      "provider_submission": false
+    }
+  }
+}

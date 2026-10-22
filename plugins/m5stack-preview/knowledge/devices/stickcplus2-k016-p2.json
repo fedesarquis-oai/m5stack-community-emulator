@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "id": "stickcplus2-k016-p2",
+  "name": "M5StickC Plus2",
+  "sku": "K016-P2",
+  "verified_on": "2026-10-08",
+  "official_source": {
+    "url": "https://docs.m5stack.com/en/core/StickC-Plus2",
+    "sections": [
+      "Description",
+      "Specifications",
+      "Operation Instructions",
+      "PinMap"
+    ]
+  },
+  "hardware": {
+    "microcontroller": {
+      "model": "ESP32-PICO-V3-02",
+      "source_section": "Specifications"
+    },
+    "memory": {
+      "flash_mb": 8,
+      "psram_mb": 2,
+      "source_section": "Specifications"
+    },
+    "camera": {
+      "present": null,
+      "model": null,
+      "status": "not_listed_unverified",
+      "basis": "No camera is listed in the official Description, Specifications or PinMap; explicit absence and physical hardware were not verified."
+    },
+    "display": {
+      "resolution_px": [
+        135,
+        240
+      ],
+      "diagonal_inches": 1.14,
+      "controller_current": "ST7789V2",
+      "rotated_sizes_px": [
+        [
+          135,
+          240
+        ],
+        [
+          240,
+          135
+        ]
+      ],
+      "rotation_contract_ref": "index.json#/rotation_contract"
+    },
+    "touch": {
+      "present": false,
+      "controller": null
+    },
+    "buttons": {
+      "app": [
+        {
+          "id": "A",
+          "gpio": 37
+        },
+        {
+          "id": "B",
+          "gpio": 39
+        },
+        {
+          "id": "C",
+          "gpio": 35,
+          "shared_role": "power"
+        }
+      ],
+      "system": [
+        {
+          "id": "C",
+          "shared_with_app": true
+        }
+      ],
+      "power_semantics": "C also controls power; its behavior is not the workbench's one-second app reset."
+    },
+    "motion": {
+      "accelerometer": true,
+      "gyroscope": true,
+      "imu": "MPU6886",
+      "magnetometer": null
+    },
+    "microphone_input": {
+      "present": true,
+      "model": "SPM1423",
+      "interface": "PDM",
+      "channels": 1
+    },
+    "audio_output": {
+      "kind": "passive_buzzer",
+      "speaker": false,
+      "buzzer": true,
+      "gpio": 2
+    },
+    "battery": {
+      "included": true,
+      "capacity_mah": 200,
+      "location": "inside controller"
+    },
+    "body_dimensions_mm_as_published": [
+      48,
+      24,
+      13.5
+    ],
+    "rtc": {
+      "present": true,
+      "model": "BM8563"
+    },
+    "infrared": {
+      "transmit": true,
+      "receive": false,
+      "gpio": 19,
+      "shared_with": "red LED"
+    },
+    "leds": {
+      "red": {
+        "programmable": true,
+        "gpio": 19,
+        "shared_with": "IR emitter"
+      },
+      "green": {
+        "programmable": false,
+        "role": "sleep indicator"
+      }
+    },
+    "power": {
+      "hold_gpio": 4,
+      "button": "C",
+      "power_button_semantics": "More than 2s on; more than 6s off without USB, sleep with USB; not the app reset"
+    },
+    "ports": {
+      "usb": "Type-C",
+      "grove": "HY2.0-4P I2C/I/O/UART",
+      "hat": true,
+      "external_gpio": [
+        "G0",
+        "G25/G26",
+        "G36",
+        "G32",
+        "G33"
+      ]
+    }
+  },
+  "native_preview": {
+    "baseline_ref": "index.json#/preview_baseline",
+    "runtime_profile": "stickcplus2",
+    "profile_exists": true,
+    "framebuffer_px": [
+      135,
+      240
+    ],
+    "inputs": [
+      "primary_A_completed_gesture",
+      "secondary_B_completed_gesture",
+      "synthetic_roll",
+      "synthetic_shake",
+      "app_reset",
+      "app_requested_microphone_PCM"
+    ],
+    "hardware_buttons_in_metadata": [
+      "A",
+      "B"
+    ],
+    "buttons_implemented": [
+      "A",
+      "B"
+    ],
+    "buttons_not_implemented": [
+      "C"
+    ],
+    "audio_output_intent": "bounded_app_tone",
+    "rotation_control": false,
+    "camera_adapter": false,
+    "battery_simulation": false,
+    "hardware_verified_by_this_task": false,
+    "microphone_adapter": true,
+    "display_pose": {
+      "enabled": true,
+      "roll_source": "acknowledged semantic roll",
+      "framebuffer_rotation": false,
+      "changes_native_resolution": false
+    },
+    "additional_peripheral_adapters": {
+      "rtc": false,
+      "ir": false,
+      "led": false,
+      "magnetometer": false,
+      "camera": false,
+      "proximity": false,
+      "battery": false,
+      "power": false,
+      "storage": false,
+      "gpio": false,
+      "radio": false
+    },
+    "requires_native_media_adapter": 1,
+    "microphone_input": {
+      "mode": "pcm",
+      "format": "PCM16",
+      "sample_rate_hz": 16000,
+      "sources": [
+        "fixture",
+        "browser"
+      ],
+      "pcm_transport": true,
+      "channels_emulated": 1,
+      "requires_worker_adapter": "audio_input_adapter:1"
+    },
+    "microphone_mapping": "UserApp onMicrophoneBlock; 16 kHz mono PCM; app opt-in required",
+    "audio_output": {
+      "renderer": "buzzer_square_approximation",
+      "apps": [
+        "counter",
+        "custom"
+      ],
+      "frequency_hz_range": [
+        40,
+        4000
+      ],
+      "duration_ms_range": [
+        1,
+        1000
+      ],
+      "default_muted": true,
+      "explicit_browser_enable_required": true,
+      "full_pcm_stream": false,
+      "trail": "none",
+      "legacy_worker": "disabled",
+      "automatic_starter_tone": false
+    },
+    "speaker_pcm": {
+      "implemented": false
+    },
+    "secondary_button": {
+      "implemented": true,
+      "name": "B",
+      "requires_worker_adapter": "secondary_button_adapter:1",
+      "application_events": [
+        "SecondaryClick",
+        "SecondaryHold"
+      ]
+    },
+    "network": {
+      "implemented": true,
+      "adapter": 1,
+      "transport": "host HTTP(S)",
+      "rf_simulation": false
+    }
+  },
+  "do_not_alias": [
+    "StickS3 K150",
+    "StickC",
+    "StickC Plus",
+    "StickC Plus SE"
+  ],
+  "browser_preview": {
+    "profile_exists": true,
+    "microphone_adapter": true,
+    "microphone_mode": "app_requested_PCM16_16000Hz_mono",
+    "microphone_sources": [
+      "browser",
+      "fixture"
+    ],
+    "microphone_default": "off",
+    "explicit_enable_and_permission_required": true,
+    "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
+    "audio_output": "buzzer_tone",
+    "audio_default": "muted",
+    "explicit_sound_enable_required": true,
+    "volume_control": true,
+    "local_test_tone": false,
+    "full_audio_playback": false,
+    "camera_adapter": false,
+    "actual_host_support_verified_by_this_task": false
+  }
+}

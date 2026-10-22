@@ -1,0 +1,7 @@
+vendor/
+.local/
+.build/
+logs/
+dist/
+__pycache__/
+.delivery/
