@@ -19,14 +19,14 @@ Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 - [x] The extracted package created a verified workspace and refused to overwrite an edited one; all 67 workspace files remained unchanged.
 - [x] Package hashes, bundle/license inventory, source boundaries and documentation links checked. This boundary scan is not a security audit.
 - [x] Existing app workspaces preserved. No USB access or writes during this release pass; the default installed plugin was not replaced.
-- [x] Community ZIP sharing instructions included. Nothing has been uploaded or publicly published.
+- [x] Community ZIP fallback and public GitHub sharing instructions included.
 
 ## Independent validation and publication
 
 - [ ] A new user on another Mac follows INSTALL.md using their own idea. Keep this pending until someone actually does it.
 - [ ] Complete manual Chrome tab-hide, permission revocation during capture and OS-level audio interruption/recovery. Automated cases pass; this browser pass did not establish the hide behavior and further native UI actions were interrupted. See VALIDATION.md for the observed scope.
-- [ ] Publisher chooses the GitHub account and authorizes public repository/release creation, if a public link is wanted.
-- [ ] Verify the actual public download and instructions before distributing that link.
+- [x] Publisher chose `fedesarquis-oai` and authorized public repository/release creation.
+- [x] Verified a fresh public HTTPS clone, exact reviewed tree, package hashes and MCP startup. The first GitHub Actions run passed. See VALIDATION.md for the commit and evidence.
 
 Current clean-extraction tests do not claim a new Codex host installation. Earlier isolated CLI install, repeat install, upgrade and removal checks remain scoped to 0.7.38. The current CLI exposes no isolated state flag, so this pass preserves the user's default installation.
 

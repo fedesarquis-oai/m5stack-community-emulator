@@ -4,7 +4,7 @@ The supported community-preview setup is **Codex on macOS Apple Silicon + Chrome
 
 ## Let Codex handle setup
 
-For a published GitHub repository, copy its URL into a new Codex chat and ask:
+Copy [the repository URL](https://github.com/fedesarquis-oai/m5stack-community-emulator) into a new Codex chat and ask:
 
 > Install the M5Stack Community Emulator from this GitHub repository using Codex’s supported plugin marketplace commands. Read its installation guide, check this computer’s prerequisites and verify the active plugin version. Then ask what I want to build. Help me choose a supported device, create my app in a separate workspace, and build and test it in Chrome using the existing emulator.
 
@@ -16,16 +16,16 @@ If you already downloaded or cloned the repository, open its folder in Codex and
 
 Codex should ask about your idea before choosing an app or device for you. If you already described the app or named a board, it should continue from that information. It can recommend a supported profile based on the controls and features your app needs. You do not need to build an example or select a community project first.
 
-This route is ready for publication but requires a real published repository URL. A local folder or an unpublished repository name is not a shareable link.
+The public repository contains the plugin and setup instructions. A local emulator URL is private to the computer running it and is not the installation link.
 
 The repository includes ready-built JavaScript bundles. Users do not need to install the plugin's npm/pnpm dependencies. Native device apps still need a compiler and pinned library sources.
 
 ## Manual installation
 
-For a published GitHub source, replace `REPOSITORY_URL` with its actual HTTPS GitHub URL:
+To install from the public GitHub source:
 
 ```sh
-codex plugin marketplace add REPOSITORY_URL
+codex plugin marketplace add https://github.com/fedesarquis-oai/m5stack-community-emulator
 codex plugin add m5stack-preview@m5stack-community
 ```
 

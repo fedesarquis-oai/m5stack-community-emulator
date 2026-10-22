@@ -1,6 +1,6 @@
 # Share from GitHub
 
-The main sharing link should be the public GitHub repository. It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
+Share [the public GitHub repository](https://github.com/fedesarquis-oai/m5stack-community-emulator). It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
 
 ## What the recipient does
 
@@ -25,7 +25,7 @@ Create a versioned community-preview release for **v0.7.42**. Optional release a
 
 After publication, check the real GitHub URL, clone it into a new directory, verify package hashes, start its MCP server and confirm version 0.7.42, 14 tools and five profiles. Check the first GitHub Actions result. Do not call a local Git clone or a prepared ZIP a completed public installation.
 
-The current package is prepared locally. No public repository URL is asserted by these instructions.
+The 0.7.42 source was published on October 22, 2026. A fresh public HTTPS clone passed package verification and MCP startup, and the [first GitHub Actions run passed](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/39816856736). The downloaded tree matched the reviewed local tree. These checks do not establish setup on another person's Mac.
 
 ## ZIP fallback
 

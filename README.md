@@ -10,7 +10,7 @@ Original code is available under the [MIT license](LICENSE). Upstream components
 
 ## Start with your idea
 
-1. Copy this repository’s GitHub URL into a new Codex chat.
+1. Copy [this repository’s GitHub URL](https://github.com/fedesarquis-oai/m5stack-community-emulator) into a new Codex chat.
 2. Paste this:
 
    > Install the M5Stack Community Emulator from the GitHub repository I linked, using Codex’s supported plugin marketplace flow. Read its installation guide, check this computer’s prerequisites and verify the active version. Then ask what I want to build. Help me choose a supported device, create my app in a separate workspace, and build and test it in Chrome using the existing emulator.
