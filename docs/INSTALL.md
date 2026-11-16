@@ -2,7 +2,7 @@
 
 The supported community-preview setup is **Codex on macOS Apple Silicon + Chrome**. Other operating systems and browsers have not completed end-to-end validation. Workspace administrators may restrict custom plugins; follow their controls. A physical M5Stack device is optional.
 
-Windows x64 and Linux setup paths are now implemented. Read [host setup](../plugins/m5stack-preview/runtime/docs/host-setup.md) and [builder readiness](BUILDER-READINESS.md) for prerequisites and acceptance status. The portable MCP launcher requires Node 22+ on PATH and no shell. Run the packaged `scripts/preflight.py --probe` before installation; it checks an actual C/C++ compile/link/run. Windows/Linux live browser and USB acceptance remain pending.
+Windows x64 and Linux setup paths passed the native CI checks. Read [host setup](../plugins/m5stack-preview/runtime/docs/host-setup.md) and [builder readiness](BUILDER-READINESS.md) for prerequisites and acceptance status. The portable MCP launcher requires Node 22+ on PATH and no shell. Run the packaged `scripts/preflight.py --probe` before installation; it checks an actual C/C++ compile/link/run. Windows/Linux live browser and USB acceptance remain pending.
 
 ## Let Codex handle setup
 
@@ -44,7 +44,7 @@ If the CLI isn't on the shell's PATH, ask Codex to locate the CLI supplied by th
 
 Verify by asking: “Show this plugin's active version and supported devices.” This candidate reports **0.7.44** and five profiles. Check the connected plugin's catalog, not just a file on disk. Unknown boards must stay unsupported rather than being silently mapped to a similar device.
 
-The November 16 host/CoreS3 candidate is not yet published: the public GitHub source still reports 0.7.42. To test 0.7.44 now, use its reviewed extracted repository and the local marketplace flow above. See [sharing state](SHARING.md).
+The November 16 host/CoreS3 candidate is published only in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); GitHub main still reports 0.7.42. To test 0.7.44 now, use the reviewed candidate ZIP or that exact review branch with the local marketplace flow above. See [sharing state](SHARING.md).
 
 ## Prerequisites
 

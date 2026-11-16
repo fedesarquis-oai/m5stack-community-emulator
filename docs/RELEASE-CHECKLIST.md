@@ -6,7 +6,7 @@ Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 
 ## Accessory update scope
 
-The 0.7.44 candidate includes the prior accessory library, portable host setup and a compiled standard CoreS3 target. No accessory adapters or new physical acceptance are claimed. Windows/Linux native CI and live-browser checks remain release gates until executed. See [builder readiness](BUILDER-READINESS.md). Publication of this update remains pending; the historical public checkout evidence below covers 0.7.42.
+The 0.7.44 candidate includes the prior accessory library, portable host setup and a compiled standard CoreS3 target. No accessory adapters or new physical acceptance are claimed. Windows/Linux/macOS native CI passed; independent live-browser checks remain release gates. See [builder readiness](BUILDER-READINESS.md). The candidate is public in draft PR #1; merge/release remains pending; the historical public checkout evidence below covers 0.7.42.
 
 ## Completed locally
 
@@ -35,7 +35,7 @@ The checks below retain their original release scope in VALIDATION.md. They are 
 
 ## Independent validation and publication
 
-- [ ] Execute the new Windows/Linux/macOS native CI matrix on the reviewed candidate.
+- [x] Windows x64, Ubuntu x64 and macOS 26 ARM64 completed the [native CI matrix](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43972900467) on the reviewed runtime, including fresh firmware setup and CoreS3 compilation.
 - [ ] Complete Windows/Linux Codex/Chrome controls, audio and USB checks; CI cannot grant browser permissions or hear audio.
 - [ ] Complete standard CoreS3 K128 backup, boot, inputs, audio, network and power-cycle acceptance when the device is available.
 

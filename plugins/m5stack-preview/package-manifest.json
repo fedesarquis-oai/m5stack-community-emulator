@@ -260,9 +260,9 @@
       "sha256": "9a1fd0da52385774d7be631d89fa3a748e00ba88c858c264493c6f17e50bc26e"
     },
     "runtime/docs/host-setup.md": {
-      "bytes": 6325,
+      "bytes": 6396,
       "mode": 420,
-      "sha256": "4b3e0b32ddecaf93d383d3f4160cb66f8cdeca0c13074e0514730d999ed2916b"
+      "sha256": "1beb915bc5648a51aa34ab92cc68f07937f8f95c6220a1a45bf4dc2ac9b35b35"
     },
     "runtime/docs/microphone-input.md": {
       "bytes": 6873,
@@ -275,9 +275,9 @@
       "sha256": "0b052a98fc4af5df961ef87b0b3bccda42331bfeb949f69e229066d657607f62"
     },
     "runtime/docs/release-validation.md": {
-      "bytes": 9877,
+      "bytes": 10472,
       "mode": 420,
-      "sha256": "bc1a660bf514ea12c88e9008163b305c10c664d2a0f7beb029d7b28f95e90dd5"
+      "sha256": "5cd160c1d6c53978cc1fe198ad418b2ed524190e6b59c1f9114d0eb907da9b74"
     },
     "runtime/docs/shake-provenance.json": {
       "bytes": 3946,

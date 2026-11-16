@@ -2,7 +2,7 @@
 
 Share [the public GitHub repository](https://github.com/fedesarquis-oai/m5stack-community-emulator). It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
 
-The public source remains 0.7.42. The accessory update is a local **0.7.44 candidate** until its reviewed tree is published. Share the candidate ZIP explicitly for prerelease testing; do not promise that installing from GitHub already includes it.
+GitHub main and the installed plugin remain at 0.7.42. The **0.7.44 candidate** is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1), with native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. It is not merged or released. Share the candidate ZIP explicitly for prerelease testing; do not promise that installing from GitHub already includes it.
 
 ## What the recipient does
 
@@ -37,6 +37,6 @@ A localhost preview URL only works on the computer running the emulator and cont
 
 ## First independent tester
 
-Have someone on another macOS Apple Silicon computer follow the instructions using their own app idea. Record the host/tool versions, active plugin version, setup result and whether the app builds and runs in Chrome. Keep this check pending until it actually happens.
+Have independent testers on macOS, Windows x64 and Linux x64 follow the candidate instructions using their own app ideas. CI has validated native builds; it does not replace live Codex/Chrome acceptance. Record the host/tool versions, active plugin version, setup result and whether the app builds and runs in Chrome. Keep this check pending until it actually happens.
 
 The [validation record](VALIDATION.md) and [release checklist](RELEASE-CHECKLIST.md) distinguish current checks, historical hardware acceptance and remaining manual audio-interruption work.

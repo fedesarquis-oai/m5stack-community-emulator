@@ -2,7 +2,7 @@
 
 Use the same native app workspace and Chrome shell on each operating system. The portable launcher is `node <plugin-root>/server/launch.mjs`; no shell, WSL or virtual machine is required. A compatible **Node 22+ must be on the PATH inherited by Codex**. Restart Codex after a normal tool installation changes PATH. Never disable company security or silently switch executables after a denial.
 
-Setup code is implemented for the hosts below. Implementation is not acceptance: see the repository validation record for real runner and browser results. Only macOS Apple Silicon has historical live Chrome audio acceptance.
+Fresh native setup/build/worker checks and CoreS3 firmware compilation passed CI on Windows x64, Ubuntu x64 and macOS 26 ARM64. See the validation record for exact scope. Intel Mac and Linux ARM64 execution remain unverified. Only macOS Apple Silicon has historical live Chrome audio acceptance.
 
 | Host | Native app prerequisites | Firmware setup |
 |---|---|---|

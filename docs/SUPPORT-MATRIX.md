@@ -21,7 +21,7 @@ Community candidate: **0.7.44**. Hardware acceptance below was collected before 
 
 Six general accessory references are available through the catalog/device-guide tools. All are **knowledge only**: manufacturer references and source review, no packaged emulator inputs, firmware adapters or physical acceptance. See [accessories](ACCESSORIES.md) and the [builder readiness review](BUILDER-READINESS.md).
 
-The Node launcher and OS-specific firmware setup now cover macOS/Linux x64 or ARM64 and native Windows x64. Windows/Linux code paths and CI jobs are implemented; real-host results must still be checked in [validation](VALIDATION.md). Live browser audio and USB acceptance remain pending on those hosts. Windows ARM64 firmware setup is unsupported by the pinned CLI release. Read [host setup](../plugins/m5stack-preview/runtime/docs/host-setup.md).
+The Node launcher and OS-specific firmware setup now cover macOS/Linux x64 or ARM64 and native Windows x64. Fresh setup, all five native profiles and CoreS3 firmware compilation passed CI on Windows x64, Ubuntu x64 and macOS 26 ARM64; see [validation](VALIDATION.md). Intel Mac and Linux ARM64 execution remain unverified. Live browser audio and USB acceptance remain pending on those hosts. Windows ARM64 firmware setup is unsupported by the pinned CLI release. Read [host setup](../plugins/m5stack-preview/runtime/docs/host-setup.md).
 
 ## Bounds that matter
 
@@ -32,7 +32,7 @@ The Node launcher and OS-specific firmware setup now cover macOS/Linux x64 or AR
 - No BLE, camera, storage/SD, GPIO/IR, raw radio, complete RTC or electrical power/battery simulation.
 - CoreS3 K128 now has its own compiled target, with physical acceptance pending. StickC Plus2 remains emulator-only. Never substitute another board's firmware.
 - Codex panel microphone capture was blocked in inspected host versions. Browser success doesn't establish panel support.
-- First-time installation on a separate Mac remains an external acceptance check. Windows/Linux and long-duration operation remain unvalidated.
+- First-time installation on a separate Mac remains an external acceptance check. Windows/Linux live Codex/Chrome/USB acceptance and long-duration operation remain unvalidated.
 
 ## Evidence
 

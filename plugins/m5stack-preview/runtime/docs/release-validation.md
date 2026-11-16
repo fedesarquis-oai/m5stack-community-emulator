@@ -4,7 +4,9 @@ These records distinguish current source/native checks from earlier browser and 
 
 ## Portable host candidate 0.7.44 — November 16, 2026
 
-The portable Node entrypoint, native Windows/Linux setup branches and standard CoreS3 target are implemented. The CoreS3 firmware compiled on the existing Mac toolchain; physical acceptance remains pending. Focused host/setup and transport tests passed on this Mac. CI now includes native build/worker checks for macOS, Windows and Linux; those runner results and live Chrome/USB acceptance must be collected separately. No USB operation was performed. The fixed emulator and media contracts are unchanged.
+The portable Node entrypoint, native Windows/Linux setup and separate standard CoreS3 target are implemented. [CI run 43972900467](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43972900467) passed compiler/MCP checks, fresh native dependency setup, all five actual workers with controls and known PCM, private-file/process/lock checks, byte-exact native pipes, firmware-tool setup and CoreS3 compilation on Windows x64, Ubuntu x64 and macOS 26 ARM64. Windows response-file quoting, inherited PowerShell module selection and text-mode pipes were corrected. No USB operation or live capture was performed.
+
+Physical CoreS3 and independent Windows/Linux Codex/Chrome acceptance remain pending. Local temporary test executables encountered macOS signature-policy rejection; clean macOS CI passed, but the local policy issue was not bypassed or declared resolved. The fixed emulator UI and media contracts remain unchanged. Candidate source is in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); main and the installed plugin stay at 0.7.42.
 
 ## Accessory candidate 0.7.43 — November 16, 2026
 
