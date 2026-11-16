@@ -54,6 +54,10 @@ def arduino_asset(version, system=None, machine=None):
 # PowerShell, without an execution-policy override or credential in arguments.
 _ACL_SCRIPT = r'''
 $ErrorActionPreference = 'Stop'
+# A caller launched from PowerShell 7 can inherit its incompatible module
+# search paths. Select the security module bundled with this OS PowerShell;
+# do not clear PSModulePath or change execution policy.
+Import-Module "$PSHOME\Modules\Microsoft.PowerShell.Security\Microsoft.PowerShell.Security.psd1" -ErrorAction Stop
 $p = $env:M5_PRIVATE_PATH
 $acl = Get-Acl -LiteralPath $p
 $sid = [System.Security.Principal.WindowsIdentity]::GetCurrent().User
@@ -62,7 +66,7 @@ if ($env:M5_PRIVATE_ACTION -eq 'protect') {
   $acl.SetAccessRuleProtection($true, $false)
   foreach ($rule in @($acl.Access)) { [void]$acl.RemoveAccessRuleSpecific($rule) }
   $inherit = [System.Security.AccessControl.InheritanceFlags]::None
-  if (Test-Path -LiteralPath $p -PathType Container) {
+  if ([System.IO.Directory]::Exists($p)) {
     $inherit = [System.Security.AccessControl.InheritanceFlags]'ContainerInherit,ObjectInherit'
   }
   foreach ($identity in @($sid, [System.Security.Principal.SecurityIdentifier]::new('S-1-5-18'))) {

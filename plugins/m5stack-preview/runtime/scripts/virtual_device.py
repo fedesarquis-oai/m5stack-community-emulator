@@ -74,11 +74,13 @@ def build(workflow, profile='stickcplus2'):
     binary = BUILD/('worker-'+digest[:16]+'-'+secrets.token_hex(4)+('.exe' if os.name=='nt' else ''))
     # A full LVGL link can exceed Windows' command-line limit in a builder's
     # long workspace path. Clang reads the same arguments from a response file.
-    link_args = [str(obj) for obj in objects] + ['-o', str(binary)]
+    # Clang accepts forward slashes on Windows. Avoid backslashes in response
+    # files: LLVM's GNU tokenizer consumes them even inside quoted arguments.
+    link_args = [obj.as_posix() for obj in objects] + ['-o', binary.as_posix()]
     response = binary.with_suffix('.rsp')
     try:
         # clang++ uses GNU response-file quoting even on Windows; only clang-cl
-        # defaults to Windows quoting. shlex.quote preserves Windows backslashes.
+        # defaults to Windows quoting. Quote the normalized paths for spaces.
         response.write_text(shlex.join(link_args), encoding='utf-8')
         workflow.run(['clang++', '@'+str(response)], log='web-link.log')
     finally:

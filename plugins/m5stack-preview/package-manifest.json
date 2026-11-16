@@ -340,14 +340,14 @@
       "sha256": "aae1d9c23123b547c9691ca22121fc234021b19f50b34b2fef98839532a092b1"
     },
     "runtime/scripts/host.py": {
-      "bytes": 5164,
+      "bytes": 5473,
       "mode": 420,
-      "sha256": "11a9f36e6722ae46a6ad28345527e7803533f00a70ac62089682e675593e04ac"
+      "sha256": "d92cdb9894ada2a6b4e78c6923e4dbb1b6da6b8ddad8d97f0c1f507cb1c2c23f"
     },
     "runtime/scripts/virtual_device.py": {
-      "bytes": 5308,
+      "bytes": 5472,
       "mode": 420,
-      "sha256": "df40f841b07ac3180761510dfc5bd458d8fc17f7c32f970a4595ccdb87b223b7"
+      "sha256": "d8aa125f3fb43fdbc5aa2ccc86e2d3e54c4b13c89f0c620ee1d800b4fe4b753a"
     },
     "runtime/src/ShakeDetector.h": {
       "bytes": 4409,
