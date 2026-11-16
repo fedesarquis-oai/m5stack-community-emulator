@@ -4,23 +4,23 @@
   "bundles": [
     {
       "path": "server/dist/index.js",
-      "bytes": 1389030,
-      "sha256": "623d008a08862448e47f6aaeddee0f4945ba00440ecc7b536ca48615ab8307ce"
+      "bytes": 1397864,
+      "sha256": "64faab1dcda25f13aaeb72466666cb9a23d87cae3fe6863418d070411b698c7d"
     },
     {
       "path": "server/dist/application-server.js",
-      "bytes": 1389016,
-      "sha256": "26fdf6e990034242cb868ff48430e00c9865f7f14392df324653c6486590fb9a"
+      "bytes": 1397850,
+      "sha256": "877333534d1c6092487d6485b174ce022a79be3f2aff206a64a931ccb73f8c31"
     },
     {
       "path": "server/dist/browser-preview.js",
-      "bytes": 1427891,
-      "sha256": "f2aaf5f49f40e56553cf7b9c2292e885e17a6c0c15faa8f333d324748bafd60d"
+      "bytes": 1436863,
+      "sha256": "a5bf5f3c5e3f6a6a59600640f37c9f6c80fd967b262b1db7c334a9a34a3a89a8"
     },
     {
       "path": "ui/dist/workbench.html",
-      "bytes": 902162,
-      "sha256": "36a75578ce3891207578b6f78824a738232cc9d3d1f292113ca586e69ad57b39"
+      "bytes": 902680,
+      "sha256": "d6c5b50b4599882e3dbe0ccaea080aa8cd2aaa3505a90448619da2a710ac7419"
     },
     {
       "path": "ui/dist/browser-host.js",
@@ -743,7 +743,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/index.js",
-          "bytesInOutput": 5085
+          "bytesInOutput": 5087
         }
       ]
     },
@@ -799,7 +799,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/schemes.js",
-          "bytesInOutput": 14892
+          "bytesInOutput": 14896
         },
         {
           "target": "server",
@@ -872,7 +872,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js",
-          "bytesInOutput": 9027
+          "bytesInOutput": 9029
         },
         {
           "target": "server",
@@ -882,7 +882,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js",
-          "bytesInOutput": 304242
+          "bytesInOutput": 304244
         },
         {
           "target": "server",
@@ -892,12 +892,12 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js",
-          "bytesInOutput": 61329
+          "bytesInOutput": 61334
         },
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js",
-          "bytesInOutput": 14772
+          "bytesInOutput": 14784
         },
         {
           "target": "server",
@@ -1277,7 +1277,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js",
-          "bytesInOutput": 51114
+          "bytesInOutput": 51118
         },
         {
           "target": "server",
@@ -2322,7 +2322,7 @@
         {
           "target": "server",
           "path": "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js",
-          "bytesInOutput": 7161
+          "bytesInOutput": 7166
         },
         {
           "target": "ui",

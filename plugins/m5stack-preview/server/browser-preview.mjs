@@ -28,13 +28,16 @@ export async function runBrowserPreview(argumentsList = process.argv.slice(2)) {
     return await startBrowserPreview({backend, uiRoot: path.join(PLUGIN_ROOT, 'ui'), openArguments: args});
   } catch (error) { try { await instance.close(); } finally { await client.close(); } throw error; }
 }
+export async function main(argumentsList = process.argv.slice(2)) {
+  const preview = await runBrowserPreview(argumentsList);
+  console.log('Local browser preview (30 minutes). Open this capability URL in Chrome:');
+  console.log(preview.url);
+  console.log('Use the device app to request microphone input; Chrome asks for permission. Sound starts with device interaction; mute and volume are in Audio settings. Ctrl-C stops this preview.');
+  const stop = () => { void preview.close().catch(() => { process.exitCode = 1; }); };
+  process.once('SIGINT', stop); process.once('SIGTERM', stop);
+  return preview;
+}
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  try {
-    const preview = await runBrowserPreview();
-    console.log('Local browser preview (30 minutes). Open this capability URL in Chrome:');
-    console.log(preview.url);
-    console.log('Use the device app to request microphone input; Chrome asks for permission. Sound starts with device interaction; mute and volume are in Audio settings. Ctrl-C stops this preview.');
-    const stop = () => { void preview.close().catch(() => { process.exitCode = 1; }); };
-    process.once('SIGINT', stop); process.once('SIGTERM', stop);
-  } catch { console.error('Browser preview did not start. Verify the command, approved Node runtime and prepared workspace build.'); process.exitCode = 1; }
+  try { await main(); }
+  catch { console.error('Browser preview did not start. Verify the command, approved Node runtime and prepared workspace build.'); process.exitCode = 1; }
 }

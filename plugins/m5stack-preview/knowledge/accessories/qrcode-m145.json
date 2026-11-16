@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "qrcode-m145",
+  "name": "Module13.2 QRCode",
+  "sku": "M145",
+  "aliases": [
+    "QR Scanner 13.2",
+    "Module13.2 QRCode",
+    "QRCode Module 13.2"
+  ],
+  "category": "stack_module",
+  "reviewed_on": "2026-11-16",
+  "summary": "Decodes printed or displayed barcodes into text; separate from the Core camera.",
+  "interface": {
+    "data_bus": "UART or USB (switch-selected)",
+    "baud": 115200,
+    "serial_format": "8N1",
+    "control_bus": "internal M5-Bus I2C",
+    "control_address": "0x43",
+    "control_chip": "PI4IOE5V6408",
+    "controls": {
+      "P0": "QR_5V_EN",
+      "P4": "TRIG"
+    },
+    "normal_output": "decoded barcode bytes"
+  },
+  "host_bindings": [
+    {
+      "host_profile": "cores3",
+      "connector": "M5-Bus",
+      "pins": {
+        "uart_rx": 18,
+        "uart_tx": 17,
+        "i2c_sda": 12,
+        "i2c_scl": 11
+      },
+      "basis": "derived_from_two_manufacturer_pinmaps",
+      "physical_validation": "not_run",
+      "notes": "Candidate UART route: select QR_TX to M5-Bus pin15 (Core RX18), QR_RX to pin16 (Core TX17); disconnect alternative UART routes. Verify actual DIP labels and orientation before power-up. The scanner uses these PORT.C signals; do not connect another UART peripheral to them."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Confirm exact M145, stack orientation and screws with power disconnected. DinBase assembly/order needs a physical fit check.",
+    "Select UART and the reviewed DIP route; initialize M5Unified, internal I2C expander and M5Module-QRCode with explicit RX/TX. Defaults/examples target other boards.",
+    "Trigger a scan; display a harmless test payload; stop scanning and keep touch responsive. Use USB mode only as a separate host workflow."
+  ],
+  "troubleshooting": [
+    "A beep alone does not prove the app received data; check UART and switch mode.",
+    "The I2C 0x43 expander controls power/trigger; it does not carry decoded text.",
+    "PORT.C changes function in USB mode. Do not treat it as an ordinary Grove UART at the same time."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "scan:DEMO-001",
+      "no_result",
+      "malformed_payload",
+      "duplicate_scan"
+    ],
+    "note": "Use explicitly labeled app-owned text fixtures if requested; there is no scanner emulator. Bound payload size and treat scanned text as data, never commands."
+  },
+  "sources": [
+    {
+      "title": "Module13.2 QRCode manual",
+      "url": "https://docs.m5stack.com/en/module/Module13.2_QRCode",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "Arduino QRCode tutorial",
+      "url": "https://docs.m5stack.com/en/arduino/projects/module/module13.2_qrcode",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "CoreS3 K128 manual",
+      "url": "https://docs.m5stack.com/en/core/CoreS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "HY2.0-4P",
+        "M5-Bus",
+        "Includes"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "M5Module-QRCode",
+      "repository": "https://github.com/m5stack/M5Module-QRCode",
+      "reviewed_commit": "55a21101829819d26095cc027e82c987717dc987",
+      "author": "M5Stack",
+      "license": "MIT",
+      "purpose": "UART decode and expander control; reviewed source uses M5.In_I2C and 115200 baud.",
+      "installed_by_plugin": false
+    }
+  ]
+}

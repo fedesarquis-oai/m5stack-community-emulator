@@ -1,6 +1,6 @@
 {
   "name": "m5stack-preview",
-  "version": "0.7.42",
+  "version": "0.7.44",
   "private": true,
   "type": "module",
   "engines": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "notices": "node scripts/collect-notices.mjs",
-    "test:release": "node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/browser-preview.test.mjs"
+    "test:release": "node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/host-support.test.mjs tests/portable-host.test.mjs tests/hardware-jobs.test.mjs tests/browser-preview.test.mjs tests/launcher.test.mjs"
   },
   "dependencies": {
     "@openai/mcp-extensions": "0.1.0",

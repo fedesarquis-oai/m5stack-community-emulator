@@ -2,6 +2,8 @@
 
 The supported community-preview setup is **Codex on macOS Apple Silicon + Chrome**. Other operating systems and browsers have not completed end-to-end validation. Workspace administrators may restrict custom plugins; follow their controls. A physical M5Stack device is optional.
 
+Windows x64 and Linux setup paths are now implemented. Read [host setup](../plugins/m5stack-preview/runtime/docs/host-setup.md) and [builder readiness](BUILDER-READINESS.md) for prerequisites and acceptance status. The portable MCP launcher requires Node 22+ on PATH and no shell. Run the packaged `scripts/preflight.py --probe` before installation; it checks an actual C/C++ compile/link/run. Windows/Linux live browser and USB acceptance remain pending.
+
 ## Let Codex handle setup
 
 Copy [the repository URL](https://github.com/fedesarquis-oai/m5stack-community-emulator) into a new Codex chat and ask:
@@ -40,15 +42,17 @@ Restart/reload Codex if it asks. Alternatively, after marketplace registration, 
 
 If the CLI isn't on the shell's PATH, ask Codex to locate the CLI supplied by the desktop app and inspect its supported plugin commands. If it is unavailable, use the host's supported Plugin Creator/local marketplace flow. Don't copy files into the installed cache. If you already use a development copy with internal ID `m5stack-preview`, keep one intended source enabled and preserve all app workspaces before replacing that source. Never remove unrelated plugins.
 
-Verify by asking: “Show this plugin's active version and supported devices.” This candidate reports **0.7.42** and five profiles. Check the connected plugin's catalog, not just a file on disk. Unknown boards must stay unsupported rather than being silently mapped to a similar device.
+Verify by asking: “Show this plugin's active version and supported devices.” This candidate reports **0.7.44** and five profiles. Check the connected plugin's catalog, not just a file on disk. Unknown boards must stay unsupported rather than being silently mapped to a similar device.
+
+The November 16 host/CoreS3 candidate is not yet published: the public GitHub source still reports 0.7.42. To test 0.7.44 now, use its reviewed extracted repository and the local marketplace flow above. See [sharing state](SHARING.md).
 
 ## Prerequisites
 
 | Requirement | Used for |
 |---|---|
-| Existing Node.js 22+ | Local MCP server and Chrome preview; launcher can use a compatible runtime bundled with the desktop host |
+| Node.js 22+ on Codex's inherited PATH | Portable MCP and Chrome launcher; restart Codex after a normal PATH-changing installation |
 | Python 3.9+ and Git | Workspace creation, pinned dependency setup and build coordination |
-| Clang/Clang++ and platform headers | Compile native C/C++ app code; normally provided by Apple's Command Line Tools |
+| Clang/Clang++ and platform headers/linker | Apple Command Line Tools on macOS; LLVM + Visual Studio C++ Build Tools/Windows SDK on Windows; development packages on Linux |
 | Chrome | Browser testing, microphone permission and playback |
 | Internet for initial setup | Fetch the pinned upstream native libraries |
 
@@ -59,24 +63,24 @@ Ask Codex to run `m5stack_doctor`. It reports paths/presence, not a successful b
 After understanding your idea and selecting the profile, Codex resolves the installed plugin root and creates a new writable workspace outside it:
 
 ```sh
-python3 /absolute/plugin-root/scripts/create_workspace.py --destination /absolute/new-app
+python /absolute/plugin-root/scripts/create_workspace.py --destination /absolute/new-app
 cd /absolute/new-app
-./m5preview doctor
-./m5preview setup --browser-only
-./m5preview web-build --profile <selected-profile>
+python m5preview doctor
+python m5preview setup --browser-only
+python m5preview web-build --profile <selected-profile>
 ```
 
-Substitute the profile Codex selected with you: `atoms3r`, `stickcplus2`, `sticks3`, `cores3` or `cores3se`. The parent directory must exist; the helper refuses to overwrite a project. The generated files provide a technical scaffold, which Codex edits into your app. Existing app workspaces stay separate from the plugin and its updates.
+Use `python3` instead of `python` on systems where that is the selected Python 3 executable. Substitute the profile Codex selected with you: `atoms3r`, `stickcplus2`, `sticks3`, `cores3` or `cores3se`. The parent directory must exist; the helper refuses to overwrite a project. The generated files provide a technical scaffold, which Codex edits into your app. Existing app workspaces stay separate from the plugin and its updates.
 
 Setup downloads pinned native source into that workspace and may take a few minutes. It does not install system tools. Run only source you trust: the native app runs with your local process permissions.
 
 Then ask Codex to open your built workspace in Chrome. The equivalent launcher, from the plugin root, is:
 
 ```sh
-sh server/launch.sh --browser --workspace /absolute/new-app --profile <selected-profile> --app custom
+node server/launch.mjs --browser --workspace /absolute/new-app --profile <selected-profile> --app custom
 ```
 
-The shell launcher uses the same approved Node runtime selection as the plugin, so Node does not have to be on the terminal PATH when a compatible bundled runtime is found.
+MCP and Chrome use the same portable entrypoint and require Node 22+ on PATH. The legacy Unix shell wrapper is optional; its bundled-Node discovery does not satisfy the new MCP manifest prerequisite.
 
 Open the exact `http://127.0.0.1:PORT/#…` URL the launcher prints. Keep that process running. The link expires after 30 minutes and is private to your computer; don't share it as the plugin's download link. Use this launcher, not the historical `m5preview web` viewer.
 
@@ -84,7 +88,7 @@ The screen should say **Native app**, and show the app Codex built from your ide
 
 ## Optional physical installation
 
-When you are happy with your app, ask Codex to install it on a **CoreS3 SE K128-SE, AtomS3R C126 or StickS3 K150**. Codex must confirm the exact device, preserve and verify a private backup, compile firmware from your app source, install it, and verify startup. Test the app on the device before calling that deployment complete. CoreS3 standard and StickC Plus2 remain emulator-only in this release. Read the [support matrix](SUPPORT-MATRIX.md) for feature limits.
+When you are happy with your app, ask Codex to install it on a **CoreS3 K128, CoreS3 SE K128-SE, AtomS3R C126 or StickS3 K150**. Codex must confirm the exact device, preserve and verify a private backup, compile firmware from your app source, install it, and verify startup. Test the app on the device before calling that deployment complete. CoreS3 K128 now has a compiled target awaiting physical acceptance; StickC Plus2 remains emulator-only. Read the [support matrix](SUPPORT-MATRIX.md) for feature limits.
 
 ## Updates and removal
 

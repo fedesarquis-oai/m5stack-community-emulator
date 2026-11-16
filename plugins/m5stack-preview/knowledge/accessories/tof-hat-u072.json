@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "id": "tof-hat-u072",
+  "name": "Hat ToF",
+  "sku": "U072",
+  "aliases": [
+    "ToF Distance HAT",
+    "ToF HAT",
+    "Hat ToF"
+  ],
+  "category": "hat",
+  "reviewed_on": "2026-11-16",
+  "summary": "Returns distance to a target using a VL53L0X time-of-flight sensor.",
+  "interface": {
+    "data_bus": "I2C",
+    "address": "0x29",
+    "chip": "VL53L0X",
+    "supply_volts": 3.3,
+    "output_units": "millimetres plus validity/timeout",
+    "range_note": "Up to 2 m is conditional; vendor notes about 1.2 m in normal mode and 2 m in long-range/dark conditions."
+  },
+  "host_bindings": [
+    {
+      "host_profile": "sticks3",
+      "connector": "Hat2-Bus legacy HAT footprint",
+      "pins": null,
+      "basis": "pin_mapping_requires_confirmation",
+      "physical_validation": "not_run",
+      "notes": "Legacy examples use StickC SDA0/SCL26. StickS3 has a different Hat2-Bus; inspect the HAT schematic and mating orientation before assigning pins. Do not use Grove GPIO9/10 for a directly attached HAT or infer GPIO26 from a StickC example. Use 3.3V, not 5V, for these HAT supply pins."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Confirm actual StickS3 HAT pin mapping and 3.3V supply. Detect 0x29, initialize sensor and set a bounded timeout.",
+    "Move a flat target between known distances and check readings plus timeout/out-of-range behavior."
+  ],
+  "troubleshooting": [
+    "A timeout or out-of-range status is not zero distance.",
+    "Do not confuse the U072 HAT with a Grove ToF Unit or VL53L1X revision.",
+    "If combining two 0x29 sensors, plan reset/address reassignment or a suitable multiplexer; address collision is not fixed by parallel wiring."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "near",
+      "far",
+      "out_of_range",
+      "timeout",
+      "sensor_missing"
+    ],
+    "note": "App-owned millimetre fixtures can test UI logic, not optics, measurement accuracy or sensor timing."
+  },
+  "sources": [
+    {
+      "title": "Hat ToF manual",
+      "url": "https://docs.m5stack.com/en/hat/Hat_ToF",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "Vendor HAT example",
+      "url": "https://github.com/m5stack/M5StickC/blob/master/examples/Hat/TOF/TOF.ino",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "VL53L0X Arduino driver",
+      "repository": "https://github.com/pololu/vl53l0x-arduino",
+      "author": "Pololu",
+      "purpose": "Driver linked by M5Stack HAT example; verify selected revision/license before reuse.",
+      "installed_by_plugin": false
+    }
+  ]
+}

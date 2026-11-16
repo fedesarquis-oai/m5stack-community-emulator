@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import stat
@@ -13,7 +14,7 @@ PLUGIN = ROOT / 'plugins/m5stack-preview'
 EXCLUDED = {'node_modules', '.git', '__pycache__', '.DS_Store', '.release', '.verify',
             'vendor', '.build', '.local', 'logs', 'evidence', '.hardware-backups', '.hardware-tools'}
 REPO_ROOTS = ['README.md', 'AGENTS.md', 'CONTRIBUTING.md', 'CREDITS.md', 'CHANGELOG.md',
-              '.gitignore', '.agents', '.github', 'docs', 'scripts', 'plugins']
+              '.gitignore', '.gitattributes', '.agents', '.github', 'docs', 'scripts', 'plugins']
 SECRET_NAMES = {'network-credentials.json', '.env', 'credentials.json'}
 PATTERNS = [rb'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----',
             rb'sk-proj-[A-Za-z0-9_-]{20,}', rb'gh[pousr]_[A-Za-z0-9]{30,}',
@@ -54,7 +55,13 @@ def manifest():
 
 def verify():
     stored = json.loads((PLUGIN / 'package-manifest.json').read_text())
-    if stored != manifest():
+    actual = manifest()
+    if os.name == 'nt':
+        # NTFS does not expose Unix execute bits. Preserve/check the recorded
+        # archive modes, while still verifying every filename, size and byte.
+        for name, entry in actual['files'].items():
+            if name in stored['files']:entry['mode'] = stored['files'][name]['mode']
+    if stored != actual:
         raise ValueError('Package hashes are stale; run python3 scripts/package.py --prepare')
     inventory = json.loads((PLUGIN / 'licenses/bundled-dependencies.json').read_text())
     if digest(PLUGIN / 'pnpm-lock.yaml') != inventory['lockfileSha256']:

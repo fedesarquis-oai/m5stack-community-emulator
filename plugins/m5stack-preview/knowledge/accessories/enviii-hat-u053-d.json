@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "id": "enviii-hat-u053-d",
+  "name": "Hat ENV-III",
+  "sku": "U053-D",
+  "aliases": [
+    "ENV III HAT",
+    "ENV-III HAT",
+    "Hat ENV-III"
+  ],
+  "category": "hat",
+  "reviewed_on": "2026-11-16",
+  "summary": "Measures temperature, relative humidity and atmospheric pressure.",
+  "interface": {
+    "data_bus": "I2C",
+    "chips": {
+      "SHT30": "0x44",
+      "QMP6988": "0x70 (reviewed HAT example)"
+    },
+    "alternate_qmp_address": "0x56 exists in the driver and some documentation; confirm the attached hardware.",
+    "supply_volts": 3.3,
+    "output_units": [
+      "degrees Celsius",
+      "percent RH",
+      "pressure Pa (divide by 100 for hPa)"
+    ]
+  },
+  "host_bindings": [
+    {
+      "host_profile": "sticks3",
+      "connector": "Hat2-Bus legacy HAT footprint",
+      "pins": null,
+      "basis": "pin_mapping_requires_confirmation",
+      "physical_validation": "not_run",
+      "notes": "Legacy examples use StickC SDA0/SCL26. StickS3 has a different Hat2-Bus; inspect the HAT schematic and mating orientation before assigning pins. Do not use Grove GPIO9/10 for a directly attached HAT or infer GPIO26 from a StickC example. Use 3.3V, not 5V, for these HAT supply pins."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Inspect HAT seating, 3.3V and actual StickS3 GPIO mapping before configuring I2C.",
+    "Check SHT30 at 0x44 and QMP6988 at 0x70 on that bus; if absent, inspect revision and documented 0x56 alternate rather than changing unrelated pins.",
+    "Read all three values and their validity; allow temperature to settle away from fingers/device heat."
+  ],
+  "troubleshooting": [
+    "Do not substitute ENV-II/BMP280 or ENV-IV/SHT40/BMP280 code.",
+    "The QMP driver default argument is 0x56 but the vendor ENV-III HAT example explicitly chooses QMP6988_SLAVE_ADDRESS_L=0x70.",
+    "Different addresses do not make two physical HATs stackable; check space, wiring and pull-ups."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "normal",
+      "high_humidity",
+      "sensor_missing",
+      "stale_reading"
+    ],
+    "note": "Use app-owned fixtures with units/validity; do not present generated values as real sensor data."
+  },
+  "sources": [
+    {
+      "title": "Hat ENV-III manual",
+      "url": "https://docs.m5stack.com/en/hat/Hat_ENV-III",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "Vendor HAT example",
+      "url": "https://github.com/m5stack/M5Unit-ENV/blob/master/examples/Hat_ENVIII_M5StickCPlus/Hat_ENVIII_M5StickCPlus.ino",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "QMP6988 address definitions",
+      "url": "https://github.com/m5stack/M5Unit-ENV/blob/master/src/QMP6988.h",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "M5Unit-ENV",
+      "repository": "https://github.com/m5stack/M5Unit-ENV",
+      "reviewed_commit": "e3384a7c3a109a078bfad2f244c3169f4dae466f",
+      "author": "M5Stack",
+      "license": "MIT",
+      "purpose": "SHT3X/QMP6988 drivers and ENV-III HAT example; adapt bus pins explicitly.",
+      "installed_by_plugin": false
+    }
+  ]
+}

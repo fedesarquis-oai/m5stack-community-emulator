@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "id": "gps-v11-u032-v11",
+  "name": "Unit GPS v1.1",
+  "sku": "U032-V11",
+  "aliases": [
+    "GPS/BDS Unit v1.1",
+    "GPS Unit v1.1",
+    "Unit GPS v1.1"
+  ],
+  "category": "grove_unit",
+  "reviewed_on": "2026-11-16",
+  "summary": "Receives satellite position/time and sends NMEA sentences; it does not provide Internet access.",
+  "interface": {
+    "data_bus": "UART",
+    "baud": 115200,
+    "serial_format": "8N1",
+    "protocol": "NMEA0183 4.1",
+    "chip": "ATGM336H-6N / AT6668",
+    "supply_volts": 5,
+    "unit_wires": {
+      "black": "GND",
+      "red": "5V",
+      "yellow": "unit RX",
+      "white": "unit TX"
+    }
+  },
+  "host_bindings": [
+    {
+      "host_profile": "cores3",
+      "connector": "PORT.C",
+      "pins": {
+        "host_rx": 18,
+        "host_tx": 17
+      },
+      "basis": "manufacturer_pinmap",
+      "physical_validation": "not_run",
+      "notes": "Unit TX (white) goes to host RX18; unit RX (yellow) goes to host TX17. This conflicts with M145 using the same PORT.C route."
+    },
+    {
+      "host_profile": "sticks3",
+      "connector": "Grove",
+      "pins": {
+        "host_rx": 10,
+        "host_tx": 9
+      },
+      "basis": "derived_from_manufacturer_connector_pinmaps",
+      "physical_validation": "not_run",
+      "notes": "For the supplied straight Grove cable, white unit TX meets host GPIO10; yellow unit RX meets GPIO9. Enable peripheral power when supplying the unit from StickS3. This occupies the same connector/pins as Grove I2C units."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Verify NMEA bytes at 115200 before diagnosing satellite reception. Older Unit GPS examples use 9600 and do not apply to v1.1.",
+    "Take the antenna to clear sky; show searching/no-fix until the parsed fix is valid and fresh. Then check coordinates and time."
+  ],
+  "troubleshooting": [
+    "Indoor no-fix can be normal even when UART and power are correct.",
+    "Do not display stale coordinates as a fresh fix or use 0,0 as a missing-value substitute.",
+    "Do not automatically run example factory-reset/reconfiguration commands just to read position."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "no_fix",
+      "valid_fix",
+      "stale_fix",
+      "invalid_checksum"
+    ],
+    "note": "Use clearly synthetic locations in app fixtures; actual location is private and should not be included in shared diagnostics."
+  },
+  "sources": [
+    {
+      "title": "Unit GPS v1.1 manual",
+      "url": "https://docs.m5stack.com/en/unit/Unit_GPS_v1.1",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "M5Stack GPS v1.1 example",
+      "url": "https://github.com/m5stack/TinyGPSPlus/blob/master/examples/UnitGPSExample/UnitGPSExample.ino",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "CoreS3 K128 manual",
+      "url": "https://docs.m5stack.com/en/core/CoreS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "HY2.0-4P",
+        "M5-Bus",
+        "Includes"
+      ]
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "TinyGPSPlus",
+      "repository": "https://github.com/m5stack/TinyGPSPlus",
+      "reviewed_commit": "254a10041ac38d17d98dab24c0ae4d2a8d19a677",
+      "author": "Mikal Hart; M5Stack fork and examples",
+      "license": "LGPL-2.1-or-later for TinyGPS++ core; vendor example has MIT notice",
+      "purpose": "NMEA parsing and v1.1 example. Example pins22/21 are not CoreS3/StickS3 pins.",
+      "installed_by_plugin": false
+    }
+  ]
+}

@@ -20056,7 +20056,8 @@ var device_profiles_default = [
     audioMode: "tone",
     hardware: {
       microphone: true,
-      audioOutput: "speaker"
+      audioOutput: "speaker",
+      sku: "K128"
     },
     network: {
       adapter: 1,
@@ -20064,6 +20065,25 @@ var device_profiles_default = [
         "GET",
         "POST"
       ],
+      physicalValidated: false
+    },
+    firmware: {
+      fqbn: "esp32:esp32:esp32s3:PSRAM=enabled,FlashSize=16M,PartitionScheme=app3M_fat9M_16MB,CDCOnBoot=cdc,USBMode=hwcdc",
+      flashBytes: 16777216,
+      psramBytes: 8388608,
+      boardEnum: "board_M5StackCoreS3",
+      rotation: 1,
+      features: [
+        "display",
+        "touch",
+        "buttons",
+        "motion",
+        "microphone",
+        "speaker",
+        "tone",
+        "network"
+      ],
+      audioDuplex: "exclusive",
       physicalValidated: false
     }
   },
@@ -21851,7 +21871,7 @@ var LiveMicrophone = class {
 };
 
 // ui/main.mjs
-var PLUGIN_VERSION = "0.7.42";
+var PLUGIN_VERSION = "0.7.44";
 var app = new i({ name: "M5Stack Community Emulator", version: PLUGIN_VERSION }, { availableDisplayModes: ["fullscreen"] });
 var extensions = new OpenAIExtensions(app);
 var $ = (id) => document.getElementById(id);

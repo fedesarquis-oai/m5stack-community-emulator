@@ -1,4 +1,27 @@
-# Candidate validation — 0.7.42
+# Candidate validation — 0.7.44
+
+## Portable host setup and CoreS3 — November 16, 2026
+
+- **PASS on this Mac:** 51 focused Node server, profile, host, hardware-job, browser-transport and launcher checks. Also 5 OS-helper/lock/process/private-file/CoreS3 admission checks, 23 hardware setup/workflow checks, 3 private network setup checks, 13 setup recovery checks and 2 compiler/build recovery checks.
+- **PASS — fresh native setup and app execution:** Downloaded and verified the two pinned libraries in a new workspace, built all five profiles, and ran actual workers with controls and known PCM. Each of the four mic profiles received 1,600 samples at 0.25 RMS while controls remained responsive; Atom rejected unsupported audio. The portable browser launcher served the compiled CoreS3 app over HTTP and closed cleanly. This did not request a live microphone or grant browser permission.
+- **PASS — CoreS3 firmware compile:** The exact `cores3` target compiled with the existing pinned ESP32/M5Unified toolchain, 16 MB flash and Quad PSRAM. The final networking-enabled build receipt is `8853f35fbc12371b`. This is a compile check only. No USB enumeration, flash, backup or physical acceptance was performed.
+- **Implemented, not yet accepted:** Native Windows x64 and Linux setup paths, executable/path handling, private file permissions, process cleanup and pinned firmware downloads. The new three-OS CI job builds all profiles, runs actual native workers, prepares pinned firmware tools and compiles CoreS3; its execution and live Chrome/USB checks are pending.
+- **Build recovery note:** After switching the LVGL link to a response file for Windows command-length limits, one tiny macOS test executable exited with SIGKILL. An unchanged rerun passed both checks, and the final five full native apps then built and ran successfully. The intermittent kill was not reproduced or attributed to a specific cause.
+- **Migration:** Portable MCP startup now requires Node 22+ on PATH. The legacy Unix browser launcher remains available. Do not treat a macOS bundled runtime discovered by that wrapper as satisfying the new manifest's prerequisite.
+- **Release state:** Local candidate only; installed/public version remains 0.7.42. Earlier validation below retains its original scope.
+
+# Earlier candidate validation — 0.7.43
+
+## Accessory knowledge update — November 16, 2026
+
+Six manufacturer/source-reviewed references are separate from implemented profiles. Firmware and media transports are unchanged.
+
+- **PASS:** 43 focused server, profile, host-reporting, browser-transport and launcher checks on this Mac. These cover six exact-SKU/name lookups, neighboring-revision rejection, knowledge-only status, absent CoreS3 firmware, unresolved HAT pins and platform-specific setup limits. Platform inputs in tests do not establish Windows/Linux execution.
+- **Source review:** Referenced manufacturer manuals and driver examples, recorded reviewed source commits and author/license credit, and distinguished derived connector routes from physically verified wiring. Reviewed against the current public checkout at `129f9549288411d4b7241f27da18d8e1e6bbb653`; no unrelated upstream source changes were replaced.
+- **PASS — rebuilt distribution:** The actual packaged stdio launcher reported 0.7.43, 14 tools, five board guides and six knowledge-only accessory guides. Neighboring-revision rejection, host-limit reporting and the fixed UI resource passed. Regenerated the inventory for five bundles and eleven retained dependencies. This is a local process check, not an installed-plugin upgrade.
+- **Not run:** Accessory hardware checks, standard CoreS3 deployment, new-host installation, live media or USB operations. This update remains a local candidate; the installed/public version is still 0.7.42.
+
+## Earlier validation — 0.7.42
 
 Updated October 22, 2026 on macOS Apple Silicon. This release improves GitHub onboarding and runtime selection; device adapters, app APIs and physical acceptance are unchanged.
 

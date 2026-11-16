@@ -25,7 +25,7 @@ test('base factory exposes 14 generic tools with no provider or voice transfer',
   const hardware=tools.find(tool=>tool.name==='m5stack_hardware');
   assert.deepEqual(hardware._meta.ui.visibility,['model']);
   assert.equal(hardware.annotations.destructiveHint,true);
-  assert.deepEqual(hardware.inputSchema.properties.profile.enum,['cores3se','atoms3r','sticks3']);
+  assert.deepEqual(hardware.inputSchema.properties.profile.enum,['cores3se','cores3','atoms3r','sticks3']);
   assert.deepEqual([...hardware.inputSchema.properties.action.enum].sort(),['status','setup','devices','build','backup','install','restore','monitor','network-prepare','network-configure','network-forget'].sort());
   const resource=await c.rpc('resources/read',{uri:'ui://m5stack-preview/workbench.html'});
   assert.match(resource.contents[0].text,/audio-settings-heading/);
@@ -56,6 +56,37 @@ test('all catalog profile IDs resolve to their exact knowledge entry; unknown re
   }
   const unknown=(await c.call('m5stack_device_guide',{device:'CoreS3 SE unknown revision 999'})).structuredContent;
   assert.equal(unknown.status,'research-only');assert.equal(unknown.simulationSupported,false);
+});
+test('accessory references are discoverable without enabling emulator or firmware capabilities',async t=>{
+  const c=await client(t,createM5StackServer());
+  const catalog=(await c.call('m5stack_catalog')).structuredContent;
+  assert.equal(catalog.profiles.length,5);
+  assert.deepEqual(catalog.accessories.entries.map(x=>x.sku),['M145','U031-B','U127','U032-V11','U053-D','U072']);
+  assert.equal(catalog.accessories.support.status,'knowledge_only');
+  for(const entry of catalog.accessories.entries){
+    assert.equal(entry.simulationSupported,false);
+    const guide=(await c.call('m5stack_device_guide',{device:entry.sku})).structuredContent;
+    assert.equal(guide.kind,'accessory');assert.equal(guide.accessory.sku,entry.sku);
+    assert.equal(guide.simulationSupported,false);assert.equal(guide.firmwareAdapterImplemented,false);
+    assert.equal(guide.accessory.support.physical_validation,'not_run');
+    assert.ok(guide.accessory.sources.every(source=>source.url.startsWith('https://')));
+    const named=(await c.call('m5stack_device_guide',{device:entry.name.toLowerCase()})).structuredContent;
+    assert.equal(named.accessory.id,entry.id);
+  }
+  assert.equal((await c.call('m5stack_device_guide',{device:'accessories'})).structuredContent.kind,'accessory_catalog');
+  const host=(await c.call('m5stack_device_guide',{device:'cores3'})).structuredContent;
+  assert.ok(host.accessoryReferences.some(x=>x.sku==='M145'));
+  assert.equal(host.device.physical_firmware.implemented,true);
+  assert.equal(host.device.physical_firmware.physical_validation,'not_run');
+  for(const query of ['U031','U032','U053-C','Unit GPS v2','../../plugin.json']){
+    const result=(await c.call('m5stack_device_guide',{device:query})).structuredContent;
+    assert.equal(result.status,'research-only');assert.equal(result.simulationSupported,false);
+  }
+  const revision=(await c.call('m5stack_device_guide',{device:'U053-D',revision:'unknown PCB revision'})).structuredContent;
+  assert.equal(revision.revisionConfirmed,false);
+  assert.equal(revision.accessory.host_bindings[0].pins,null);
+  const rejected=await c.call('m5stack_open',{profile:'U072'});
+  assert.equal(rejected.isError,true);
 });
 test('every tool that runs app code advertises possible external effects; pure guidance stays read-only',async t=>{
   const c=await client(t,createM5StackServer());

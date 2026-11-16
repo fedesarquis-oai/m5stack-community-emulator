@@ -2,6 +2,14 @@
 
 These records distinguish current source/native checks from earlier browser and physical observations. A passed simulation does not establish physical fidelity or a fresh host permission result.
 
+## Portable host candidate 0.7.44 — November 16, 2026
+
+The portable Node entrypoint, native Windows/Linux setup branches and standard CoreS3 target are implemented. The CoreS3 firmware compiled on the existing Mac toolchain; physical acceptance remains pending. Focused host/setup and transport tests passed on this Mac. CI now includes native build/worker checks for macOS, Windows and Linux; those runner results and live Chrome/USB acceptance must be collected separately. No USB operation was performed. The fixed emulator and media contracts are unchanged.
+
+## Accessory candidate 0.7.43 — November 16, 2026
+
+General accessory knowledge and explicit host limits added. Forty-three focused server/profile/host/browser-transport/launcher checks passed. No new peripheral adapters, physical target or media implementation. No device was available; manufacturer/source review is not hardware acceptance. No live media, new host or USB operations were performed. See the repository validation record for package/extraction evidence and release state.
+
 ## Community candidate 0.7.42 — October 22, 2026
 
 GitHub-first guidance lets people ask Codex to install from a real repository URL, with no manual clone. MCP and Chrome now use one shell launcher for Node selection. Forty server/profile/browser/launcher tests passed, including nineteen launcher checks. The actual browser launcher started and shut down cleanly with no Node on PATH, using this Mac’s desktop-bundled runtime. Codex.app path candidates have fixture coverage only; no fresh Codex.app-only or another-Mac installation is claimed. Device behavior and prior audio/hardware evidence are unchanged. Public GitHub clone and CI verification remain pending until publication.

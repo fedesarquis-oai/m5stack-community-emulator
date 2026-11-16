@@ -1,9 +1,14 @@
 {
   "server": {
+    "server/host-tools.mjs": {
+      "bytes": 1442,
+      "format": "esm",
+      "bytesInOutput": 4737
+    },
     "server/network-adapter.mjs": {
       "bytes": 6118,
       "format": "esm",
-      "bytesInOutput": 21435
+      "bytesInOutput": 21459
     },
     "ui/speaker-pcm.mjs": {
       "bytes": 1218,
@@ -11,9 +16,9 @@
       "bytesInOutput": 3885
     },
     "runtime/data/device-profiles.json": {
-      "bytes": 4297,
+      "bytes": 4835,
       "format": "esm",
-      "bytesInOutput": 12186
+      "bytesInOutput": 13740
     },
     "ui/device-profiles.mjs": {
       "bytes": 662,
@@ -23,7 +28,12 @@
     "server/native-session.mjs": {
       "bytes": 51886,
       "format": "esm",
-      "bytesInOutput": 159885
+      "bytesInOutput": 159918
+    },
+    "server/host-support.mjs": {
+      "bytes": 1673,
+      "format": "esm",
+      "bytesInOutput": 4776
     },
     "server/raster-image.mjs": {
       "bytes": 11560,
@@ -31,14 +41,14 @@
       "bytesInOutput": 32454
     },
     "server/workbench.mjs": {
-      "bytes": 16955,
+      "bytes": 16778,
       "format": "esm",
-      "bytesInOutput": 54924
+      "bytesInOutput": 53877
     },
     "server/hardware.mjs": {
-      "bytes": 7214,
+      "bytes": 7442,
       "format": "esm",
-      "bytesInOutput": 24123
+      "bytesInOutput": 24579
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/util.js": {
       "bytes": 4055,
@@ -63,7 +73,7 @@
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/parseUtil.js": {
       "bytes": 3601,
       "format": "esm",
-      "bytesInOutput": 9027
+      "bytesInOutput": 9029
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/helpers/typeAliases.js": {
       "bytes": 11,
@@ -78,7 +88,7 @@
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/types.js": {
       "bytes": 131268,
       "format": "esm",
-      "bytesInOutput": 304242
+      "bytesInOutput": 304244
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v3/external.js": {
       "bytes": 205,
@@ -98,12 +108,12 @@
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js": {
       "bytes": 22018,
       "format": "esm",
-      "bytesInOutput": 61329
+      "bytesInOutput": 61334
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js": {
       "bytes": 6413,
       "format": "esm",
-      "bytesInOutput": 14772
+      "bytesInOutput": 14784
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js": {
       "bytes": 4444,
@@ -508,7 +518,7 @@
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js": {
       "bytes": 24161,
       "format": "esm",
-      "bytesInOutput": 51114
+      "bytesInOutput": 51118
     },
     "node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js": {
       "bytes": 550,
@@ -728,7 +738,7 @@
     "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/zodToJsonSchema.js": {
       "bytes": 3188,
       "format": "esm",
-      "bytesInOutput": 7161
+      "bytesInOutput": 7166
     },
     "node_modules/.pnpm/zod-to-json-schema@3.25.1_zod@4.4.3/node_modules/zod-to-json-schema/dist/esm/index.js": {
       "bytes": 1474,
@@ -867,7 +877,7 @@
     "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/lib/schemes.js": {
       "bytes": 4724,
       "format": "cjs",
-      "bytesInOutput": 14892
+      "bytesInOutput": 14896
     },
     "node_modules/.pnpm/fast-uri@3.0.1/node_modules/fast-uri/index.js": {
       "bytes": 9801,
@@ -1101,7 +1111,7 @@
     "node_modules/.pnpm/ajv-formats@3.0.1_ajv@8.17.1/node_modules/ajv-formats/dist/index.js": {
       "bytes": 1508,
       "format": "cjs",
-      "bytesInOutput": 5085
+      "bytesInOutput": 5087
     },
     "node_modules/.pnpm/@modelcontextprotocol+sdk@1.29.0_@cfworker+json-schema@4.1.1_zod@4.4.3/node_modules/@modelcontextprotocol/sdk/dist/esm/validation/ajv-provider.js": {
       "bytes": 2814,
@@ -1278,10 +1288,20 @@
       "format": "esm",
       "bytesInOutput": 0
     },
-    "server/application-server.mjs": {
-      "bytes": 15182,
+    "knowledge/accessories/index.json": {
+      "bytes": 3144,
       "format": "esm",
-      "bytesInOutput": 50175
+      "bytesInOutput": 9159
+    },
+    "server/accessory-knowledge.mjs": {
+      "bytes": 1684,
+      "format": "esm",
+      "bytesInOutput": 4917
+    },
+    "server/application-server.mjs": {
+      "bytes": 15728,
+      "format": "esm",
+      "bytesInOutput": 51585
     },
     "server/index.mjs": {
       "bytes": 173,
@@ -1309,9 +1329,9 @@
       "bytesInOutput": 8246
     },
     "server/browser-preview.mjs": {
-      "bytes": 2622,
+      "bytes": 2725,
       "format": "esm",
-      "bytesInOutput": 2391
+      "bytesInOutput": 2485
     }
   },
   "ui": {
@@ -2086,9 +2106,9 @@
       "bytesInOutput": 11072
     },
     "runtime/data/device-profiles.json": {
-      "bytes": 4297,
+      "bytes": 4835,
       "format": "esm",
-      "bytesInOutput": 4062
+      "bytesInOutput": 4580
     },
     "ui/device-profiles.mjs": {
       "bytes": 662,
@@ -2870,8 +2890,23 @@
   "outputs": {
     "server": {
       "server/dist/index.js": {
-        "bytes": 1389030,
+        "bytes": 1397864,
         "imports": [
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
           {
             "path": "node:fs/promises",
             "kind": "import-statement",
@@ -2999,14 +3034,39 @@
           },
           {
             "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
             "kind": "import-statement",
             "external": true
           }
         ]
       },
       "server/dist/application-server.js": {
-        "bytes": 1389016,
+        "bytes": 1397850,
         "imports": [
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
           {
             "path": "node:fs/promises",
             "kind": "import-statement",
@@ -3134,13 +3194,23 @@
           },
           {
             "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
             "kind": "import-statement",
             "external": true
           }
         ]
       },
       "server/dist/browser-preview.js": {
-        "bytes": 1427891,
+        "bytes": 1436863,
         "imports": [
           {
             "path": "node:path",
@@ -3149,6 +3219,21 @@
           },
           {
             "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
             "kind": "import-statement",
             "external": true
           },
@@ -3279,6 +3364,16 @@
           },
           {
             "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
             "kind": "import-statement",
             "external": true
           },
@@ -3307,7 +3402,7 @@
     },
     "ui": {
       "ui/dist/workbench.js": {
-        "bytes": 875655,
+        "bytes": 876173,
         "imports": []
       },
       "ui/dist/workbench.css": {

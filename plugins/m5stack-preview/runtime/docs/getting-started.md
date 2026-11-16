@@ -19,10 +19,12 @@ The generated app files are technical scaffolding. Codex edits `src/user_app.hpp
 
 From the new workspace, substitute the selected profile:
 
+Use `python3` instead of `python` if that is the selected Python 3 executable on this computer.
+
 ```sh
-./m5preview doctor
-./m5preview setup --browser-only
-./m5preview web-build --profile <selected-profile>
+python m5preview doctor
+python m5preview setup --browser-only
+python m5preview web-build --profile <selected-profile>
 ```
 
 Setup does not install system tools. If execution is denied, stop the affected action; do not bypass it with another interpreter. Missing or dirty dependencies need preservation/recovery guidance, not silent replacement. Setup retains private staging directories; they can consume disk and may share file data through hard links, so do not edit them as independent backups.
@@ -41,7 +43,7 @@ After an edit, build and reload. Reload starts a fresh worker and clears in-memo
 <summary>Build and recovery details</summary>
 
 ```sh
-./m5preview web-build --profile <selected-profile>
+python m5preview web-build --profile <selected-profile>
 ```
 
 Use `m5stack_reload` after the build. Host/bridge edits need a supported restart; preserve unrelated sessions. If the native worker fails, keep the error and last valid frame, fix the cause, rebuild and reload. An illustrative input response does not replace a failed native check.
@@ -66,7 +68,7 @@ Keep test evidence tied to the exact build and mode. See [current release valida
 
 ## Optional physical installation
 
-When you are happy with the app, ask Codex to install it on a **CoreS3 SE K128-SE, AtomS3R C126 or StickS3 K150**. The [hardware workflow](hardware-workflow.md) handles exact-device checks, pinned setup, declared capability checks, firmware compilation from the same app source, verified private backup, installation and boot diagnostics. Identification alone does not open a port or reset the device. CoreS3 standard and StickC Plus2 remain emulator-only; the [hardware plan](hardware-plan.md) tracks those gaps.
+When you are happy with the app, ask Codex to install it on a **CoreS3 K128, CoreS3 SE K128-SE, AtomS3R C126 or StickS3 K150**. The [hardware workflow](hardware-workflow.md) handles exact-device checks, pinned setup, declared capability checks, firmware compilation from the same app source, verified private backup, installation and boot diagnostics. Identification alone does not open a port or reset the device. CoreS3 K128 has a compiled target awaiting physical acceptance; StickC Plus2 remains emulator-only; the [hardware plan](hardware-plan.md) tracks those gaps.
 
 ## Keep the shared emulator
 

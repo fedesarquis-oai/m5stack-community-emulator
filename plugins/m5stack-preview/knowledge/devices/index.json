@@ -41,14 +41,14 @@
     "shake_animation": "bounded shell animation; reduced-motion suppresses transient movement"
   },
   "preview_baseline": {
-    "version": "0.7.40",
+    "version": "0.7.44",
     "display": "native C++ framebuffer",
     "microphone": "app-requested local PCM16 at 16 kHz mono",
     "speaker": "CoreS3/SE/StickS3 mono PCM16 at 8\u201348 kHz; up to 30 seconds per clip",
     "buzzer": "StickC Plus2 tone intents",
     "providers": "none",
     "default_shell": "fixed generic device controls and host audio settings",
-    "physical_firmware": "CoreS3 SE: display/touch/buttons/mono exclusive audio. AtomS3R: display/button/semantic motion and Wi-Fi/HTTP(S). StickS3: display/KEY1/KEY2/semantic motion/mono exclusive audio. All three have scoped deployment, original-firmware restore and restart acceptance; CoreS3 standard and StickC Plus2 remain emulator-only.",
+    "physical_firmware": "Four exact firmware targets: CoreS3 SE, AtomS3R and StickS3 retain scoped physical acceptance. Standard CoreS3 K128 is compiled, with touch, semantic motion/POWER, exclusive mono audio and optional Wi-Fi; physical checks pending. StickC Plus2 remains emulator-only.",
     "network": "Optional bounded GET/JSON POST on all five emulator profiles. Firmware adapters on AtomS3R, CoreS3 SE and StickS3; Atom has prior physical Wi-Fi acceptance; SE/Stick public API, saved-settings power cycle and forget/reprovision accepted October 20. Private USB setup, saved credentials, optional reconnection and explicit forget. Public service calls run on device Wi-Fi without a Mac server."
   },
   "selection_rules": [
@@ -58,5 +58,6 @@
     "Do not infer microphone, speaker or battery on plain C126 from an attached Voice Base",
     "Unknown requested SKU must remain unsupported until its profile and adapters are implemented and validated"
   ],
-  "evidence_status": "See runtime/docs/release-validation.md; physical claims require board tests."
+  "evidence_status": "See runtime/docs/release-validation.md; physical claims require board tests.",
+  "accessory_knowledge": "../accessories/index.json; knowledge-only, not peripheral adapters"
 }

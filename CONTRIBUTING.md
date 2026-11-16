@@ -20,7 +20,7 @@ cd plugins/m5stack-preview
 pnpm install --frozen-lockfile --ignore-scripts
 node scripts/build.mjs
 node scripts/collect-notices.mjs
-node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/browser-preview.test.mjs tests/launcher.test.mjs
+node --test tests/application-server.test.mjs tests/device-profiles.test.mjs tests/browser-preview.test.mjs tests/launcher.test.mjs tests/portable-host.test.mjs tests/host-support.test.mjs tests/hardware-jobs.test.mjs
 cd ../..
 python3 scripts/package.py --prepare
 node scripts/smoke.mjs
@@ -52,3 +52,5 @@ python3 scripts/package.py --output /absolute/new-release-directory
 This produces a repository ZIP, a standalone plugin ZIP and SHA-256 checksums. The repository ZIP is easiest for a new user because it contains the marketplace catalog and agent instructions. Test a clean extraction, tools/list and a native app build before sharing. The scanner catches common secret/path mistakes; it is not a security audit.
 
 Do not upload private development history. Publish only the reviewed repository tree. GitHub publication, release creation and social posting are separate user-authorized actions.
+
+The portable-host CI matrix creates a verified app workspace, fetches pinned sources, compiles all profiles and exercises actual native workers on macOS, Linux and Windows. Run the packaged preflight compiler probe first. CI is not a microphone-permission, acoustic or USB test; keep those acceptance states separate. `.gitattributes` preserves exact package bytes on Windows; do not normalize distribution line endings after hashes are generated.

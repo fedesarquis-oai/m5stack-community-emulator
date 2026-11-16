@@ -1,9 +1,11 @@
+import {executable,pythonExecutable,stopOwnedProcess} from './host-tools.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { NativeSession } from './native-session.mjs';
 import { randomUUID } from 'node:crypto';
+import { hostSupport } from './host-support.mjs';
 import { loadWorkspaceImage } from './raster-image.mjs';
 
 const moduleDirectory=path.dirname(fileURLToPath(import.meta.url));
@@ -23,7 +25,7 @@ export function chooseApp(value='counter') {
   return value;
 }
 export function catalog() {
-  return { version:'0.7.42', profiles:PROFILES, apps:APPS,
+  return { version:'0.7.44', profiles:PROFILES, apps:APPS,
     fidelity:'Native C++ framebuffer preview. Physical peripherals, firmware and electrical behavior are not emulated.',
     hardwareAccess:false };
 }
@@ -207,16 +209,8 @@ export class Workbench {
   }
 }
 
-async function executable(name) {
-  for(const part of (process.env.PATH||'').split(path.delimiter)) {
-    if(!part || !path.isAbsolute(part)) continue;
-    const value=path.join(part,name);
-    try {await fs.access(value,1); if((await fs.stat(value)).isFile())return value;} catch {}
-  }
-  return null;
-}
 export async function doctor({workspace}={}) {
-  const tools=Object.fromEntries(await Promise.all(['python3','git','clang','clang++'].map(async name=>[name,await executable(name)])));
+  const tools=Object.fromEntries(await Promise.all(['python3','git','clang','clang++'].map(async name=>[name,name==='python3'?await pythonExecutable():await executable(name)])));
   let prepared=false,dependencies=false;
   if(workspace) {
     const root=await workspacePath(workspace); prepared=true;
@@ -226,6 +220,7 @@ export async function doctor({workspace}={}) {
     } catch {}
   }
   return textResult({node:process.versions.node,platform:process.platform,architecture:process.arch,tools,
+    hostSupport:hostSupport(process.platform,process.arch),
     workspacePrepared:prepared,dependencyDirectoriesPresent:dependencies,
     note:'Tool paths and directory presence do not verify a usable SDK or dependency pins. Build verifies pins. Setup uses approved Git access; do not retry blocked executables.',hardwareAccess:false});
 }
@@ -238,7 +233,7 @@ export async function build({workspace,profile}) {
   if(builds.has(root))throw new Error('A build is already running for this workspace.');
   const record={child:null}; builds.set(root,record);
   try {
-    const python=await executable('python3');
+    const python=await pythonExecutable();
     if(buildsStopping)throw new Error('Workbench is stopping.');
     if(!python)throw new Error('Approved Python 3.9+ is required. Use the company-approved setup process; no runtime installer is included.');
     const output=await boundedBuild(python,[path.join(root,'m5preview'),'web-build','--profile',profile],root,record);
@@ -266,8 +261,8 @@ function boundedBuild(command,args,cwd,record) {
     const stop=(reason='cancelled')=>{
       if(finished || stopReason)return;
       stopReason=reason;
-      try {process.platform==='win32'?child.kill('SIGTERM'):process.kill(-child.pid,'SIGTERM');}catch{}
-      killTimer=setTimeout(()=>{try{process.platform==='win32'?child.kill('SIGKILL'):process.kill(-child.pid,'SIGKILL');}catch{}},1000);
+      try {stopOwnedProcess(child,'SIGTERM');}catch{}
+      killTimer=setTimeout(()=>{try{stopOwnedProcess(child,'SIGKILL');}catch{}},1000);
       finalTimer=setTimeout(()=>{
         cleanupUnconfirmed=true;
         child.stdout.destroy();child.stderr.destroy();

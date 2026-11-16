@@ -1,3 +1,4 @@
+import {pythonExecutable,stopOwnedProcess} from './host-tools.mjs';
 import fs from 'node:fs/promises';
 import {constants} from 'node:fs';
 import path from 'node:path';
@@ -79,8 +80,8 @@ export function createHardwareRunner({resolveWorkspace=workspacePath,spawnProces
       clearTimeout(timer);job.finishedAt=Date.now();job.result=reply({...value,operationId:job.id},isError);
       release();resolve(job.result);
     };});
-    job.stop=()=>{try{process.kill(-job.child.pid,'SIGTERM');}catch{}};
-    try{job.child=spawnProcess('python3',argv,{cwd:root,stdio:['ignore','pipe','pipe'],detached:true});}
+    job.stop=()=>stopOwnedProcess(job.child);
+    try{const python=await pythonExecutable();if(!python)throw new Error('Python 3.9+ is required');if(closed)throw new Error('Hardware service is stopping');job.child=spawnProcess(python,argv,{cwd:root,stdio:['ignore','pipe','pipe'],detached:process.platform!=='win32',windowsHide:true});}
     catch{finish({status:'error',message:'Hardware process could not start. Inspect the local tool setup.'},true);return job.result;}
     const child=job.child;
     timer=setTimeout(()=>{failure='Hardware operation timed out. Inspect its local log and device state before retrying.';job.stop();},args.action==='setup'?2400000:args.action==='build'?1500000:1000000);timer.unref();

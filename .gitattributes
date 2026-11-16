@@ -1,0 +1,2 @@
+# Package hashes describe exact bytes. Do not rewrite LF to CRLF on Windows.
+* -text

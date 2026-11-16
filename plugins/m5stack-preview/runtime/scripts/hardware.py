@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Pinned, local firmware workflow. Never erases a board as a preparation step."""
-import argparse, fcntl, hashlib, json, os, platform, re, shutil, signal, subprocess, sys, tarfile, time, urllib.request
+import argparse, hashlib, json, os, platform, re, shutil, signal, subprocess, sys, tarfile, time, urllib.request, zipfile
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from scripts.host import process_options, stop_process, lock_operation, arduino_asset, protect_private
 CLI_VERSION='1.5.1'
 CORE_VERSION='3.3.12'
 LIBRARIES={'M5GFX':'0.2.33','M5Unified':'0.2.26'}
@@ -16,20 +18,21 @@ def profile_config(profile):
 def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def save(path,data,private=False):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
-    if private:path.parent.chmod(0o700)
+    if private:
+        protect_private(path.parent)
+        if path.exists():protect_private(path)
     with open(path,'w') as f:json.dump(data,f,indent=2);f.write('\n')
-    if private:path.chmod(0o600)
+    if private:protect_private(path)
 def run(command,log,timeout=900,env=None):
     log=Path(log);log.parent.mkdir(parents=True,exist_ok=True)
     with log.open('w') as output:
-        process=subprocess.Popen([str(x) for x in command],stdout=output,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,start_new_session=True,env=env)
+        process=subprocess.Popen([str(x) for x in command],stdout=output,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,env=env,**process_options())
         try:code=process.wait(timeout=timeout)
         except BaseException:
             import signal
-            try:os.killpg(process.pid,signal.SIGTERM)
-            except ProcessLookupError:pass
+            stop_process(process)
             try:process.wait(timeout=3)
-            except subprocess.TimeoutExpired:os.killpg(process.pid,signal.SIGKILL);process.wait()
+            except subprocess.TimeoutExpired:stop_process(process,force=True);process.wait()
             raise
     if code:raise RuntimeError('Command failed; inspect local log '+str(log))
     return log.read_text(errors='replace')
@@ -38,8 +41,8 @@ def tools_root():
     # A workspace-local configuration can reuse an explicitly prepared toolchain.
     config=ROOT/'.local/hardware-location.json'
     return Path(json.loads(config.read_text())['path']).resolve() if config.exists() else ROOT/'.local/hardware'
-def python():return tools_root()/'python/bin/python'
-def cli():return tools_root()/'bin/arduino-cli'
+def python():return tools_root()/('python/Scripts/python.exe' if os.name=='nt' else 'python/bin/python')
+def cli():return tools_root()/('bin/arduino-cli.exe' if os.name=='nt' else 'bin/arduino-cli')
 def config():return tools_root()/'arduino-cli.yaml'
 def arduino(*args):return [cli(),*args,'--config-file',config()]
 def configure():
@@ -107,20 +110,21 @@ def native_ctags(git_env=None):
 
 def setup():
     root=tools_root()
-    if platform.system()!='Darwin' or platform.machine() not in ('arm64','x86_64'):
-        raise RuntimeError('Automatic setup currently supports macOS arm64/x86_64. No installer was run on this platform.')
+    name=arduino_asset(CLI_VERSION)
     # Check this before Arduino/core downloads, which can take several minutes.
-    git_env=None if (root/'ctags-source/ctags').is_file() else git_environment()
+    git_env=git_environment() if platform.system()=='Darwin' and not (root/'ctags-source/ctags').is_file() else None
     configure()
     if not cli().exists():
-        arch='ARM64' if platform.machine()=='arm64' else '64bit';name=f'arduino-cli_{CLI_VERSION}_macOS_{arch}.tar.gz'
         base=f'https://github.com/arduino/arduino-cli/releases/download/v{CLI_VERSION}/'
         checks=urllib.request.urlopen(base+CLI_VERSION+'-checksums.txt',timeout=60).read().decode()
         expected=next(line.split()[0] for line in checks.splitlines() if line.endswith(name))
         raw=urllib.request.urlopen(base+name,timeout=120).read()
         if hashlib.sha256(raw).hexdigest()!=expected:raise RuntimeError('Arduino CLI checksum mismatch')
         archive=root/name;archive.write_bytes(raw);cli().parent.mkdir(exist_ok=True)
-        with tarfile.open(archive) as tar:cli().write_bytes(tar.extractfile(tar.getmember('arduino-cli')).read())
+        if name.endswith('.zip'):
+            with zipfile.ZipFile(archive) as zipped:cli().write_bytes(zipped.read('arduino-cli.exe'))
+        else:
+            with tarfile.open(archive) as tar:cli().write_bytes(tar.extractfile(tar.getmember('arduino-cli')).read())
         cli().chmod(0o755);save(root/'cli-download.json',{'version':CLI_VERSION,'sha256':expected,'url':base+name})
     version=subprocess.check_output(arduino('version','--format','json'),text=True)
     if json.loads(version)['VersionString']!=CLI_VERSION:raise RuntimeError('Unexpected Arduino CLI version')
@@ -129,7 +133,7 @@ def setup():
     run(arduino('core','update-index'),root/'index.log')
     run(arduino('core','install','esp32:esp32@'+CORE_VERSION),root/'core-install.log',1800)
     run(arduino('lib','install',*[k+'@'+v for k,v in LIBRARIES.items()],'--no-deps'),root/'libraries.log')
-    native_ctags(git_env)
+    if platform.system()=='Darwin':native_ctags(git_env)
     save(root/'pins.json',{'arduino_cli':CLI_VERSION,'esp32':CORE_VERSION,'libraries':LIBRARIES,'esptool':'4.8.1','pyserial':'3.5'})
     return {'status':'ready','tools':str(root),'profiles':list(PROFILES)}
 
@@ -156,7 +160,7 @@ def check_chip(port,serial,profile=PROFILE):
 def backup(port,serial,profile=PROFILE):
     check_chip(port,serial,profile)
     flash_bytes=profile_config(profile)['flashBytes']
-    folder=ROOT/'.hardware-backups'/time.strftime('%Y%m%d-%H%M%S');folder.mkdir(parents=True,exist_ok=False);folder.chmod(0o700)
+    folder=ROOT/'.hardware-backups'/time.strftime('%Y%m%d-%H%M%S');folder.mkdir(parents=True,exist_ok=False);protect_private(folder)
     binary=folder/'flash.bin'
     old=os.umask(0o077)
     try:
@@ -176,13 +180,14 @@ def source_files():
             if path.is_file():files.append(path)
     if (ROOT/'firmware.json').exists():files.append(ROOT/'firmware.json')
     files.append(ROOT/'scripts/hardware.py')
+    if (ROOT/'scripts/host.py').exists():files.append(ROOT/'scripts/host.py')
     files.extend(sorted(p for p in (ROOT/'data').rglob('*') if p.is_file() and p.suffix in ('.json','.pem')))
     return files
 
 def source_hash(profile=PROFILE):
     profile_config(profile)
     h=hashlib.sha256(profile.encode()+b'\0')
-    for p in source_files():h.update(str(p.relative_to(ROOT)).encode()+b'\0'+p.read_bytes()+b'\0')
+    for p in source_files():h.update(p.relative_to(ROOT).as_posix().encode()+b'\0'+p.read_bytes()+b'\0')
     return h.hexdigest()
 def requirements(profile=PROFILE):
     path=ROOT/'firmware.json'
@@ -257,7 +262,8 @@ def build(profile=PROFILE):
     write_network_config(stage,enabled)
     for helper in (ROOT/'hardware').glob('*.hpp'):shutil.copy2(helper,stage/helper.name)
     (stage/'user_draw.hpp').write_text('#include "src/user_draw.hpp"\n')
-    run(arduino('compile','--fqbn',cfg['fqbn'],'--jobs','2','--build-property','compiler.cpp.extra_flags=-std=gnu++17 -fexceptions','--build-property','runtime.tools.ctags.path='+str(tools_root()/'ctags-source'),'--output-dir',output,stage),folder/'build.log',1200)
+    ctags=['--build-property','runtime.tools.ctags.path='+str(tools_root()/'ctags-source')] if platform.system()=='Darwin' else []
+    run(arduino('compile','--fqbn',cfg['fqbn'],'--jobs','2','--build-property','compiler.cpp.extra_flags=-std=gnu++17 -fexceptions',*ctags,'--output-dir',output,stage),folder/'build.log',1200)
     core=tools_root()/'arduino-data/packages/esp32/hardware/esp32'/CORE_VERSION
     shutil.copy2(core/'tools/partitions/boot_app0.bin',output/'boot_app0.bin')
     files=[('device_app.ino.bootloader.bin',0),('device_app.ino.partitions.bin',0x8000),('boot_app0.bin',0xe000),('device_app.ino.bin',0x10000)]
@@ -340,8 +346,8 @@ def main():
     signal.signal(signal.SIGTERM,interrupted)
     # Serialize independent Codex calls, not only calls in one MCP process.
     lock_path=ROOT/'.local/hardware-operation.lock';lock_path.parent.mkdir(parents=True,exist_ok=True)
-    lock=lock_path.open('a')
-    try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    lock=lock_path.open('a+b')
+    try:lock_operation(lock)
     except BlockingIOError:raise RuntimeError('Another hardware operation is running in this workspace')
     if args.action=='setup':result=setup()
     elif args.action=='devices':result=ports()

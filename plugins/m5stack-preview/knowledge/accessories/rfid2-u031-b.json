@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "id": "rfid2-u031-b",
+  "name": "Unit RFID2",
+  "sku": "U031-B",
+  "aliases": [
+    "RFID2",
+    "RFID2 Unit",
+    "Unit RFID2"
+  ],
+  "category": "grove_unit",
+  "reviewed_on": "2026-11-16",
+  "summary": "Reads identifiers and supported card data at close range.",
+  "interface": {
+    "data_bus": "I2C",
+    "address": "0x28",
+    "chip": "WS1850S",
+    "frequency_mhz": 13.56,
+    "supply_volts": 5,
+    "range_note": "Manufacturer specifies less than 20 mm; not a phone/NFC compatibility guarantee."
+  },
+  "host_bindings": [
+    {
+      "host_profile": "cores3",
+      "connector": "PORT.A",
+      "pins": {
+        "sda": 2,
+        "scl": 1,
+        "supply_volts": 5
+      },
+      "basis": "manufacturer_pinmap",
+      "physical_validation": "not_run",
+      "notes": "External bus; do not reinitialize internal I2C on GPIO12/11."
+    },
+    {
+      "host_profile": "sticks3",
+      "connector": "Grove",
+      "pins": {
+        "sda": 9,
+        "scl": 10,
+        "supply_volts": 5
+      },
+      "basis": "manufacturer_pinmap",
+      "physical_validation": "not_run",
+      "notes": "USB-powered bring-up: enable EXT_5V output after M5.begin when powering the unit from StickS3. Do not feed external power into an output-enabled Grove port."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Check external bus acknowledgement at 0x28. Use an I2C RFID driver, not an SPI-only RC522 example.",
+    "Read UID from a supplied compatible tag; remove and re-present it; display a no-card state. Start read-only."
+  ],
+  "troubleshooting": [
+    "UID presence is not secure authentication. Do not default to card writing or key/sector changes.",
+    "Vendor page lists Type A/B, while its FAQ and RC522-style examples focus on Type A/MIFARE/NTAG. Treat other tag protocols as unverified until tested.",
+    "RFID U031, RFID2 U031-B and UHF RFID are different parts."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "tag_present:test_uid",
+      "tag_removed",
+      "unsupported_tag",
+      "read_error"
+    ],
+    "note": "Label simulated identifiers; preserve UID length and leading zero bytes. No RF or card-memory emulation."
+  },
+  "sources": [
+    {
+      "title": "Unit RFID2 manual",
+      "url": "https://docs.m5stack.com/en/unit/Unit_RFID2",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "RFID Arduino tutorial",
+      "url": "https://docs.m5stack.com/en/arduino/projects/unit/unit_rfid",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "CoreS3 K128 manual",
+      "url": "https://docs.m5stack.com/en/core/CoreS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "HY2.0-4P",
+        "M5-Bus",
+        "Includes"
+      ]
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "MFRC522_I2C vendor tutorial",
+      "url": "https://docs.m5stack.com/en/arduino/projects/unit/unit_rfid",
+      "author": "M5Stack and upstream driver authors",
+      "purpose": "Choose the I2C implementation used by the vendor; inspect its license and revision before copying code.",
+      "installed_by_plugin": false
+    }
+  ]
+}

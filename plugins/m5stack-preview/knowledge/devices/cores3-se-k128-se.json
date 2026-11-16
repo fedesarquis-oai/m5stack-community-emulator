@@ -343,8 +343,8 @@
     "explicit_enable_and_permission_required": true,
     "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
     "audio_output": "speaker_pcm_and_tone",
-    "audio_default": "muted",
-    "explicit_sound_enable_required": true,
+    "audio_default": "enabled_after_device_gesture",
+    "explicit_sound_enable_required": false,
     "volume_control": true,
     "local_test_tone": false,
     "full_audio_playback": true,
@@ -366,7 +366,9 @@
     "host_support_evidence": {
       "Chrome": "user-confirmed local microphone PCM and speaker playback",
       "Codex_panel": "microphone blocked in previously inspected host; no later fix verified"
-    }
+    },
+    "sound_gesture_required": true,
+    "explicit_mute_preserved_in_view": true
   },
   "physical_firmware": {
     "implemented": true,

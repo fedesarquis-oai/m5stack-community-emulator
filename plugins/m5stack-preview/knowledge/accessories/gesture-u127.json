@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "id": "gesture-u127",
+  "name": "Unit Gesture",
+  "sku": "U127",
+  "aliases": [
+    "Gesture Unit",
+    "Unit Gesture",
+    "PAJ7620U2 Unit"
+  ],
+  "category": "grove_unit",
+  "reviewed_on": "2026-11-16",
+  "summary": "Reports discrete hand gestures without touching the device.",
+  "interface": {
+    "data_bus": "I2C",
+    "address": "0x73",
+    "chip": "PAJ7620U2",
+    "supply_volts": 5,
+    "gestures": [
+      "up",
+      "down",
+      "left",
+      "right",
+      "forward",
+      "backward",
+      "clockwise",
+      "counterclockwise",
+      "wave"
+    ],
+    "working_distance_cm": [
+      5,
+      15
+    ]
+  },
+  "host_bindings": [
+    {
+      "host_profile": "cores3",
+      "connector": "PORT.A",
+      "pins": {
+        "sda": 2,
+        "scl": 1,
+        "supply_volts": 5
+      },
+      "basis": "manufacturer_pinmap",
+      "physical_validation": "not_run",
+      "notes": "External bus; do not reinitialize internal I2C on GPIO12/11."
+    },
+    {
+      "host_profile": "sticks3",
+      "connector": "Grove",
+      "pins": {
+        "sda": 9,
+        "scl": 10,
+        "supply_volts": 5
+      },
+      "basis": "manufacturer_pinmap",
+      "physical_validation": "not_run",
+      "notes": "USB-powered bring-up: enable EXT_5V output after M5.begin when powering the unit from StickS3. Do not feed external power into an output-enabled Grove port."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "first_hardware_check": [
+    "Check 0x73 on the external bus; initialize the vendor PAJ7620U2 driver.",
+    "Display raw gesture names first; try left/right and wave; only then map events to app actions."
+  ],
+  "troubleshooting": [
+    "Confirm sensor-facing orientation before deciding that left/right is reversed.",
+    "Debounce repeated detections and keep driver polling bounded so the device controls keep working.",
+    "This is an external gesture sensor, not the board IMU or touchscreen swipe input."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "left",
+      "right",
+      "wave",
+      "none",
+      "sensor_missing"
+    ],
+    "note": "Keep named synthetic gestures in the app test harness; do not map them silently onto the emulator shake control."
+  },
+  "sources": [
+    {
+      "title": "Unit Gesture manual",
+      "url": "https://docs.m5stack.com/en/unit/Unit_Gesture",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "Vendor PAJ7620U2 example",
+      "url": "https://github.com/m5stack/M5Stack/blob/master/examples/Unit/GESTURE_PAJ7620U2/GESTURE_PAJ7620U2.ino",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "CoreS3 K128 manual",
+      "url": "https://docs.m5stack.com/en/core/CoreS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "HY2.0-4P",
+        "M5-Bus",
+        "Includes"
+      ]
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "M5Stack PAJ7620U2 example",
+      "url": "https://github.com/m5stack/M5Stack/tree/master/examples/Unit/GESTURE_PAJ7620U2",
+      "author": "M5Stack and embedded driver authors",
+      "purpose": "Reference initialization and gesture decoding; review included source licenses before adaptation.",
+      "installed_by_plugin": false
+    }
+  ]
+}
