@@ -31,7 +31,16 @@ class HostPortabilityTest(unittest.TestCase):
             if child.poll() is None:child.kill();child.wait(timeout=5)
 
     def test_private_file_roundtrip_uses_real_os_permissions(self):
-        with tempfile.TemporaryDirectory() as directory:
+        actual_run = subprocess.run
+        def diagnostic_run(*args, **kwargs):
+            kwargs['stderr'] = subprocess.PIPE
+            result = actual_run(*args, **kwargs)
+            if result.returncode:
+                # This disposable fixture contains no credentials. Keep native
+                # ACL failures visible in CI without exposing real user files.
+                self.fail(result.stderr.decode(errors='replace')[-4000:])
+            return result
+        with tempfile.TemporaryDirectory() as directory, patch.object(host.subprocess, 'run', side_effect=diagnostic_run):
             folder=Path(directory);host.protect_private(folder)
             filename=folder/'private.json';filename.write_text('{"fixture":true}')
             host.protect_private(filename);host.verify_private(filename)

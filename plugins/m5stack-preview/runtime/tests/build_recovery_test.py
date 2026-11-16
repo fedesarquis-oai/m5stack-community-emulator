@@ -48,7 +48,11 @@ class BuildRecoveryTest(unittest.TestCase):
             # build must not mistake those bytes for a reusable object.
             Path(args[args.index('-o') + 1]).write_bytes(b'incomplete object')
             raise RuntimeError('injected compiler interruption')
-        return subprocess.run(args, check=True, capture_output=True, timeout=15)
+        try:
+            return subprocess.run(args, check=True, capture_output=True, timeout=15)
+        except subprocess.CalledProcessError as error:
+            # Only this test's generated sources/paths, never credentials.
+            raise RuntimeError(error.stderr.decode(errors='replace')[-4000:]) from error
 
     def build(self):
         with contextlib.redirect_stdout(io.StringIO()):

@@ -345,9 +345,9 @@
       "sha256": "11a9f36e6722ae46a6ad28345527e7803533f00a70ac62089682e675593e04ac"
     },
     "runtime/scripts/virtual_device.py": {
-      "bytes": 5223,
+      "bytes": 5308,
       "mode": 420,
-      "sha256": "b3bbacd1d4483494e3247510e001f9fa3b777c0d61ef59c11f415de22c54a751"
+      "sha256": "df40f841b07ac3180761510dfc5bd458d8fc17f7c32f970a4595ccdb87b223b7"
     },
     "runtime/src/ShakeDetector.h": {
       "bytes": 4409,
@@ -440,9 +440,9 @@
       "sha256": "a29216557be18d33d6ef9c32cb17bca6e5af2e752df8f1a974a93610a8eaf317"
     },
     "runtime/tests/build_recovery_test.py": {
-      "bytes": 4090,
+      "bytes": 4326,
       "mode": 420,
-      "sha256": "b58c9c30eca7bb302a5fb7ea3fcf51d1c3183dfc10cb74d6e5037339e2f79a7c"
+      "sha256": "2b49a93b89ef75054d92175a976d98b7f57c221ff2090d1b1c5bd0f92a9a7d59"
     },
     "runtime/tests/capture_handshake_test.cpp": {
       "bytes": 6366,
@@ -475,9 +475,9 @@
       "sha256": "af30cb64225bd449a52a84161c07a2b00f5345a32b0d96fa04b6c4e0eb32414a"
     },
     "runtime/tests/host_portability_test.py": {
-      "bytes": 3514,
+      "bytes": 4049,
       "mode": 420,
-      "sha256": "caaaf35605ab8bde1e8796971145a13db02a72256738641c7fa9876aa9de6d44"
+      "sha256": "9ee6dc44163fc90b80faca2d85f7932e2ff01c17fc91cb19eced4aeb4a584e4d"
     },
     "runtime/tests/live_audio_protocol_test.py": {
       "bytes": 7993,

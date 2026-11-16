@@ -7,7 +7,6 @@ import platform
 from pathlib import Path
 import secrets
 import shlex
-import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -78,7 +77,9 @@ def build(workflow, profile='stickcplus2'):
     link_args = [str(obj) for obj in objects] + ['-o', str(binary)]
     response = binary.with_suffix('.rsp')
     try:
-        response.write_text(subprocess.list2cmdline(link_args) if os.name == 'nt' else shlex.join(link_args), encoding='utf-8')
+        # clang++ uses GNU response-file quoting even on Windows; only clang-cl
+        # defaults to Windows quoting. shlex.quote preserves Windows backslashes.
+        response.write_text(shlex.join(link_args), encoding='utf-8')
         workflow.run(['clang++', '@'+str(response)], log='web-link.log')
     finally:
         response.unlink(missing_ok=True)
