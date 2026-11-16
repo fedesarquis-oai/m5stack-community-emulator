@@ -379,6 +379,11 @@
       "mode": 420,
       "sha256": "67b5f6607d1dc29da9d152ede63df1f68b81be60bb43dd46e49b75e49c801387"
     },
+    "runtime/src/host_stdio.hpp": {
+      "bytes": 456,
+      "mode": 420,
+      "sha256": "df882536932a210942adb588eabb4eaf190be717c0e5f0b8bac3588248861967"
+    },
     "runtime/src/live_audio.hpp": {
       "bytes": 6348,
       "mode": 420,
@@ -425,9 +430,9 @@
       "sha256": "2d6567d7e541728488d526907e1772d316d334dc706cdaa5c21cbadd73432e49"
     },
     "runtime/src/virtual_device.cpp": {
-      "bytes": 21370,
+      "bytes": 21443,
       "mode": 420,
-      "sha256": "fc455cfadfcaed7c6c502d039153c97f0f18230a1295d1bb3ad496708f67610c"
+      "sha256": "9b538a028431b6139f6c051c7af3ac82e99c0a20005ed63c4766c37f9feced5d"
     },
     "runtime/tests/app_assets_test.cpp": {
       "bytes": 22125,
@@ -440,9 +445,9 @@
       "sha256": "a29216557be18d33d6ef9c32cb17bca6e5af2e752df8f1a974a93610a8eaf317"
     },
     "runtime/tests/build_recovery_test.py": {
-      "bytes": 4326,
+      "bytes": 4993,
       "mode": 420,
-      "sha256": "2b49a93b89ef75054d92175a976d98b7f57c221ff2090d1b1c5bd0f92a9a7d59"
+      "sha256": "db83653c84cac8a7f98396276e9efb6ce2f4360313c1d607fe6448592246dd9d"
     },
     "runtime/tests/capture_handshake_test.cpp": {
       "bytes": 6366,

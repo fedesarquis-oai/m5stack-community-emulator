@@ -79,6 +79,15 @@ class BuildRecoveryTest(unittest.TestCase):
             result = self.build()
         subprocess.run([str(self.scope['BUILD'] / result['binary'])], check=True, timeout=3)
 
+    def test_native_pipe_preserves_binary_control_bytes(self):
+        source=self.work/'stdio.cpp'
+        source.write_text('#include "host_stdio.hpp"\nint main(){if(!preview::prepareHostStdio())return 2;unsigned char b[7];if(std::fread(b,1,7,stdin)!=7)return 3;return std::fwrite(b,1,7,stdout)==7?0:4;}\n')
+        binary=self.work/('stdio.exe' if os.name=='nt' else 'stdio')
+        self.run_command(['clang++','-std=c++17','-I'+str(ROOT/'src'),source,'-o',binary])
+        payload=b'\x00\x0a\x0d\x1a\xff\x0a\x00'
+        result=subprocess.run([str(binary)],input=payload,capture_output=True,check=True,timeout=5)
+        self.assertEqual(result.stdout,payload)
+
 
 if __name__ == '__main__':
     unittest.main()
