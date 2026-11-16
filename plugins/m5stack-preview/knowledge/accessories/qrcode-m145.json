@@ -36,7 +36,7 @@
       },
       "basis": "derived_from_two_manufacturer_pinmaps",
       "physical_validation": "not_run",
-      "notes": "Candidate UART route: select QR_TX to M5-Bus pin15 (Core RX18), QR_RX to pin16 (Core TX17); disconnect alternative UART routes. Verify actual DIP labels and orientation before power-up. The scanner uses these PORT.C signals; do not connect another UART peripheral to them."
+      "notes": "Candidate UART route: select QR_TX to M5-Bus pin15 (Core RX18), QR_RX to pin16 (Core TX17); disconnect alternative UART routes. Verify actual DIP labels and orientation before power-up. The scanner uses these PORT.C signals; do not connect another UART peripheral to them. The vendor separately reports both routing banks at 3 ON / 1,2,4 OFF for this route; check actual switch labels before applying it. Do not select routes onto CoreS3 GPIO13/14 used by audio."
     }
   ],
   "support": {
@@ -44,7 +44,7 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
     "Confirm exact M145, stack orientation and screws with power disconnected. DinBase assembly/order needs a physical fit check.",
@@ -54,7 +54,10 @@
   "troubleshooting": [
     "A beep alone does not prove the app received data; check UART and switch mode.",
     "The I2C 0x43 expander controls power/trigger; it does not carry decoded text.",
-    "PORT.C changes function in USB mode. Do not treat it as an ordinary Grove UART at the same time."
+    "PORT.C changes function in USB mode. Do not treat it as an ordinary Grove UART at the same time.",
+    "The CoreS3 body red PORT.A (GPIO2/1) differs from M145 red PORT.A, which the module pinmap connects to internal M5-Bus I2C (CoreS3 GPIO12/11). Identify which physical connector is being used; do not assume identical colors mean identical buses.",
+    "Keep M5.In_I2C ownership for the 0x43 expander. Do not replace it with a fresh Wire.begin on the internal bus.",
+    "Power down before moving routing switches or restacking. Check speaker playback after scanner routing to catch shared audio pins."
   ],
   "app_fixture_plan": {
     "proposed_events": [
@@ -100,5 +103,18 @@
       "purpose": "UART decode and expander control; reviewed source uses M5.In_I2C and 115200 baud.",
       "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "Vendor tested UART mode with switch 3 ON and 1, 2, 4 OFF in each of the two routing banks, for CoreS3 RX18/TX17.",
+      "Confirm switch numbering/orientation on the actual module against the schematic. Some alternate routes land on CoreS3 audio signals, including GPIO13.",
+      "Trigger-mode settings sent by protocol can persist on the scanner; inspect mode before changing it.",
+      "A raw-image transfer took about 27 seconds in the vendor build. Use decoded text for a first app; this observation is not a streaming-camera capability."
+    ]
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

@@ -63,7 +63,7 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
     "Check 0x73 on the external bus; initialize the vendor PAJ7620U2 driver.",
@@ -72,7 +72,8 @@
   "troubleshooting": [
     "Confirm sensor-facing orientation before deciding that left/right is reversed.",
     "Debounce repeated detections and keep driver polling bounded so the device controls keep working.",
-    "This is an external gesture sensor, not the board IMU or touchscreen swipe input."
+    "This is an external gesture sensor, not the board IMU or touchscreen swipe input.",
+    "Load the selected driver initialization table and debounce events. This sensor reports gesture categories, not hand coordinates or a depth image."
   ],
   "app_fixture_plan": {
     "proposed_events": [
@@ -127,6 +128,24 @@
       "author": "M5Stack and embedded driver authors",
       "purpose": "Reference initialization and gesture decoding; review included source licenses before adaptation.",
       "installed_by_plugin": false
+    },
+    {
+      "name": "DFRobot_PAJ7620U2",
+      "repository": "https://github.com/DFRobot/DFRobot_PAJ7620U2",
+      "author": "DFRobot",
+      "purpose": "Additional vendor-suggested initialization/event reference. Inspect license, bus selection and exact revision before adapting.",
+      "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "Vendor notes that sensor orientation sets direction names, one movement can emit several events, and the startup register table is required.",
+      "DFRobot_PAJ7620U2 is an additional reference for initialization; its presence does not establish a plugin adapter or current-board acceptance."
+    ]
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

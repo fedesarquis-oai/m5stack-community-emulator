@@ -24,9 +24,9 @@
       "host_profile": "sticks3",
       "connector": "Hat2-Bus legacy HAT footprint",
       "pins": null,
-      "basis": "pin_mapping_requires_confirmation",
+      "basis": "vendor_candidate_recorded_separately_pending_plugin_physical_check",
       "physical_validation": "not_run",
-      "notes": "Legacy examples use StickC SDA0/SCL26. StickS3 has a different Hat2-Bus; inspect the HAT schematic and mating orientation before assigning pins. Do not use Grove GPIO9/10 for a directly attached HAT or infer GPIO26 from a StickC example. Use 3.3V, not 5V, for these HAT supply pins."
+      "notes": "Vendor bench report gives SDA8/SCL0 at 100 kHz; see vendor_bench_report.candidate_connection. This has not been physically verified by the plugin and must not be applied to an unknown revision. Confirm seating/orientation and 3.3V. Do not copy legacy StickC SDA0/SCL26 or Grove GPIO9/10. GPIO0 is a boot-strapping signal: check cold boot with the HAT attached and do not force it low during reset."
     }
   ],
   "support": {
@@ -34,11 +34,12 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
-    "Confirm actual StickS3 HAT pin mapping and 3.3V supply. Detect 0x29, initialize sensor and set a bounded timeout.",
-    "Move a flat target between known distances and check readings plus timeout/out-of-range behavior."
+    "Compare the attached HAT against the vendor SDA8/SCL0 candidate and manufacturer connector drawings; use 3.3V and start at 100 kHz. Detect 0x29 and initialize with a bounded timeout.",
+    "Try a flat target at known distances, then remove it. Show millimetres and validity; check cold boot with the HAT attached.",
+    "Discard invalid/out-of-range samples before optional 3-5-sample smoothing. A timeout must remain unavailable, not be averaged into a false distance."
   ],
   "troubleshooting": [
     "A timeout or out-of-range status is not zero distance.",
@@ -88,5 +89,26 @@
       "purpose": "Driver linked by M5Stack HAT example; verify selected revision/license before reuse.",
       "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "The vendor used StickS3 top HAT SDA GPIO8 and SCL GPIO0 at 100 kHz, separate from Grove GPIO9/10.",
+      "Confirm exact HAT seating, connector orientation and supply before using this route; the plugin has not repeated the physical test.",
+      "The vendor found roughly 30-120 cm useful for its demo. This is a bench observation, not a guaranteed minimum or maximum range."
+    ],
+    "candidate_connection": {
+      "host_profile": "sticks3",
+      "connector": "top HAT",
+      "sda": 8,
+      "scl": 0,
+      "frequency_hz": 100000,
+      "supply_volts": 3.3,
+      "acceptance": "vendor_report_only_confirm_on_attached_hardware"
+    }
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

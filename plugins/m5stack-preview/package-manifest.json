@@ -40,19 +40,19 @@
       "sha256": "0eb5b2c394ad5d03078d05b4a254ed259685c1e0a37b11c9b142343b7190ce11"
     },
     "knowledge/accessories/enviii-hat-u053-d.json": {
-      "bytes": 3761,
+      "bytes": 5422,
       "mode": 420,
-      "sha256": "e9f791db7344c9f406879d7504a065a3479742d9e0b34f5ba34fe75bafb7347f"
+      "sha256": "53bba0c48d73f71b14e307f2cce5d78d07a8b78483d6b6911f5855fcda5574b1"
     },
     "knowledge/accessories/gesture-u127.json": {
-      "bytes": 3811,
+      "bytes": 5019,
       "mode": 420,
-      "sha256": "6ec952b09569db5e0aae493fcf341604d69018c449a687f5b88b91eb80e2f89d"
+      "sha256": "430a72ccee1dafaad2ac3d69330fcfcb1c16950de40e38b29b72fd4b4bde8aca"
     },
     "knowledge/accessories/gps-v11-u032-v11.json": {
-      "bytes": 4115,
+      "bytes": 5512,
       "mode": 420,
-      "sha256": "8c5613be289cfd65b69da506f8c37b999f4f84f4415e262002a22c7e3277a6d3"
+      "sha256": "91d6924e9ab077c67bee739abdab355db41a965b4267b334bee20d100c6063ef"
     },
     "knowledge/accessories/index.json": {
       "bytes": 3144,
@@ -60,19 +60,19 @@
       "sha256": "a9131ae43bc170292777e5ed87f154ab53c3bb5725599cdcf7e55b0272a33fad"
     },
     "knowledge/accessories/qrcode-m145.json": {
-      "bytes": 3744,
+      "bytes": 5422,
       "mode": 420,
-      "sha256": "43f3215db745050f5c779dbba25f8dd9e4187035e6408e263cec538e994a13a0"
+      "sha256": "917bc1d12e41646285f8312f89f904f14db5e0b34008aaa46afa0216f58da542"
     },
     "knowledge/accessories/rfid2-u031-b.json": {
-      "bytes": 3732,
+      "bytes": 5317,
       "mode": 420,
-      "sha256": "823fe4ca28db56143db27e26c0d6e7509338057591cb2a67933d92c9ad06a8ab"
+      "sha256": "ac5d522cce4644213482e44b97549981c0bb435e08f45e5d29e830ef2d44a6b9"
     },
     "knowledge/accessories/tof-hat-u072.json": {
-      "bytes": 3211,
+      "bytes": 4682,
       "mode": 420,
-      "sha256": "cf13b6b9c832fdb4704e7711ba2b6935b5506ea5e73fed45cb555bfc1eac98ce"
+      "sha256": "d9926e4bec574e030c3d4c4bfea3528fd24d48cf2d2e1f8982d26c736b487d98"
     },
     "knowledge/devices/atoms3r-c126.json": {
       "bytes": 6218,
@@ -80,9 +80,9 @@
       "sha256": "7f841ccd05eae6a995a63ad076fabdfdf606c0ddcf35246c25efdc9d3b232c44"
     },
     "knowledge/devices/cores3-k128.json": {
-      "bytes": 11193,
+      "bytes": 11500,
       "mode": 420,
-      "sha256": "e6867dbf9dd421c0ed63b240ddb6fc95bac54bd1375992b9a9ccfec74ee4b495"
+      "sha256": "7e055439f706a04e79f83131d8481b3363964f2f33f71d5950f01277cd64b466"
     },
     "knowledge/devices/cores3-se-k128-se.json": {
       "bytes": 13167,
@@ -100,9 +100,9 @@
       "sha256": "b7c9012b5e7ef84327cce38429d7b183a03a95294f8dfdee8f3dfd789c776d73"
     },
     "knowledge/devices/sticks3-k150.json": {
-      "bytes": 9581,
+      "bytes": 9759,
       "mode": 420,
-      "sha256": "eb0b3d8ff9896b6e78cbd24279e798a203b5b7b9a18ba823f513e294428bef80"
+      "sha256": "7fb4c0522f4bf55e8b987443c67fb50b0759e4e91346faeb818d7b58d818c34c"
     },
     "knowledge/devices/validation.json": {
       "bytes": 3273,
@@ -670,14 +670,19 @@
       "sha256": "c1144ede29b26b5946e91123802afbbdc5e54ca267172902d4e81e62ff670c1d"
     },
     "skills/m5stack-preview/SKILL.md": {
-      "bytes": 15885,
+      "bytes": 16617,
       "mode": 420,
-      "sha256": "2ec4bb095bbb9e7bcdb604ba43d58d1a3aba40824de94af04bf4378dd63cb7b4"
+      "sha256": "90dc014e4cfe6ad217cb1691fee5db6406f2fd2f6866587c95c0b3ff7d2d0295"
     },
     "skills/m5stack-preview/references/accessories.md": {
-      "bytes": 7598,
+      "bytes": 8746,
       "mode": 420,
-      "sha256": "21e9aff36a24cc41018dc707e780e1f8ba8c32db2962e5680859dc2701f41825"
+      "sha256": "5abcf3972551d547b222733bb330729b114c105074e5adc17dedce0d204bd740"
+    },
+    "skills/m5stack-preview/references/accessory-bringup.md": {
+      "bytes": 13232,
+      "mode": 420,
+      "sha256": "055e6ea9626c6bdb340c932d55626d3914cee02e96d085268cfe5e76f6524ef1"
     },
     "skills/m5stack-preview/references/project-discovery.md": {
       "bytes": 7351,

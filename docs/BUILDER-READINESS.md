@@ -34,4 +34,6 @@ Review date: November 16, 2026. Candidate: 0.7.44. This is a technical readiness
 
 With the OS CI matrix passed, prioritize independent real-host onboarding and standard CoreS3 physical acceptance before adding six simulated peripherals. Then define one reusable accessory-input contract with validity, timestamps, bounded events and cleanup, implement one end-to-end driver/fixture path, and expand it part by part. Each extension needs its own source, native and physical evidence. Accessory adapters remain proposed future work; host setup and the CoreS3 build target are implemented in 0.7.44.
 
+For Thursday, the accessory scope is usable setup knowledge and guided first physical tests, not six new sensor emulators. The [builder guide](../plugins/m5stack-preview/skills/m5stack-preview/references/accessory-bringup.md) integrates the supplied vendor bench notes, explains all eight pictured items and preserves the existing toolchain and private provisioning route. Builders can test app logic with labeled fixtures or request an app-specific hardware driver project. Actual accessory acquisition still needs that driver and the physical part.
+
 The [support matrix](SUPPORT-MATRIX.md), [validation record](VALIDATION.md), [accessory library](ACCESSORIES.md) and [release checklist](RELEASE-CHECKLIST.md) remain the source of release claims.

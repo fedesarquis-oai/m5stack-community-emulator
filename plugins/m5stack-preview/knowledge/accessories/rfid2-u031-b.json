@@ -50,7 +50,7 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
     "Check external bus acknowledgement at 0x28. Use an I2C RFID driver, not an SPI-only RC522 example.",
@@ -59,7 +59,8 @@
   "troubleshooting": [
     "UID presence is not secure authentication. Do not default to card writing or key/sector changes.",
     "Vendor page lists Type A/B, while its FAQ and RC522-style examples focus on Type A/MIFARE/NTAG. Treat other tag protocols as unverified until tested.",
-    "RFID U031, RFID2 U031-B and UHF RFID are different parts."
+    "RFID U031, RFID2 U031-B and UHF RFID are different parts.",
+    "Start with a known Type A test tag. 125 kHz and UHF tags use incompatible radio bands; do not diagnose them as wiring faults. Test absent-reader recovery without writing card memory."
   ],
   "app_fixture_plan": {
     "proposed_events": [
@@ -113,6 +114,26 @@
       "author": "M5Stack and upstream driver authors",
       "purpose": "Choose the I2C implementation used by the vendor; inspect its license and revision before copying code.",
       "installed_by_plugin": false
+    },
+    {
+      "name": "MFRC522_I2C vendor-tested candidate",
+      "repository": "https://github.com/kkloesener/MFRC522_I2C",
+      "author": "kkloesener and upstream MFRC522 authors",
+      "purpose": "Vendor-reported candidate, not compiled into this plugin. Inspect current bus injection, reset timeout and source notices; pin a reviewed commit in the app before reuse.",
+      "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "RFID2 was tested on StickS3 Grove SDA9/SCL10; the vendor read NTAG215 using an MFRC522 I2C implementation.",
+      "The selected driver polls ISO14443 Type A; this does not validate Type B even though the WS1850S hardware manual lists A/B.",
+      "The supplied kit guide reports four adhesive tags. Check the actual box; this is not a guaranteed RFID2 retail package quantity.",
+      "The vendor warns that PCD_Reset in its selected driver can wait indefinitely if the reader is absent. Review and bound initialization before relying on it."
+    ]
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

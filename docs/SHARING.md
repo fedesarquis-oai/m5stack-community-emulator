@@ -2,7 +2,9 @@
 
 Share [the public GitHub repository](https://github.com/fedesarquis-oai/m5stack-community-emulator). It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
 
-GitHub main and the installed plugin remain at 0.7.42. The **0.7.44 candidate** is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1), with native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. It is not merged or released. Share the candidate ZIP explicitly for prerelease testing; do not promise that installing from GitHub already includes it.
+GitHub main remains at 0.7.42. The **0.7.44 candidate** is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1), with native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. It is not merged or released. Share the candidate ZIP explicitly for prerelease testing; do not promise that installing from GitHub main already includes it.
+
+The November 16 vendor-guide knowledge update is included in that draft PR. Its branch is `review/portable-setup-cores3-v0.7.44`. For an explicitly requested candidate installation, Codex can register the repository with `--ref review/portable-setup-cores3-v0.7.44`, install `m5stack-preview@m5stack-community`, then verify version 0.7.44 and all eight exact-SKU guides. This follows the review branch, not future main updates; switch back to the released source when appropriate. See the current [validation record](VALIDATION.md) before describing support.
 
 ## What the recipient does
 

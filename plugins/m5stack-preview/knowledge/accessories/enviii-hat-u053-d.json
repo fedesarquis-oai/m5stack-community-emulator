@@ -15,9 +15,9 @@
     "data_bus": "I2C",
     "chips": {
       "SHT30": "0x44",
-      "QMP6988": "0x70 (reviewed HAT example)"
+      "QMP6988": "0x70"
     },
-    "alternate_qmp_address": "0x56 exists in the driver and some documentation; confirm the attached hardware.",
+    "alternate_qmp_address": "0x56 is supported by the driver; the current official U053-D manual and vendor bench report specify 0x70. Do not silently substitute another ENV revision.",
     "supply_volts": 3.3,
     "output_units": [
       "degrees Celsius",
@@ -30,9 +30,9 @@
       "host_profile": "sticks3",
       "connector": "Hat2-Bus legacy HAT footprint",
       "pins": null,
-      "basis": "pin_mapping_requires_confirmation",
+      "basis": "vendor_candidate_recorded_separately_pending_plugin_physical_check",
       "physical_validation": "not_run",
-      "notes": "Legacy examples use StickC SDA0/SCL26. StickS3 has a different Hat2-Bus; inspect the HAT schematic and mating orientation before assigning pins. Do not use Grove GPIO9/10 for a directly attached HAT or infer GPIO26 from a StickC example. Use 3.3V, not 5V, for these HAT supply pins."
+      "notes": "Vendor bench report gives SDA8/SCL0 at 100 kHz; see vendor_bench_report.candidate_connection. This has not been physically verified by the plugin and must not be applied to an unknown revision. Confirm seating/orientation and 3.3V. Do not copy legacy StickC SDA0/SCL26 or Grove GPIO9/10. GPIO0 is a boot-strapping signal: check cold boot with the HAT attached and do not force it low during reset."
     }
   ],
   "support": {
@@ -40,17 +40,18 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
-    "Inspect HAT seating, 3.3V and actual StickS3 GPIO mapping before configuring I2C.",
-    "Check SHT30 at 0x44 and QMP6988 at 0x70 on that bus; if absent, inspect revision and documented 0x56 alternate rather than changing unrelated pins.",
-    "Read all three values and their validity; allow temperature to settle away from fingers/device heat."
+    "Compare the attached HAT against the vendor SDA8/SCL0 candidate and manufacturer connector drawings; use 3.3V and start at 100 kHz.",
+    "Check both 0x44 and 0x70 on the selected bus. If only one responds, power down, reseat, then repeat; one responding chip is not a complete pass.",
+    "Show temperature in C, humidity in %RH and pressure in Pa or hPa with validity per quantity. Check that readings recover after a cold restart and remain available during use."
   ],
   "troubleshooting": [
     "Do not substitute ENV-II/BMP280 or ENV-IV/SHT40/BMP280 code.",
     "The QMP driver default argument is 0x56 but the vendor ENV-III HAT example explicitly chooses QMP6988_SLAVE_ADDRESS_L=0x70.",
-    "Different addresses do not make two physical HATs stackable; check space, wiring and pull-ups."
+    "Different addresses do not make two physical HATs stackable; check space, wiring and pull-ups.",
+    "Handle pressure and humidity/temperature failure independently; show unavailable instead of zero. This part does not measure CO2 or particulates."
   ],
   "app_fixture_plan": {
     "proposed_events": [
@@ -102,5 +103,27 @@
       "purpose": "SHT3X/QMP6988 drivers and ENV-III HAT example; adapt bus pins explicitly.",
       "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "The vendor used StickS3 top HAT SDA GPIO8 and SCL GPIO0 at 100 kHz, separate from Grove GPIO9/10.",
+      "Confirm exact HAT seating, connector orientation and supply before using this route; the plugin has not repeated the physical test.",
+      "The pressure chip at 0x70 intermittently disappeared while SHT30 at 0x44 still answered; reseating temporarily restored it.",
+      "Nearby board heat biased the temperature upward; missing pressure is a separate failure from temperature bias."
+    ],
+    "candidate_connection": {
+      "host_profile": "sticks3",
+      "connector": "top HAT",
+      "sda": 8,
+      "scl": 0,
+      "frequency_hz": 100000,
+      "supply_volts": 3.3,
+      "acceptance": "vendor_report_only_confirm_on_attached_hardware"
+    }
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

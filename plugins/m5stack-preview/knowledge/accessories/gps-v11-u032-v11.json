@@ -54,7 +54,7 @@
     "simulation_supported": false,
     "packaged_firmware_adapter": false,
     "physical_validation": "not_run",
-    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
   },
   "first_hardware_check": [
     "Verify NMEA bytes at 115200 before diagnosing satellite reception. Older Unit GPS examples use 9600 and do not apply to v1.1.",
@@ -63,7 +63,8 @@
   "troubleshooting": [
     "Indoor no-fix can be normal even when UART and power are correct.",
     "Do not display stale coordinates as a fresh fix or use 0,0 as a missing-value substitute.",
-    "Do not automatically run example factory-reset/reconfiguration commands just to read position."
+    "Do not automatically run example factory-reset/reconfiguration commands just to read position.",
+    "Test missing and stale fixes explicitly. For an indoor demonstration, use an app-owned labeled route fixture, then disable it for real acquisition."
   ],
   "app_fixture_plan": {
     "proposed_events": [
@@ -120,5 +121,26 @@
       "purpose": "NMEA parsing and v1.1 example. Example pins22/21 are not CoreS3/StickS3 pins.",
       "installed_by_plugin": false
     }
-  ]
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "Vendor also received GPS data on CoreS3 body PORT.A: unit white TX to host GPIO1, RX-only at 115200. This is an alternate UART use of that connector, not simultaneous I2C.",
+      "Indoor tests produced no satellite fix. Receiving NMEA demonstrates transport; it does not validate position.",
+      "For a live fix, check valid parsed status and age. ANTENNA OPEN text alone must not be dismissed as simply being indoors; inspect power, module and outdoor behavior if it persists."
+    ],
+    "alternate_connection": {
+      "host_profile": "cores3",
+      "connector": "body PORT.A, not M145 PORT.A",
+      "host_rx": 1,
+      "host_tx": null,
+      "baud": 115200,
+      "acceptance": "vendor_report_only",
+      "bus_ownership": "Release external I2C first; do not attach an I2C unit to the same pins."
+    }
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
 }

@@ -311,8 +311,9 @@
       "white_gpio": 10
     },
     "ext_5v": "M5Unified defaults EXT_5V output off; enable only when the Stick supplies the attached peripheral, with no conflicting power input.",
-    "hat_pin_mapping": "Verify exact HAT schematic and Hat2-Bus mating orientation; do not copy GPIO0/26 from StickC examples.",
+    "hat_pin_mapping": "Vendor bench guide reports top HAT SDA8/SCL0 at 100 kHz. See the exact HAT guide for candidate pins, supply and orientation checks; no plugin physical acceptance. Do not reuse legacy StickC SDA0/SCL26.",
     "status": "manufacturer_documented_not_physically_validated",
-    "guide": "skills/m5stack-preview/references/accessories.md"
+    "guide": "skills/m5stack-preview/references/accessories.md",
+    "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
   }
 }

@@ -1,5 +1,13 @@
 # Candidate validation — 0.7.44
 
+## Vendor guide integration — November 16, 2026
+
+- **PASS:** Five existing application-server checks, including all exact board/accessory lookups, unknown-revision handling and knowledge-only capability boundaries.
+- **PASS:** Actual packaged stdio launcher startup and direct readback of K128, K150 and all six accessory SKUs. Each links the new builder guide; each accessory returns its separately qualified vendor bench notes. The HAT candidate is SDA8/SCL0 at 100 kHz and remains unverified by this plugin.
+- **PASS:** Package hashes, unchanged bundle/license inventory, source boundary scan and Markdown link verification. No runtime, shell, tool schema, driver or compiler change was made for this follow-up; broad firmware/media suites were not repeated.
+- **Source review:** Checked current manufacturer manuals against the supplied vendor guide. Preserved the distinction between the CoreS3 body and M145 red ports, manufacturer specs and vendor-observed ranges, Type A driver support and Type A/B hardware claims, and vendor testing versus plugin acceptance.
+- **Scope:** Included in the existing [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1) for candidate installation and review. No USB access, physical sensor acceptance or accessory driver changes. The preceding cross-platform CI results below apply to the reviewed runtime code, which is unchanged. Installation into one owner's Codex does not make this a public release or prove another host's setup.
+
 ## Portable host setup and CoreS3 — November 16, 2026
 
 - **PASS on this Mac:** 51 focused Node server, profile, host, hardware-job, browser-transport and launcher checks. Also 5 OS-helper/lock/process/private-file/CoreS3 admission checks, 23 hardware setup/workflow checks, 3 private network setup checks, 13 setup recovery checks and 2 compiler/build recovery checks.
@@ -10,7 +18,7 @@
 - **Local Mac policy:** Two temporary build-test executables were killed during local checks. Scoped system logs identified an AMFI signature-policy rejection. Earlier unchanged reruns had passed; after identifying the policy rejection, no bypass or further retry of that blocked check was attempted. Clean macOS CI passed all three compiler/byte-stream checks. This is not evidence that the local policy issue is resolved.
 - **Still pending:** Independent Codex installation and live Chrome controls/audio/permission lifecycle on Windows/Linux; physical USB and standard CoreS3 acceptance; Intel Mac and Linux ARM64 execution.
 - **Migration:** Portable MCP startup now requires Node 22+ on PATH. The legacy Unix browser launcher remains available. Do not treat a macOS bundled runtime discovered by that wrapper as satisfying the new manifest's prerequisite.
-- **Release state:** Candidate source is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); main, releases and the installed plugin remain at 0.7.42. The later validation-document update does not change the tested runtime code. Earlier validation below retains its original scope.
+- **Release state:** Candidate source is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); main remains at 0.7.42 and no new release is published. The later validation-document and accessory-knowledge updates do not change the tested runtime code. Earlier validation below retains its original scope.
 
 # Earlier candidate validation — 0.7.43
 

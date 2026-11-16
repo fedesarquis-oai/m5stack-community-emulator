@@ -7,6 +7,7 @@
 - Added a compiler preflight and native-worker CI matrix for macOS, Linux and Windows. Runner results and live media acceptance remain separate.
 - Added exact CoreS3 K128 firmware configuration, board/PSRAM admission and capability limits. Firmware compilation passed; physical testing remains pending.
 - Preserved the fixed emulator and the previous accessory-reference library. No USB writes or new accessory drivers.
+- Integrated vendor-reported accessory bring-up notes, qualified StickS3 HAT wiring, QR routing/bus conflicts, failure handling and a builder walkthrough for both controllers and all six add-ons. Documentation support remains separate from emulation and physical acceptance.
 
 ## 0.7.43 — accessory references and builder readiness
 
