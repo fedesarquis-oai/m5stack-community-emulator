@@ -2,6 +2,16 @@
 
 These records distinguish current source/native checks from earlier browser and physical observations. A passed simulation does not establish physical fidelity or a fresh host permission result.
 
+## Portable host candidate 0.7.44 — November 16, 2026
+
+The portable Node entrypoint, native Windows/Linux setup and separate standard CoreS3 target are implemented. [CI run 43972900467](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43972900467) passed compiler/MCP checks, fresh native dependency setup, all five actual workers with controls and known PCM, private-file/process/lock checks, byte-exact native pipes, firmware-tool setup and CoreS3 compilation on Windows x64, Ubuntu x64 and macOS 26 ARM64. Windows response-file quoting, inherited PowerShell module selection and text-mode pipes were corrected. No USB operation or live capture was performed.
+
+Physical CoreS3 and independent Windows/Linux Codex/Chrome acceptance remain pending. Local temporary test executables encountered macOS signature-policy rejection; clean macOS CI passed, but the local policy issue was not bypassed or declared resolved. The fixed emulator UI and media contracts remain unchanged. Candidate source is in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); main and the installed plugin stay at 0.7.42.
+
+## Accessory candidate 0.7.43 — November 16, 2026
+
+General accessory knowledge and explicit host limits added. Forty-three focused server/profile/host/browser-transport/launcher checks passed. No new peripheral adapters, physical target or media implementation. No device was available; manufacturer/source review is not hardware acceptance. No live media, new host or USB operations were performed. See the repository validation record for package/extraction evidence and release state.
+
 ## Community candidate 0.7.42 — October 22, 2026
 
 GitHub-first guidance lets people ask Codex to install from a real repository URL, with no manual clone. MCP and Chrome now use one shell launcher for Node selection. Forty server/profile/browser/launcher tests passed, including nineteen launcher checks. The actual browser launcher started and shut down cleanly with no Node on PATH, using this Mac’s desktop-bundled runtime. Codex.app path candidates have fixture coverage only; no fresh Codex.app-only or another-Mac installation is claimed. Device behavior and prior audio/hardware evidence are unchanged. Public GitHub clone and CI verification remain pending until publication.

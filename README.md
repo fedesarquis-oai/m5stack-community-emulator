@@ -4,7 +4,7 @@ Tell Codex what you want to build, then develop and test your device app in Chro
 
 This community plugin gives Codex a fixed emulator and a portable C++ app workspace. Tell it what you want to build; Codex edits the app, builds it and opens the result. When you have a supported physical device, Codex can compile the same app source for that board and guide installation.
 
-**Community preview · v0.7.42 · tested on macOS Apple Silicon with Chrome.** No hardware or API key is required for the base emulator. This is an independent project, not an official M5Stack or OpenAI product. It simulates supported app interfaces; it does not run arbitrary ESP32 firmware or reproduce every peripheral.
+**Community preview · v0.7.44 · tested on macOS Apple Silicon with Chrome.** No hardware or API key is required for the base emulator. This is an independent project, not an official M5Stack or OpenAI product. It simulates supported app interfaces; it does not run arbitrary ESP32 firmware or reproduce every peripheral.
 
 Original code is available under the [MIT license](LICENSE). Upstream components retain their own notices.
 
@@ -28,7 +28,7 @@ The workspace includes the technical scaffold needed to compile an app. Your ide
 - Receive live microphone PCM in Chrome while keeping app controls responsive.
 - Play app-generated audio on speaker-equipped profiles, or buzzer tones on StickC Plus2.
 - Call named HTTP(S) services through the optional network adapter.
-- Compile the same portable app source for one of the three supported physical targets.
+- Compile the same portable app source for one of four firmware targets (CoreS3 physical acceptance is pending).
 
 Microphone use requires your app to request it, a device interaction and browser/OS permission. Recording controls and results stay on the device screen. Transcription and AI providers are separate app features with their own setup and data handling.
 
@@ -39,18 +39,23 @@ Microphone use requires your app to request it, a device interaction and browser
 | AtomS3R C126 | Display-cap button, semantic tilt/shake | No onboard mic | No onboard speaker | Tested |
 | StickC Plus2 K016-P2 | A/B buttons, semantic tilt/shake | Yes | Buzzer tones | Not implemented |
 | StickS3 K150 | KEY1/KEY2, semantic tilt/shake | Yes | Speaker PCM/tones | Tested; speaker volume needs improvement |
-| CoreS3 K128 | Touch, semantic POWER, tilt/shake | Yes | Speaker PCM/tones | Not implemented |
+| CoreS3 K128 | Touch, semantic POWER, tilt/shake | Yes | Speaker PCM/tones | Compiled; physical checks pending |
 | CoreS3 SE K128-SE | Touch/lower strip, semantic POWER | Yes | Speaker PCM/tones | Tested |
 
 All five have an optional network adapter. CoreS3 SE has no IMU or camera. Browser microphone support is separate from Codex's embedded panel, where capture has been blocked by the host. **Use Chrome for microphone apps.** See [tested scope and limits](docs/SUPPORT-MATRIX.md).
+
+## Accessory references
+
+The plugin includes [exact-part guidance](docs/ACCESSORIES.md) for QRCode, RFID2, Gesture, GPS v1.1, ENV-III HAT and ToF HAT accessories. Codex can look them up by SKU and explain wiring, libraries and missing support. These are knowledge references; accessory emulator inputs and firmware drivers are not implemented.
 
 ## For people and agents
 
 - [Install and build your first app](docs/INSTALL.md)
 - [Agent workflow and boundaries](AGENTS.md)
 - [App authoring guide](docs/AGENT-GUIDE.md)
+- [Builder readiness and host limits](docs/BUILDER-READINESS.md)
 - [Supported features and device evidence](docs/SUPPORT-MATRIX.md)
-- [Current candidate validation](docs/VALIDATION.md)
+- [Validation and remaining checks](docs/VALIDATION.md)
 - [Troubleshooting and bug reports](docs/TROUBLESHOOTING.md)
 - [Contributing and reproducible builds](CONTRIBUTING.md)
 - [Data handling](docs/DATA-HANDLING.md)

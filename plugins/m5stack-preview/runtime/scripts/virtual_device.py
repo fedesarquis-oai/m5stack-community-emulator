@@ -3,8 +3,10 @@ import concurrent.futures
 import hashlib
 import json
 import os
+import platform
 from pathlib import Path
 import secrets
+import shlex
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,9 +26,9 @@ def source_digest(profile='stickcplus2'):
              'vendor/M5GFX/src/lgfx/Fonts/glcdfont.h'}
     for path in (ROOT/'src').iterdir():
         if path.is_file() and path.suffix in ('.h','.hpp','.cpp'):
-            paths.add(str(path.relative_to(ROOT)))
+            paths.add(path.relative_to(ROOT).as_posix())
     for path in (ROOT/'data').rglob('*'):
-        if path.is_file() and path.suffix in ('.json','.wav','.pem'): paths.add(str(path.relative_to(ROOT)))
+        if path.is_file() and path.suffix in ('.json','.wav','.pem'): paths.add(path.relative_to(ROOT).as_posix())
     digest = hashlib.sha256(profile.encode()+b'\0')
     for name in sorted(paths):
         digest.update(name.encode() + b'\0' + (ROOT/name).read_bytes())
@@ -43,11 +45,11 @@ def build(workflow, profile='stickcplus2'):
     sources.append(ROOT/'src/virtual_device.cpp')
     flags = ['-O1', '-g0', '-DLV_CONF_INCLUDE_SIMPLE', '-I'+str(ROOT/'src'), '-I'+str(lvgl)]
     shared_headers = [ROOT/'src/lv_conf.h', ROOT/'dependencies.lock.json'] + list((lvgl/'src').rglob('*.h'))
-    header_key = hashlib.sha256(b''.join(str(p.relative_to(ROOT)).encode()+b'\0'+p.read_bytes() for p in sorted(shared_headers))).digest()
+    header_key = hashlib.sha256(b''.join(p.relative_to(ROOT).as_posix().encode()+b'\0'+p.read_bytes() for p in sorted(shared_headers))).digest()
     app_headers = list((ROOT/'src').glob('*.hpp'))+list((ROOT/'src').glob('*.h'))+[ROOT/'vendor/M5GFX/src/lgfx/Fonts/glcdfont.h']
     app_header_key = hashlib.sha256(b''.join(p.read_bytes() for p in sorted(app_headers))).digest()
     def compile_one(source):
-        key = hashlib.sha256((str(source)+repr(flags)).encode()+source.read_bytes()+header_key+
+        key = hashlib.sha256((str(source)+repr(flags)+platform.system()+platform.machine()).encode()+source.read_bytes()+header_key+
                              (app_header_key if source.suffix=='.cpp' else b'')).hexdigest()[:20]
         obj = BUILD/(key+'.o')
         if not obj.exists():
@@ -69,8 +71,20 @@ def build(workflow, profile='stickcplus2'):
         objects = list(pool.map(compile_one, sources))
     # Link to a new final path, then atomically publish metadata. This avoids
     # replacing a mapped executable and keeps macOS linker signing intact.
-    binary = BUILD/('worker-'+digest[:16]+'-'+secrets.token_hex(4))
-    workflow.run(['clang++', *objects, '-o', binary], log='web-link.log')
+    binary = BUILD/('worker-'+digest[:16]+'-'+secrets.token_hex(4)+('.exe' if os.name=='nt' else ''))
+    # A full LVGL link can exceed Windows' command-line limit in a builder's
+    # long workspace path. Clang reads the same arguments from a response file.
+    # Clang accepts forward slashes on Windows. Avoid backslashes in response
+    # files: LLVM's GNU tokenizer consumes them even inside quoted arguments.
+    link_args = [obj.as_posix() for obj in objects] + ['-o', binary.as_posix()]
+    response = binary.with_suffix('.rsp')
+    try:
+        # clang++ uses GNU response-file quoting even on Windows; only clang-cl
+        # defaults to Windows quoting. Quote the normalized paths for spaces.
+        response.write_text(shlex.join(link_args), encoding='utf-8')
+        workflow.run(['clang++', '@'+str(response)], log='web-link.log')
+    finally:
+        response.unlink(missing_ok=True)
     if source_digest(profile) != digest:
         raise RuntimeError('Source changed during build; rerun web-build')
     metadata = {'build_id': digest[:16], 'source_sha256': digest,

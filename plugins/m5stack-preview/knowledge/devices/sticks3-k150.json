@@ -232,8 +232,8 @@
     "explicit_enable_and_permission_required": true,
     "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
     "audio_output": "speaker_pcm_and_tone",
-    "audio_default": "muted",
-    "explicit_sound_enable_required": true,
+    "audio_default": "enabled_after_device_gesture",
+    "explicit_sound_enable_required": false,
     "volume_control": true,
     "local_test_tone": false,
     "full_audio_playback": true,
@@ -248,7 +248,9 @@
     "host_support_evidence": {
       "Chrome": "Historical v0.7.28 acceptance: StickS3 PCM playback, live microphone, KEY1 during capture and KEY2 stopping capture; physical acceptance is recorded separately. Fresh October 20 v0.7.35 live microphone capture confirmed by user; native screen showed 294400 samples.",
       "Codex_panel": "Previously inspected host blocked microphone access; no current host fix verified."
-    }
+    },
+    "sound_gesture_required": true,
+    "explicit_mute_preserved_in_view": true
   },
   "physical_firmware": {
     "status": "implemented_features_physically_accepted",
@@ -300,5 +302,18 @@
       "validated_firmware_build": "753f7bf8662a970b",
       "status": "Public HTTPS GET/JSON POST, physical input, pause, forget/reprovision and battery power cycle with persisted settings passed; no Mac API server."
     }
+  },
+  "accessory_connections": {
+    "reviewed_on": "2026-11-16",
+    "official_source": "https://docs.m5stack.com/en/core/StickS3",
+    "grove": {
+      "yellow_gpio": 9,
+      "white_gpio": 10
+    },
+    "ext_5v": "M5Unified defaults EXT_5V output off; enable only when the Stick supplies the attached peripheral, with no conflicting power input.",
+    "hat_pin_mapping": "Vendor bench guide reports top HAT SDA8/SCL0 at 100 kHz. See the exact HAT guide for candidate pins, supply and orientation checks; no plugin physical acceptance. Do not reuse legacy StickC SDA0/SCL26.",
+    "status": "manufacturer_documented_not_physically_validated",
+    "guide": "skills/m5stack-preview/references/accessories.md",
+    "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
   }
 }

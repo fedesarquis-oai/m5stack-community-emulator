@@ -48,7 +48,11 @@ class BuildRecoveryTest(unittest.TestCase):
             # build must not mistake those bytes for a reusable object.
             Path(args[args.index('-o') + 1]).write_bytes(b'incomplete object')
             raise RuntimeError('injected compiler interruption')
-        return subprocess.run(args, check=True, capture_output=True, timeout=15)
+        try:
+            return subprocess.run(args, check=True, capture_output=True, timeout=15)
+        except subprocess.CalledProcessError as error:
+            # Only this test's generated sources/paths, never credentials.
+            raise RuntimeError(error.stderr.decode(errors='replace')[-4000:]) from error
 
     def build(self):
         with contextlib.redirect_stdout(io.StringIO()):
@@ -74,6 +78,15 @@ class BuildRecoveryTest(unittest.TestCase):
         with mock.patch.dict(os.environ, {'GIT_DIR': str(self.work / 'unrelated.git'), 'GIT_WORK_TREE': str(self.work / 'unrelated')}):
             result = self.build()
         subprocess.run([str(self.scope['BUILD'] / result['binary'])], check=True, timeout=3)
+
+    def test_native_pipe_preserves_binary_control_bytes(self):
+        source=self.work/'stdio.cpp'
+        source.write_text('#include "host_stdio.hpp"\nint main(){if(!preview::prepareHostStdio())return 2;unsigned char b[7];if(std::fread(b,1,7,stdin)!=7)return 3;return std::fwrite(b,1,7,stdout)==7?0:4;}\n')
+        binary=self.work/('stdio.exe' if os.name=='nt' else 'stdio')
+        self.run_command(['clang++','-std=c++17','-I'+str(ROOT/'src'),source,'-o',binary])
+        payload=b'\x00\x0a\x0d\x1a\xff\x0a\x00'
+        result=subprocess.run([str(binary)],input=payload,capture_output=True,check=True,timeout=5)
+        self.assertEqual(result.stdout,payload)
 
 
 if __name__ == '__main__':

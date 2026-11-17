@@ -1,10 +1,22 @@
 # Community release checks
 
-Candidate **0.7.42**, updated October 22, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
+Community preview **0.7.44**, updated November 17, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
 
 Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 
+## Accessory update scope
+
+The 0.7.44 community preview includes the accessory library, portable host setup and a compiled standard CoreS3 target. It is distributed from GitHub `main` through the normal repository installation link. No accessory adapters or new physical acceptance are claimed. Windows/Linux/macOS native CI passed; independent live-browser checks remain required before expanding the accepted host scope. See [builder readiness](BUILDER-READINESS.md). Historical public checkout evidence below retains its original version scope; a separate GitHub Release is optional.
+
 ## Completed locally
+
+- [x] Six exact-SKU accessory references, source/author credits and reusable agent guidance added to the existing catalog/guide tools.
+- [x] Host reporting separates implementation limits from available tools; stale default-audio and physical-target metadata corrected.
+- [x] Fifty-one focused server/profile/host/hardware-job/browser/launcher checks and the targeted Python setup/helper suites passed. No live capture or USB action was performed.
+
+## Carried-forward evidence
+
+The checks below retain their original release scope in VALIDATION.md. They are not new 0.7.44 hardware or browser acceptance.
 
 - [x] GitHub-first setup instructions let recipients ask Codex to install directly from the repository URL; cloning is optional.
 - [x] MCP and Chrome use one runtime-selection launcher. Nineteen launcher checks cover quoting, mode selection, missing/unsupported runtimes and terminal execution failures. Codex bundle paths have fixture coverage; this Mac has a ChatGPT-hosted runtime.
@@ -22,6 +34,10 @@ Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 - [x] Community ZIP fallback and public GitHub sharing instructions included.
 
 ## Independent validation and publication
+
+- [x] Windows x64, Ubuntu x64 and macOS 26 ARM64 completed the [native CI matrix](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43972900467) on the reviewed runtime, including fresh firmware setup and CoreS3 compilation.
+- [ ] Complete Windows/Linux Codex/Chrome controls, audio and USB checks; CI cannot grant browser permissions or hear audio.
+- [ ] Complete standard CoreS3 K128 backup, boot, inputs, audio, network and power-cycle acceptance when the device is available.
 
 - [ ] A new user on another Mac follows INSTALL.md using their own idea. Keep this pending until someone actually does it.
 - [ ] Complete manual Chrome tab-hide, permission revocation during capture and OS-level audio interruption/recovery. Automated cases pass; this browser pass did not establish the hide behavior and further native UI actions were interrupted. See VALIDATION.md for the observed scope.

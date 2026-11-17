@@ -2,10 +2,10 @@
 
 The plugin includes a local browser host for the same built MCP App and native device controls. Use it for current microphone development and testing. Browser results remain separate from Codex-panel permission support; this surface does not change Codex permissions or bypass an OS denial.
 
-From the installed plugin directory, use the same runtime selection as the MCP server:
+From the installed plugin directory, use the same portable Node entrypoint as the MCP server (Node 22+ on PATH):
 
 ```sh
-sh server/launch.sh --browser --workspace /absolute/prepared/workspace --profile cores3se --app custom
+node server/launch.mjs --browser --workspace /absolute/prepared/workspace --profile cores3se --app custom
 ```
 
 The command prints a temporary `http://127.0.0.1:PORT/#…` URL. Open that exact URL in Chrome. It expires after 30 minutes; Ctrl-C stops its owned preview and native worker. It installs no service, accesses no physical hardware, builds no source and exposes no provider tools. The workspace must already contain a verified current native build.

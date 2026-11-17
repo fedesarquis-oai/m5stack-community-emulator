@@ -9,7 +9,7 @@ Read the [packaged skill](../plugins/m5stack-preview/skills/m5stack-preview/SKIL
 | Create | Copy the verified runtime into a new user workspace | Existing user source preserved; no installed-cache edits |
 | Prepare | Run doctor and explicit `setup --browser-only` | Required tools and pinned native sources available |
 | Author | Edit `src/user_app.hpp`, `src/user_draw.hpp`, assets and app-owned services | All interactions/results render on the native screen or device buttons |
-| Build | `m5stack_build` or `./m5preview web-build --profile <id>` | Current native build receipt for the actual profile |
+| Build | `m5stack_build` or `python m5preview web-build --profile <id>` | Current native build receipt for the actual profile |
 | Open | Packaged local browser launcher in Chrome; keep the embedded Codex panel outside this release | Native app pixels visible; launcher remains alive |
 | Test | Real device controls; relevant audio/network lifecycle | Observed results separated from automated/source checks |
 | Iterate | Build and reload after edits | New session uses the new app build; no stale result injection |

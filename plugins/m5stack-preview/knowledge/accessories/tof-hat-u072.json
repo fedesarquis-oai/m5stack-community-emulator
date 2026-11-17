@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "tof-hat-u072",
+  "name": "Hat ToF",
+  "sku": "U072",
+  "aliases": [
+    "ToF Distance HAT",
+    "ToF HAT",
+    "Hat ToF"
+  ],
+  "category": "hat",
+  "reviewed_on": "2026-11-16",
+  "summary": "Returns distance to a target using a VL53L0X time-of-flight sensor.",
+  "interface": {
+    "data_bus": "I2C",
+    "address": "0x29",
+    "chip": "VL53L0X",
+    "supply_volts": 3.3,
+    "output_units": "millimetres plus validity/timeout",
+    "range_note": "Up to 2 m is conditional; vendor notes about 1.2 m in normal mode and 2 m in long-range/dark conditions."
+  },
+  "host_bindings": [
+    {
+      "host_profile": "sticks3",
+      "connector": "Hat2-Bus legacy HAT footprint",
+      "pins": null,
+      "basis": "vendor_candidate_recorded_separately_pending_plugin_physical_check",
+      "physical_validation": "not_run",
+      "notes": "Vendor bench report gives SDA8/SCL0 at 100 kHz; see vendor_bench_report.candidate_connection. This has not been physically verified by the plugin and must not be applied to an unknown revision. Confirm seating/orientation and 3.3V. Do not copy legacy StickC SDA0/SCL26 or Grove GPIO9/10. GPIO0 is a boot-strapping signal: check cold boot with the HAT attached and do not force it low during reset."
+    }
+  ],
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Primary-source review plus separately labeled vendor bench notes. No accessory driver or emulator input is implemented; vendor results are not plugin physical acceptance."
+  },
+  "first_hardware_check": [
+    "Compare the attached HAT against the vendor SDA8/SCL0 candidate and manufacturer connector drawings; use 3.3V and start at 100 kHz. Detect 0x29 and initialize with a bounded timeout.",
+    "Try a flat target at known distances, then remove it. Show millimetres and validity; check cold boot with the HAT attached.",
+    "Discard invalid/out-of-range samples before optional 3-5-sample smoothing. A timeout must remain unavailable, not be averaged into a false distance."
+  ],
+  "troubleshooting": [
+    "A timeout or out-of-range status is not zero distance.",
+    "Do not confuse the U072 HAT with a Grove ToF Unit or VL53L1X revision.",
+    "If combining two 0x29 sensors, plan reset/address reassignment or a suitable multiplexer; address collision is not fixed by parallel wiring."
+  ],
+  "app_fixture_plan": {
+    "proposed_events": [
+      "near",
+      "far",
+      "out_of_range",
+      "timeout",
+      "sensor_missing"
+    ],
+    "note": "App-owned millimetre fixtures can test UI logic, not optics, measurement accuracy or sensor timing."
+  },
+  "sources": [
+    {
+      "title": "Hat ToF manual",
+      "url": "https://docs.m5stack.com/en/hat/Hat_ToF",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "Vendor HAT example",
+      "url": "https://github.com/m5stack/M5StickC/blob/master/examples/Hat/TOF/TOF.ino",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16"
+    },
+    {
+      "title": "StickS3 K150 manual",
+      "url": "https://docs.m5stack.com/en/core/StickS3",
+      "author": "M5Stack",
+      "checked_on": "2026-11-16",
+      "sections": [
+        "EXT_5V_EN",
+        "HY2.0-4P",
+        "Hat2-Bus"
+      ]
+    }
+  ],
+  "libraries": [
+    {
+      "name": "VL53L0X Arduino driver",
+      "repository": "https://github.com/pololu/vl53l0x-arduino",
+      "author": "Pololu",
+      "purpose": "Driver linked by M5Stack HAT example; verify selected revision/license before reuse.",
+      "installed_by_plugin": false
+    }
+  ],
+  "vendor_bench_report": {
+    "source_kind": "owner_supplied_vendor_bench_guide",
+    "received_on": "2026-11-16",
+    "independently_reproduced_by_plugin": false,
+    "scope": "Reported observations from a separate vendor build; not plugin driver or physical acceptance.",
+    "notes": [
+      "The vendor used StickS3 top HAT SDA GPIO8 and SCL GPIO0 at 100 kHz, separate from Grove GPIO9/10.",
+      "Confirm exact HAT seating, connector orientation and supply before using this route; the plugin has not repeated the physical test.",
+      "The vendor found roughly 30-120 cm useful for its demo. This is a bench observation, not a guaranteed minimum or maximum range."
+    ],
+    "candidate_connection": {
+      "host_profile": "sticks3",
+      "connector": "top HAT",
+      "sda": 8,
+      "scl": 0,
+      "frequency_hz": 100000,
+      "supply_volts": 3.3,
+      "acceptance": "vendor_report_only_confirm_on_attached_hardware"
+    }
+  },
+  "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md"
+}

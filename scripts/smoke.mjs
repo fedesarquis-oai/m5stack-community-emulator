@@ -54,10 +54,23 @@ try{
     const guide=(await call('m5stack_device_guide',{device:profile})).structuredContent;
     assert.equal(guide.device.native_preview.runtime_profile,profile);
   }
+  assert.deepEqual(catalog.accessories.entries.map(part=>part.sku),['M145','U031-B','U127','U032-V11','U053-D','U072']);
+  for(const part of catalog.accessories.entries){
+    const guide=(await call('m5stack_device_guide',{device:part.sku})).structuredContent;
+    assert.equal(guide.accessory.sku,part.sku);
+    assert.equal(guide.accessory.support.status,'knowledge_only');
+    assert.equal(guide.simulationSupported,false);
+    assert.equal(guide.firmwareAdapterImplemented,false);
+  }
+  const unsupported=(await call('m5stack_device_guide',{device:'U053-C'})).structuredContent;
+  assert.equal(unsupported.status,'research-only');
+  const host=(await call('m5stack_doctor')).structuredContent;
+  assert.equal(host.hostSupport.posixShellRequired,false);
+  assert.equal(host.hardwareAccess,false);
   const resource=await rpc('resources/read',{uri:'ui://m5stack-preview/workbench.html'});
   assert.match(resource.contents[0].text,/audio-settings-heading/);
   assert.doesNotMatch(resource.contents[0].text,/id="(?:voice-transcript|record-toggle|image-controls|sound-test)"/);
-  console.log('PASS: packaged MCP launcher, stdio server, version, 14 tools, five exact guides and fixed UI resource');
+  console.log('PASS: packaged MCP launcher, version, 14 tools, five boards, six knowledge-only accessory guides, exact-revision rejection, host limits and fixed UI resource');
 }catch(error){if(stderr)console.error(stderr);throw error;}
 finally{
   child.stdin.end();

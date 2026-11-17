@@ -26,13 +26,13 @@ The simulator runs the portable C++ application, renders native framebuffer pixe
 
 | Feature | Implemented scope | Limits |
 |---|---|---|
-| Display and app logic | Five native profiles; same app headers compile for three physical targets | Exact-board build/boot acceptance remains distinct from simulation |
+| Display and app logic | Five native profiles; same app headers compile for four firmware targets; CoreS3 awaits physical acceptance | Exact-board build/boot acceptance remains distinct from simulation |
 | Touch/buttons | Profile-gated events, secondary key opt-in, SE lower strip, Core semantic POWER/RST | No electrical power/bootloader simulation |
 | Microphone | Browser to 16 kHz mono PCM16 app callbacks on four profiles; physical SE/Stick capture tested | Browser/OS permission required; panel host capture unverified; no stereo/full-duplex promise |
 | Speaker/buzzer | CoreS3/SE/StickS3 mono PCM16 clips; Plus2 buzzer | Physical SE/Stick playback tested; Stick loudness remains an issue |
 | Images | App drawing plus Codex-injected RGB565 fixtures | Camera/storage adapters unimplemented |
 | Motion | Semantic shake/tilt on supported profiles; Atom/Stick physical mapping tested | Not raw calibrated IMU emulation; SE has no IMU |
-| Network | Optional named HTTP(S), GET/JSON POST, three firmware targets | Bounded messages; no audio upload, streaming or BLE |
+| Network | Optional named HTTP(S), GET/JSON POST, four firmware targets | Bounded messages; no audio upload, streaming or BLE |
 | Deployment | Pinned build, private verified backup, exact-identity flash/restore and boot diagnostics for AtomS3R, StickS3 and SE | Standard CoreS3/Plus2 firmware targets unimplemented |
 
 A native executable cannot be flashed. Use the same portable app source with the appropriate firmware adapter. Camera, SD/storage, GPIO/IR, raw radio, full RTC and battery behavior require additional contracts and validation. See [hardware workflow](hardware-workflow.md) and [hardware scope](hardware-plan.md).

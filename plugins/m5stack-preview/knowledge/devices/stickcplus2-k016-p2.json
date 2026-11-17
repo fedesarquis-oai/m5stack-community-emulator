@@ -267,12 +267,20 @@
     "explicit_enable_and_permission_required": true,
     "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
     "audio_output": "buzzer_tone",
-    "audio_default": "muted",
-    "explicit_sound_enable_required": true,
+    "audio_default": "enabled_after_device_gesture",
+    "explicit_sound_enable_required": false,
     "volume_control": true,
     "local_test_tone": false,
     "full_audio_playback": false,
     "camera_adapter": false,
-    "actual_host_support_verified_by_this_task": false
+    "actual_host_support_verified_by_this_task": false,
+    "sound_gesture_required": true,
+    "explicit_mute_preserved_in_view": true
+  },
+  "physical_firmware": {
+    "implemented": false,
+    "status": "not_implemented",
+    "physical_validation": "not_run",
+    "note": "An emulator profile is not a firmware target. Do not flash firmware for a different board."
   }
 }

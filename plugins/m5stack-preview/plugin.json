@@ -1,14 +1,14 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "m5stack-preview",
-  "version": "0.7.42",
+  "version": "0.7.44",
   "description": "Build and test M5Stack device apps with Codex using a local emulator, browser microphone, app-owned audio and optional networking. Deploy portable app source to supported physical boards.",
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "M5Stack Community Emulator",
         "shortDescription": "Build device apps, no hardware",
-        "longDescription": "A community plugin for developing M5Stack apps with Codex. Five native emulator profiles, Chrome microphone input, supported speaker/buzzer output and optional HTTP(S). Three tested physical deployment targets. First-release host validation covers macOS Apple Silicon and Chrome. No base API key or transcription service. This simulates supported app interfaces, not arbitrary ESP32 firmware or every peripheral.",
+        "longDescription": "A community plugin for developing M5Stack apps with Codex. Five native emulator profiles, Chrome microphone input, supported speaker/buzzer output and optional HTTP(S). Four firmware targets; three have prior physical acceptance and standard CoreS3 is compile-checked pending hardware. First-release host validation covers macOS Apple Silicon and Chrome. No base API key or transcription service. This simulates supported app interfaces, not arbitrary ESP32 firmware or every peripheral.",
         "category": "Developer Tools",
         "capabilities": [
           "Interactive"

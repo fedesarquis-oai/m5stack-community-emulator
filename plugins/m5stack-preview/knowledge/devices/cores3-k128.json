@@ -317,8 +317,8 @@
     "explicit_enable_and_permission_required": true,
     "microphone_maps_to": "app onMicrophoneBlock; requires audio_input_adapter=1",
     "audio_output": "speaker_pcm_and_tone",
-    "audio_default": "muted",
-    "explicit_sound_enable_required": true,
+    "audio_default": "enabled_after_device_gesture",
+    "explicit_sound_enable_required": false,
     "volume_control": true,
     "local_test_tone": false,
     "full_audio_playback": true,
@@ -333,6 +333,50 @@
       "native_requires": "power_button_adapter:1 and matching Core counter/custom profile/app",
       "duration_threshold": false,
       "physical_poweroff_or_bootloader": false
-    }
+    },
+    "sound_gesture_required": true,
+    "explicit_mute_preserved_in_view": true
+  },
+  "physical_firmware": {
+    "implemented": true,
+    "status": "build_target_added_physical_acceptance_pending",
+    "physical_validation": "not_run",
+    "runtime_profile": "cores3",
+    "features": [
+      "display",
+      "touch",
+      "buttons",
+      "motion",
+      "microphone",
+      "speaker",
+      "tone",
+      "network"
+    ],
+    "limits": [
+      "Exclusive mono audio",
+      "Camera/proximity, raw IMU, SD, RTC, battery/power and accessory adapters are not implemented"
+    ],
+    "source": "https://docs.m5stack.com/en/core/CoreS3"
+  },
+  "accessory_connections": {
+    "reviewed_on": "2026-11-16",
+    "official_source": "https://docs.m5stack.com/en/core/CoreS3",
+    "port_a": {
+      "sda": 2,
+      "scl": 1
+    },
+    "port_c": {
+      "rx": 18,
+      "tx": 17
+    },
+    "mbus_internal_i2c": {
+      "sda": 12,
+      "scl": 11
+    },
+    "dinbase": "Bundled power/mounting base; no sensor adapter. M145 assembly and electrical fit remain physically untested.",
+    "status": "manufacturer_documented_not_physically_validated",
+    "guide": "skills/m5stack-preview/references/accessories.md",
+    "builder_guide": "skills/m5stack-preview/references/accessory-bringup.md",
+    "bus_ownership": "CoreS3 body PORT.A uses M5.Ex_I2C on GPIO2/1; use its API or release it before a separate Wire owner. Internal GPIO12/11 remains with M5.In_I2C. M145 red PORT.A is on that internal bus, not body GPIO2/1."
   }
 }

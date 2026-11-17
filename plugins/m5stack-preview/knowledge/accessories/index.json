@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-16",
+  "purpose": "General accessory reference catalog; documentation does not create emulator or firmware capabilities.",
+  "guide_query": "Call m5stack_device_guide with an exact SKU, listed name/id/alias, or accessories for this catalog.",
+  "support": {
+    "status": "knowledge_only",
+    "simulation_supported": false,
+    "packaged_firmware_adapter": false,
+    "physical_validation": "not_run",
+    "meaning": "Manufacturer documentation and source review only. No accessory driver or emulator input is implemented by this record."
+  },
+  "entries": [
+    {
+      "id": "qrcode-m145",
+      "name": "Module13.2 QRCode",
+      "sku": "M145",
+      "aliases": [
+        "QR Scanner 13.2",
+        "Module13.2 QRCode",
+        "QRCode Module 13.2"
+      ],
+      "category": "stack_module",
+      "summary": "Decodes printed or displayed barcodes into text; separate from the Core camera.",
+      "file": "qrcode-m145.json",
+      "candidate_host_profiles": [
+        "cores3"
+      ]
+    },
+    {
+      "id": "rfid2-u031-b",
+      "name": "Unit RFID2",
+      "sku": "U031-B",
+      "aliases": [
+        "RFID2",
+        "RFID2 Unit",
+        "Unit RFID2"
+      ],
+      "category": "grove_unit",
+      "summary": "Reads identifiers and supported card data at close range.",
+      "file": "rfid2-u031-b.json",
+      "candidate_host_profiles": [
+        "cores3",
+        "sticks3"
+      ]
+    },
+    {
+      "id": "gesture-u127",
+      "name": "Unit Gesture",
+      "sku": "U127",
+      "aliases": [
+        "Gesture Unit",
+        "Unit Gesture",
+        "PAJ7620U2 Unit"
+      ],
+      "category": "grove_unit",
+      "summary": "Reports discrete hand gestures without touching the device.",
+      "file": "gesture-u127.json",
+      "candidate_host_profiles": [
+        "cores3",
+        "sticks3"
+      ]
+    },
+    {
+      "id": "gps-v11-u032-v11",
+      "name": "Unit GPS v1.1",
+      "sku": "U032-V11",
+      "aliases": [
+        "GPS/BDS Unit v1.1",
+        "GPS Unit v1.1",
+        "Unit GPS v1.1"
+      ],
+      "category": "grove_unit",
+      "summary": "Receives satellite position/time and sends NMEA sentences; it does not provide Internet access.",
+      "file": "gps-v11-u032-v11.json",
+      "candidate_host_profiles": [
+        "cores3",
+        "sticks3"
+      ]
+    },
+    {
+      "id": "enviii-hat-u053-d",
+      "name": "Hat ENV-III",
+      "sku": "U053-D",
+      "aliases": [
+        "ENV III HAT",
+        "ENV-III HAT",
+        "Hat ENV-III"
+      ],
+      "category": "hat",
+      "summary": "Measures temperature, relative humidity and atmospheric pressure.",
+      "file": "enviii-hat-u053-d.json",
+      "candidate_host_profiles": [
+        "sticks3"
+      ]
+    },
+    {
+      "id": "tof-hat-u072",
+      "name": "Hat ToF",
+      "sku": "U072",
+      "aliases": [
+        "ToF Distance HAT",
+        "ToF HAT",
+        "Hat ToF"
+      ],
+      "category": "hat",
+      "summary": "Returns distance to a target using a VL53L0X time-of-flight sensor.",
+      "file": "tof-hat-u072.json",
+      "candidate_host_profiles": [
+        "sticks3"
+      ]
+    }
+  ]
+}

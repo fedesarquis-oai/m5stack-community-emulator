@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "package": "m5stack-preview",
-  "version": "0.7.42",
+  "version": "0.7.44",
   "distribution": "community repository",
   "files": {
     "LICENSE": {
@@ -10,9 +10,9 @@
       "sha256": "b7b9333c7ec70f78299d5a777ee2863cde836a444ad25392d85aa9fa67b6328d"
     },
     "README.md": {
-      "bytes": 7319,
+      "bytes": 7630,
       "mode": 420,
-      "sha256": "f35d47987e06a56cc16e8543728c048dcb50c3e149de97eebc94db4777cac0ee"
+      "sha256": "b952ed7bfbf42cbfd4ecae4e56612b1e279b1a3b33993f2b60b27995253e7001"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 1623,
@@ -39,45 +39,80 @@
       "mode": 420,
       "sha256": "0eb5b2c394ad5d03078d05b4a254ed259685c1e0a37b11c9b142343b7190ce11"
     },
+    "knowledge/accessories/enviii-hat-u053-d.json": {
+      "bytes": 5422,
+      "mode": 420,
+      "sha256": "53bba0c48d73f71b14e307f2cce5d78d07a8b78483d6b6911f5855fcda5574b1"
+    },
+    "knowledge/accessories/gesture-u127.json": {
+      "bytes": 5019,
+      "mode": 420,
+      "sha256": "430a72ccee1dafaad2ac3d69330fcfcb1c16950de40e38b29b72fd4b4bde8aca"
+    },
+    "knowledge/accessories/gps-v11-u032-v11.json": {
+      "bytes": 5512,
+      "mode": 420,
+      "sha256": "91d6924e9ab077c67bee739abdab355db41a965b4267b334bee20d100c6063ef"
+    },
+    "knowledge/accessories/index.json": {
+      "bytes": 3144,
+      "mode": 420,
+      "sha256": "a9131ae43bc170292777e5ed87f154ab53c3bb5725599cdcf7e55b0272a33fad"
+    },
+    "knowledge/accessories/qrcode-m145.json": {
+      "bytes": 5422,
+      "mode": 420,
+      "sha256": "917bc1d12e41646285f8312f89f904f14db5e0b34008aaa46afa0216f58da542"
+    },
+    "knowledge/accessories/rfid2-u031-b.json": {
+      "bytes": 5317,
+      "mode": 420,
+      "sha256": "ac5d522cce4644213482e44b97549981c0bb435e08f45e5d29e830ef2d44a6b9"
+    },
+    "knowledge/accessories/tof-hat-u072.json": {
+      "bytes": 4682,
+      "mode": 420,
+      "sha256": "d9926e4bec574e030c3d4c4bfea3528fd24d48cf2d2e1f8982d26c736b487d98"
+    },
     "knowledge/devices/atoms3r-c126.json": {
       "bytes": 6218,
       "mode": 420,
       "sha256": "7f841ccd05eae6a995a63ad076fabdfdf606c0ddcf35246c25efdc9d3b232c44"
     },
     "knowledge/devices/cores3-k128.json": {
-      "bytes": 9966,
+      "bytes": 11500,
       "mode": 420,
-      "sha256": "5b98685ad8982ab818cdf77855389f44c31b90e65dd2367ec9ab0a43d7210a46"
+      "sha256": "7e055439f706a04e79f83131d8481b3363964f2f33f71d5950f01277cd64b466"
     },
     "knowledge/devices/cores3-se-k128-se.json": {
-      "bytes": 13062,
+      "bytes": 13167,
       "mode": 420,
-      "sha256": "1c95216f5cfd4636547cdd5d3644b4fdc8738aacf95266e120cabcd14c002f07"
+      "sha256": "272dea5d73a24e8eaa5aac21ab95b872a237923bad32b7d39a2b56ec07863d7c"
     },
     "knowledge/devices/index.json": {
-      "bytes": 4515,
+      "bytes": 4558,
       "mode": 420,
-      "sha256": "932764b3c94bdf54b7babb7372aaddca334a45e092b439c5c7fb9ec346abb6f0"
+      "sha256": "1c867a9049425279516446628a0d1a3bcea03fa652bbe32764c7cc94af9c5f5e"
     },
     "knowledge/devices/stickcplus2-k016-p2.json": {
-      "bytes": 6460,
+      "bytes": 6797,
       "mode": 420,
-      "sha256": "e9d91b085728c45318ca09b20645976ba73f0b96e81d8b49c249a7592de17ce1"
+      "sha256": "b7c9012b5e7ef84327cce38429d7b183a03a95294f8dfdee8f3dfd789c776d73"
     },
     "knowledge/devices/sticks3-k150.json": {
-      "bytes": 8865,
+      "bytes": 9759,
       "mode": 420,
-      "sha256": "0289d2e583ef56c0a18f36b16cef4c938df7a2261e8d3fbba8e7c0e2a3e2791d"
+      "sha256": "7fb4c0522f4bf55e8b987443c67fb50b0759e4e91346faeb818d7b58d818c34c"
     },
     "knowledge/devices/validation.json": {
-      "bytes": 3034,
+      "bytes": 3273,
       "mode": 420,
-      "sha256": "19d9c4f7669d0067f43776d27e44658f44f060697985c33acf54841b52ef1061"
+      "sha256": "4c53bf8bf138b54b44080d0b59af872b23abe0a5ec6b69e82dbee9366bbe9f75"
     },
     "licenses/bundled-dependencies.json": {
       "bytes": 86120,
       "mode": 420,
-      "sha256": "225b11ff2744ed302e4bf461615752e0067395e9c9a0aaa7ec6e68a8458b05f5"
+      "sha256": "2c9ac02ac4c61177265cf3e5c90bfba3f7cc85684b1fbf8fe6e59f4f11d8f94b"
     },
     "licenses/npm/@cfworker/json-schema/LICENSE.md": {
       "bytes": 1070,
@@ -135,19 +170,19 @@
       "sha256": "80d3168ad2f70f6f5bb2ab22b23414707abf6f0a392034891481ae36a1a429d4"
     },
     "mcp.json": {
-      "bytes": 272,
+      "bytes": 275,
       "mode": 420,
-      "sha256": "40cfca39f4ab33f98c61aaa5efa9b338fcca5f4934cc8a53c179f49dbf088257"
+      "sha256": "6a2cc285917f27b308a26a7fbd7a0a10b4f059506aa5b63c825450cc21b58d7c"
     },
     "package.json": {
-      "bytes": 711,
+      "bytes": 821,
       "mode": 420,
-      "sha256": "fb71f3a557a0e2b163a48c0ef9126e791ba68064a3b03dabf30c0a0800325b31"
+      "sha256": "4c1c5d3e69d466ba6eab06f6783568a8c5a5dbe7ebe97cd44fa5faacbe18eb63"
     },
     "plugin.json": {
-      "bytes": 1484,
+      "bytes": 1559,
       "mode": 420,
-      "sha256": "7f3ac2d6c854d4e5343df6c0cc8a1d07d997be08ae5cad5c388793e4fd6e5624"
+      "sha256": "3477ffb08b627f5a2fd5b3d7e6db807748e36b5c299c4872b98848f66a83053d"
     },
     "pnpm-lock.yaml": {
       "bytes": 35698,
@@ -172,7 +207,7 @@
     "runtime/README.md": {
       "bytes": 1355,
       "mode": 420,
-      "sha256": "aa7863231d664eec8ae848b2d3e92c22f37e4d82345b104107276f14f533447a"
+      "sha256": "c3774881ae411d48f58758f3c7f5ea1d4355c12fbb8523c3a6121f276a0fdea9"
     },
     "runtime/THIRD_PARTY_NOTICES.md": {
       "bytes": 3348,
@@ -182,12 +217,12 @@
     "runtime/app-manifest.json": {
       "bytes": 5145,
       "mode": 420,
-      "sha256": "54d7821bb9dd2186949d60289ea50f810f7d5f7ac21c611ce0c195add01a1f79"
+      "sha256": "a01d032db08c7a7d9dba73373e7dd6aec689f602cbee70b09478c5044ecd93ba"
     },
     "runtime/data/device-profiles.json": {
-      "bytes": 4297,
+      "bytes": 4835,
       "mode": 420,
-      "sha256": "fa9b57bb575e349ef97d315812c948d0f5bfa959addbae8ca6c4ebf0a9f5a878"
+      "sha256": "cc0df9fd8125435b38724016a05333e41df78c826e4ca86a22ce5831db54ac5f"
     },
     "runtime/dependencies.lock.json": {
       "bytes": 293,
@@ -195,14 +230,14 @@
       "sha256": "287a03f564aa8d2e9ac01bb8fc5b1b956e08db9381444f07dc8f47daaf9a6689"
     },
     "runtime/docs/browser-fallback.md": {
-      "bytes": 4962,
+      "bytes": 4991,
       "mode": 420,
-      "sha256": "cfff6730a1e7df1935cb8c81d81e057167e355202d1238a9712b2c03c26c61fc"
+      "sha256": "49420cd15b2df7a5da93ef6c8b9702130f8f9b947c8237964bd6e6f6cc6c9900"
     },
     "runtime/docs/emulator-contract.md": {
-      "bytes": 4226,
+      "bytes": 4259,
       "mode": 420,
-      "sha256": "c39da148e48561a3b036edc64c05e21198217c818b9c7a1ccbfff6f90e2c6c51"
+      "sha256": "1cb49962f1c275dc44c448c73671ce4bd4b10d8bc11c21672634ad7c5c498823"
     },
     "runtime/docs/generic-app.md": {
       "bytes": 15251,
@@ -210,19 +245,24 @@
       "sha256": "4ba3c41cdf68d9f8f20bc7ed2244bc3a262408984f5229d86ed95a3d120a1ba2"
     },
     "runtime/docs/getting-started.md": {
-      "bytes": 6711,
+      "bytes": 6886,
       "mode": 420,
-      "sha256": "202a12a03b53c3922b6e83ad2452d68087ad0e2ef4ff859d3cfb992b23162f0b"
+      "sha256": "32164e8eb921c3995e0be8c823f8196d76a26fd8d638e0f649766f2000ae1a25"
     },
     "runtime/docs/hardware-plan.md": {
-      "bytes": 6958,
+      "bytes": 7054,
       "mode": 420,
-      "sha256": "eca79a63fbef33ebb6fe6e742ece5c87cd2c971801fecc4b4807566fb81086fc"
+      "sha256": "b054ab1cf8fcbd755719317a1acd8c05c2ba81f97b6fa7c5e168210f00f4c4e7"
     },
     "runtime/docs/hardware-workflow.md": {
-      "bytes": 12760,
+      "bytes": 13133,
       "mode": 420,
-      "sha256": "a072c63de9b00f46aa08bef6265137e344bd87c2ef47a7ba680eb46a4431e312"
+      "sha256": "9a1fd0da52385774d7be631d89fa3a748e00ba88c858c264493c6f17e50bc26e"
+    },
+    "runtime/docs/host-setup.md": {
+      "bytes": 6396,
+      "mode": 420,
+      "sha256": "1beb915bc5648a51aa34ab92cc68f07937f8f95c6220a1a45bf4dc2ac9b35b35"
     },
     "runtime/docs/microphone-input.md": {
       "bytes": 6873,
@@ -230,14 +270,14 @@
       "sha256": "d0b2648c27aea0338b9df320c28efcad085c9f24cb67d5730af6787b2aa1191b"
     },
     "runtime/docs/network.md": {
-      "bytes": 12365,
+      "bytes": 12396,
       "mode": 420,
-      "sha256": "0aa328e507ad09d3b26a41e6809153e1b05168793ffbf9322865386677b06b0d"
+      "sha256": "0b052a98fc4af5df961ef87b0b3bccda42331bfeb949f69e229066d657607f62"
     },
     "runtime/docs/release-validation.md": {
-      "bytes": 8821,
+      "bytes": 10472,
       "mode": 420,
-      "sha256": "ba68daef1d1a0fbd2b6e82192a142f6b5e9ca6e8dc7bcb49ff4567e79af44e5d"
+      "sha256": "5cd160c1d6c53978cc1fe198ad418b2ed524190e6b59c1f9114d0eb907da9b74"
     },
     "runtime/docs/shake-provenance.json": {
       "bytes": 3946,
@@ -245,9 +285,9 @@
       "sha256": "dcdc2171d97ac6b6dd419947e241ff98c7afe2c9876ccd9c4d876822ce54bdcd"
     },
     "runtime/docs/speaker-output.md": {
-      "bytes": 3812,
+      "bytes": 3857,
       "mode": 420,
-      "sha256": "53c64ae02e5ee8ad1638f704333119f0e368f692636886b35422e2ba8b4ac69d"
+      "sha256": "bcd7c765992ad4a782186126c73f7a5edb0e360a99d35ac8b1d81300cb302b5f"
     },
     "runtime/firmware.json": {
       "bytes": 130,
@@ -270,9 +310,9 @@
       "sha256": "6fd0021e9811405f7672c440e772ce9fc9e28c9b3fe1f8a205b901c65989186e"
     },
     "runtime/hardware/network_configure.py": {
-      "bytes": 5780,
+      "bytes": 5741,
       "mode": 420,
-      "sha256": "5dcc596b8b70499b5c7b1beeca6514381b8ba75269d618f5ae9283d91bf33a46"
+      "sha256": "18d571c81c8ba0c59143f8e242915203643c5020bc562e2c7a76dd292ba5f6e1"
     },
     "runtime/hardware/network_driver.hpp": {
       "bytes": 13274,
@@ -285,9 +325,9 @@
       "sha256": "ed94bcb41d5da31bcaf8ed6aef33dc451fae287656d77815f3daf1fa25b7b457"
     },
     "runtime/m5preview": {
-      "bytes": 12163,
+      "bytes": 12498,
       "mode": 493,
-      "sha256": "d35d0b4837dbf3eee72949a2e8e56fa1cd790db36338942edccf17acbfccd250"
+      "sha256": "93f5c6c8f06d964ce9952520aa8cc1e57e483e570440468599acc1116eda2736"
     },
     "runtime/scripts/export_source.py": {
       "bytes": 3950,
@@ -295,14 +335,19 @@
       "sha256": "d554be8fd337108b6e9bc1c2ae427a419baa282d6b72137aa47f7f3d6f4a48ed"
     },
     "runtime/scripts/hardware.py": {
-      "bytes": 28040,
+      "bytes": 28318,
       "mode": 420,
-      "sha256": "b3aa2f05cf7b0b6ac5894e0884890a257548f76bf27919cd0844410e497aafc5"
+      "sha256": "aae1d9c23123b547c9691ca22121fc234021b19f50b34b2fef98839532a092b1"
+    },
+    "runtime/scripts/host.py": {
+      "bytes": 5473,
+      "mode": 420,
+      "sha256": "d92cdb9894ada2a6b4e78c6923e4dbb1b6da6b8ddad8d97f0c1f507cb1c2c23f"
     },
     "runtime/scripts/virtual_device.py": {
-      "bytes": 4630,
+      "bytes": 5472,
       "mode": 420,
-      "sha256": "3ce7fb288638096a95cad3c678428ac0da10e7db60a0be899d7f50586996644d"
+      "sha256": "d8aa125f3fb43fdbc5aa2ccc86e2d3e54c4b13c89f0c620ee1d800b4fe4b753a"
     },
     "runtime/src/ShakeDetector.h": {
       "bytes": 4409,
@@ -333,6 +378,11 @@
       "bytes": 927,
       "mode": 420,
       "sha256": "67b5f6607d1dc29da9d152ede63df1f68b81be60bb43dd46e49b75e49c801387"
+    },
+    "runtime/src/host_stdio.hpp": {
+      "bytes": 456,
+      "mode": 420,
+      "sha256": "df882536932a210942adb588eabb4eaf190be717c0e5f0b8bac3588248861967"
     },
     "runtime/src/live_audio.hpp": {
       "bytes": 6348,
@@ -380,9 +430,9 @@
       "sha256": "2d6567d7e541728488d526907e1772d316d334dc706cdaa5c21cbadd73432e49"
     },
     "runtime/src/virtual_device.cpp": {
-      "bytes": 21370,
+      "bytes": 21443,
       "mode": 420,
-      "sha256": "fc455cfadfcaed7c6c502d039153c97f0f18230a1295d1bb3ad496708f67610c"
+      "sha256": "9b538a028431b6139f6c051c7af3ac82e99c0a20005ed63c4766c37f9feced5d"
     },
     "runtime/tests/app_assets_test.cpp": {
       "bytes": 22125,
@@ -395,9 +445,9 @@
       "sha256": "a29216557be18d33d6ef9c32cb17bca6e5af2e752df8f1a974a93610a8eaf317"
     },
     "runtime/tests/build_recovery_test.py": {
-      "bytes": 4090,
+      "bytes": 4993,
       "mode": 420,
-      "sha256": "b58c9c30eca7bb302a5fb7ea3fcf51d1c3183dfc10cb74d6e5037339e2f79a7c"
+      "sha256": "db83653c84cac8a7f98396276e9efb6ce2f4360313c1d607fe6448592246dd9d"
     },
     "runtime/tests/capture_handshake_test.cpp": {
       "bytes": 6366,
@@ -425,9 +475,14 @@
       "sha256": "6e290d1180a4effcac2dd8e34b36ef61bb677b23bb06fa41e3c29f5e60413132"
     },
     "runtime/tests/hardware_workflow_test.py": {
-      "bytes": 8566,
+      "bytes": 8575,
       "mode": 420,
-      "sha256": "05aa575d623e74921c89464309a9a73bb85888533978ca507ee473de5c7b3cd4"
+      "sha256": "af30cb64225bd449a52a84161c07a2b00f5345a32b0d96fa04b6c4e0eb32414a"
+    },
+    "runtime/tests/host_portability_test.py": {
+      "bytes": 4049,
+      "mode": 420,
+      "sha256": "9ee6dc44163fc90b80faca2d85f7932e2ff01c17fc91cb19eced4aeb4a584e4d"
     },
     "runtime/tests/live_audio_protocol_test.py": {
       "bytes": 7993,
@@ -514,10 +569,20 @@
       "mode": 420,
       "sha256": "de70989c43fa5743be7af0529145df5dbc5ca78850aa9666728ddec7e9c47bcd"
     },
-    "server/application-server.mjs": {
-      "bytes": 15182,
+    "scripts/preflight.py": {
+      "bytes": 2796,
       "mode": 420,
-      "sha256": "4eb1dca070b8f877e775ddc6d144a0e1e8ca7bcc9a0b74f4bd2b400ab0b5e58f"
+      "sha256": "c7aaf7833d3710b4f33f317a0843b2e54fd3180ef97e8fe0b13cf898c3f33f69"
+    },
+    "server/accessory-knowledge.mjs": {
+      "bytes": 1684,
+      "mode": 420,
+      "sha256": "2ced9efa7a9ef47e68c8e8b6aeb0dba53e1c36adafa8b8ba88dde2410cacb16b"
+    },
+    "server/application-server.mjs": {
+      "bytes": 15728,
+      "mode": 420,
+      "sha256": "fe8272078e740d2e5d7eedbef4de3518d3b5c709cf3c81c23e3c4a5e900116c8"
     },
     "server/browser-preview-server.mjs": {
       "bytes": 8474,
@@ -525,39 +590,54 @@
       "sha256": "7a138dc7e911093fa63934555d3a6c63ea96dd33f813fd730667c89e22090275"
     },
     "server/browser-preview.mjs": {
-      "bytes": 2622,
+      "bytes": 2725,
       "mode": 420,
-      "sha256": "7e3d63a379bfdd40c1cdb6e0cfdd2dfae696947aad0113a15fe70f729ec446d1"
+      "sha256": "f85e81dd66bd49ef18cfc8793cee04bee549258d3c9cebd84fbc75122dfa3629"
     },
     "server/dist/application-server.js": {
-      "bytes": 1389016,
+      "bytes": 1397850,
       "mode": 420,
-      "sha256": "26fdf6e990034242cb868ff48430e00c9865f7f14392df324653c6486590fb9a"
+      "sha256": "877333534d1c6092487d6485b174ce022a79be3f2aff206a64a931ccb73f8c31"
     },
     "server/dist/browser-preview.js": {
-      "bytes": 1427891,
+      "bytes": 1436863,
       "mode": 420,
-      "sha256": "f2aaf5f49f40e56553cf7b9c2292e885e17a6c0c15faa8f333d324748bafd60d"
+      "sha256": "a5bf5f3c5e3f6a6a59600640f37c9f6c80fd967b262b1db7c334a9a34a3a89a8"
     },
     "server/dist/build-inputs.json": {
-      "bytes": 110850,
+      "bytes": 113286,
       "mode": 420,
-      "sha256": "eeeec2224e540f8b8c6033161b5ab36e5b99bd36154262639535a324bd854db5"
+      "sha256": "cc9cf5336fbe94c622ae4d556a5f19a3532bebfb2bc8e1f3c22af4045e2cb191"
     },
     "server/dist/index.js": {
-      "bytes": 1389030,
+      "bytes": 1397864,
       "mode": 420,
-      "sha256": "623d008a08862448e47f6aaeddee0f4945ba00440ecc7b536ca48615ab8307ce"
+      "sha256": "64faab1dcda25f13aaeb72466666cb9a23d87cae3fe6863418d070411b698c7d"
     },
     "server/hardware.mjs": {
-      "bytes": 7214,
+      "bytes": 7442,
       "mode": 420,
-      "sha256": "d7b811d600ebbf58c0c91c9b2ac28509aad14c32785123c130ea6063ea8f799c"
+      "sha256": "42b3bf24468533692f5760a727cac67353b0ba4b6508510304a965dddf1d4878"
+    },
+    "server/host-support.mjs": {
+      "bytes": 1673,
+      "mode": 420,
+      "sha256": "3d9cb9aaf85b78ee78cbf467b5bb13e8cbadee3cca7cabde46057eaa60762fc9"
+    },
+    "server/host-tools.mjs": {
+      "bytes": 1442,
+      "mode": 420,
+      "sha256": "bf524797025ec40c83c63ea96d5da789d9e39d4b0142983f42f50898216f9da7"
     },
     "server/index.mjs": {
       "bytes": 173,
       "mode": 420,
       "sha256": "b216bbdc0011bc1c8cac33eff73a690fb0ddb5069d69243766e08d4f22e1de31"
+    },
+    "server/launch.mjs": {
+      "bytes": 1548,
+      "mode": 420,
+      "sha256": "f5a5137056dfb4d88a04279ad567087fb9b68f30961750fac3ffbb3e5c904c30"
     },
     "server/launch.sh": {
       "bytes": 2475,
@@ -580,9 +660,9 @@
       "sha256": "3a4ea474ba65c42e001ee6aadd8d56b372b5575b3d99accc6dfc40f23e0e3285"
     },
     "server/workbench.mjs": {
-      "bytes": 16955,
+      "bytes": 16778,
       "mode": 420,
-      "sha256": "5b7a560d06e3c965f499cad204884e50b9448a967a1c1a7bd9c3d6613ba20523"
+      "sha256": "6dd10aeef00c338728675495fb8ea88c8cf4b1fb216b886e0a22b4bc94c4a373"
     },
     "server/workbench.test.mjs": {
       "bytes": 10048,
@@ -590,9 +670,19 @@
       "sha256": "c1144ede29b26b5946e91123802afbbdc5e54ca267172902d4e81e62ff670c1d"
     },
     "skills/m5stack-preview/SKILL.md": {
-      "bytes": 14110,
+      "bytes": 16617,
       "mode": 420,
-      "sha256": "671e9931d3b6244210a2e3bc0ca14a9a8cb8c3871d6bf44cad64b474ed19c156"
+      "sha256": "90dc014e4cfe6ad217cb1691fee5db6406f2fd2f6866587c95c0b3ff7d2d0295"
+    },
+    "skills/m5stack-preview/references/accessories.md": {
+      "bytes": 8746,
+      "mode": 420,
+      "sha256": "5abcf3972551d547b222733bb330729b114c105074e5adc17dedce0d204bd740"
+    },
+    "skills/m5stack-preview/references/accessory-bringup.md": {
+      "bytes": 13232,
+      "mode": 420,
+      "sha256": "055e6ea9626c6bdb340c932d55626d3914cee02e96d085268cfe5e76f6524ef1"
     },
     "skills/m5stack-preview/references/project-discovery.md": {
       "bytes": 7351,
@@ -605,9 +695,9 @@
       "sha256": "959bc18ac33b8df81223a8586c6d6ebc73c651ee7b3c2f0862159acfd605661e"
     },
     "tests/application-server.test.mjs": {
-      "bytes": 5499,
+      "bytes": 7698,
       "mode": 420,
-      "sha256": "b2a227f2cc15ea5d7a624b1464017ba862a1fd13cf04fbf3504a8802bf878a3a"
+      "sha256": "afa8ff4f2ab2d3bfa72f54b81321b0cf90357d568e8d9325a930204d116c4f63"
     },
     "tests/browser-preview.test.mjs": {
       "bytes": 11380,
@@ -634,6 +724,11 @@
       "mode": 420,
       "sha256": "0adf0af3a50ebf9e0033863799134f73fefb3dc34dc9e7778c3c1c6400cc6f8e"
     },
+    "tests/host-support.test.mjs": {
+      "bytes": 1234,
+      "mode": 420,
+      "sha256": "5288bff173823c2537d646b07574eb490ea2ab9e9303f256613f97f4037e4ac4"
+    },
     "tests/launcher.test.mjs": {
       "bytes": 8108,
       "mode": 420,
@@ -658,6 +753,11 @@
       "bytes": 637,
       "mode": 420,
       "sha256": "514ef08dd9fa607a17c547a04abbbbe7877bccf6464acd57d4e00b2f45828b57"
+    },
+    "tests/portable-host.test.mjs": {
+      "bytes": 1461,
+      "mode": 420,
+      "sha256": "354b6156b6343a8c8afc7e54e68a0a18b52b810d7cfe1530646bc56098cb5fb1"
     },
     "tests/power-input.test.mjs": {
       "bytes": 7766,
@@ -725,9 +825,9 @@
       "sha256": "30aaa1263b7d6c001e0e3977ebf39c335b281fb6827bd3926475ab736e304101"
     },
     "ui/dist/workbench.html": {
-      "bytes": 902162,
+      "bytes": 902680,
       "mode": 420,
-      "sha256": "36a75578ce3891207578b6f78824a738232cc9d3d1f292113ca586e69ad57b39"
+      "sha256": "d6c5b50b4599882e3dbe0ccaea080aa8cd2aaa3505a90448619da2a710ac7419"
     },
     "ui/host-media-support.mjs": {
       "bytes": 1448,
@@ -757,7 +857,7 @@
     "ui/main.mjs": {
       "bytes": 35504,
       "mode": 420,
-      "sha256": "f1922df8a0ddabf07c34313a072478de89bea036fa328fc89e8122f7d871553d"
+      "sha256": "346512813a49126a3c00286d801e66cedcb424bc996d4f020a94f3d5a3df064b"
     },
     "ui/preview-connection.mjs": {
       "bytes": 2768,

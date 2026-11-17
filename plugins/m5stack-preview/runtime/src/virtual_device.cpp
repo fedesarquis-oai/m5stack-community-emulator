@@ -10,6 +10,7 @@
 #include "speaker_output.hpp"
 #include "network_io.hpp"
 #include "app_tick.hpp"
+#include "host_stdio.hpp"
 #include <memory>
 #include <chrono>
 #include <cstdio>
@@ -173,6 +174,7 @@ static void audioReply(const std::string& id,const char* action,bool accepted) {
         <<",\"active\":"<<(audio_input.active()?"true":"false")<<"}\n"<<std::flush;
 }
 int main(int argc,char **argv) {
+    if(!preview::prepareHostStdio()) return 2;
     if(argc<2 || argc>3) return 2;
     const auto* selected=preview::hardwareProfile(argv[1]);
     if(!selected)return 2;

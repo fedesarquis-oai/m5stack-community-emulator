@@ -60,7 +60,7 @@ class WorkflowTest(unittest.TestCase):
    p.write_text(json.dumps(dict(version=1,requires=[feature])))
    with self.assertRaisesRegex(ValueError,feature):hw.requirements('atoms3r')
  def test_network_is_supported_on_each_firmware_target(self):
-  for profile in ['cores3se','atoms3r','sticks3']:
+  for profile in ['cores3se','cores3','atoms3r','sticks3']:
    (self.root/'firmware.json').write_text(json.dumps(dict(version=1,requires=['network'])))
    hw.requirements(profile)
  def test_network_provisioning_checks_current_and_legacy_receipts(self):

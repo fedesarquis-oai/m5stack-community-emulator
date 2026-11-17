@@ -47,7 +47,7 @@
     "pcm": true,
     "pcm_scope": "Microphone: PCM16 little-endian, 16000 Hz, mono. Speaker: mono PCM16, 8\u201348 kHz, up to 30 seconds per clip; no hardware codec emulation."
   },
-  "version": "0.7.42",
+  "version": "0.7.44",
   "profile_gates": {
     "motion": [
       "atoms3r",

@@ -3,9 +3,9 @@
   "mcpServers": {
     "m5stack-preview": {
       "type": "stdio",
-      "command": "sh",
+      "command": "node",
       "args": [
-        "${PLUGIN_ROOT}/server/launch.sh"
+        "${PLUGIN_ROOT}/server/launch.mjs"
       ],
       "cwd": "${PLUGIN_ROOT}"
     }

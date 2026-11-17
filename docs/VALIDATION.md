@@ -1,4 +1,43 @@
-# Candidate validation — 0.7.42
+# Validation — 0.7.44
+
+## Community distribution — November 17, 2026
+
+Version 0.7.44 is distributed from the default `main` branch through the normal GitHub marketplace installation. Branch-specific onboarding instructions have been removed. This is a community preview, not an official directory listing or a claim that the pending independent-host and physical checks below have passed. The [PR and its checks](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1) record the merge and final CI status.
+
+The vendor-guide head `9435a8fcb3d7e2f8fb638db947a686b43da4f1d6` passed [all four CI jobs](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43979931230), including the three native host runners. The November 17 follow-up changes repository documentation only; packaged runtime, guides and dependencies are unchanged.
+
+## Vendor guide integration — November 16, 2026
+
+- **PASS:** Five existing application-server checks, including all exact board/accessory lookups, unknown-revision handling and knowledge-only capability boundaries.
+- **PASS:** Actual packaged stdio launcher startup and direct readback of K128, K150 and all six accessory SKUs. Each links the new builder guide; each accessory returns its separately qualified vendor bench notes. The HAT candidate is SDA8/SCL0 at 100 kHz and remains unverified by this plugin.
+- **PASS:** Package hashes, unchanged bundle/license inventory, source boundary scan and Markdown link verification. No runtime, shell, tool schema, driver or compiler change was made for this follow-up; broad firmware/media suites were not repeated.
+- **Source review:** Checked current manufacturer manuals against the supplied vendor guide. Preserved the distinction between the CoreS3 body and M145 red ports, manufacturer specs and vendor-observed ranges, Type A driver support and Type A/B hardware claims, and vendor testing versus plugin acceptance.
+- **Scope at the time of this check:** Included in [PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1) for candidate installation and review. No USB access, physical sensor acceptance or accessory driver changes. The preceding cross-platform CI results below apply to the reviewed runtime code, which is unchanged. Installation into one owner's Codex does not make this a public release or prove another host's setup.
+
+## Portable host setup and CoreS3 — November 16, 2026
+
+- **PASS on this Mac:** 51 focused Node server, profile, host, hardware-job, browser-transport and launcher checks. Also 5 OS-helper/lock/process/private-file/CoreS3 admission checks, 23 hardware setup/workflow checks, 3 private network setup checks, 13 setup recovery checks and 2 compiler/build recovery checks.
+- **PASS — fresh native setup and app execution:** Downloaded and verified the two pinned libraries in a new workspace, built all five profiles, and ran actual workers with controls and known PCM. Each of the four mic profiles received 1,600 samples at 0.25 RMS while controls remained responsive; Atom rejected unsupported audio. The portable browser launcher served the compiled CoreS3 app over HTTP and closed cleanly. This did not request a live microphone or grant browser permission.
+- **PASS — CoreS3 firmware compile:** The exact `cores3` target compiled with the existing pinned ESP32/M5Unified toolchain, 16 MB flash and Quad PSRAM. The pre-CI networking-enabled build receipt is `8853f35fbc12371b`. This is a compile check only. No USB enumeration, flash, backup or physical acceptance was performed.
+- **PASS — real three-OS CI:** [Run 43972900467](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/43972900467) passed on runtime commit `f2a308154d1bcab495095c91be163b2ac3169267`: Windows Server 2025 x64, Ubuntu x64 and macOS 26 ARM64. Every runner passed the compiler probe, package/MCP launch, five OS helper checks, three compiler/byte-stream checks, fresh dependency setup, all five native profiles with known PCM and controls, pinned firmware-tool installation and standard CoreS3 compilation. The separate package/server/browser test job also passed. No USB access or browser capture occurred.
+- **CI fixes:** Normalized Windows response-file paths, selected the security module bundled with Windows PowerShell to avoid inherited PowerShell 7 module conflicts, and enabled binary stdin/stdout for the native bridge. The obsolete macOS 14 runner was replaced with macOS 26. Branch pushes no longer duplicate PR jobs.
+- **Local Mac policy:** Two temporary build-test executables were killed during local checks. Scoped system logs identified an AMFI signature-policy rejection. Earlier unchanged reruns had passed; after identifying the policy rejection, no bypass or further retry of that blocked check was attempted. Clean macOS CI passed all three compiler/byte-stream checks. This is not evidence that the local policy issue is resolved.
+- **Still pending:** Independent Codex installation and live Chrome controls/audio/permission lifecycle on Windows/Linux; physical USB and standard CoreS3 acceptance; Intel Mac and Linux ARM64 execution.
+- **Migration:** Portable MCP startup now requires Node 22+ on PATH. The legacy Unix browser launcher remains available. Do not treat a macOS bundled runtime discovered by that wrapper as satisfying the new manifest's prerequisite.
+- **Distribution state on November 16:** Candidate source was public in [PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); main was still 0.7.42. See the November 17 distribution note above for the current route. The later validation-document and accessory-knowledge updates do not change the tested runtime code. Earlier validation below retains its original scope.
+
+# Earlier candidate validation — 0.7.43
+
+## Accessory knowledge update — November 16, 2026
+
+Six manufacturer/source-reviewed references are separate from implemented profiles. Firmware and media transports are unchanged.
+
+- **PASS:** 43 focused server, profile, host-reporting, browser-transport and launcher checks on this Mac. These cover six exact-SKU/name lookups, neighboring-revision rejection, knowledge-only status, absent CoreS3 firmware, unresolved HAT pins and platform-specific setup limits. Platform inputs in tests do not establish Windows/Linux execution.
+- **Source review:** Referenced manufacturer manuals and driver examples, recorded reviewed source commits and author/license credit, and distinguished derived connector routes from physically verified wiring. Reviewed against the current public checkout at `129f9549288411d4b7241f27da18d8e1e6bbb653`; no unrelated upstream source changes were replaced.
+- **PASS — rebuilt distribution:** The actual packaged stdio launcher reported 0.7.43, 14 tools, five board guides and six knowledge-only accessory guides. Neighboring-revision rejection, host-limit reporting and the fixed UI resource passed. Regenerated the inventory for five bundles and eleven retained dependencies. This is a local process check, not an installed-plugin upgrade.
+- **Not run:** Accessory hardware checks, standard CoreS3 deployment, new-host installation, live media or USB operations. This update remains a local candidate; the installed/public version is still 0.7.42.
+
+## Earlier validation — 0.7.42
 
 Updated October 22, 2026 on macOS Apple Silicon. This release improves GitHub onboarding and runtime selection; device adapters, app APIs and physical acceptance are unchanged.
 

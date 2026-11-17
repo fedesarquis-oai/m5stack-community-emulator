@@ -7,6 +7,7 @@ This community project builds on M5Stack's documentation and open-source librari
 - [M5Stack LVGL emulator](https://github.com/m5stack/lv_m5_emulator): the initial native display/input approach, MIT.
 - [M5GFX](https://github.com/m5stack/M5GFX): graphics/font sources and board support, with its original per-file notices.
 - [LVGL](https://github.com/lvgl/lvgl): native framebuffer rendering, MIT and retained component notices.
+- Accessory references link M5Stack's manuals, drivers and examples, [TinyGPS++ by Mikal Hart](https://github.com/m5stack/TinyGPSPlus) and [Pololu's VL53L0X library](https://github.com/pololu/vl53l0x-arduino). These are source references, not bundled drivers. Exact records preserve authors, reviewed revisions and license qualifications; inspect and retain the upstream notices before copying code.
 - MCP SDK, MCP Apps and OpenAI MCP extensions: local tools and fixed host integration. Full bundled license texts are in the plugin's `licenses/` directory.
 
 See [JavaScript dependency notices](plugins/m5stack-preview/THIRD_PARTY_NOTICES.md) and [native/source notices](plugins/m5stack-preview/runtime/THIRD_PARTY_NOTICES.md) for exact versions, provenance and license details. Official product photographs are not bundled; the casing illustrations are CSS.

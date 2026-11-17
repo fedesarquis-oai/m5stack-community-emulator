@@ -12,6 +12,8 @@ import subprocess
 import sys
 import tempfile
 import secrets
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from scripts.host import process_options, stop_process
 
 ROOT = Path(__file__).resolve().parent
 PROFILES = ('atoms3r','stickcplus2','sticks3','cores3','cores3se')
@@ -53,24 +55,21 @@ def git_output(folder, *args, timeout=GIT_LOCAL_TIMEOUT):
                '--git-dir='+str(folder/'.git'),'--work-tree='+str(folder),*args]
     process = subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,
                                stderr=subprocess.PIPE,text=True,env=git_environment(),
-                               start_new_session=True)
+                               **process_options())
     try:
         output,_ = process.communicate(timeout=timeout)
     except subprocess.TimeoutExpired:
         # Git may spawn transport/credential helpers holding these pipes open.
         # Terminate only this owned process group, including its descendants.
-        try: os.killpg(process.pid,signal.SIGTERM)
-        except ProcessLookupError: pass
+        stop_process(process)
         try: process.communicate(timeout=1)
         except subprocess.TimeoutExpired:
-            try: os.killpg(process.pid,signal.SIGKILL)
-            except ProcessLookupError: pass
+            stop_process(process, force=True)
             process.communicate(timeout=2)
         raise RuntimeError(f'Git {args[0]} timed out after {timeout} seconds; its owned process group was stopped') from None
     except BaseException:
         # Ctrl-C must not leave a detached Git transport/helper using staging.
-        try: os.killpg(process.pid,signal.SIGKILL)
-        except ProcessLookupError: pass
+        stop_process(process, force=True)
         process.wait(timeout=2)
         process.stdout.close(); process.stderr.close()
         raise
@@ -169,6 +168,13 @@ def install_dependency(name, dep):
         git_output(stage,'fetch','--depth','1','origin',dep['commit'],timeout=GIT_FETCH_TIMEOUT)
         git_output(stage,'checkout','--detach',dep['commit'])
         verify_checkout(stage,name,dep)
+        if os.name == 'nt':
+            # Windows rename fails if any destination exists; unlike POSIX it
+            # cannot replace an empty directory created by another installer.
+            os.rename(stage, folder)
+            verify_checkout(folder, name, dep)
+            print(f'Verified {name}.', flush=True)
+            return
         # mkdir is an exclusive reservation. rename(stage, folder) could
         # silently replace a concurrently created empty user directory.
         folder.mkdir()
@@ -226,8 +232,9 @@ def main():
     from scripts import virtual_device
     metadata=virtual_device.build(sys.modules[__name__],args.profile)
     if args.command in ('test','web-test'):
-        run(['clang++','-std=c++17','-Wall','-Wextra','-pedantic','tests/user_app_test.cpp','-o','.build/user-app-test'])
-        run([ROOT/'.build/user-app-test'])
+        binary=ROOT/'.build'/('user-app-test.exe' if os.name=='nt' else 'user-app-test')
+        run(['clang++','-std=c++17','-Wall','-Wextra','-pedantic','tests/user_app_test.cpp','-o',binary])
+        run([binary])
         print('PASS starter model and native compilation; browser microphone and physical checks remain separate')
 
 if __name__=="__main__":

@@ -10,7 +10,7 @@ The supported path is one portable app workspace → native emulator → exact-b
 | StickS3 K150 | KEY1/KEY2, 135×240 display, semantic motion, exclusive microphone/speaker, optional Wi-Fi/HTTP(S) | Both keys/holds, audio/voice playback, restore, battery restart, public GET/POST and forget/reprovision | Final listening check after app loudness adjustment; other peripherals |
 | CoreS3 SE K128-SE | Touch and opted-in lower strip, semantic POWER, 320×240 display, exclusive microphone/speaker, optional Wi-Fi/HTTP(S) | Tested touch/hold/swipe/strip/POWER events, voice playback, restore, USB/RST restart, public GET/POST and forget/reprovision | Exhaustive touch boundaries/power states and other peripherals |
 | StickC Plus2 K016-P2 | No firmware target in this package | None | Exact board adapter and full acceptance; retain its buzzer rather than inventing speaker PCM |
-| CoreS3 K128 | No firmware target in this package | None | Exact board adapter and full acceptance; do not flash the SE target |
+| CoreS3 K128 | Display/touch, semantic POWER/motion, exclusive microphone/speaker and optional Wi-Fi/HTTP(S); target compiled | Pending | Exact-board backup, boot, inputs/audio/network and restart; never flash the SE target |
 
 Acceptance is scoped, not a claim of every physical feature. See [release validation](release-validation.md) for dates and evidence. The v0.7.38 starter cleanup has not been tested on hardware; the firmware adapters are carried forward. Hardware testing is optional for simulator-only users.
 
@@ -36,7 +36,7 @@ For a new target, implement each step before calling it supported. Do not repeat
 | Buzzer | StickC Plus2 tone intents | Its physical target and frequency/duration checks |
 | Motion | Semantic tilt/shake where present | Raw IMU axes, calibrated sample timing and other sensors |
 | Power | Limited Core POWER semantics and simulator reset | Sleep/wake, charging, brownout and complete PMIC behavior |
-| Wi-Fi/API | All five simulator profiles; three firmware targets; bounded GET/JSON POST | Atom reprovision regression, other routers and long-duration recovery; audio upload/streaming is outside this API |
+| Wi-Fi/API | All five simulator profiles; four firmware targets; bounded GET/JSON POST | Atom reprovision regression, other routers and long-duration recovery; audio upload/streaming is outside this API |
 | BLE, camera, SD/storage, RTC, GPIO/IR/Grove buses | Not implemented | Explicit app contracts, per-board adapters, fixtures and physical acceptance |
 
 For every extension, define capability/error behavior, implement the simulator and board adapters, then compare the same app on both. A synthetic fixture is not physical hardware. Keep app-specific test programs outside the base plugin.

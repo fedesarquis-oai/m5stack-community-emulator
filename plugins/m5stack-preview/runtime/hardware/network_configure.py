@@ -1,6 +1,8 @@
 """Provision credentials over verified local USB without returning them to chat/logs."""
 import json, os, re, stat, sys, time
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from scripts.host import protect_private, verify_private
 
 def prepare(workspace):
     """Create a private editable template, never overwrite or return secrets."""
@@ -8,11 +10,11 @@ def prepare(workspace):
     folder=workspace/'.local'
     if folder.is_symlink():raise ValueError('Private configuration directory must not be a symlink')
     folder.mkdir(mode=0o700,exist_ok=True)
+    protect_private(folder)
     filename=folder/'network-credentials.json'
     if filename.exists() or filename.is_symlink():
         st=filename.lstat()
-        if not stat.S_ISREG(st.st_mode) or st.st_uid!=os.getuid() or st.st_mode & 0o077:
-            raise ValueError('Existing network configuration must be an owner-only regular file')
+        verify_private(filename,st)
         created=False
     else:
         manifest=workspace/'data/network.json'
@@ -28,6 +30,7 @@ def prepare(workspace):
         flags=os.O_WRONLY|os.O_CREAT|os.O_EXCL|getattr(os,'O_NOFOLLOW',0)
         fd=os.open(filename,flags,0o600)
         with os.fdopen(fd,'w') as f:json.dump({'wifi':{'ssid':'ENTER_SSID','password':'ENTER_PASSWORD'},'persistOnDevice':True,'tokens':tokens},f,indent=2);f.write('\n')
+        protect_private(filename)
         created=True
     return {'status':'private_config_created' if created else 'private_config_exists','path':str(filename),'created':created,
             'credentials_returned':False,'next_step':'Open this private file for the user to edit locally, then run network-configure. Do not read its contents into chat.'}
@@ -37,8 +40,8 @@ def read_private(filename):
     fd=os.open(path,os.O_RDONLY|getattr(os,'O_NOFOLLOW',0))
     with os.fdopen(fd) as f:
         st=os.fstat(f.fileno())
-        if not stat.S_ISREG(st.st_mode) or st.st_uid!=os.getuid() or st.st_mode & 0o077 or st.st_size>32768:
-            raise ValueError('Private network configuration needs owner-only permissions')
+        verify_private(path,st)
+        if st.st_size>32768:raise ValueError('Private network configuration exceeds its size limit')
         data=json.load(f)
     wifi=data.get('wifi',{});ssid=wifi.get('ssid');password=wifi.get('password')
     if not isinstance(ssid,str) or not 1<=len(ssid.encode())<=32 or ssid.startswith('ENTER_') or '\0' in ssid:

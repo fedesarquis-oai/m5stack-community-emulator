@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.7.44 — portable host setup and standard CoreS3 target
+
+- Replaced the MCP shell dependency with a portable Node entrypoint; retained the legacy Unix browser wrapper.
+- Added Windows/Linux executable, process, lock, CLI-download and private-file handling; normalized native receipts and preserved package bytes on Windows.
+- Added a compiler preflight and native-worker CI matrix for macOS, Linux and Windows. Runner results and live media acceptance remain separate.
+- Added exact CoreS3 K128 firmware configuration, board/PSRAM admission and capability limits. Firmware compilation passed; physical testing remains pending.
+- Preserved the fixed emulator and the previous accessory-reference library. No USB writes or new accessory drivers.
+- Integrated vendor-reported accessory bring-up notes, qualified StickS3 HAT wiring, QR routing/bus conflicts, failure handling and a builder walkthrough for both controllers and all six add-ons. Documentation support remains separate from emulation and physical acceptance.
+
+## 0.7.43 — accessory references and builder readiness
+
+- Added six source-backed general accessory records, discoverable through the existing catalog/device-guide tools by exact name or SKU. Wiring basis, libraries, credits, first checks and unresolved hardware questions stay explicit. No accessory adapters or new emulator UI are implied.
+- Added a general accessory authoring workflow, connection conflict guidance and host/readiness comparison. The pictured kit is one supported knowledge combination, not a required onboarding path.
+- Doctor now separates host validation from the macOS-only firmware installer and POSIX launcher requirements.
+- Corrected stale muted-by-default board knowledge and made missing standard CoreS3/StickC Plus2 firmware targets explicit. Existing runtime/media behavior and three firmware targets are unchanged.
+
 ## 0.7.42 — GitHub setup and shared browser launcher
 
 - GitHub onboarding now lets people paste the repository URL into Codex and ask it to install the plugin, check prerequisites and build their own app. Manual cloning remains optional.

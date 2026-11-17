@@ -20,19 +20,24 @@
   ],
   "files_sha256": {
     "atoms3r-c126.json": "7f841ccd05eae6a995a63ad076fabdfdf606c0ddcf35246c25efdc9d3b232c44",
-    "cores3-k128.json": "5b98685ad8982ab818cdf77855389f44c31b90e65dd2367ec9ab0a43d7210a46",
-    "cores3-se-k128-se.json": "1c95216f5cfd4636547cdd5d3644b4fdc8738aacf95266e120cabcd14c002f07",
-    "index.json": "9254a97de5155161692e221e7a2b38c74edc3400c2bff44d68065aba0524fbbc",
-    "stickcplus2-k016-p2.json": "e9d91b085728c45318ca09b20645976ba73f0b96e81d8b49c249a7592de17ce1",
-    "sticks3-k150.json": "0289d2e583ef56c0a18f36b16cef4c938df7a2261e8d3fbba8e7c0e2a3e2791d"
+    "cores3-k128.json": "e6867dbf9dd421c0ed63b240ddb6fc95bac54bd1375992b9a9ccfec74ee4b495",
+    "cores3-se-k128-se.json": "272dea5d73a24e8eaa5aac21ab95b872a237923bad32b7d39a2b56ec07863d7c",
+    "index.json": "1c867a9049425279516446628a0d1a3bcea03fa652bbe32764c7cc94af9c5f5e",
+    "stickcplus2-k016-p2.json": "b7c9012b5e7ef84327cce38429d7b183a03a95294f8dfdee8f3dfd789c776d73",
+    "sticks3-k150.json": "eb0b3d8ff9896b6e78cbd24279e798a203b5b7b9a18ba823f513e294428bef80"
   },
   "not_run": [
-    "Physical adapters and acceptance for StickC Plus2 and CoreS3 standard",
+    "Physical acceptance for standard CoreS3; adapter and acceptance for StickC Plus2",
     "Raw 9-axis IMU, camera/storage/GPIO/RTC and BLE adapters",
     "Verification of a new Codex desktop microphone fix",
     "Long-duration network stress, RF fidelity and exhaustive router compatibility",
     "Atom regression of new setup/forget/reprovision; prior network baseline remains accepted.",
     "Fresh Chrome acceptance on other microphone profiles; existing historical acceptance and current PCM/lifecycle checks retained."
   ],
-  "physical_evidence_ref": "../../runtime/docs/hardware-plan.md"
+  "physical_evidence_ref": "../../runtime/docs/hardware-plan.md",
+  "current_metadata_review": {
+    "date": "2026-11-16",
+    "version": "0.7.44",
+    "scope": "Separate CoreS3 compiled target added; source and host setup updated. Historical physical checks retain their original dates."
+  }
 }
