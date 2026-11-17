@@ -42,9 +42,9 @@ Restart/reload Codex if it asks. Alternatively, after marketplace registration, 
 
 If the CLI isn't on the shell's PATH, ask Codex to locate the CLI supplied by the desktop app and inspect its supported plugin commands. If it is unavailable, use the host's supported Plugin Creator/local marketplace flow. Don't copy files into the installed cache. If you already use a development copy with internal ID `m5stack-preview`, keep one intended source enabled and preserve all app workspaces before replacing that source. Never remove unrelated plugins.
 
-Verify by asking: “Show this plugin's active version and supported devices.” This candidate reports **0.7.44** and five profiles. Check the connected plugin's catalog, not just a file on disk. Unknown boards must stay unsupported rather than being silently mapped to a similar device.
+Verify by asking: “Show this plugin's active version and supported devices.” This community preview reports **0.7.44** and five profiles. Check the connected plugin's catalog, not just a file on disk. Unknown boards must stay unsupported rather than being silently mapped to a similar device.
 
-The November 16 host/CoreS3 candidate is published only in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1); GitHub main still reports 0.7.42. To test 0.7.44 now, use the reviewed candidate ZIP or that exact review branch with the local marketplace flow above. See [sharing state](SHARING.md).
+The default `main` branch includes v0.7.44: portable host setup, the standard CoreS3 firmware target and guidance for all eight kit components. No review-branch selection or ZIP is needed. If you previously installed the review branch, ask Codex to move that marketplace source to `main` through its supported commands, refresh the plugin and verify the active version while preserving your app workspaces. See [sharing and support limits](SHARING.md).
 
 ## Prerequisites
 

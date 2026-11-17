@@ -55,7 +55,7 @@ The plugin includes [exact-part guidance](docs/ACCESSORIES.md) for QRCode, RFID2
 - [App authoring guide](docs/AGENT-GUIDE.md)
 - [Builder readiness and host limits](docs/BUILDER-READINESS.md)
 - [Supported features and device evidence](docs/SUPPORT-MATRIX.md)
-- [Current candidate validation](docs/VALIDATION.md)
+- [Validation and remaining checks](docs/VALIDATION.md)
 - [Troubleshooting and bug reports](docs/TROUBLESHOOTING.md)
 - [Contributing and reproducible builds](CONTRIBUTING.md)
 - [Data handling](docs/DATA-HANDLING.md)

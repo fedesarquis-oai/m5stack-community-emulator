@@ -1,6 +1,6 @@
 # Builder readiness review
 
-Review date: November 16, 2026. Candidate: 0.7.44. This is a technical readiness record, not new hardware acceptance. No devices were available for this review. The accessory library is general-purpose; the pictured CoreS3/StickS3 combination is one use case.
+Technical review: November 16, 2026; distribution instructions updated November 17. Community preview: 0.7.44. This is a technical readiness record, not new hardware acceptance. No devices were available for this review. The accessory library is general-purpose; the pictured CoreS3/StickS3 combination is one use case.
 
 | Builder workflow | Implementation | Acceptance still needed |
 |---|---|---|
@@ -22,7 +22,7 @@ Review date: November 16, 2026. Candidate: 0.7.44. This is a technical readiness
 6. Verify a usable 2.4 GHz network and an alternate hotspot before the event. Check whether the venue requires a captive portal or enterprise authentication; do not assume the current SSID/password flow supports it. Keep passwords/tokens in private local configuration. Start offline; add APIs only when the idea needs them.
 7. Pin one reviewed release for the group, retain the prior release and flash backups, and capture redacted failure reports with OS, version, SKU, stage and exact error. A failed sensor should not lead to blind reflashing or deleting a builder's workspace.
 
-## Review findings addressed in this candidate
+## Review findings addressed in this version
 
 - Added discoverable accessory knowledge without adding fake capabilities or more tools.
 - Added host-support status to `m5stack_doctor`; discovering a compiler no longer stands alone as the setup story.

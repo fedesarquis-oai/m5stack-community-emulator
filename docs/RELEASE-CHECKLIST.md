@@ -1,12 +1,12 @@
 # Community release checks
 
-Candidate **0.7.44**, updated November 16, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
+Community preview **0.7.44**, updated November 17, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
 
 Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 
 ## Accessory update scope
 
-The 0.7.44 candidate includes the prior accessory library, portable host setup and a compiled standard CoreS3 target. No accessory adapters or new physical acceptance are claimed. Windows/Linux/macOS native CI passed; independent live-browser checks remain release gates. See [builder readiness](BUILDER-READINESS.md). The candidate is public in draft PR #1; merge/release remains pending; the historical public checkout evidence below covers 0.7.42.
+The 0.7.44 community preview includes the accessory library, portable host setup and a compiled standard CoreS3 target. It is distributed from GitHub `main` through the normal repository installation link. No accessory adapters or new physical acceptance are claimed. Windows/Linux/macOS native CI passed; independent live-browser checks remain required before expanding the accepted host scope. See [builder readiness](BUILDER-READINESS.md). Historical public checkout evidence below retains its original version scope; a separate GitHub Release is optional.
 
 ## Completed locally
 

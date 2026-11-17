@@ -2,13 +2,11 @@
 
 Share [the public GitHub repository](https://github.com/fedesarquis-oai/m5stack-community-emulator). It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
 
-GitHub main remains at 0.7.42. The **0.7.44 candidate** is public in [draft PR #1](https://github.com/fedesarquis-oai/m5stack-community-emulator/pull/1), with native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. It is not merged or released. Share the candidate ZIP explicitly for prerelease testing; do not promise that installing from GitHub main already includes it.
-
-The November 16 vendor-guide knowledge update is included in that draft PR. Its branch is `review/portable-setup-cores3-v0.7.44`. For an explicitly requested candidate installation, Codex can register the repository with `--ref review/portable-setup-cores3-v0.7.44`, install `m5stack-preview@m5stack-community`, then verify version 0.7.44 and all eight exact-SKU guides. This follows the review branch, not future main updates; switch back to the released source when appropriate. See the current [validation record](VALIDATION.md) before describing support.
+The default `main` branch provides **v0.7.44**, including portable setup, the standard CoreS3 build target and all eight exact-SKU kit guides. Builders can use the repository link directly; no review branch or ZIP is required. Native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. Independent Windows/Linux Codex and live Chrome acceptance remain pending; see the [validation record](VALIDATION.md).
 
 ## What the recipient does
 
-1. Open Codex on a supported Mac.
+1. Open Codex. macOS Apple Silicon + Chrome is the accepted setup; Windows/Linux users should read the remaining checks in [builder readiness](BUILDER-READINESS.md).
 2. Paste the repository's actual GitHub URL and ask:
 
    > Install the M5Stack Community Emulator from the GitHub repository I linked, using Codex’s supported plugin marketplace flow. Read its installation guide, check this computer’s prerequisites and verify the active version. Then ask what I want to build. Help me choose a supported device, create my app in a separate workspace, and build and test it in Chrome using the existing emulator.
@@ -21,24 +19,20 @@ State the supported setup with the link: **community preview for macOS Apple Sil
 
 This is an independent community project, not an official M5Stack or OpenAI product. The emulator reproduces the implemented app interfaces for five exact profiles. It does not execute arbitrary ESP32 firmware or simulate every peripheral. Physical installation is optional and limited to the four implemented targets, with CoreS3 physical acceptance still pending, in the [support matrix](SUPPORT-MATRIX.md).
 
-## Publish the reviewed tree
+## Maintainer updates
 
-Choose the owner and repository name before creating a public repository. Publish only the reviewed distribution tree with the MIT license, upstream notices, committed server/UI bundles and setup documents. Do not upload development history, app workspaces, recordings, credentials or device backups.
+Publish only reviewed changes to this repository with the MIT license, upstream notices, committed server/UI bundles and setup documents. Keep app workspaces, recordings, credentials and device backups outside it. A future versioned GitHub Release can provide a pinned archive, but builders do not need a Release to install from `main`. This community source is separate from an official plugin-directory submission.
 
-After approval to publish this update, create a versioned community-preview release for **v0.7.44**. Optional release attachments are the repository ZIP and its matching SHA256SUMS; the plugin-only ZIP is mainly for maintainers.
-
-After publication, check the real GitHub URL, clone it into a new directory, verify package hashes, start its MCP server and confirm version 0.7.44, 14 tools, five profiles and six knowledge-only accessory references. Check the GitHub Actions result and update this document's release-state note. Do not call a local Git clone or a prepared ZIP a completed public installation.
-
-The 0.7.42 source was published on October 22, 2026. A fresh public HTTPS clone passed package verification and MCP startup, and the [first GitHub Actions run passed](https://github.com/fedesarquis-oai/m5stack-community-emulator/actions/runs/39816856736). The downloaded tree matched the reviewed local tree. These checks do not establish setup on another person's Mac.
+For each update, verify the public checkout, package hashes, MCP startup, active version and CI. A successful source checkout is not a completed installation on another person's computer. Earlier publication evidence remains in [VALIDATION.md](VALIDATION.md).
 
 ## ZIP fallback
 
-For candidate testing, send **m5stack-community-emulator-v0.7.44.zip** and SHA256SUMS. They extract the ZIP, open its folder in Codex and use the local-folder prompt in [INSTALL.md](INSTALL.md). The smaller plugin-only ZIP lacks the repository onboarding files.
+For a file-based handoff, prepare **m5stack-community-emulator-v0.7.44.zip** and matching SHA256SUMS from the reviewed tree. They extract the ZIP, open its folder in Codex and use the local-folder prompt in [INSTALL.md](INSTALL.md). The smaller plugin-only ZIP lacks the repository onboarding files.
 
 A localhost preview URL only works on the computer running the emulator and contains a private capability. Share the GitHub repository link instead.
 
 ## First independent tester
 
-Have independent testers on macOS, Windows x64 and Linux x64 follow the candidate instructions using their own app ideas. CI has validated native builds; it does not replace live Codex/Chrome acceptance. Record the host/tool versions, active plugin version, setup result and whether the app builds and runs in Chrome. Keep this check pending until it actually happens.
+Have independent testers on macOS, Windows x64 and Linux x64 follow the installation instructions using their own app ideas. CI has validated native builds; it does not replace live Codex/Chrome acceptance. Record the host/tool versions, active plugin version, setup result and whether the app builds and runs in Chrome. Keep this check pending until it actually happens.
 
 The [validation record](VALIDATION.md) and [release checklist](RELEASE-CHECKLIST.md) distinguish current checks, historical hardware acceptance and remaining manual audio-interruption work.
