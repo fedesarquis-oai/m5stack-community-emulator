@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reviewed_on": "2026-11-16",
   "purpose": "General accessory reference catalog; documentation does not create emulator or firmware capabilities.",
-  "guide_query": "Call m5stack_device_guide with an exact SKU, listed name/id/alias, or accessories for this catalog.",
+  "guide_query": "Call m5stack_device_guide with kit to identify the box contents and loose pieces, accessories for this catalog, or an exact SKU/name for wiring and support.",
   "support": {
     "status": "knowledge_only",
     "simulation_supported": false,

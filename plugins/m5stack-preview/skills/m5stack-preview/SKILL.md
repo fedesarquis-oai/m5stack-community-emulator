@@ -1,6 +1,6 @@
 ---
 name: m5stack-preview
-description: Build and test M5Stack device apps with Codex using the fixed local emulator, supported inputs and audio. Find existing M5Stack projects, verify exact-board compatibility and credit upstream sources. Guide first-time CoreS3, CoreS3 SE, AtomS3R and StickS3 firmware setup, backup, build and deployment.
+description: Answer questions about M5Stack kits, loose parts, stickers, sensors and wiring. Build and test device apps in the fixed emulator, find existing projects, verify board compatibility, and guide firmware setup, backup and deployment.
 ---
 
 # M5Stack Community Emulator
@@ -37,6 +37,8 @@ Always credit sources for recommended projects, inspiration and reused work. Whe
 Downloaded ESP32 firmware binaries cannot run in this native C++ simulator. Adapt suitable source into the app workspace, keep the fixed emulator, and explain missing adapters before proposing an extension. Third-party hardware flashing is a separate requested deployment with exact-target and backup checks. Keep catalog discovery in Codex; do not add a firmware browser or app picker to the emulator shell.
 
 ## Accessories and host readiness
+
+When someone is unpacking the CoreS3/StickS3 kit, answer their question before suggesting a build. Call `m5stack_device_guide` with `device: "kit"` or read the bundled [kit contents](references/kit-contents.md). Use their words, whether they describe a part, ask a follow-up about it, or want to accomplish something like measuring distance. No SKU, workspace, USB connection or emulator launch is needed for this conversation. Look up the exact part for technical details. If the description fits multiple items, ask for a label, connector or photo. For questions beyond the guide, consult the linked primary source for that revision and say what still needs a bench check. Use this box inventory only when it fits the builder's context.
 
 For an attached part, read [the accessory workflow](references/accessories.md). The catalog has a separate knowledge-only accessory list; call `m5stack_device_guide` with its exact SKU/name, or `accessories` to list it. Current references cover QRCode M145, RFID2 U031-B, Gesture U127, GPS v1.1 U032-V11, ENV-III HAT U053-D and ToF HAT U072. Explain data, connection and missing implementation before proposing an app. These records do not add emulator inputs or firmware drivers. Keep fixtures explicitly labeled and app-owned; never change the shell or claim sensor fidelity from fixture results. Do not automatically choose these parts for unrelated app ideas.
 

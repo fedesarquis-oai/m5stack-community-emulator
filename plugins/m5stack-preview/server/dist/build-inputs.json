@@ -1289,19 +1289,19 @@
       "bytesInOutput": 0
     },
     "knowledge/accessories/index.json": {
-      "bytes": 3144,
+      "bytes": 3201,
       "format": "esm",
-      "bytesInOutput": 9159
+      "bytesInOutput": 9330
     },
     "server/accessory-knowledge.mjs": {
-      "bytes": 1684,
+      "bytes": 2630,
       "format": "esm",
-      "bytesInOutput": 4917
+      "bytesInOutput": 7569
     },
     "server/application-server.mjs": {
-      "bytes": 15728,
+      "bytes": 15707,
       "format": "esm",
-      "bytesInOutput": 51585
+      "bytesInOutput": 51522
     },
     "server/index.mjs": {
       "bytes": 173,
@@ -2890,7 +2890,7 @@
   "outputs": {
     "server": {
       "server/dist/index.js": {
-        "bytes": 1397864,
+        "bytes": 1398784,
         "imports": [
           {
             "path": "node:fs/promises",
@@ -3050,7 +3050,7 @@
         ]
       },
       "server/dist/application-server.js": {
-        "bytes": 1397850,
+        "bytes": 1398770,
         "imports": [
           {
             "path": "node:fs/promises",
@@ -3210,7 +3210,7 @@
         ]
       },
       "server/dist/browser-preview.js": {
-        "bytes": 1436863,
+        "bytes": 1437783,
         "imports": [
           {
             "path": "node:path",

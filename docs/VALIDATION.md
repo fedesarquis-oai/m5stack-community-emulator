@@ -1,4 +1,8 @@
-# Validation — 0.7.44
+# Validation — 0.7.45
+
+## Kit questions — November 18, 2026
+
+The device guide returned the packaged box inventory for plain-language lookups, including round stickers, a little wrench and mounting clips. The guide covers two controller SKUs and six accessory SKUs. The RFID2 record distinguishes ID-based actions, writable NFC data and the pending physical write/read-back test. An unidentified bracket and an unknown board revision still follow the research-only path. These checks exercise the plugin's knowledge and tool routing.
 
 ## Community distribution — November 17, 2026
 

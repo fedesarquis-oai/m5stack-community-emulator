@@ -25,7 +25,7 @@ export function chooseApp(value='counter') {
   return value;
 }
 export function catalog() {
-  return { version:'0.7.44', profiles:PROFILES, apps:APPS,
+  return { version:'0.7.45', profiles:PROFILES, apps:APPS,
     fidelity:'Native C++ framebuffer preview. Physical peripherals, firmware and electrical behavior are not emulated.',
     hardwareAccess:false };
 }

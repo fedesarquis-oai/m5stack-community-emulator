@@ -4,7 +4,7 @@ Tell Codex what you want to build, then develop and test your device app in Chro
 
 This community plugin gives Codex a fixed emulator and a portable C++ app workspace. Tell it what you want to build; Codex edits the app, builds it and opens the result. When you have a supported physical device, Codex can compile the same app source for that board and guide installation.
 
-**Community preview · v0.7.44 · tested on macOS Apple Silicon with Chrome.** No hardware or API key is required for the base emulator. This is an independent project, not an official M5Stack or OpenAI product. It simulates supported app interfaces; it does not run arbitrary ESP32 firmware or reproduce every peripheral.
+**Community preview · v0.7.45 · tested on macOS Apple Silicon with Chrome.** No hardware or API key is required for the base emulator. This is an independent project, not an official M5Stack or OpenAI product. It simulates supported app interfaces; it does not run arbitrary ESP32 firmware or reproduce every peripheral.
 
 Original code is available under the [MIT license](LICENSE). Upstream components retain their own notices.
 
@@ -17,6 +17,8 @@ Original code is available under the [MIT license](LICENSE). Upstream components
 
 3. Describe your idea. Codex will work out the screen, controls and features with you, choose the matching device profile, and build your app in its own folder.
 4. Try the app in Chrome and tell Codex what to change. Hardware is optional; ask for installation only when you want to move your app to a supported physical device.
+
+Just unpacking a kit? Ask “What are these round stickers for?” or “Which part measures distance?” Codex can identify common items from your description and look up the matching board or sensor. [See what's in the CoreS3 and StickS3 box](plugins/m5stack-preview/skills/m5stack-preview/references/kit-contents.md).
 
 You do not need to clone the repository or type the installation commands yourself. Codex handles plugin installation, dependency preparation and compilation. The first build downloads pinned native dependencies. Existing Node 22+, Python 3.9+, Git and Clang/platform headers are needed; [installation](docs/INSTALL.md) covers missing tools and the manual route.
 

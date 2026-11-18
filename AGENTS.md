@@ -12,6 +12,7 @@ This repository distributes the existing `m5stack-preview` plugin. Read the user
 
 ## Building a user's app
 
+- Answer kit questions directly. Use the plugin's device guide with `device: "kit"` to identify a loose item or select a part by what the builder wants to do. Look up the exact board/accessory for wiring. A question about the contents needs no app setup.
 - Start by asking what the user wants to build, unless they already described it. Let their idea determine the interface and required features, then help choose an exact supported profile. Do not prescribe a bundled app, community project or hardware purchase. The default goal is their app in Chrome, with no physical device required. The embedded Codex panel is outside this release; do not route new users there. Don't ask about hardware again after their route is known.
 - Treat the plugin as read-only. Create a separate workspace with `scripts/create_workspace.py --destination <new-directory>`. Preserve existing app edits. Run doctor, explicit pinned dependency setup, then the selected native build. Never claim the illustrative input preview is a compiled app.
 - Open the compiled app using `node <plugin-root>/server/launch.mjs --browser --workspace <app-workspace> --profile <profile> --app custom`. This uses the same portable Node entrypoint as MCP; Node 22+ must be on PATH. Read the packaged host setup guide for platform prerequisites. Keep the process alive and give the user its exact local URL.

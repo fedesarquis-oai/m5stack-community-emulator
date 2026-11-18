@@ -4,6 +4,8 @@ Use this reference when a builder has one of these parts. Start with their idea 
 
 ## What is ready
 
+For questions about something found in the box, start with [kit contents](kit-contents.md). It covers the NFC stickers, Allen key, DinBase mounting clips, two controllers and six add-ons.
+
 | Part | What a builder can develop now | First physical check |
 |---|---|---|
 | CoreS3 K128 + DinBase | Native screen/touch, semantic motion, mono audio and bounded HTTP(S). Firmware target compiles; standard CoreS3 physical acceptance is pending. DinBase power/battery behavior is not simulated. | Show text, tap a counter, then test each needed input/output. Confirm the actual base and board revision. |

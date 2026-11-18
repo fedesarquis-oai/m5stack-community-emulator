@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.45 — questions about the kit
+
+- The existing device guide can explain both controllers, six add-ons and the loose NFC tags, Allen key and mounting clips. Builders can describe what they found or what they want to measure.
+- Added the distinction between assigning an action to a tag's ID and storing writable NFC data on the tag. Accessory hardware checks are tracked separately.
+
 ## 0.7.44 — portable host setup and standard CoreS3 target
 
 - Replaced the MCP shell dependency with a portable Node entrypoint; retained the legacy Unix browser wrapper.

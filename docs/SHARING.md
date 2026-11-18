@@ -2,7 +2,7 @@
 
 Share [the public GitHub repository](https://github.com/fedesarquis-oai/m5stack-community-emulator). It contains the ready-built plugin, marketplace catalog, installation guide and agent instructions. People do not need a sample app, physical device or manual Git clone.
 
-The default `main` branch provides **v0.7.44**, including portable setup, the standard CoreS3 build target and all eight exact-SKU kit guides. Builders can use the repository link directly; no review branch or ZIP is required. Native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. Independent Windows/Linux Codex and live Chrome acceptance remain pending; see the [validation record](VALIDATION.md).
+The default `main` branch provides **v0.7.45**, including portable setup, the standard CoreS3 build target and all eight exact-SKU kit guides. Builders can use the repository link directly; no review branch or ZIP is required. Native setup/build CI passed on Windows x64, Ubuntu x64 and macOS 26 ARM64. Independent Windows/Linux Codex and live Chrome acceptance remain pending; see the [validation record](VALIDATION.md).
 
 ## What the recipient does
 
@@ -27,7 +27,7 @@ For each update, verify the public checkout, package hashes, MCP startup, active
 
 ## ZIP fallback
 
-For a file-based handoff, prepare **m5stack-community-emulator-v0.7.44.zip** and matching SHA256SUMS from the reviewed tree. They extract the ZIP, open its folder in Codex and use the local-folder prompt in [INSTALL.md](INSTALL.md). The smaller plugin-only ZIP lacks the repository onboarding files.
+For a file-based handoff, prepare **m5stack-community-emulator-v0.7.45.zip** and matching SHA256SUMS from the reviewed tree. They extract the ZIP, open its folder in Codex and use the local-folder prompt in [INSTALL.md](INSTALL.md). The smaller plugin-only ZIP lacks the repository onboarding files.
 
 A localhost preview URL only works on the computer running the emulator and contains a private capability. Share the GitHub repository link instead.
 

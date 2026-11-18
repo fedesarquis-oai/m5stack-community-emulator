@@ -1,4 +1,4 @@
-# M5Stack app runtime — v0.7.44
+# M5Stack app runtime — v0.7.45
 
 Portable application model/drawing plus a native C++ renderer. Profiles: AtomS3R C126, StickC Plus2, StickS3 K150, CoreS3 and CoreS3 SE. This is not ESP32 instruction-set emulation.
 

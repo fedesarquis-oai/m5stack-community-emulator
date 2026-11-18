@@ -16,7 +16,7 @@ export const UI_URI='ui://m5stack-preview/workbench.html';
 export function createM5StackServer({manager=new Workbench()}={}){
 if(Number(process.versions.node.split('.')[0])<22)throw new Error('M5Stack Community Emulator requires an approved Node 22+ runtime.');
 const {hardware,stopHardware}=createHardwareRunner();
-const server=new McpServer({name:'m5stack-preview',version:'0.7.44'});
+const server=new McpServer({name:'m5stack-preview',version:'0.7.45'});
 const extensions=new OpenAIExtensions(server);
 const response=value=>({content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value});
 const safe=action=>async args=>{try{return await action(args);}catch(error){return {isError:true,content:[{type:'text',text:error instanceof Error?error.message:'Operation failed.'}]};}};
@@ -42,7 +42,7 @@ registerAppTool(server,'m5stack_open',{
   _meta:{ui:{resourceUri:UI_URI,visibility:['model','app']},'openai/ui':{entrypoints:[{type:'thread'}],preferredModelDisplayMode:'fullscreen'}}
 },safe(args=>manager.open(args)));
 server.registerTool('m5stack_catalog',{title:'List supported preview devices and accessory references',description:'List implemented simulation profiles plus a separate knowledge-only accessory catalog. Accessories are not emulator capabilities. Use exact SKU lookup for wiring, libraries and support limits.',inputSchema:{},annotations:readOnly},safe(()=>response({...catalog(),accessories:accessoryCatalog()})));
-server.registerTool('m5stack_device_guide',{title:'Read exact board or accessory knowledge',description:'Read manufacturer references for an exact board or accessory SKU/name. Pass accessories to list the accessory catalog. Accessory records include wiring basis, source credits, first checks and explicit unimplemented emulator/firmware status. Unknown revisions remain research-only; never alias a similar part.',inputSchema:{device:z.string().min(1).max(120),revision:z.string().max(200).optional()},annotations:readOnly},safe(async({device,revision})=>{
+server.registerTool('m5stack_device_guide',{title:'Look up a kit, board or accessory',description:'For ordinary questions about this hackathon box, loose parts or what a builder can do with them, pass kit. Pass accessories for the catalog or an exact board/accessory SKU or name for wiring, manufacturer sources, first checks and implementation status. Unknown revisions remain research-only.',inputSchema:{device:z.string().min(1).max(120),revision:z.string().max(200).optional()},annotations:readOnly},safe(async({device,revision})=>{
   const accessory=await accessoryGuide(PLUGIN_ROOT,device);
   if(accessory)return response({...accessory,requestedRevision:revision??null,revisionConfirmed:false});
   const manualRoot=path.join(PLUGIN_ROOT,'knowledge/devices');

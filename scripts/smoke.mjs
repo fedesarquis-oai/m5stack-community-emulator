@@ -50,6 +50,10 @@ try{
   assert.equal((await rpc('tools/list')).tools.length,14);
   const catalog=(await call('m5stack_catalog')).structuredContent;
   assert.deepEqual(catalog.profiles.map(p=>p.id).sort(),[...profiles].sort());
+  const kit=(await call('m5stack_device_guide',{device:'round stickers'})).structuredContent;
+  assert.equal(kit.kind,'kit_guide');
+  assert.match(kit.guide,/2\.5 mm Allen key/);
+  assert.match(kit.guide,/NDEF/);
   for(const profile of profiles){
     const guide=(await call('m5stack_device_guide',{device:profile})).structuredContent;
     assert.equal(guide.device.native_preview.runtime_profile,profile);

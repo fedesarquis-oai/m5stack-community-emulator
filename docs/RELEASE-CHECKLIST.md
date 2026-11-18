@@ -1,10 +1,12 @@
 # Community release checks
 
-Community preview **0.7.44**, updated November 17, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
+Community preview **0.7.45**, updated November 18, 2026. This is a community preview for **macOS Apple Silicon, Codex and Chrome**, with the limits in the [support matrix](SUPPORT-MATRIX.md). It is not an official directory submission.
 
 Detailed evidence and historical scope: [VALIDATION.md](VALIDATION.md).
 
 ## Accessory update scope
+
+Version 0.7.45 adds plain-language kit identification to the packaged skill and device guide. See the [kit lookup checks](VALIDATION.md).
 
 The 0.7.44 community preview includes the accessory library, portable host setup and a compiled standard CoreS3 target. It is distributed from GitHub `main` through the normal repository installation link. No accessory adapters or new physical acceptance are claimed. Windows/Linux/macOS native CI passed; independent live-browser checks remain required before expanding the accepted host scope. See [builder readiness](BUILDER-READINESS.md). Historical public checkout evidence below retains its original version scope; a separate GitHub Release is optional.
 
