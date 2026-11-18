@@ -23343,7 +23343,7 @@ function chooseApp(value = "counter") {
 }
 function catalog() {
   return {
-    version: "0.7.44",
+    version: "0.7.45",
     profiles: DEVICE_PROFILES,
     apps: APPS2,
     fidelity: "Native C++ framebuffer preview. Physical peripherals, firmware and electrical behavior are not emulated.",
@@ -35052,7 +35052,7 @@ var accessories_default = {
   schema_version: 1,
   reviewed_on: "2026-11-16",
   purpose: "General accessory reference catalog; documentation does not create emulator or firmware capabilities.",
-  guide_query: "Call m5stack_device_guide with an exact SKU, listed name/id/alias, or accessories for this catalog.",
+  guide_query: "Call m5stack_device_guide with kit to identify the box contents and loose pieces, accessories for this catalog, or an exact SKU/name for wiring and support.",
   support: {
     status: "knowledge_only",
     simulation_supported: false,
@@ -35164,6 +35164,27 @@ var accessories_default = {
 };
 
 // server/accessory-knowledge.mjs
+var kitNames = /* @__PURE__ */ new Set([
+  "kit",
+  "hackathon kit",
+  "m5stack hackathon kit",
+  "kit contents",
+  "box contents",
+  "what's in the box",
+  "what's in the kit",
+  "round sticker",
+  "round stickers",
+  "nfc sticker",
+  "nfc stickers",
+  "little wrench",
+  "wrench",
+  "allen key",
+  "hex key",
+  "dinbase",
+  "din rail clip",
+  "mounting clips",
+  "small pieces"
+]);
 function accessoryCatalog() {
   return {
     reviewedOn: accessories_default.reviewed_on,
@@ -35178,6 +35199,16 @@ function accessoryCatalog() {
 }
 async function accessoryGuide(pluginRoot, query) {
   const key = query.trim().toLowerCase();
+  const kitName = key.replaceAll("\u2019", "'").replace(/[?!\.]+$/, "").replace(/\s+/g, " ").trim();
+  if (kitNames.has(kitName)) {
+    const guide = await fs7.readFile(path7.join(pluginRoot, "skills/m5stack-preview/references/kit-contents.md"), "utf8");
+    return {
+      kind: "kit_guide",
+      title: "CoreS3 and StickS3 hackathon kit",
+      guide,
+      next: "Use the matching SKU for detailed wiring and support. Ask for a label or photo if a loose part could be something else."
+    };
+  }
   if (key === "accessories") return { kind: "accessory_catalog", accessories: accessoryCatalog() };
   const entry = accessories_default.entries.find((record2) => [record2.id, record2.sku, record2.name, ...record2.aliases].some((value) => value.toLowerCase() === key));
   if (!entry) return null;
@@ -35199,7 +35230,7 @@ var UI_URI = "ui://m5stack-preview/workbench.html";
 function createM5StackServer({ manager = new Workbench() } = {}) {
   if (Number(process.versions.node.split(".")[0]) < 22) throw new Error("M5Stack Community Emulator requires an approved Node 22+ runtime.");
   const { hardware: hardware2, stopHardware: stopHardware2 } = createHardwareRunner();
-  const server = new McpServer({ name: "m5stack-preview", version: "0.7.44" });
+  const server = new McpServer({ name: "m5stack-preview", version: "0.7.45" });
   const extensions = new OpenAIExtensions(server);
   const response = (value) => ({ content: [{ type: "text", text: JSON.stringify(value) }], structuredContent: value });
   const safe = (action) => async (args) => {
@@ -35232,7 +35263,7 @@ function createM5StackServer({ manager = new Workbench() } = {}) {
     _meta: { ui: { resourceUri: UI_URI, visibility: ["model", "app"] }, "openai/ui": { entrypoints: [{ type: "thread" }], preferredModelDisplayMode: "fullscreen" } }
   }, safe((args) => manager.open(args)));
   server.registerTool("m5stack_catalog", { title: "List supported preview devices and accessory references", description: "List implemented simulation profiles plus a separate knowledge-only accessory catalog. Accessories are not emulator capabilities. Use exact SKU lookup for wiring, libraries and support limits.", inputSchema: {}, annotations: readOnly }, safe(() => response({ ...catalog(), accessories: accessoryCatalog() })));
-  server.registerTool("m5stack_device_guide", { title: "Read exact board or accessory knowledge", description: "Read manufacturer references for an exact board or accessory SKU/name. Pass accessories to list the accessory catalog. Accessory records include wiring basis, source credits, first checks and explicit unimplemented emulator/firmware status. Unknown revisions remain research-only; never alias a similar part.", inputSchema: { device: external_exports.string().min(1).max(120), revision: external_exports.string().max(200).optional() }, annotations: readOnly }, safe(async ({ device, revision }) => {
+  server.registerTool("m5stack_device_guide", { title: "Look up a kit, board or accessory", description: "For ordinary questions about this hackathon box, loose parts or what a builder can do with them, pass kit. Pass accessories for the catalog or an exact board/accessory SKU or name for wiring, manufacturer sources, first checks and implementation status. Unknown revisions remain research-only.", inputSchema: { device: external_exports.string().min(1).max(120), revision: external_exports.string().max(200).optional() }, annotations: readOnly }, safe(async ({ device, revision }) => {
     const accessory = await accessoryGuide(PLUGIN_ROOT, device);
     if (accessory) return response({ ...accessory, requestedRevision: revision ?? null, revisionConfirmed: false });
     const manualRoot = path8.join(PLUGIN_ROOT, "knowledge/devices");

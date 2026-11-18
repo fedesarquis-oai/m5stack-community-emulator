@@ -10,7 +10,7 @@ import {LiveMicrophone} from './live-microphone.mjs';
 import './style.css';
 
 // Release contracts: ext-apps 1.7.5 and mcp-extensions 0.1.0.
-const PLUGIN_VERSION='0.7.44';
+const PLUGIN_VERSION='0.7.45';
 const app=new App({name:'M5Stack Community Emulator',version:PLUGIN_VERSION},{availableDisplayModes:['fullscreen']});
 const extensions=new OpenAIExtensions(app);
 const $=id=>document.getElementById(id);

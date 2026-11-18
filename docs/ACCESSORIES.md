@@ -1,5 +1,7 @@
 # Accessory reference library
 
+Builders can ask “What are the round stickers for?”, “What is this little wrench?” or “Which part measures distance?” without reading the labels first. Codex can open the [kit contents](../plugins/m5stack-preview/skills/m5stack-preview/references/kit-contents.md) through the device guide with `device: "kit"`.
+
 Codex can look up these parts by exact SKU or listed name through the plugin's existing device-guide tool. Each record includes manufacturer links, wiring notes, library references, a first hardware check and common failures. This library is useful for any project; it does not make the parts mandatory or change the emulator UI.
 
 Start with the packaged [accessory builder guide](../plugins/m5stack-preview/skills/m5stack-preview/references/accessory-bringup.md). It covers both controllers and all six add-ons, example connection plans, the vendor's bench findings and one first test per part. The facts are available to Codex through the exact-SKU records; builders do not need to copy a second AGENTS.md or adopt another toolchain.

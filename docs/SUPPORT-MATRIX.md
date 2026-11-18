@@ -1,6 +1,6 @@
 # Supported scope
 
-Community candidate: **0.7.44**. Hardware acceptance below was collected before this packaging update; no new hardware tests are implied. Browser microphone capture is the supported route. macOS Apple Silicon and Chrome are the tested host combination.
+Community candidate: **0.7.45**. Hardware acceptance below was collected before this packaging update; no new hardware tests are implied. Browser microphone capture is the supported route. macOS Apple Silicon and Chrome are the tested host combination.
 
 | Capability | AtomS3R C126 | StickC Plus2 | StickS3 K150 | CoreS3 | CoreS3 SE |
 |---|---|---|---|---|---|

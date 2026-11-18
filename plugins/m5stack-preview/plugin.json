@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "m5stack-preview",
-  "version": "0.7.44",
+  "version": "0.7.45",
   "description": "Build and test M5Stack device apps with Codex using a local emulator, browser microphone, app-owned audio and optional networking. Deploy portable app source to supported physical boards.",
   "extensions": {
     "com.openai": {

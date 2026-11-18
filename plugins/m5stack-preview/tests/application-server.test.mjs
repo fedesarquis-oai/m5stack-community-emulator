@@ -57,6 +57,30 @@ test('all catalog profile IDs resolve to their exact knowledge entry; unknown re
   const unknown=(await c.call('m5stack_device_guide',{device:'CoreS3 SE unknown revision 999'})).structuredContent;
   assert.equal(unknown.status,'research-only');assert.equal(unknown.simulationSupported,false);
 });
+test('kit questions return the packaged inventory and retain exact hardware lookup', async t => {
+  const c = await client(t, createM5StackServer());
+  const lookup = async device => (await c.call('m5stack_device_guide', {device})).structuredContent;
+  const catalog = (await c.call('m5stack_catalog')).structuredContent;
+  assert.match(catalog.accessories.guideQuery, /kit/);
+  const kit = await lookup('kit');
+  assert.equal(kit.kind, 'kit_guide');
+  for (const sku of ['K128', 'K150', ...catalog.accessories.entries.map(entry => entry.sku)]) {
+    assert.ok(kit.guide.includes(sku), sku);
+  }
+  for (const phrase of ['What’s in the box?', 'round stickers', 'little wrench', 'small pieces', 'DIN rail clip']) {
+    assert.equal((await lookup(phrase)).guide, kit.guide, phrase);
+  }
+  assert.match(kit.guide, /2\.5 mm Allen key/);
+  assert.match(kit.guide, /Four small screw-mount clips and a rail clip/);
+  assert.match(kit.guide, /NDEF/);
+  assert.match(kit.guide, /physical test/);
+  const rfid = await lookup('U031-B');
+  assert.match(rfid.accessory.kit_stickers.use_by_id, /without writing/);
+  assert.equal(rfid.firmwareAdapterImplemented, false);
+  assert.equal((await lookup('K128-SE')).device.sku, 'K128-SE');
+  assert.equal((await lookup('unidentified mounting bracket')).status, 'research-only');
+});
+
 test('accessory references are discoverable without enabling emulator or firmware capabilities',async t=>{
   const c=await client(t,createM5StackServer());
   const catalog=(await c.call('m5stack_catalog')).structuredContent;

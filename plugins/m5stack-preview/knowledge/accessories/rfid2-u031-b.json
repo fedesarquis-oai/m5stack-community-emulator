@@ -10,7 +10,12 @@
   ],
   "category": "grove_unit",
   "reviewed_on": "2026-11-16",
-  "summary": "Reads identifiers and supported card data at close range.",
+  "summary": "Reads tag IDs and can read or write user data on compatible 13.56 MHz tags at close range.",
+  "kit_stickers": {
+    "contents": "The CoreS3/StickS3 hackathon kit guide lists four adhesive tags. Their individual chip types and lock states need identification.",
+    "use_by_id": "An app can assign an action to the tag's existing ID without writing to it.",
+    "use_by_data": "A compatible writable tag can carry short text or a URL as an NFC record (NDEF). The first example reads IDs. A write and read-back still needs physical validation."
+  },
   "interface": {
     "data_bus": "I2C",
     "address": "0x28",
@@ -72,6 +77,12 @@
     "note": "Label simulated identifiers; preserve UID length and leading zero bytes. No RF or card-memory emulation."
   },
   "sources": [
+    {
+      "title": "NTAG213, NTAG215 and NTAG216 user memory and NFC data format",
+      "url": "https://www.nxp.com/products/NTAG213_215_216",
+      "author": "NXP Semiconductors",
+      "checked_on": "2026-11-18"
+    },
     {
       "title": "Unit RFID2 manual",
       "url": "https://docs.m5stack.com/en/unit/Unit_RFID2",

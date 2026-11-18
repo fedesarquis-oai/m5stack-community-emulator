@@ -1,4 +1,4 @@
-# M5Stack Community Emulator — v0.7.44
+# M5Stack Community Emulator — v0.7.45
 
 Build an M5Stack app with Codex, then interact with its screen and supported inputs in one fixed emulator. Codex edits app source, prepares assets, builds, loads and tests. App development does not modify the emulator unless the user explicitly requests an emulator extension.
 
